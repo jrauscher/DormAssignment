@@ -1,0 +1,22 @@
+table.mytable
+{
+	width:80%;
+	border:none;
+	background-color:rgb(0,102,186);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px rgb(46,0,117);
+	border-collapse:collapse;
+}
+
+.myyable th, tr, td
+{
+	padding:5px;
+	border:1px solid black;
+}
+.mytable th
+{
+	background-image: linear-gradient(rgb(100, 111, 127), rgb(74, 85, 100));
+}
+
