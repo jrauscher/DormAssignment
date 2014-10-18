@@ -1,0 +1,17 @@
+table.mytable{
+	width: 90%; 
+	border-collapse: collapse; 
+}
+.mytable tr:nth-of-type(odd) { 
+	background: #eee; 
+}
+.mytable th { 
+	background: #333; 
+	color: white; 
+	font-weight: bold; 
+}
+.mytable td, th { 
+	padding: 6px;
+	border: 1px solid white; 
+	text-align: left; 
+}

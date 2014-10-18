@@ -1,0 +1,125 @@
+Schema
+Name: UNODB
+
+building {
+	build_id (primary key)
+    	building_name
+	building_letter
+	lease
+	campus
+	num_rooms
+	floor
+	RA_rooms
+	handicapped_rooms
+ }
+
+rooms{
+	room_num (primary key)
+   	build_id (primary key)
+	group_id (index)
+	gender
+	smoking
+	num_students
+	floor
+ }
+ 
+room_letter {
+	room_num (primary key)
+	build_id (index)
+student_id (index)	
+letter
+}
+
+users {
+	student_id
+	username(email)
+	password (random)
+building_name
+	pwd_reset
+	needs_email
+	form_completion
+}
+
+admins {
+	admin_id
+	username
+	password
+	pwd_reset
+}
+
+room_available _que {
+	student_id
+	date
+}
+
+form_settings {
+	form_id (primary key)
+	form_name
+	deadline_date
+	warning_date
+}
+
+groups {
+	group_id
+	build_id
+	room_num
+student_id_1
+student_id_2
+student_id_3
+student_id_4
+}
+
+bench {
+	becnh_id
+	student_id
+	query1
+	query2
+}
+
+students {
+	student_id
+	group_id
+	room_num
+	build_id
+	first_name
+	last_name
+	gender
+	birthdate
+	cell_phone
+	home_phone
+	email
+	age
+	address
+	city
+	state
+	zip
+	lease
+	renewal
+	sub_date
+	scott_scholar
+	desired_roommate1
+desired_roommate2
+desired_roommate3
+	grade_lvl
+	enrolled_college
+	enrolled_department
+	cleanliness
+	noise
+	guest_sleeping
+	share_belongings
+	bed_time
+	wakeup_time
+	gathering
+	drink_alchohol
+	others_drink
+	smoking
+	others_smoking
+	noise_rateing
+	cleanliness_rateing
+	lifestyle_rateing
+	age_rateing
+	major_rateing
+	guest_rateing
+	comments
+	comments_resolved
+}

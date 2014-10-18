@@ -23,15 +23,15 @@ $sql="INSERT INTO building (build_id, building_name, building_letter, lease, cam
 if( isset($bName) && $bName != null && $bName != '' ){
         $valid ++;
 }
-
+if( isset($letter) && $letter != null && $letter != '' ){
+        $valid ++;
+}
 if( isset($roomNum) && $roomNum != null && $roomNum != '' && is_numeric($roomNum) ){
         $valid ++;
 }
-
 if( isset($campus) && $campus != null && $campus != '' ){
         $valid ++;
 }
-
 if( isset($floorNum) && $floorNum != null && $floorNum != '' && is_numeric($floorNum) ){
         $valid ++;
 }
@@ -50,7 +50,7 @@ $result = mysqli_query($con, $sql) or die ('Error ' . mysqli_error($con));
 
 print<<<END
 <script>
-window.location="../addBuilding.php";
+window.location="../settings.php?validate='Building added sucessfully!'";
 </script>
 END;
 }

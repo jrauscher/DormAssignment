@@ -30,7 +30,7 @@ $avail_room_count =0;
 $user_string = '';
 $user_completion_count = 0;
 $user_needs_email_count = 0;
-$campus_arr;
+$group_arr = array();
 $array_counter=0;
 include ('includes/header.html');
 
@@ -44,8 +44,9 @@ while($campus_name = mysqli_fetch_assoc($result_campus))
 		{
 			foreach ($building_name as $building_val)
 			{
+				$group_arr[$building_val] = 0;
 				$group_string = $group_string . ' '. $building_val . ',';
-				$campus_arr [$building_val] = 0;
+				//$campus_arr [$building_val] = 0;
 				$array_counter = $array_counter + 1; 	
 				$result_building_id = mysqli_query($dbconn, "SELECT build_id FROM building WHERE building_name = '" . $building_val . "';");
 				while ($building_id = mysqli_fetch_assoc($result_building_id)) 
@@ -90,98 +91,142 @@ while ($user_needs_email = mysqli_fetch_assoc($result_user_needs_email))
 		}
 	}
 }
-/*
-$result_student_building = mysqli_query($dbconn, "SELECT build_id FROM users");
-while ($user_building = mysqli_fetch_assoc($result_student_building))
+
+$result_user_building_x = mysqli_query($dbconn, "SELECT building_name FROM users");
+while ($user_building_x = mysqli_fetch_assoc($result_user_building_x))
 {
-	foreach($user_building as $user_building_value)
+	foreach($user_building_x as $user_building_value_x)
 	{
-			$campus_arr[$user_building_val] = $campus_arr[$user_building_value] + 1;
+			if (isset($group_arr[$user_building_value_x]))
+			{
+				$group_arr[$user_building_value_x] = $group_arr[$user_building_value_x] + 1;
+			}
 	}
 }
-*/		
+		
+$males_count = 0;
+$females_count = 0;
+$student_gender_var ='';
+$result_student_gender = mysqli_query($dbconn, "SELECT gender FROM students");
+while ($student_gender = mysqli_fetch_assoc($result_student_gender))
+{
+	foreach($student_gender as $student_gender_val)
+	{
+			
+			if($student_gender_val)
+			{
+				$females_count++;
+			}
+			else
+			{
+				$males_count++;
+			}
+	}
+}
+
+$result_warning_date = mysqli_query($dbconn, "SELECT warning_date FROM form_settings");
+$warning_date = mysqli_fetch_assoc($result_warning_date);
+$result_deadline_date = mysqli_query($dbconn, "SELECT deadline_date FROM form_settings");
+$deadline_date = mysqli_fetch_assoc($result_deadline_date);
+if($warning_date)
+{
+	foreach($warning_date as $warning_date_value){}
+}
+else
+{
+	$warning_date_value ='Not set up.';
+}
+if($deadline_date)
+{
+	foreach($deadline_date as $deadline_date_value){}
+}
+else
+{
+	$deadline_date_value ='Not set up.';
+}
+
 ?>
 
 <div id = "home">
 	<div id="welcome">
 		<h2>Welcome!  </h2>
-		<p> Here's an overview of current data:</p>
-		<div id="w_top_left">
-			<h4>Campuses:</h4>				
-			<p>
-				<?php
-				echo $campus_string;
-				?>
-				
-			</p>
-			<h4>Buildings Groups:</h4>				
-			<p>
-				<?php
-					echo $group_string;
-				?>
-			</p>
-			<h4>Number of Buildings:</h4>				
-			<p>
-				<?php
-					echo $building_count;
-				?>
-			</p>
-		</div>
-		<div id="w_top_right">
-			<h4>Number of Rooms:</h4>				
-			<p>
-				<?php
-				//	echo $room_count;
-					echo $total_room_count;
-				?>
-			</p>
-			<h4>Number of users completed form:</h4>
-			<p>
-				<?php
-					echo $user_completion_count;
-				?>
-			</p>
-			<h4>Number of users need email:</h4>
-			<p>
-				<?php
-					echo $user_needs_email_count;
-				?>
-			</p>
-
-</div>
-		<div id="w_bottom_left">
-			<h4>Gender counts:</h4>
-			<p>
-				<?php
-					echo 'No female/male data available (hint!)';
-				?>
-			</p>
-			<h4>Warning Date:</h4>
-			<p>
-				<?php
-					echo '' ;
-				?>
-			</p>
-			<h4>Deadline Date:</h4>
-			<p>
-				<?php
-					echo '';
-				?>
-			</p>
-		</div>
-		<div id="w_bottom_right">		
-			<ul>
+		<p> <h3 style="margin-top:-20px">Data Overview:</h3></p>
+	</div>
+	<div id="home_left">
+		<h4>Campuses:</h4>				
+		<p>
 			<?php
-			$array_counter = 0;
-			foreach ($campus_arr as $key => $value)
-			{
-				echo '<li>' . $key . ': ' . $value  . '</li>';
-			}
+			echo rtrim($campus_string, ",") . '.';
 			?>
-			</ul>
-		</div>
-		
-</div>
+			
+		</p>
+		<h4>Buildings Groups:</h4>				
+		<p>
+			<?php
+			echo rtrim($group_string, ",") . '.';
+			?>
+		</p>
+		<h4>Number of Buildings:</h4>				
+		<p>
+			<?php
+				echo $building_count;
+			?>
+		</p>
+		<h4>Number of Rooms:</h4>				
+		<p>
+			<?php
+			//	echo $room_count;
+				echo $total_room_count;
+			?>
+		</p>
+		<h4>Gender counts:</h4>
+			<?php
+				echo '<table><tr><td align="left"> Males:</td><td align="right">' . $males_count  . '</td></tr>';
+				echo '<tr><td align="left"> Females:</td><td align="right">' . $females_count  . '</td></tr></table>';
+					
+			?>
+	</div>
+	<div id="home_right">
+		<h4>Warning Date:</h4>
+		<p>
+			<?php
+				echo $warning_date_value ;
+			?>
+		</p>
+		<h4>Deadline Date:</h4>
+		<p>
+			<?php
+				echo $deadline_date_value;
+			?>
+		</p>
+		<h4>Number of users completed form:</h4>
+		<p>
+			<?php
+				echo $user_completion_count;
+			?>
+		</p>
+		<h4>Number of users need email:</h4>
+		<p>
+			<?php
+				echo $user_needs_email_count;
+			?>
+		</p>
+		<table>
+		<?php
+		$array_counter = 0;
+		/*echo '<tr><th align="left">Building Group:</th><th align="right">Student Count</th></tr><tr><td>&nbsp</td></tr>';*/
+		echo '<h4> Students Per Building Group <h4>';
+		foreach ($group_arr as $key => $value)
+		{
+			if(isset($key) && isset($group_arr) && isset($value))
+			{
+				echo '<tr><td align="left">' . $key . ':</td><td align="right">' . $value  . '</td></tr>';
+			}
+		}
+		?>
+		</table>
+
+	</div>
 </div>
 <?php
 include ('includes/footer.html');

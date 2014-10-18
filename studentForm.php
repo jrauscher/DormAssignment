@@ -1,17 +1,17 @@
 <?php
 include ('includes/header.html');
 ?>
-<div id = "subform"> 
-<form> 
+<div id = "sub_content"> 
+<form id ="subform"> 
 <title>Sumbission Form</title>
 <h2>Student Submission Form</h2>
 <div id="sub_main">
 <table border="0">
 	<tr>
-       <th align="right">First Name:</th>
-       <th><input type="text"></input></th>
+       <th align="right" >First Name:</th>
+       <th><input type="text" name="first_name"></input></th>
        <th align="right">Last Name:</th>
-       <th><input type="text"></input></th>
+       <th><input type="text" name="last_name"></input></th>
        <th><input type="radio" name="gender">Male</input></th>
        <th><input type="radio" name="gender" checked>Female</input></th>
      </tr>

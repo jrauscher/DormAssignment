@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use List::Util qw(shuffle);
 
-my $num_buildings = 15;
+my $num_buildings = 0;
 my @num_rooms = (50,20,40,50,40,30,20,15,50,60,30,20,40,50,30);
 my $num_students = 545 * 4;
 my $scott_scholar = 120;
@@ -147,7 +147,7 @@ for (my $i=1; $i<=$num_students; $i++){
 }
 
 print "\n-- User DATA  --\n";
-my @complex = ("Scott Hall","Scott Village","Scott Court");
+my @complex = ("Scott Residence Hall","Scott Village","Scott Court");
 $std_id = 10000000;
 for (my $i=1; $i<=$num_students; $i++){
 	if($i < $scott_scholar){
