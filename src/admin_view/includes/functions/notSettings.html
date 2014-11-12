@@ -1,0 +1,29 @@
+
+ <br><br><font size=5>Notification Settings</font><br/><br/>
+<form action="validate/notVal.php" method="post">
+	<table class>
+		<tr>
+       		<th align="right">Form Name:</th>
+			<th align="left">				
+				<select name="fName">
+					<?php
+						while( $row = mysqli_fetch_assoc($resFormNames) ){
+							foreach($row as $val){
+								echo '<option value="'.$val.'">';
+									echo $val;
+									echo '</option>';
+							}	
+						}
+					?>
+				</select>
+       		<th align="right">Deadline Date:</th>
+       		<th><input name="dDate" type="date" required></input></th>
+       		<th align="right">Warning Date:</th>
+       		<th><input name="wDate" type="date" required></input></th>
+		</tr>
+		<tr>
+			<th align="left"> <input class="button1" type="submit" value="Submit" /></th>
+		</tr>
+	</table>
+</form>		
+<br/>

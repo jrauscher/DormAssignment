@@ -1,0 +1,388 @@
+html {
+	background-color: #999999;
+	min-height:98%;/* change together*/
+	height: 98%; /* and adjust manage_left home_left home_right after changing them cause they all have "fixed" positions*/
+}
+body {
+	height:98%;
+	width: 99%;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+h1 {
+	font-weight: bold;
+	margin-left: 28px;
+	color: #990000;
+	font-size: 30px;
+	line-height:0px;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+h2 {
+	font-weight:normal;
+	margin-left: 20px;
+	color: red;
+	font-size: 30px;
+	line-height:0px;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+h2 p {
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	line-height:0px;
+}
+h3 { 
+	margin-left: 20px;
+	color: green;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+h4 {
+	color: #003333;
+	line-height: 0px;
+	margin-left: 5px;
+	margin-bottom: 15px;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+h4 p {
+	line-height: 0px;
+}
+body p{
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	padding:10px 0 0 0;
+	font-size: 12px;
+	margin-left: 20px;
+	line-height:16px;
+}
+table {
+	margin-left: 20px;
+}
+textarea {
+	margin-left: 20px;
+}
+th {
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	font-size: 15px;
+	margin-left: 20px;
+}	
+td p,td {
+	font-size: 14px;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+b {
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	margin-left: 20px;
+	font-size: 15px;
+}
+#pretty_large_button {
+	background-color: #CCFFCC;
+	padding: 10px 20px;
+	font-weight: bold;
+	font-size: 20px;
+	box-shadow: 10px 10px 5px #888888;
+}
+#pretty_small_button {
+	background-color: #CCFFCC;
+	font-weight: bold;
+	font-size: 15px;
+	box-shadow: 5px 5px 5px #888888;
+}
+#pretty_drop {
+	background-color: #FFFFFF;
+}
+#button_table {
+	margin-left: 25px;
+}	
+#headerNbody {
+	min-height:91%;
+	height:91%;
+	width: 99%;
+}
+#header {
+	overflow: hidden;
+	z-index: 1;
+	position: fixed;
+	width: 99%;
+	margin-top: -20px;
+	min-height: 85px;
+	background-image:url(../images/header_background.jpg);
+	margin-bottom: 8px;
+}
+.right p {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: -10px;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	color: #000000;
+}
+a:hover {
+	font-weight: bold;
+	color: red;
+}
+a:hover li {
+	color: red;		
+}
+.left {
+	position: relative;
+	float: left;
+	margin-top: 50px;
+	width: 10%;
+	height: 400px;
+	background-color: #B9D7D9;
+	margin-bottom: 10px;
+}
+.content {
+	position: relative;
+	float: left;
+	margin-top: 69px;
+	width: 101%;
+	margin-bottom: 3px;
+	background-color: #ffffff;
+	white-space: nowrap;
+	min-height: 93%;
+}
+#footer {
+	height: 45px;
+	clear: both;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	text-align: center;
+	z-index: 1;
+	background-image:url(../images/header_background.jpg);
+	color: #ffffff;
+	width: 100%;
+	bottom:0px;
+}
+#footer p {
+	padding-top: 10px;
+	position: relative;
+}
+#navbar {
+	overflow: hidden;
+	position: fixed;
+	top: -10px;
+	float: left;
+	margin: 0;
+	padding: 15px 0 0 0;
+	margin-left:-30px;
+}
+#navbar ul{
+	overflow: hidden;
+	list-style-type: none;
+	position: fixed;
+	min-width: 1000px;
+}
+.list_of_elements {
+	display: inline;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	color: #ffffff;
+	float: left;
+	padding-top: 20px;
+	margin-top 100px;
+	min-width: 75px;
+	border-radius: 5px 5px;
+	text-align: center;
+}
+.img{
+	float:left;
+	height:50px;
+}
+.img img{
+	height:50px;
+	width:auto;
+	padding-right:15px;
+}
+/* View CSS */
+#manage {
+	min-height: 100%;
+	white-space: initial;
+}
+#left_manage li {
+	font-size: 16px;
+	margin-left: -1px;
+}
+#left_manage span:hover {
+	color: red;
+} 
+.liBullet:hover  {
+	color: red;
+} 
+#left_manage {
+	min-height: 81.2%;
+	max-height: 81.2%;
+	position: fixed;
+	overflow: auto;
+	white-space: nowrap;
+	width:15%;
+	max-width: 15%;
+	float: left;
+	background-color: #EAFFE5;
+}
+#left_manage_title {
+	font-weight: bold;
+	font-size: 25px;
+	color: red;
+	margin-top: -15px;
+	margin-left -30px;
+	white-space: normal;
+	font-weight: normal;
+}
+#wrapper_right {
+	overflow: auto;
+	margin-bottom: 40px;
+	height: 100%;
+	
+	min-height: 100%;
+	/*width: 83.5%;*/
+	width: 84.5%;
+	overflow: auto;
+	max-width 83.5%;
+	margin-left: 15.5%;
+}
+#right_view_header{
+	overflow: auto;
+	background-color: #EBEBEB;
+	min-height: 4%;
+	height: 96%;
+	margin-bottom: 2px;	
+}
+#right_view_content {
+	overflow: auto;
+	position: absolute; /*dont change */
+	white-space: nowrap;
+	background-color: #FFE5E5;
+	min-height: 94.5%;
+	height: 94%;
+	width: 84.5%; /* is based on position*/
+}
+/* submissions form CSS*/
+#sub_content {
+	overflow: auto;
+	min-width:				80%;
+	height: 100%;
+	width: 100%;
+	background-color: #EBEBEB;
+}
+#subform {
+	height: 100%;
+}
+#sub_main {
+	margin-left: 20px;
+	background-color: #FFE5E5;
+	box-shadow: 10px 10px 5px #888888;
+	min-width: 1240px;
+	height: 100%;
+}
+#sub_optional {
+	margin-left: 20px;
+	background-color: #EAFFE5;
+	box-shadow: 10px 10px 5px #888888;
+	min-width: 1240px;
+}
+#sub_optional b {
+	margin-left: 0px;
+}
+
+#form_questions_table{
+	height: 46px;
+}
+#form_questions_table td{
+	width: 500px;
+}
+/* Home CSS */
+#welcome {
+	position: absolute;
+	overflow: auto;
+	min-width: 80%;
+	height: auto;
+	height: 100%;
+	min-height: 99%;
+	width: 100%;
+	background-color: #EBEBEB;
+}
+#welcome_table {
+	background-color:#d9d9d9;
+    top:50%;
+    left:50%;
+}
+#welcome_table th{
+	border:#d9d9d9;
+}
+#welcome_table tbody tr{
+	background-color:#EBEBEB;
+}
+#welcome_table table,p{
+	margin:10px;
+}
+/* copied and modified from http://stackoverflow.com/questions/18431276/how-to-replace-radio-buttons-with-images   */
+/* visually hide the default radio button */
+.radio {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: auto;
+    padding: 10px;
+    position: absolute;
+    width: 1px;
+}
+/* make the label relative, add padding to the left for adding the custom radio button */
+.radio + label {
+    padding-left: 23px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    line-height: 24px;
+    margin: 8px 0;
+	font-weight: bold;
+	color:red;
+}
+/* :before will be our new button! */
+.radio + label:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition(background 250ms ease-in-out);
+    -moz-transition(background 250ms ease-in-out);
+    -o-transition(background 250ms ease-in-out);
+    transition(background 250ms ease-in-out);
+
+    /* Your size */
+    width: 15px;
+    height: 15px;
+    /* This should be: 0 - (height / 2) */
+    margin-top: -7px;
+    /* Your default background color */
+    background: #f97e76;
+}
+.radio:checked + label:before {
+    /* Your checked background color */
+    background: #a8bd44;
+	color:red;
+}
+.radio:not(:checked) + label div {
+/* 	display: none;*/
+	color:red;
+}
+.radio + label div{
+	color: #a8bd44;	
+}
+.radio + label:hover div{
+	display:initial;
+    line-height: 0px;
+	color:inherit;
+	padding: -10px -10px 0 0;
+}
+
+.radio:checked + label:hover div{
+	color: #a8bd44;	
+}
+
+/* email css*/
+.sortedTable {
+	color: #ffffff;
+}

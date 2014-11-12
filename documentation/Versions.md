@@ -1,3 +1,33 @@
+#DormAssignment 0.3 (11-12-2014)
+========
+###Bug Fixes:
+- Fixed issues with CSS in order to make the web interface more fluid.<br/>
+- Fixed issues with adding and the removing of rooms.<br/>
+- The bench on the manage page toggles in and out correctly.<br/>
+
+###Features:
+- Additions to web interface.<br/>
+- More back end functionality.<br/>
+
+#### Web Interface
+- Email page now has an email form and user table has been broken up into pages. <br/>
+- Manage page now has click and drag functionality.<br/>
+- Manage page now shows people are in the rooms it displays.<br/>
+- Settings page now allows for the editing of buildings, Campuses and Complexes. <br/>
+- Changed the logo of the program. <br/>
+
+#### Back End
+- Added column to students table "requested building".<br/>
+- Added column to building table "complex".<br/>
+
+###Performance improvements:
+- None.<br/>
+
+###Documentation:
+- None.<br/>
+
+-----------------------------------------------------------------------
+
 #DormAssignment 0.2 (10-17-2014)
 ========
 ###Bug Fixes:
@@ -52,7 +82,6 @@
 #### Back End
 - Database populated with fake data. <br/>
 - Script the generate fake data. <br/>
-
 
 ###Performance improvements:
 - None.<br/>

@@ -1,0 +1,67 @@
+	<!DOCTYPE html>
+	<html>
+		<div id="headerNbody">
+			<head>
+			<link rel="stylesheet" href="../css/stylesheet.css" type="text/css">
+			<link rel="stylesheet" href="../css/table.css" type="text/css">
+			<link rel="stylesheet" href="../css/v_table.css" type="text/css">
+			<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+			</head>
+			
+
+
+			<body>
+				<div id="header">
+					<div id="navbar">
+
+						<ul>
+							<a href="index.php"><li><div class="img"><img src ="../images/scottcampuslogo.png"/></div></li></a>
+							<?php
+								make_tab("index.php","home","Home","1");
+								make_tab("manage.php","manage","Manage","2");
+								make_tab("email.php","email","Emails","3");
+								make_tab("settings.php","settings","Settings","4");
+								
+							?>
+		
+
+						</ul>
+					</div>
+				</div>
+				<div class="content">
+
+
+		<?php 
+
+			function make_tab($link,$id,$value,$tab_c)
+			{
+				echo '<label>';
+				echo '<li id="';
+				echo $id;
+				echo '" ';
+				if ($_POST[$tab_c] && $tab_c == $_POST[$tab_c])
+				{
+					echo 'class="list_of_elements_checked"';
+				}
+				else
+				{
+					echo 'class="list_of_elements"';
+				}
+
+				echo '>';
+				echo $value;
+				echo '</li>';
+				echo '<form style="visibility:hidden; display:none" action="';
+				echo $link;
+				echo '" method="post">';
+				echo '<input type="submit" name="';
+				echo $tab_c;
+				echo '" style="visibility: hidden;" value="';
+				echo $tab_c;
+				echo '">';
+				echo '</form>';
+				echo '</label>';
+			}
+
+		?>
+
