@@ -364,7 +364,7 @@ background-color: red;
 	overflow: auto;
 	height: 100%;
 	width: 100%;
-	cursor: default;
+	cursor: move;
 	display: inline-block;
 }
 .manageCellsHeader{
@@ -379,6 +379,7 @@ background-color: red;
 	width: 100px;
 	max-width: 100px;
 	padding: 0px;
+	cursor: move;
 }
 /* ---- Emails  ----- */
 .sortedTable {
@@ -609,4 +610,38 @@ a:hover {
 }
 .radio:checked + label:hover div{
 	color: #a8bd44;	
+}
+
+
+
+
+
+
+
+.black_overlay{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+}
+
+.white_content {
+	display: none;
+	position: absolute;
+	top: 35%;
+	left: 2%;
+	width: 96%;
+	height: 300px;
+	padding: 16px;
+	border: 16px solid #191970;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
 }

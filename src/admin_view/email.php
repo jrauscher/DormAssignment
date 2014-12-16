@@ -5,10 +5,10 @@ $was_errors = false;
 $errors = array();
 
 /* Set up your query in a string. */
-$sqlEmailTable = "SELECT student_id AS 'Student ID', username AS 'Username', building_name AS 'Complex Name' FROM users";
+$sqlEmailTable = "SELECT needs_email AS 'Email?', student_id AS 'Student ID', username AS 'Username', building_name AS 'Complex Name' FROM users";
+$sqlEmailTable2 = "SELECT student_id AS 'Student ID', username AS 'Username', building_name AS 'Complex Name' FROM users";
 $building_names = "SELECT DISTINCT building_name FROM building";
-
-
+$better = 0;
 
 if(isset($_GET['sort'])){
 	if($_GET['sort'] == 'Student ID')
@@ -22,6 +22,10 @@ if(isset($_GET['sort'])){
 	else if($_GET['sort'] == 'Complex Name')
 	{
 		$sqlEmailTable .= " ORDER BY building_name";
+	}
+	else if($_GET['sort'] == 'Email?')
+	{
+		$sqlEmailTable .= " ORDER BY needs_email";
 	}
 }
 if(isset($_GET['order']))
@@ -39,54 +43,165 @@ if(isset($_GET['limit']))
 {
 	$sqlEmailTable.= " LIMIT ".$_GET['limit']." , 10";
 }
-$result_1 = mysqli_query($dbconn, $sqlEmailTable);
-$result_2 = mysqli_query($dbconn, $building_names);
 
 include ('../includes/header.html');
 ?>
 <head>
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+   <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 	<script type="text/javascript "src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/packages/jquery.tablesorter.js"></script>
 </head>
+
 <div class ="content2">
-<div id = "home">
-	<div id="welcome"> 
+	<div id = "home">
+		<div id="welcome"> 
 			<link rel="stylesheet" type="text/css" href="table.css">
 			<!-- Form for user to enter information. -->
-	<br/>
-			
+		<br/>
+	
+			<form action="" method="post">
+				<table>
+					<tr>
+						<th><label for="username">Search for user(by username):</label>
+		    			<th><input name="username" /></th>
+			    		<th><input class="button1" type="submit" value="Submit" /></th>
+					</tr>
+				<table>
+			</form>
+			<br/>
+
 			<form action="validate/sendMail.php" method="post">
-				<p style="padding-left:20px">
-				Title: <input type="text" name="title" style="width: 600px"><br><br>
-				Body:<br/> <textarea name="body" rows="6" cols="100"></textarea><br>
-       			<font size=3>Select users to send emails to:</font>
-				<br/><br/>
-				<input class="button1" type="submit" value="Send" /></p> 
-</div></div>
-<br/><br/> 
+				<table>
+					<tr>
+						<th style="text-align:left"><label for="username">Email:</label>
+					</tr>
+					<tr style="text-align:left">
+						<th>&nbsp;&nbsp;&nbsp;&nbsp;Title: <input type="text" name="title" style="width: 600px"></th>
+					</tr>
+					<tr>
+						<th>&nbsp;&nbsp;&nbsp;&nbsp;Manual Recipiant: <input type="text" name="recip" style="width: 425px"></th>
+					</tr>	
+					<tr style="text-align:left">
+						<th>&nbsp;&nbsp;&nbsp;&nbsp;Body:<br/><textarea name="body" rows="6" cols="100"></textarea></th>
+					</tr>	
+					<tr style="text-align:right">
+						<th><input class="button1" type="submit" value="Send" /></th>
+					</tr>
+				</table>
+			<br/><br/> 
 
 <?php
+
+if( isset($_POST['username']) && $_POST['username'] != null && $_POST['username'] != '' ){
+     $sqlEmailTable2 .= ' WHERE username = "' . mysqli_real_escape_string($dbconn,$_POST['username']) .'"';
+	 $better = 1;
+}
+
 $limit = 0; 
 if(isset($_GET['limit']))
 {
+	echo '<input type="hidden" value="'.$_GET['limit'].'" name="limit"/>';
 	$limit = $_GET['limit'];
 	$limit2 = $limit + 10;
 	$limit3 = $limit - 10;
-	echo'<a align="center" class="button1" href="email.php?tab=three&limit=';
-	echo $limit2;
-	echo '"> Next </a>';
+
+	echo '&nbsp;&nbsp;&nbsp;&nbsp;';
+	echo '&nbsp;&nbsp;';
+	
 	if($limit > 0)
 	{
-		echo '<a aligne"center" class="button1" href="email.php?tab=three&limit=';
-		echo $limit3;
-		echo '"> Prev </a>';
+		if(isset($_GET['sort']))
+		{
+		if($_GET['order'] == 'asc')
+		{
+			echo'<a class="button1" href="email.php?tab=emails&sort=';
+			echo $_GET['sort'];
+			echo'&order=asc&limit=';
+			echo $limit3;
+			echo '">Prev 10</a>';
+		}
+		else
+		{
+			echo '<a class="button1" href="email.php?tab=emails&sort=';	
+			echo $_GET['sort'];
+			echo '&order=desc&limit=';
+			echo $limit3;
+			echo '">Prev 10</a>';
+		}
+		}
+		else
+		{
+			echo '<a class="button1" href="email.php?tab=emails&limit=';
+			echo $limit3;
+			echo '">Prev 10</a>';
+		}
 	}
+	if(isset($_GET['sort']))
+	{
+		if($_GET['order'] == 'asc')
+		{
+			echo'<a class="button1" href="email.php?tab=emails&sort=';
+			echo $_GET['sort'];
+			echo'&order=asc&limit=';
+			echo $limit2;
+			echo '">Next 10</a>';
+		}
+		else
+		{
+			echo'<a class="button1" href="email.php?tab=emails&sort=';
+			echo $_GET['sort'];
+			echo'&order=desc&limit=';
+			echo $limit2;
+			echo '">Next 10</a>';
+		}
+	}
+	else
+	{
+		echo'<a class="button1" href="email.php?tab=emails&limit=';
+		echo $limit2;
+		echo '">Next 10</a>';
+	}
+	echo '<br/><br/>';
+	$result_1 = mysqli_query($dbconn, $sqlEmailTable);
 }
 else
 {
-	echo '<a align="center" class="button1" href="email.php?tab=three&limit=10"> Next </a>';
+	$sqlEmailTable.= " LIMIT 0, 10";
+	echo '&nbsp;&nbsp;&nbsp;&nbsp;';
+	echo '&nbsp;&nbsp;';
+	if(isset($_GET['sort']))
+	{
+		if($_GET['order'] == 'asc')
+		{
+			echo '<a class="button1" href="email.php?tab=emails&sort=';
+			echo $_GET['sort'];
+			echo'&order=asc&limit=10">Next 10</a>';
+		}
+		else
+		{
+			echo '<a class="button1" href="email.php?tab=emails&sort=';
+			echo $_GET['sort'];
+			echo '&order=desc&limit=10">Next 10</a>';
+		}
+	}
+	else
+	{
+		echo '<a class="button1" href="email.php?tab=emails&limit=10">Next 10</a>';
+	}
+	echo '<br/><br/>';
+	$result_1 = mysqli_query($dbconn, $sqlEmailTable);
 }
+
+if($better == 1){
+     $result_1 = mysqli_query($dbconn, $sqlEmailTable2);
+}
+
+$result_2 = mysqli_query($dbconn, $building_names);
 ?>
+<p><font size=3>Select users to send emails to:</font>
+</div></div>
 
 <?php
 printResultTable($result_1);
@@ -106,13 +221,10 @@ function printResultTable($res){
 				$first_row = mysqli_fetch_assoc($res);
 				echo '<thead>';
 				echo '<tr>';			
-				echo '<th>';
-				echo '';
-				echo '</th>';
 				foreach($first_row as $col => $val){ /* Don't care about the $val here, but have to have it to get the $col */
 					echo '<th>';
 
-					echo '<a href="email.php?tab=three&sort=';
+					echo '<a href="email.php?tab=emails&sort=';
 					echo $col;
 					if(isset($_GET['order']))
 					{
@@ -128,12 +240,17 @@ function printResultTable($res){
 					else
 					{
 						echo '&order=desc';
+					}
+					if(isset($_GET['limit']))
+					{
+						echo '&limit=';
+						echo $_GET['limit'];
 					}
 					echo '" class="sortedTable">';
 					echo $col;
 					echo '</a>';
 					echo ' ';
-					echo '<a href="email.php?tab=three&sort=';
+					echo '<a href="email.php?tab=emails&sort=';
 					echo $col;
 					if(isset($_GET['order']))
 					{
@@ -150,6 +267,11 @@ function printResultTable($res){
 					{
 						echo '&order=desc';
 					}
+					if(isset($_GET['limit']))
+					{
+						echo '&limit=';
+						echo $_GET['limit'];
+					}	
 					echo '" class="sortedTable">';	
 					if(isset($_GET['order'])&& isset($_GET['sort']) && $_GET['sort']==$col )
 					{
@@ -175,20 +297,32 @@ function printResultTable($res){
 				/* Make sure to reset the pointer back to beginning if you've used the result before. */
 				mysqli_data_seek($res, 0);
 				while( $row = mysqli_fetch_assoc($res) ){ /* mysqli_fetch_assoc will return each row until all rows have been read. Once it's done, it returns false. */
-					echo '<tr>';
 					foreach($row as $val){ /* Loop through array, each item in array gets assigned to $val */
 						if($count == 0)
 						{
-							echo '<td style="text-aslign:center;">';
-							echo '<input type="hidden" value="'.$val.'" name="stdID'.$count2.'"/>';
-							echo '<input type="hidden" value="0" name="chk'.$count2.'"/>';
-							echo '<input type="checkbox" value="1" name="chk'.$count2.'"/>';
-							echo '</td>';
-							$count = 3;
+							if($val=='0')
+							{
+								echo '<tr bgcolor="#3366FF">';
+							}
+							else
+							{
+								echo '<tr>';
+							}
+							$count = 4;
 							$count2++;
 						}
 						echo '<td>';
-						echo $val;
+						if($count == 4){
+							echo '<input type="hidden" value="0" name="chk'.$count2.'"/>';
+							echo '<input type="checkbox" value="'.$val.'" name="chk'.$count2.'"/>';
+						}
+						elseif($count == 3){
+							echo '<input type="hidden" value="'.$val.'" name="stdID'.$count2.'"/>';
+							echo $val;
+						}
+						else{
+							echo $val;
+						}
 						echo '</td>';
 					$count--;
 					} 

@@ -4,9 +4,9 @@ use strict;
 use warnings;
 use List::Util qw(shuffle);
 
-my $num_buildings = 0;
+my $num_buildings = 15;
 my @num_rooms = (50,20,40,50,40,30,20,15,50,60,30,20,40,50,30);
-my $num_students = 545 * 4;
+my $num_students = 600;
 my $scott_scholar = 120;
 my $num_admins = 1;
 
@@ -76,17 +76,20 @@ for (my $i=1; $i<=$num_buildings; $i++){
 
 print "\n-- Student DATA  --\n";
 $num_students -= 8;
-my $std_id = 10000000;
+my $std_id = 1000000;
 my @col = ("College IST","Business","ART","Science","Math");
 my @maj = ("Computer Science","MIS","IA","Phyiscs","Drawing");
 my @btime = ("10:00:00","11:00:00","12:00:00","01:00:00","02:00:00","03:00:00");
 my @wtime = ("05:00:00","06:00:00","07:00:00","08:00:00","09:00:00","10:00:00");
 my @rate = (1,2,3,4,5,6);
+my @req_room = (101,102,103,104,201,202,203,204,301,302,303,304);
+my @req_build = (2,4,5,6,7,8,9,10,11,12,13);
 
 for (my $i=1; $i<=$num_students; $i++){
 	my $floor = int(rand()) + 1;
 	my $binrand = int(rand(2));
 	my $binrand2 = int(rand(2));
+	my $binrand3 = int(rand(9));
 	my $grade_lvl = int(rand(5));
 	my $college = int(rand(5));
 	my $month = int(rand(12));
@@ -104,8 +107,18 @@ for (my $i=1; $i<=$num_students; $i++){
 	my $wakeT = int(rand(6));
 	my $smoking = int(rand(6));
 	my $assoc = int(rand(4));
-	my @rrate = shuffle(@rate);	
+	my $rrr = int(rand(11));
+	my $perSame = int(rand(99));
+	my $rrb = int(rand(10));
+	my @rrate = shuffle(@rate);
+	my $bit;
 
+	if($binrand3 > 3){
+		$bit = 1;
+	}else{
+		$bit = 0;
+	}
+	
 	print 'INSERT INTO `students` (`student_id`,`group_id`,`room_num`,`build_id`,`first_name`,`last_name`,`gender`,`birthdate`,`cell_phone`,';
 	print '`home_phone`,`email`,`age`,`address`,`city`,`state`,`zip`';
 	print ',`lease`,`renewal`,`sub_date`,`scott_scholar`,`desired_roommate1`,`desired_roommate2`,`desired_roommate3`,`grade_lvl`,`enrolled_college`';
@@ -116,7 +129,7 @@ for (my $i=1; $i<=$num_students; $i++){
 	if($i < $scott_scholar){
 		print 'VALUES ('.$std_id.',0,0,0,"stdFname'.$i.'","stdLname'.$i.'",'.$binrand.',"1990-'.$month.'-'.$day.'","'.$Cnum.'-'.$Cnum.'-'.$Cnum.'"';
 		print ',"'.$Hnum.'-'.$Hnum.'-'.$Hnum.'","stdFname'.$i.'@testemail.com","'.$age.'","'.$day.''.$Hnum.' N St.","city'.$city.'","NE","68116",';
-    	print '"'.$lease[$binrand].'","'.$binrand2.'","2014-6-'.$day.'","Y","","","","'.$grade_lvl.'","'.$col[$college].'",';
+    	print '"'.$lease[$bit].'","'.$binrand2.'","2014-6-'.$day.'","Y","","","","'.$grade_lvl.'","'.$col[$college].'",';
 		print '"'.$maj[$clean].'","'.$clean.'","'.$noise.'","'.$guestS.'","'.$share.'","'.$btime[$bedT].'","'.$wtime[$wakeT].'","'.$clean.'","'.$noise.'",';
 		print '"'.$share.'","'.$smoking.'","'.$smoking.'","'.$rrate[1].'","'.$rrate[2].'","'.$rrate[3].'","'.$rrate[4].'","'.$rrate[5].'","'.$rrate[0].'",';
 		print '"Comments","N",0,"",0);';
@@ -126,18 +139,27 @@ for (my $i=1; $i<=$num_students; $i++){
 		my $match = $i - 1;
 		print 'VALUES ('.$std_id.',0,0,0,"stdFname'.$i.'","stdLname'.$i.'",'.$binrand.',"1990-'.$month.'-'.$day.'","'.$Cnum.'-'.$Cnum.'-'.$Cnum.'"';
 		print ',"'.$Hnum.'-'.$Hnum.'-'.$Hnum.'","stdFname'.$i.'@testemail.com","'.$age.'","'.$day.''.$Hnum.' N St.","city'.$city.'","NE","68116",';
-    	print '"'.$lease[$binrand].'","'.$binrand2.'","2014-6-'.$day.'","N","stdFname'.$match.'@testemail.com","","","'.$grade_lvl.'","'.$col[$college].'",';
+    	print '"'.$lease[$bit].'","'.$binrand2.'","2014-6-'.$day.'","N","stdFname'.$match.'@testemail.com","","","'.$grade_lvl.'","'.$col[$college].'",';
 		print '"'.$maj[$clean].'","'.$clean.'","'.$noise.'","'.$guestS.'","'.$share.'","'.$btime[$bedT].'","'.$wtime[$wakeT].'","'.$clean.'","'.$noise.'",';
 		print '"'.$share.'","'.$smoking.'","'.$smoking.'","'.$rrate[1].'","'.$rrate[2].'","'.$rrate[3].'","'.$rrate[4].'","'.$rrate[5].'","'.$rrate[0].'",';
 		print '"Comments","N",0,"",0);';
 	}
 	else {
-		print 'VALUES ('.$std_id.',0,0,0,"stdFname'.$i.'","stdLname'.$i.'",'.$binrand.',"1990-'.$month.'-'.$day.'","'.$Cnum.'-'.$Cnum.'-'.$Cnum.'"';
-		print ',"'.$Hnum.'-'.$Hnum.'-'.$Hnum.'","stdFname'.$i.'@testemail.com","'.$age.'","'.$day.''.$Hnum.' N St.","city'.$city.'","NE","68116",';
-    	print '"'.$lease[$binrand].'","'.$binrand2.'","2014-6-'.$day.'","N","","","","'.$grade_lvl.'","'.$col[$college].'",';
-		print '"'.$maj[$clean].'","'.$clean.'","'.$noise.'","'.$guestS.'","'.$share.'","'.$btime[$bedT].'","'.$wtime[$wakeT].'","'.$clean.'","'.$noise.'",';
-		print '"'.$share.'","'.$smoking.'","'.$smoking.'","'.$rrate[1].'","'.$rrate[2].'","'.$rrate[3].'","'.$rrate[4].'","'.$rrate[5].'","'.$rrate[0].'",';
-		print '"Comments","N",0,"",0);';
+		if($perSame > 55){
+			print 'VALUES ('.$std_id.',0,0,0,"stdFname'.$i.'","stdLname'.$i.'",'.$binrand.',"1990-'.$month.'-'.$day.'","'.$Cnum.'-'.$Cnum.'-'.$Cnum.'"';
+			print ',"'.$Hnum.'-'.$Hnum.'-'.$Hnum.'","stdFname'.$i.'@testemail.com","'.$age.'","'.$day.''.$Hnum.' N St.","city'.$city.'","NE","68116",';
+	    	print '"'.$lease[$bit].'","'.$binrand2.'","2014-6-'.$day.'","N","","","","'.$grade_lvl.'","'.$col[$college].'",';
+			print '"'.$maj[$clean].'","'.$clean.'","'.$noise.'","'.$guestS.'","'.$share.'","'.$btime[$bedT].'","'.$wtime[$wakeT].'","'.$clean.'","'.$noise.'",';
+			print '"'.$share.'","'.$smoking.'","'.$smoking.'","'.$rrate[1].'","'.$rrate[2].'","'.$rrate[3].'","'.$rrate[4].'","'.$rrate[5].'","'.$rrate[0].'",';
+			print '"Comments","N",0,"",0);';
+		}else{
+			print 'VALUES ('.$std_id.',0,0,0,"stdFname'.$i.'","stdLname'.$i.'",'.$binrand.',"1990-'.$month.'-'.$day.'","'.$Cnum.'-'.$Cnum.'-'.$Cnum.'"';
+			print ',"'.$Hnum.'-'.$Hnum.'-'.$Hnum.'","stdFname'.$i.'@testemail.com","'.$age.'","'.$day.''.$Hnum.' N St.","city'.$city.'","NE","68116",';
+	    	print '"'.$lease[$bit].'","'.$binrand2.'","2014-6-'.$day.'","N","","","","'.$grade_lvl.'","'.$col[$college].'",';
+			print '"'.$maj[$clean].'","'.$clean.'","'.$noise.'","'.$guestS.'","'.$share.'","'.$btime[$bedT].'","'.$wtime[$wakeT].'","'.$clean.'","'.$noise.'",';
+			print '"'.$share.'","'.$smoking.'","'.$smoking.'","'.$rrate[1].'","'.$rrate[2].'","'.$rrate[3].'","'.$rrate[4].'","'.$rrate[5].'","'.$rrate[0].'",';
+			print '"Comments","N","'.$req_room[$rrr].'","","'.$req_build[$rrb].'");';
+		}
 
 	}
 

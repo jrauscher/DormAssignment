@@ -4,7 +4,9 @@
 	$errors = array();
 
 	//should be passed from login
-	$EMAIL = "stdFname2@testemail.com";
+//	$EMAIL = "stdFname2@testemail.com";
+	$EMAIL = "five@five.com";
+	$std_build2 = "I";
 	
 	$sqlStdID = "SELECT student_id FROM users WHERE username ='" . $EMAIL . "'";
 	$sqlStdComplex 	= "SELECT building_name FROM users WHERE username ='" . $EMAIL . "'";
@@ -55,8 +57,6 @@
 			<table border="0" style="margin: 10px 30px;">
 				<tr>
 				   <td><input type="text" name="first_name" placeholder="First name" autofocus ="true"></input></td>
-				 </tr>
-				 <tr>
 				   <td><input type="text" name="last_name" placeholder= "Last name"></input></td>
 				 </tr>
 				 <tr>
@@ -65,8 +65,6 @@
 				 </tr>
 				 <tr>
 				   <td><input type="tel" placeholder="Cell phone" name="cell_phone"></input></td>
-				 </tr>
-				 <tr>
 				   <td><input type="tel" placeholder="Home phone" name="home_phone"></input></td>
 				   <input type="hidden" name="sub_date" value=""/>
 				   <td></td>
@@ -124,6 +122,7 @@
 					<td>
 						<select id="pretty_drop" name="req_build_letter" >
 							<?php
+								echo '<option value="" disabled="true" selected="true">Building</option>';
 								$iterate =1;
 								while($std_build_temp = mysqli_fetch_assoc($result_8))
 								{
@@ -133,7 +132,6 @@
 										{	
 											if (count($std_build_temp) != 1)
 											{
-												echo '<option value="" disabled="true" selected="true">Building</option>';
 											}
 											if ($std_build)
 											{
@@ -162,7 +160,8 @@
 						<select id="pretty_drop" name="req_room_num" >
 							<option value="" disabled="true" selected="true">Room</option>
 							<?php
-								$std_build2 = "1";
+								// take based on building selected
+								//$std_build2 = "1";
 								echo '<option disabled="true">ajax needed</option>';
 								$BUILD_ID = "SELECT build_id FROM building WHERE building_name ='" . $COMPLEX . "'AND building_letter ='". $std_build2 . "'";
 								$result_9 = mysqli_query($dbconn, $BUILD_ID);

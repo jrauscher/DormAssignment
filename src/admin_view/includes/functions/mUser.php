@@ -1,39 +1,33 @@
 
- <br><br><font size=5>Add User</font><br/><br/>
-<form action="validate/userVal.php" method="post">
+ <br><br><font size=5>Remove User</font><br/><br/>
+<form action="validate/studentPReset.php" method="post">
 	<table>
      	<tr>
        		<th align="right">Student ID:</th>
-      		<th><input name="NUID" type="text" required></input></th>
+      		<th><input name="student_id" type="text" required></input></th>
+     		<th align="right">New Password:</th>
+       		<th><input name="PSW" type="password" required></input></th>
     	</tr>
 		<tr>
-			<th align="right">Complex Name:</th>
-			<th align="left">
-				<select name="complex">
-					<?php
-						while( $row = mysqli_fetch_assoc($complex) ){
-							foreach($row as $val){
-								echo '<option value="'.$val.'">';
-								echo $val;
-								echo '</option>';
-							}	
-						}
-					?>
-				</select>
-			</th>
-     		<th align="right">Username(email):</th>
-       		<th><input name="email" type="email" required></input></th>
-		</tr>
-		<tr>
-			<th align="left"> <input class="button1" type="submit" value="Add User" /></th>
+			<th align="left"> <input class="button1" type="submit" value="Reset" /></th>
 		</tr>
 			</th>
 	</table>
-			<p>A temporary password will be generated for the user!</p>
 </form>		
+<br/><br/>
+<form action="" method="post">
+	<table>
+		<tr>
+			<th><label for="username">Search for user(by username):</label>
+    		<th><input name="username" /></th>
+
+		    <th><input class="button1" type="submit" value="Submit" /></th>
+	</tr>
+	<table>
+</form>
 <br/>
 
-<?php
+<?php 
 $users = "SELECT student_id AS ID, username AS Username FROM users";
 $users2 = "SELECT student_id AS ID, username AS Username FROM users";
 $limit = 0; 
@@ -62,4 +56,12 @@ else
 }
 
 $resUsers = mysqli_query($dbconn, $users);
+
+if( isset($_POST['username']) && $_POST['username'] != null && $_POST['username'] != '' ){
+     $users2 .= ' WHERE username = "' . mysqli_real_escape_string($dbconn,$_POST['username']) .'"';
+     $resUsers = mysqli_query($dbconn, $users2);
+}
+
 ?>
+
+

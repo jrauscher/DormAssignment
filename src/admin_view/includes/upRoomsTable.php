@@ -22,6 +22,7 @@ echo '<br/><br/>';
 	$complex100 = "SELECT building_name FROM building WHERE complex=1";
 	$complexRes100 = mysqli_query($dbconn, $complex100);	
 	$count=0;
+	$num_rooms = 0;
 	$I=0;
 
 		if($res){
@@ -51,7 +52,7 @@ echo '<br/><br/>';
 						if($count == 0){
 							echo '<td>';
 								echo '<input style="width:100px;" name="room';
-								echo $val;
+								echo $I;
 								echo '" size="4" maxlength="4" type="text" value="';
 								echo $val;
 								echo '"></input>';
@@ -70,43 +71,36 @@ echo '<br/><br/>';
 								echo $val;
 								echo '"></input>';
 								echo '<input type="hidden" name="oldFloor';
-								echo $val;
+								echo $I;
 								echo '" value="';
 								echo $val;
 								echo '"></input>';
 							echo '</td>';
 						}
 						if($count == 2){
-							echo '<td>';
-								echo '<input name="RA';
-								echo $I;
-								echo '" type="checkbox" value="';
-								echo $val;
-								echo '"></input>';
-								echo '<input type="hidden" name="oldRA';
-								echo $I;
-								echo '" value="';
-								echo $val;
-								echo '"></input>';
-							echo '</td>';
+							if($val == 1){
+								echo '<td><input type="hidden" name="RA'.$I.'" value="0"/>';
+								echo '<input name="RA'.$I.'" value="1" type="checkbox" checked></input></td>';
+							}else{
+								echo '<td><input type="hidden" name="RA'.$I.'" value="0"/>';
+								echo '<input name="RA'.$I.'" value="1" type="checkbox"></input></td>';
+							}
 						}
 						if($count == 3){
-							echo '<td>';
-								echo '<input name="HC';
-								echo $I;
-								echo '" type="checkbox" value="';
-								echo $val;
-								echo '"></input>';
-								echo '<input type="hidden" name="oldHC';
-								echo $I;
-								echo '" value="';
-								echo $val;
-								echo '"></input>';
-							echo '</td>';
+							if($val == 1){
+								echo '<td><input type="hidden" name="HC'.$I.'" value="0"/>';
+								echo '<input name="HC'.$I.'" value="1" type="checkbox" checked></input></td>';
+							}else{
+								echo '<td><input type="hidden" name="HC'.$I.'" value="0"/>';
+								echo '<input name="HC'.$I.'" value="1" type="checkbox"></input></td>';
+							}
+
 							$count = -1;
+							$I ++;
+							$num_rooms ++;
 						}
 						$count ++;
-						$I ++;
+						
 					}
 					echo '</tr>';
 				}
@@ -118,10 +112,11 @@ echo '<br/><br/>';
 		} else { /* There was a syntax error in your SQL! */
 			echo 'Query not successful.';
 		}
-
-echo '<input name="BID" type="hidden" value="';
+echo '<input name="num_rooms" type="hidden" value="';
+echo $num_rooms;
+echo ':';
 echo $BID;
-echo '</input>';
+echo '"></input>';
 			
 echo '</form>';
 ?>

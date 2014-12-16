@@ -26,14 +26,14 @@ $result = mysqli_query($dbconn, $sql) or die ('Error ' . mysqli_error($dbconn));
 
 print<<<END
 <script>
-window.location="../email.php";
+window.location="../settings.php?validate=User added sucessfully!";
 </script>
 END;
 }
 else{
 print<<<END
 <script>
-window.location="../failed.php";
+window.location="../settings.php?validate=Error: User was not added, invalid input!";
 </script>
 END;
 }

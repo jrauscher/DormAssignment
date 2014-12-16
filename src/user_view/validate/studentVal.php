@@ -75,6 +75,16 @@ while($build_id_tempp = mysqli_fetch_assoc($result_9))            {
 
 	$sql="INSERT INTO students (student_id, group_id, room_num, build_id, first_name, last_name, gender, birthdate, cell_phone, home_phone, email, age, address, city, state, zip, lease, renewal, sub_date, scott_scholar, desired_roommate1, desired_roommate2, desired_roommate3, desired_roommate1_ph, desired_roommate2_ph, desired_roommate3_ph, grade_lvl, enrolled_college, enrolled_department, cleanliness, noise, guest_sleeping, share_belongings, bed_time, wakeup_time, gathering, drink_alchohol, others_drink, smoking, others_smoking, noise_rating, cleanliness_rating, lifestyle_rating, age_rating, major_rating, guest_rating, comments, comments_resolved, req_room_num, req_bedroom_letter, req_build_id) VALUES ('$student_id', 0, 0, 0, '$first_name', '$last_name', '$gender', '$birthdate', '$cell_phone', '$home_phone', '$email', 0, '$address1', '$city', '$state', '$zip', '$lease', '$renewal', '$sub_date', '$scott_scholar', '$desired_roommate1', '$desired_roommate2', '$desired_roommate3', '$desired_roommate_ph1', '$desired_roommate_ph2', '$desired_roommate_ph3', '$grade_lvl', '$enrolled_college', '$enrolled_department', '$cleanliness', '$noise', '$guest_sleeping', '$share_belongings', '$bed_time', '$wakeup_time', '$gathering', '$drink_alchohol', '$others_drink', '$smoking', '$others_smoking',  '$noise_rating', '$cleanliness_rating', '$lifestyle_rating',  '$age_rating', '$major_rating', '$guest_rating', '$comments', 0, '$req_room_num', '$req_bedroom_letter', '$req_build_id')";
 
+	$valid_first_name = 0;
+	$valid_last_name = 0;
+	$valid_cell_ph = 0;
+	$valid_home_ph = 0;
+	$valid_address1 = 0;
+	$valid_city = 0;
+	$valid_zip = 0;
+	$valid = 0;
+	$valid = 0;
+	
 	$valid = $valid + validate_string($first_name);
 	$valid = $valid + validate_string($last_name);
 	$valid = $valid + validate_string($address1);
@@ -88,32 +98,46 @@ while($build_id_tempp = mysqli_fetch_assoc($result_9))            {
 	$valid = $valid + validate_string($comments);
 	$valid = $valid + validate_number($desired_roommate_ph2);
 	$valid = $valid + validate_number($desired_roommate_ph3);
-
+// use switch statement
 		echo $sql;
 	
-	if ($valid == 13)
-	{
-		$result = mysqli_query($dbconn, $sql) or die ('Error ' . mysqli_error($dbconn));
+//	if ($valid == 13)
+//	{
+//		$result = mysqli_query($dbconn, $sql) or die ('Error ' . mysqli_error($dbconn));
 
-print<<<END
-<script>
-window.location="../index.php";
-//		window.location="../index.php?validate_string='Student added sucessfully!'";
+//print<<<END
+//<script>
+//window.location="../index.php?approved=yes";
+////		window.location="../index.php?validate_string='Student added sucessfully!'";
 	
-</script>
-END;
-	}
-	else
-	{
-print<<<END
-<script>
-window.location="../index.php";
+//</script>
+//END;
+//	}
+//	else
+//	{
+//print<<<END
+//<script>
+//window.location="../index.php?approved=no";
 //			window.location="../studentForm.php?validate_string='Campus added sucessfully!'";
 
-</script>
-END;
-	}
+//</script>
+//END;
+//	}
 
+	function validate_must_string($string)
+	{
+		if( isset($string) && $string != null && $string != '')
+		{
+			return 1;
+		}
+	}
+	function validate_must_number($value)
+	{
+		if( isset($number) && $number != null && $number != '' && is_numeric($number))
+		{
+			return 1;
+		}
+	}
 	function validate_string($string)
 	{
 		if( isset($string) && $string != null && $string != '')

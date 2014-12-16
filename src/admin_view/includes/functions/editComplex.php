@@ -20,7 +20,7 @@
 			</th>
 		</tr>
 		<tr>
-			<th align="left"> <input class="button1" type="submit" value="Submit" /></th>
+			<th align="left"> <input class="button1" type="submit" value="View" /></th>
 		</tr>
 	</table>
 </form>

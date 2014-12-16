@@ -89,11 +89,11 @@ while ($student_gender = mysqli_fetch_assoc($result_student_gender))
 			
 			if($student_gender_val)
 			{
-				$females_count++;
+				$males_count++;
 			}
 			else
 			{
-				$males_count++;
+				$females_count++;
 			}
 	}
 }
@@ -138,13 +138,13 @@ function fetch_count($X)
 			<tr>
 				<td><h4>Campuses:</h4></td>				
 				<td><p><?php echo rtrim($campus_string, ",") ; ?></p></td>
-				<td><h4>Warning Date:</h4></td>
+				<td><h4>Lease Warning Date:</h4></td>
 				<td><p><?php echo $warning_date_value; ?></p></td>
 			</tr>
 			<tr>
 				<td><h4>Complexes:</h4></td>
 				<td><p><?php echo rtrim($group_string, ",") . '.'; ?><p/></td>
-				<td><h4>Deadline Date:</h4></td>
+				<td><h4>Lease Deadline Date:</h4></td>
 				<td><p><?php echo $deadline_date_value; ?></p></td>
 			</tr>
 			<tr>

@@ -103,8 +103,10 @@ include ('../includes/header.html');
 					<h3><font color="white">Notifications</font></h3>
 					<div class="footer">
 						<a href="settings.php?page=nSettings" class="action_button">Settings</a>
-						<br/><br/><br/>
 						<br/><br/>
+						<a href="settings.php?page=cEmail" class="action_button">Change Email</a>
+						<br/><br/>
+						<br/>
 					</div>
 				</li>
 				<li class="table_block">
@@ -113,7 +115,8 @@ include ('../includes/header.html');
 						<a href="settings.php?page=aStudent" class="action_button">Add Student</a>
 						<br/><br/>
 						<a href="settings.php?page=rStudent" class="action_button">Remove Student</a>
-						<br/><br/><br/>
+						<br/><br/>
+						<a href="settings.php?page=autoStudent" class="action_button">Auto Assign Students</a>
 					</div>
 				</li>
 				<li class="table_block">
@@ -122,7 +125,8 @@ include ('../includes/header.html');
 						<a href="settings.php?page=aAccounts" class="action_button">Add Account</a>
 						<br/><br/>
 						<a href="settings.php?page=rAccounts" class="action_button">Remove Account</a>
-						<br/><br/><br/>
+						<br/><br/>
+						<a href="settings.php?page=mAccounts" class="action_button">Manage Account</a>
 					</div>
 				</li>
 			</ul>
@@ -174,12 +178,18 @@ include ('../includes/header.html');
 				include ('includes/functions/notSettings.html');
 				printResultTable($resForms);
 			}
+			if($page == "cEmail"){
+				include ('includes/functions/getEmail.php');
+			}
 			if($page == "aStudent"){
 				include ('includes/functions/addStudent.html');
 			}
 			if($page == "rStudent"){
 				include ('includes/functions/rmStudent.php');
 				printResultTable($resStudent);
+			}
+			if($page == "autoStudent"){
+				include ('includes/algo/algoHome.php');
 			}
 			if($page == "aAccounts"){
 				?>
@@ -203,6 +213,18 @@ include ('../includes/header.html');
 					<br/><br/><br/>
 				<?php
 					include ('includes/functions/rmUser.php');
+					printResultTable($resUsers);
+			}
+			if($page == "mAccounts"){
+				?>
+					<br/>
+				<?php
+					include ('includes/functions/mAdmin.php');
+					printResultTable($resAdmins);
+				?>
+					<br/><br/><br/>
+				<?php
+					include ('includes/functions/mUser.php');
 					printResultTable($resUsers);
 			}
 			if($page == "aComplex"){
