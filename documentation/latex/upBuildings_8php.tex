@@ -1,0 +1,45 @@
+\hypertarget{upBuildings_8php}{\section{src/admin\-\_\-view/validate/update/up\-Buildings.php \-File \-Reference}
+\label{upBuildings_8php}\index{src/admin\-\_\-view/validate/update/up\-Buildings.\-php@{src/admin\-\_\-view/validate/update/up\-Buildings.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{upBuildings_8php_adda32c78f7f7aed9a0f7bb03a9198e9c}{\$b\-Name} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'b\-Name'\mbox{]})
+\item 
+\hyperlink{upBuildings_8php_ac3687b5a21519c53f240b5d1c07f997a}{\$let} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'letter'\mbox{]})
+\item 
+\hyperlink{upBuildings_8php_a6f0655994f3941d6ab50f681032f899b}{\$campus} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'campus'\mbox{]})
+\item 
+\hyperlink{upBuildings_8php_ae95126b1133cf958aaf8a31b0283364c}{\$lease} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'lease'\mbox{]})
+\item 
+\hyperlink{upBuildings_8php_a7458cf5c1cfaeb93fe055362ecff999e}{\$\-B\-I\-D} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'old\-Complex'\mbox{]})
+\item 
+\hyperlink{upBuildings_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{upBuildings_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-U\-P\-D\-A\-T\-E `building` \-S\-E\-T `building\-\_\-name`='\$b\-Name',`campus`='\$campus',`lease`='\$lease',`building\-\_\-letter`='\$let' \-W\-H\-E\-R\-E build\-\_\-id ='\$\-B\-I\-D' \-A\-N\-D complex=0\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{upBuildings_8php_a7458cf5c1cfaeb93fe055362ecff999e}{\index{up\-Buildings.\-php@{up\-Buildings.\-php}!\$\-B\-I\-D@{\$\-B\-I\-D}}
+\index{\$\-B\-I\-D@{\$\-B\-I\-D}!upBuildings.php@{up\-Buildings.\-php}}
+\subsubsection[{\$\-B\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$\-B\-I\-D = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'old\-Complex'\mbox{]})}}\label{upBuildings_8php_a7458cf5c1cfaeb93fe055362ecff999e}
+\-Gets the old complex id from the \hyperlink{settings_8php}{settings.\-php}?page=e\-Building page. \hypertarget{upBuildings_8php_adda32c78f7f7aed9a0f7bb03a9198e9c}{\index{up\-Buildings.\-php@{up\-Buildings.\-php}!\$b\-Name@{\$b\-Name}}
+\index{\$b\-Name@{\$b\-Name}!upBuildings.php@{up\-Buildings.\-php}}
+\subsubsection[{\$b\-Name}]{\setlength{\rightskip}{0pt plus 5cm}\$b\-Name = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'b\-Name'\mbox{]})}}\label{upBuildings_8php_adda32c78f7f7aed9a0f7bb03a9198e9c}
+\-Gets the building name from the \hyperlink{settings_8php}{settings.\-php}?page=e\-Building page. \hypertarget{upBuildings_8php_a6f0655994f3941d6ab50f681032f899b}{\index{up\-Buildings.\-php@{up\-Buildings.\-php}!\$campus@{\$campus}}
+\index{\$campus@{\$campus}!upBuildings.php@{up\-Buildings.\-php}}
+\subsubsection[{\$campus}]{\setlength{\rightskip}{0pt plus 5cm}\$campus = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'campus'\mbox{]})}}\label{upBuildings_8php_a6f0655994f3941d6ab50f681032f899b}
+\-Gets the campus from the \hyperlink{settings_8php}{settings.\-php}?page=e\-Building page. \hypertarget{upBuildings_8php_ae95126b1133cf958aaf8a31b0283364c}{\index{up\-Buildings.\-php@{up\-Buildings.\-php}!\$lease@{\$lease}}
+\index{\$lease@{\$lease}!upBuildings.php@{up\-Buildings.\-php}}
+\subsubsection[{\$lease}]{\setlength{\rightskip}{0pt plus 5cm}\$lease = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'lease'\mbox{]})}}\label{upBuildings_8php_ae95126b1133cf958aaf8a31b0283364c}
+\-Gets the building lease type from the \hyperlink{settings_8php}{settings.\-php}?page=e\-Building page. \hypertarget{upBuildings_8php_ac3687b5a21519c53f240b5d1c07f997a}{\index{up\-Buildings.\-php@{up\-Buildings.\-php}!\$let@{\$let}}
+\index{\$let@{\$let}!upBuildings.php@{up\-Buildings.\-php}}
+\subsubsection[{\$let}]{\setlength{\rightskip}{0pt plus 5cm}\$let = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'letter'\mbox{]})}}\label{upBuildings_8php_ac3687b5a21519c53f240b5d1c07f997a}
+\-Gets the building letter from the \hyperlink{settings_8php}{settings.\-php}?page=e\-Building page. \hypertarget{upBuildings_8php_a047170d6020a882807665812a27e2525}{\index{up\-Buildings.\-php@{up\-Buildings.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!upBuildings.php@{up\-Buildings.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-U\-P\-D\-A\-T\-E `building` \-S\-E\-T `building\-\_\-name`='\$b\-Name',`campus`='\$campus',`lease`='\$lease',`building\-\_\-letter`='\$let' \-W\-H\-E\-R\-E build\-\_\-id ='\$\-B\-I\-D' \-A\-N\-D complex=0\char`\"{}}}\label{upBuildings_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L string that updates buildings with the new infromation stored in \$b\-Name, \$campus, \$lease and \$let where build\-\_\-id = \$\-B\-I\-D. \hypertarget{upBuildings_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{up\-Buildings.\-php@{up\-Buildings.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!upBuildings.php@{up\-Buildings.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{upBuildings_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

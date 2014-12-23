@@ -8,12 +8,17 @@
 <?php
 include ('../includes/svrConnect.php');
 
-$action = $_GET['action'];
-$st_id = $_GET['id'];
+$action = $_GET['action']; /**< Determines what information should be displayed and is escaped later. */
+$st_id = $_GET['id']; /**< The id of the student and is escaped later. */
 
 $action = mysql_real_escape_string($action);
 $st_id = mysql_real_escape_string($st_id);
 
+/**
+* If $action is "add", the student will be added to the bench table.
+*
+* If $action is "remove", the student will removed from the bench table.
+*/
 if($action == "add")
 {
 	$addStudentToBench = "INSERT INTO bench_temp (`student_id`) VALUES ('$st_id')";
@@ -52,7 +57,7 @@ if($action == "remove")
                 {
 					$.ajax({
                         type:"GET",
-                       url: "checkRooms.php?action=addBench&id=" + studentID + "&building_id=" + buildingID + "&room=" + roomID,
+                       url: "checkRooms2.php?action=addBench&id=" + studentID + "&building_id=" + buildingID + "&room=" + roomID,
                         success: function(msg){
                             $("#uselessDiv").html(msg);
                         }
@@ -62,7 +67,7 @@ if($action == "remove")
                 {
 					$.ajax({
                         type:"GET",
-                       url: "checkRooms.php?action=addStudent&id=" + studentID + "&building_id=" + buildingID2 + "&room=" + roomID2,
+                       url: "checkRooms2.php?action=addStudent&id=" + studentID + "&building_id=" + buildingID2 + "&room=" + roomID2,
                         success: function(msg){
                             $("#uselessDiv").html(msg);
                         }
@@ -90,9 +95,9 @@ if($action == "remove")
 	echo '<tbody class="connectedSortable">';
 	echo '<tr>';
 	echo '</tr>';
-	$query = "SELECT student_id FROM bench_temp";// LIMIT 10";
-	$query_result = mysqli_query($dbconn, $query);
-		$counter = 1;
+	$query = "SELECT student_id FROM bench_temp"; /**< SQL query to get the student's id from the temporary bench table. */
+	$query_result = mysqli_query($dbconn, $query); /**< Holds the result from the query $query. */
+	$counter = 1; /**< A counter to help assign IDs to the cells in the generated table */
 while($row = mysqli_fetch_assoc($query_result))
 {
 	foreach($row as $st_id)

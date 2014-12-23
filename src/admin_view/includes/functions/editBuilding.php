@@ -6,9 +6,9 @@
 			<th align="left">				
 				<select name="complex">
 					<?php
-						$complex3 = "SELECT build_id,building_name, building_letter FROM building WHERE complex=0 ORDER BY building_name AND building_letter";
-						$count = 0;
-						$complexRes = mysqli_query($dbconn, $complex3);
+						$complex3 = "SELECT build_id,building_name, building_letter FROM building WHERE complex=0 ORDER BY building_name AND building_letter"; /**< SQL string that gets building information from the builing table and orders it. */
+						$count = 0; /**< Counter variable for a loop. */
+						$complexRes = mysqli_query($dbconn, $complex3); /**< Runs the SQL Query in $complex3. */
 						while( $row = mysqli_fetch_assoc($complexRes)){
 							foreach($row as $val){
 								$count ++;

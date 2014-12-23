@@ -1,0 +1,30 @@
+\hypertarget{studentPReset_8php}{\section{src/admin\-\_\-view/validate/student\-P\-Reset.php \-File \-Reference}
+\label{studentPReset_8php}\index{src/admin\-\_\-view/validate/student\-P\-Reset.\-php@{src/admin\-\_\-view/validate/student\-P\-Reset.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{studentPReset_8php_ad10f6388800bdf18e795c1afd61faab1}{\$\-P\-W\-D} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'\-P\-S\-W'\mbox{]})
+\item 
+\hyperlink{studentPReset_8php_a71c1c0263d3e18eab2e45b17e450b2dd}{\$s\-I\-D} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'student\-\_\-id'\mbox{]})
+\item 
+\hyperlink{studentPReset_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{studentPReset_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-U\-P\-D\-A\-T\-E `users` \-S\-E\-T `password`='\$\-P\-W\-D', `pwd\-\_\-reset`='1' \-W\-H\-E\-R\-E student\-\_\-id='\$s\-I\-D'\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{studentPReset_8php_ad10f6388800bdf18e795c1afd61faab1}{\index{student\-P\-Reset.\-php@{student\-P\-Reset.\-php}!\$\-P\-W\-D@{\$\-P\-W\-D}}
+\index{\$\-P\-W\-D@{\$\-P\-W\-D}!studentPReset.php@{student\-P\-Reset.\-php}}
+\subsubsection[{\$\-P\-W\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$\-P\-W\-D = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'\-P\-S\-W'\mbox{]})}}\label{studentPReset_8php_ad10f6388800bdf18e795c1afd61faab1}
+\-Gets the new password from the \hyperlink{settings_8php}{settings.\-php}?page=a\-Accounts page. \hypertarget{studentPReset_8php_a71c1c0263d3e18eab2e45b17e450b2dd}{\index{student\-P\-Reset.\-php@{student\-P\-Reset.\-php}!\$s\-I\-D@{\$s\-I\-D}}
+\index{\$s\-I\-D@{\$s\-I\-D}!studentPReset.php@{student\-P\-Reset.\-php}}
+\subsubsection[{\$s\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$s\-I\-D = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'student\-\_\-id'\mbox{]})}}\label{studentPReset_8php_a71c1c0263d3e18eab2e45b17e450b2dd}
+\-Gets the new student\-\_\-id from the \hyperlink{settings_8php}{settings.\-php}?page=a\-Accounts page. \hypertarget{studentPReset_8php_a047170d6020a882807665812a27e2525}{\index{student\-P\-Reset.\-php@{student\-P\-Reset.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!studentPReset.php@{student\-P\-Reset.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-U\-P\-D\-A\-T\-E `users` \-S\-E\-T `password`='\$\-P\-W\-D', `pwd\-\_\-reset`='1' \-W\-H\-E\-R\-E student\-\_\-id='\$s\-I\-D'\char`\"{}}}\label{studentPReset_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L string that updates the user from the \$s\-I\-D with the new password that was provided from \$\-P\-W\-D. \hypertarget{studentPReset_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{student\-P\-Reset.\-php@{student\-P\-Reset.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!studentPReset.php@{student\-P\-Reset.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{studentPReset_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

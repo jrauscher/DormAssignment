@@ -1,0 +1,46 @@
+\hypertarget{updateBenchDB_8php}{\section{src/admin\-\_\-view/update\-Bench\-D\-B.php \-File \-Reference}
+\label{updateBenchDB_8php}\index{src/admin\-\_\-view/update\-Bench\-D\-B.\-php@{src/admin\-\_\-view/update\-Bench\-D\-B.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{updateBenchDB_8php_aa698a3e72116e8e778be0e95d908ee30}{\$action} = \$\-\_\-\-G\-E\-T\mbox{[}'action'\mbox{]}
+\item 
+\hyperlink{updateBenchDB_8php_ab68b86e23fd74e101c03130a49b24f66}{\$st\-\_\-id} = \$\-\_\-\-G\-E\-T\mbox{[}'id'\mbox{]}
+\item 
+\hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(\$action==\char`\"{}add\char`\"{}) \hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if} (\$action==\char`\"{}remove\char`\"{})
+\item 
+\hyperlink{updateBenchDB_8php_af59a5f7cd609e592c41dc3643efd3c98}{\$query} = \char`\"{}\-S\-E\-L\-E\-C\-T student\-\_\-id \-F\-R\-O\-M bench\-\_\-temp\char`\"{}
+\item 
+\hyperlink{updateBenchDB_8php_ade0b3dacf5d65d8f2293ffa78561fe31}{\$query\-\_\-result} = mysqli\-\_\-query(\$dbconn, \$query)
+\item 
+\hyperlink{updateBenchDB_8php_adc0a189fac719187ba2e6f01ca0f2466}{\$counter} = 1
+\item 
+\hyperlink{updateBenchDB_8php_abbca5b4e0da1a7b7e95bb777ad93473d}{while} (\$row=mysqli\-\_\-fetch\-\_\-assoc(\$query\-\_\-result))
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{updateBenchDB_8php_aa698a3e72116e8e778be0e95d908ee30}{\index{update\-Bench\-D\-B.\-php@{update\-Bench\-D\-B.\-php}!\$action@{\$action}}
+\index{\$action@{\$action}!updateBenchDB.php@{update\-Bench\-D\-B.\-php}}
+\subsubsection[{\$action}]{\setlength{\rightskip}{0pt plus 5cm}\$action = \$\-\_\-\-G\-E\-T\mbox{[}'action'\mbox{]}}}\label{updateBenchDB_8php_aa698a3e72116e8e778be0e95d908ee30}
+\-Determines what information should be displayed and is escaped later. \hypertarget{updateBenchDB_8php_adc0a189fac719187ba2e6f01ca0f2466}{\index{update\-Bench\-D\-B.\-php@{update\-Bench\-D\-B.\-php}!\$counter@{\$counter}}
+\index{\$counter@{\$counter}!updateBenchDB.php@{update\-Bench\-D\-B.\-php}}
+\subsubsection[{\$counter}]{\setlength{\rightskip}{0pt plus 5cm}\$counter = 1}}\label{updateBenchDB_8php_adc0a189fac719187ba2e6f01ca0f2466}
+\-A counter to help assign \-I\-Ds to the cells in the generated table \hypertarget{updateBenchDB_8php_af59a5f7cd609e592c41dc3643efd3c98}{\index{update\-Bench\-D\-B.\-php@{update\-Bench\-D\-B.\-php}!\$query@{\$query}}
+\index{\$query@{\$query}!updateBenchDB.php@{update\-Bench\-D\-B.\-php}}
+\subsubsection[{\$query}]{\setlength{\rightskip}{0pt plus 5cm}\$query = \char`\"{}\-S\-E\-L\-E\-C\-T student\-\_\-id \-F\-R\-O\-M bench\-\_\-temp\char`\"{}}}\label{updateBenchDB_8php_af59a5f7cd609e592c41dc3643efd3c98}
+\-S\-Q\-L query to get the student's id from the temporary bench table. \hypertarget{updateBenchDB_8php_ade0b3dacf5d65d8f2293ffa78561fe31}{\index{update\-Bench\-D\-B.\-php@{update\-Bench\-D\-B.\-php}!\$query\-\_\-result@{\$query\-\_\-result}}
+\index{\$query\-\_\-result@{\$query\-\_\-result}!updateBenchDB.php@{update\-Bench\-D\-B.\-php}}
+\subsubsection[{\$query\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}\$query\-\_\-result = mysqli\-\_\-query(\$dbconn, \$query)}}\label{updateBenchDB_8php_ade0b3dacf5d65d8f2293ffa78561fe31}
+\-Holds the result from the query \$query. \hypertarget{updateBenchDB_8php_ab68b86e23fd74e101c03130a49b24f66}{\index{update\-Bench\-D\-B.\-php@{update\-Bench\-D\-B.\-php}!\$st\-\_\-id@{\$st\-\_\-id}}
+\index{\$st\-\_\-id@{\$st\-\_\-id}!updateBenchDB.php@{update\-Bench\-D\-B.\-php}}
+\subsubsection[{\$st\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}\$st\-\_\-id = \$\-\_\-\-G\-E\-T\mbox{[}'id'\mbox{]}}}\label{updateBenchDB_8php_ab68b86e23fd74e101c03130a49b24f66}
+\-The id of the student and is escaped later. \hypertarget{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{\index{update\-Bench\-D\-B.\-php@{update\-Bench\-D\-B.\-php}!if@{if}}
+\index{if@{if}!updateBenchDB.php@{update\-Bench\-D\-B.\-php}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (\$action==\char`\"{}add\char`\"{}) if(\$action==\char`\"{}remove\char`\"{})}}\label{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}
+\-If \$action is \char`\"{}add\char`\"{}, the student will be added to the bench table.
+
+\-If \$action is \char`\"{}remove\char`\"{}, the student will removed from the bench table. \hypertarget{updateBenchDB_8php_abbca5b4e0da1a7b7e95bb777ad93473d}{\index{update\-Bench\-D\-B.\-php@{update\-Bench\-D\-B.\-php}!while@{while}}
+\index{while@{while}!updateBenchDB.php@{update\-Bench\-D\-B.\-php}}
+\subsubsection[{while}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while}(\$row=mysqli\-\_\-fetch\-\_\-assoc(\$query\-\_\-result))}}\label{updateBenchDB_8php_abbca5b4e0da1a7b7e95bb777ad93473d}

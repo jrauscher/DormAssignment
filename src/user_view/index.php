@@ -2,16 +2,24 @@
 	include ('../includes/svrConnect.php');
 	include ('../includes/student_header.html');
 
-	$result_deadline_date = mysqli_query($dbconn, "SELECT deadline_date FROM form_settings WHERE form_name='Student Form'");
+	$result_deadline_date = mysqli_query($dbconn, "SELECT deadline_date FROM form_settings WHERE form_name='Student Form'"); /**< Holds the result of the query to get the student form deadline date from the form_settings table. */
 
-	$SFdeadline;
+	$SFdeadline; /**< The student form deadline date. */
+	
+	/**
+	* Gets the correct value for $SFdeadline. */
+	*/
 	while($deadline = mysqli_fetch_assoc($result_deadline_date)){
 		$SFdeadline = $deadline['deadline_date'];
 	}
 	
-	$result_deadline_date = mysqli_query($dbconn, "SELECT deadline_date FROM form_settings WHERE form_name='Lease Information'");
+	$result_deadline_date = mysqli_query($dbconn, "SELECT deadline_date FROM form_settings WHERE form_name='Lease Information'"); /**< Holds the result of the query to get the lease information deadline date from the for_settings table. */
 
-	$LEdeadline;
+	$LEdeadline; /** The lease information deadline date. */
+	
+	/**
+	* Gets the correct value for $LEdeadline. */
+	*/
 	while($deadline = mysqli_fetch_assoc($result_deadline_date)){
 		$LEdeadline = $deadline['deadline_date'];
 	}

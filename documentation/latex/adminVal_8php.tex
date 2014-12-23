@@ -1,0 +1,30 @@
+\hypertarget{adminVal_8php}{\section{src/admin\-\_\-view/validate/admin\-Val.php \-File \-Reference}
+\label{adminVal_8php}\index{src/admin\-\_\-view/validate/admin\-Val.\-php@{src/admin\-\_\-view/validate/admin\-Val.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{adminVal_8php_a3f42272d7be6f25532b7b50ff79517fc}{\$ad\-Name} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'\-A\-D\-I\-D'\mbox{]})
+\item 
+\hyperlink{adminVal_8php_a5b519c2c09881014890c26c8dc361242}{\$psw} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'\-P\-S\-W'\mbox{]})
+\item 
+\hyperlink{adminVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{adminVal_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O admins (admin\-\_\-id,username,password,pwd\-\_\-reset)\-V\-A\-L\-U\-E\-S ('\-D\-E\-F\-A\-U\-L\-T','\$ad\-Name','\$psw','0')\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{adminVal_8php_a3f42272d7be6f25532b7b50ff79517fc}{\index{admin\-Val.\-php@{admin\-Val.\-php}!\$ad\-Name@{\$ad\-Name}}
+\index{\$ad\-Name@{\$ad\-Name}!adminVal.php@{admin\-Val.\-php}}
+\subsubsection[{\$ad\-Name}]{\setlength{\rightskip}{0pt plus 5cm}\$ad\-Name = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'\-A\-D\-I\-D'\mbox{]})}}\label{adminVal_8php_a3f42272d7be6f25532b7b50ff79517fc}
+\-Gets the admin name from the \hyperlink{settings_8php}{settings.\-php}?page=a\-Accounts page. \hypertarget{adminVal_8php_a5b519c2c09881014890c26c8dc361242}{\index{admin\-Val.\-php@{admin\-Val.\-php}!\$psw@{\$psw}}
+\index{\$psw@{\$psw}!adminVal.php@{admin\-Val.\-php}}
+\subsubsection[{\$psw}]{\setlength{\rightskip}{0pt plus 5cm}\$psw = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'\-P\-S\-W'\mbox{]})}}\label{adminVal_8php_a5b519c2c09881014890c26c8dc361242}
+\-Gets the admin password from the \hyperlink{settings_8php}{settings.\-php}?page=a\-Accounts page. \hypertarget{adminVal_8php_a047170d6020a882807665812a27e2525}{\index{admin\-Val.\-php@{admin\-Val.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!adminVal.php@{admin\-Val.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O admins (admin\-\_\-id,username,password,pwd\-\_\-reset)\-V\-A\-L\-U\-E\-S ('\-D\-E\-F\-A\-U\-L\-T','\$ad\-Name','\$psw','0')\char`\"{}}}\label{adminVal_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L string that creates a new admin using the variables \$ad\-Name and \$psw. \hypertarget{adminVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{admin\-Val.\-php@{admin\-Val.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!adminVal.php@{admin\-Val.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{adminVal_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

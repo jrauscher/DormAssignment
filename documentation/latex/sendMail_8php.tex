@@ -1,0 +1,56 @@
+\hypertarget{sendMail_8php}{\section{src/admin\-\_\-view/validate/send\-Mail.php \-File \-Reference}
+\label{sendMail_8php}\index{src/admin\-\_\-view/validate/send\-Mail.\-php@{src/admin\-\_\-view/validate/send\-Mail.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(ob\-\_\-get\-\_\-level()==0) \hyperlink{sendMail_8php_a3413c11d1f6b9e38ea54c7dffc0e5ea3}{\$body} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'body'\mbox{]})
+\item 
+\hyperlink{sendMail_8php_ada57e7bb7c152edad18fe2f166188691}{\$title} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'title'\mbox{]})
+\item 
+\hyperlink{sendMail_8php_a6f4e87f5425e063c148526b2f75d2a3b}{\$recip} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'recip'\mbox{]})
+\item 
+\hyperlink{sendMail_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 1
+\item 
+\hyperlink{sendMail_8php_a4bf9ea5c2d7c2941d7ed61f245159bbf}{\$semail} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{sendMail_8php_a73004ce9cd673c1bfafd1dc351134797}{\$output} = 1
+\item 
+\hyperlink{sendMail_8php_a26bed4c7bf2dd10f80cfd792aba56800}{\$email\-String} = \char`\"{}echo '\$body' $|$ mail -\/s '\$title' \$recip\char`\"{}
+\item 
+\hyperlink{sendMail_8php_a97c5d50455f68774b384f988b990d00f}{for} (\$i=1;\$i$<$ 11;\$i++)
+\item 
+\hyperlink{sendMail_8php_a3ad3a4240c0f97c7e85aff5c52a454d4}{print}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{sendMail_8php_a3413c11d1f6b9e38ea54c7dffc0e5ea3}{\index{send\-Mail.\-php@{send\-Mail.\-php}!\$body@{\$body}}
+\index{\$body@{\$body}!sendMail.php@{send\-Mail.\-php}}
+\subsubsection[{\$body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (ob\-\_\-get\-\_\-level()==0) \$body = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'body'\mbox{]})}}\label{sendMail_8php_a3413c11d1f6b9e38ea54c7dffc0e5ea3}
+\-Gets the message body from the \hyperlink{email_8php}{email.\-php} page. \hypertarget{sendMail_8php_a26bed4c7bf2dd10f80cfd792aba56800}{\index{send\-Mail.\-php@{send\-Mail.\-php}!\$email\-String@{\$email\-String}}
+\index{\$email\-String@{\$email\-String}!sendMail.php@{send\-Mail.\-php}}
+\subsubsection[{\$email\-String}]{\setlength{\rightskip}{0pt plus 5cm}\$email\-String = \char`\"{}echo '\$body' $|$ mail -\/s '\$title' \$recip\char`\"{}}}\label{sendMail_8php_a26bed4c7bf2dd10f80cfd792aba56800}
+\-String that is going to be sent to a linx shell, so it can use the mail command. \hypertarget{sendMail_8php_a73004ce9cd673c1bfafd1dc351134797}{\index{send\-Mail.\-php@{send\-Mail.\-php}!\$output@{\$output}}
+\index{\$output@{\$output}!sendMail.php@{send\-Mail.\-php}}
+\subsubsection[{\$output}]{\setlength{\rightskip}{0pt plus 5cm}\$output = 1}}\label{sendMail_8php_a73004ce9cd673c1bfafd1dc351134797}
+\-Output = 1 if error \-Ouput = 0 if good.
+
+\-Runs the \$email\-String in a shell. \hypertarget{sendMail_8php_a6f4e87f5425e063c148526b2f75d2a3b}{\index{send\-Mail.\-php@{send\-Mail.\-php}!\$recip@{\$recip}}
+\index{\$recip@{\$recip}!sendMail.php@{send\-Mail.\-php}}
+\subsubsection[{\$recip}]{\setlength{\rightskip}{0pt plus 5cm}\$recip = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'recip'\mbox{]})}}\label{sendMail_8php_a6f4e87f5425e063c148526b2f75d2a3b}
+\-Gets the recipiants from the \hyperlink{email_8php}{email.\-php} page. \hypertarget{sendMail_8php_a4bf9ea5c2d7c2941d7ed61f245159bbf}{\index{send\-Mail.\-php@{send\-Mail.\-php}!\$semail@{\$semail}}
+\index{\$semail@{\$semail}!sendMail.php@{send\-Mail.\-php}}
+\subsubsection[{\$semail}]{\setlength{\rightskip}{0pt plus 5cm}\$semail = \char`\"{}\char`\"{}}}\label{sendMail_8php_a4bf9ea5c2d7c2941d7ed61f245159bbf}
+\-Stores the email of the person we are sending mail too in the loop. \hypertarget{sendMail_8php_ada57e7bb7c152edad18fe2f166188691}{\index{send\-Mail.\-php@{send\-Mail.\-php}!\$title@{\$title}}
+\index{\$title@{\$title}!sendMail.php@{send\-Mail.\-php}}
+\subsubsection[{\$title}]{\setlength{\rightskip}{0pt plus 5cm}\$title = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'title'\mbox{]})}}\label{sendMail_8php_ada57e7bb7c152edad18fe2f166188691}
+\-Gets the message title from the \hyperlink{email_8php}{email.\-php} page. \hypertarget{sendMail_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{send\-Mail.\-php@{send\-Mail.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!sendMail.php@{send\-Mail.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 1}}\label{sendMail_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. \hypertarget{sendMail_8php_a97c5d50455f68774b384f988b990d00f}{\index{send\-Mail.\-php@{send\-Mail.\-php}!for@{for}}
+\index{for@{for}!sendMail.php@{send\-Mail.\-php}}
+\subsubsection[{for}]{\setlength{\rightskip}{0pt plus 5cm}{\bf for}(\$i=1;\$i$<$ 11;\$i++)}}\label{sendMail_8php_a97c5d50455f68774b384f988b990d00f}
+\-Sends 10 emails at a time, loops though all the recipients that were sent to this script from a html form. \hypertarget{sendMail_8php_a3ad3a4240c0f97c7e85aff5c52a454d4}{\index{send\-Mail.\-php@{send\-Mail.\-php}!print@{print}}
+\index{print@{print}!sendMail.php@{send\-Mail.\-php}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}{\bf print}}}\label{sendMail_8php_a3ad3a4240c0f97c7e85aff5c52a454d4}

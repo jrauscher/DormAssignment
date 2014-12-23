@@ -1,0 +1,45 @@
+\hypertarget{getRoomInfo_8php}{\section{src/admin\-\_\-view/get\-Room\-Info.php \-File \-Reference}
+\label{getRoomInfo_8php}\index{src/admin\-\_\-view/get\-Room\-Info.\-php@{src/admin\-\_\-view/get\-Room\-Info.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{getRoomInfo_8php_acfaa0ff73c631ce07c4851ed12fcd83d}{\$building\-I\-D} = \$\-\_\-\-G\-E\-T\mbox{[}'building\-\_\-id'\mbox{]}
+\item 
+\hyperlink{getRoomInfo_8php_a61034568ba6e795a925d00afa98d3797}{\$room\-I\-D} = \$\-\_\-\-G\-E\-T\mbox{[}'room'\mbox{]}
+\item 
+\hyperlink{getRoomInfo_8php_aabf2e51b7b4dbb02c653d458b96fcd32}{\$get\-Building\-Lease} = \char`\"{}\-S\-E\-L\-E\-C\-T lease \-F\-R\-O\-M building \-W\-H\-E\-R\-E build\-\_\-id = '\$building\-I\-D'\char`\"{}
+\item 
+\hyperlink{getRoomInfo_8php_a85b7461a0b78e5b681f1c7c5c6b4654c}{\$result\-\_\-get\-Building\-Lease} = mysqli\-\_\-query(\$dbconn, \$get\-Building\-Lease)
+\item 
+\hyperlink{studentForm_8php_abeb5d2366a9870820ffb1e260d040d8d}{while}(\$lease=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-get\-Building\-Lease)) \hyperlink{getRoomInfo_8php_a65a823b86bd329b8545e10df6a4bc325}{\$get\-Room\-Gender} = \char`\"{}\-S\-E\-L\-E\-C\-T gender \-F\-R\-O\-M rooms\-\_\-temp \-W\-H\-E\-R\-E build\-\_\-id = '\$building\-I\-D' \-A\-N\-D room\-\_\-num = '\$room\-I\-D'\char`\"{}
+\item 
+\hyperlink{getRoomInfo_8php_a9ce0616f2a54ee7e19e22d0bb7c4c1c7}{\$result\-\_\-get\-Room\-Gender} = mysqli\-\_\-query(\$dbconn, \$get\-Room\-Gender)
+\item 
+\hyperlink{getRoomInfo_8php_a47624afeb833a11e7095ab00ea7bd2ea}{while} (\$gender=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-get\-Room\-Gender))
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{getRoomInfo_8php_acfaa0ff73c631ce07c4851ed12fcd83d}{\index{get\-Room\-Info.\-php@{get\-Room\-Info.\-php}!\$building\-I\-D@{\$building\-I\-D}}
+\index{\$building\-I\-D@{\$building\-I\-D}!getRoomInfo.php@{get\-Room\-Info.\-php}}
+\subsubsection[{\$building\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$building\-I\-D = \$\-\_\-\-G\-E\-T\mbox{[}'building\-\_\-id'\mbox{]}}}\label{getRoomInfo_8php_acfaa0ff73c631ce07c4851ed12fcd83d}
+\-The id of the building and is escaped later. \hypertarget{getRoomInfo_8php_aabf2e51b7b4dbb02c653d458b96fcd32}{\index{get\-Room\-Info.\-php@{get\-Room\-Info.\-php}!\$get\-Building\-Lease@{\$get\-Building\-Lease}}
+\index{\$get\-Building\-Lease@{\$get\-Building\-Lease}!getRoomInfo.php@{get\-Room\-Info.\-php}}
+\subsubsection[{\$get\-Building\-Lease}]{\setlength{\rightskip}{0pt plus 5cm}\$get\-Building\-Lease = \char`\"{}\-S\-E\-L\-E\-C\-T lease \-F\-R\-O\-M building \-W\-H\-E\-R\-E build\-\_\-id = '\$building\-I\-D'\char`\"{}}}\label{getRoomInfo_8php_aabf2e51b7b4dbb02c653d458b96fcd32}
+\-S\-Q\-L query to get the lease of the building. \hypertarget{getRoomInfo_8php_a65a823b86bd329b8545e10df6a4bc325}{\index{get\-Room\-Info.\-php@{get\-Room\-Info.\-php}!\$get\-Room\-Gender@{\$get\-Room\-Gender}}
+\index{\$get\-Room\-Gender@{\$get\-Room\-Gender}!getRoomInfo.php@{get\-Room\-Info.\-php}}
+\subsubsection[{\$get\-Room\-Gender}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while} (\$lease=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-get\-Building\-Lease)) \$get\-Room\-Gender = \char`\"{}\-S\-E\-L\-E\-C\-T gender \-F\-R\-O\-M rooms\-\_\-temp \-W\-H\-E\-R\-E build\-\_\-id = '\$building\-I\-D' \-A\-N\-D room\-\_\-num = '\$room\-I\-D'\char`\"{}}}\label{getRoomInfo_8php_a65a823b86bd329b8545e10df6a4bc325}
+\-S\-Q\-L query to get the gender of the room. \hypertarget{getRoomInfo_8php_a85b7461a0b78e5b681f1c7c5c6b4654c}{\index{get\-Room\-Info.\-php@{get\-Room\-Info.\-php}!\$result\-\_\-get\-Building\-Lease@{\$result\-\_\-get\-Building\-Lease}}
+\index{\$result\-\_\-get\-Building\-Lease@{\$result\-\_\-get\-Building\-Lease}!getRoomInfo.php@{get\-Room\-Info.\-php}}
+\subsubsection[{\$result\-\_\-get\-Building\-Lease}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-get\-Building\-Lease = mysqli\-\_\-query(\$dbconn, \$get\-Building\-Lease)}}\label{getRoomInfo_8php_a85b7461a0b78e5b681f1c7c5c6b4654c}
+\-Holds the result from the query \$get\-Building\-Lease. \hypertarget{getRoomInfo_8php_a9ce0616f2a54ee7e19e22d0bb7c4c1c7}{\index{get\-Room\-Info.\-php@{get\-Room\-Info.\-php}!\$result\-\_\-get\-Room\-Gender@{\$result\-\_\-get\-Room\-Gender}}
+\index{\$result\-\_\-get\-Room\-Gender@{\$result\-\_\-get\-Room\-Gender}!getRoomInfo.php@{get\-Room\-Info.\-php}}
+\subsubsection[{\$result\-\_\-get\-Room\-Gender}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-get\-Room\-Gender = mysqli\-\_\-query(\$dbconn, \$get\-Room\-Gender)}}\label{getRoomInfo_8php_a9ce0616f2a54ee7e19e22d0bb7c4c1c7}
+\-Holds the result of the query \$get\-Room\-Gender. \hypertarget{getRoomInfo_8php_a61034568ba6e795a925d00afa98d3797}{\index{get\-Room\-Info.\-php@{get\-Room\-Info.\-php}!\$room\-I\-D@{\$room\-I\-D}}
+\index{\$room\-I\-D@{\$room\-I\-D}!getRoomInfo.php@{get\-Room\-Info.\-php}}
+\subsubsection[{\$room\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$room\-I\-D = \$\-\_\-\-G\-E\-T\mbox{[}'room'\mbox{]}}}\label{getRoomInfo_8php_a61034568ba6e795a925d00afa98d3797}
+\-The id of the room and is escaped later. \hypertarget{getRoomInfo_8php_a47624afeb833a11e7095ab00ea7bd2ea}{\index{get\-Room\-Info.\-php@{get\-Room\-Info.\-php}!while@{while}}
+\index{while@{while}!getRoomInfo.php@{get\-Room\-Info.\-php}}
+\subsubsection[{while}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while}(\$gender=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-get\-Room\-Gender))}}\label{getRoomInfo_8php_a47624afeb833a11e7095ab00ea7bd2ea}
+\-Gets the gender of the room and assigns it to \$room\-\_\-gender. 

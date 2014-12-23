@@ -1,13 +1,13 @@
 <?php
 
-$myFile = fopen("/etc/ssmtp/ssmtp.conf", "r") or die("Unable to open file!");
-$fileContent = fread($myFile,filesize("/etc/ssmtp/ssmtp.conf"));
+$myFile = fopen("/etc/ssmtp/ssmtp.conf", "r") or die("Unable to open file!"); /**< File discriptor opening the ssmtm config file for editing. */
+$fileContent = fread($myFile,filesize("/etc/ssmtp/ssmtp.conf")); /**< Holds all the text that was stored in the file desciptor $myFile. */
 
-$pattern = "/hostname=[^\s]+/";
+$pattern = "/hostname=[^\s]+/"; /**< Regex that finds the text hostname followed by any number of charactors followed by a newline. */
 preg_match($pattern,$fileContent,$matches);
 
-$len = strlen($matches[0]);
-$email = substr($matches[0],9,$len);
+$len = strlen($matches[0]); /**< Length of the first match our regex found ($pattern). */
+$email = substr($matches[0],9,$len); /**< Pulls the email out of the match array which holds the values our regex found.  */
 
 fclose($myFile);
 

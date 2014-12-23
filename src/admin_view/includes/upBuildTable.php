@@ -1,13 +1,13 @@
 <?php
 echo '<link rel="stylesheet" href="../css/inputTable.css" type="text/css">';
 
-$complex = mysqli_real_escape_string($dbconn, $_POST['complex']);
-$count = 0;
+$complex = mysqli_real_escape_string($dbconn, $_POST['complex']); /**< gets complex ID from the settings.php?page=buildInput page. */
+$count = 0; /**< Counter variable for a loop. */
 
-$sql ="SELECT building_name AS 'Complex Name', building_letter AS 'Letter', campus AS 'Campus',lease as 'Lease' FROM building WHERE build_id='$complex'";
-$sql2 ="SELECT building_name AS 'Complex Name', building_letter AS 'Letter' FROM building WHERE build_id='$complex'";
-$res = mysqli_query($dbconn, $sql);
-$res2 = mysqli_query($dbconn, $sql2);
+$sql ="SELECT building_name AS 'Complex Name', building_letter AS 'Letter', campus AS 'Campus',lease as 'Lease' FROM building WHERE build_id='$complex'"; /**< SQL string that gets complex information from the building table. */
+$sql2 ="SELECT building_name AS 'Complex Name', building_letter AS 'Letter' FROM building WHERE build_id='$complex'"; /**< SQL string that gets building information from the building table. */
+$res = mysqli_query($dbconn, $sql); /**< Runs the SQL Query in $sql. */
+$res2 = mysqli_query($dbconn, $sql2); /**< Runs the sQL Query in $sql2. */
 
 echo "<p>Selected Building:";
 while( $row = mysqli_fetch_assoc($res2) ){ 
@@ -20,8 +20,8 @@ echo "</p>";
 echo '<form action="validate/update/upBuildings.php" method="post">';
 echo '<input class="button1" type="submit" value="Update"/><br/>';
 echo '<br/><br/>';
-	$complex100 = "SELECT building_name FROM building WHERE complex=1";
-	$complexRes100 = mysqli_query($dbconn, $complex100);	
+	$complex100 = "SELECT building_name FROM building WHERE complex=1"; /**< SQL string that gets the building names from the building table. */
+	$complexRes100 = mysqli_query($dbconn, $complex100); /**< Runs the SQL Query in $coplex100. */	
 	$count=0;
 
 		if($res){

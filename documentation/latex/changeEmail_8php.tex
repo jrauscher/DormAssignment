@@ -1,0 +1,110 @@
+\hypertarget{changeEmail_8php}{\section{src/admin\-\_\-view/validate/change\-Email.php \-File \-Reference}
+\label{changeEmail_8php}\index{src/admin\-\_\-view/validate/change\-Email.\-php@{src/admin\-\_\-view/validate/change\-Email.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{changeEmail_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 1
+\item 
+\hyperlink{changeEmail_8php_ab8dfe1defb9b0561a165b59f387dfebd}{\$new\-Email} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'email'\mbox{]})
+\item 
+\hyperlink{changeEmail_8php_a37ca0c79236601207fcf80e029b8a573}{\$new\-Pass} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'pass'\mbox{]})
+\item 
+\hyperlink{changeEmail_8php_aec8c77a99462294dbbfb1639bd8b5165}{\$my\-File} = fopen(\char`\"{}/etc/ssmtp/ssmtp.\-conf\char`\"{}, \char`\"{}r\char`\"{}) or die(\char`\"{}\-Unable to open file!\char`\"{})
+\item 
+\hyperlink{changeEmail_8php_ad89080bb6e501b4f254f01ee5d24fa2d}{\$file\-Content} = fread(\$my\-File,filesize(\char`\"{}/etc/ssmtp/ssmtp.\-conf\char`\"{}))
+\item 
+\hyperlink{changeEmail_8php_a4bc4c985021f839a471d37cee4cd84d3}{\$oldemail} = \char`\"{}hostname=\char`\"{}
+\item 
+\hyperlink{changeEmail_8php_a9ca73f95fb990256fbfb6c68f5a7737b}{\$newemail} = \char`\"{}hostname=\$new\-Email\char`\"{}
+\item 
+\hyperlink{changeEmail_8php_ad37dae854d7ab1ccf30e1bc5e5fc8834}{\$olduser} = \char`\"{}\-Auth\-User=\char`\"{}
+\item 
+\hyperlink{changeEmail_8php_a1133c11f7ee0057b9f6879abb058f87d}{\$newuser} = \char`\"{}\-Auth\-User=\$new\-Email\char`\"{}
+\item 
+\hyperlink{changeEmail_8php_ac91d50aede6cea362c8a10db1ab9a916}{\$oldpass} = \char`\"{}\-Auth\-Pass=\char`\"{}
+\item 
+\hyperlink{changeEmail_8php_af05fd45196336008a55cceff7365760f}{\$newpass} = \char`\"{}\-Auth\-Pass=\$new\-Pass\char`\"{}
+\item 
+\hyperlink{changeEmail_8php_a99c668c59ad650ca9b31ad5313dc5720}{\$patterns} = array()
+\item 
+\hyperlink{changeEmail_8php_afbc27b9f7ed25335ed52087da7e8c292}{\$patterns} \mbox{[}0\mbox{]} = '/hostname=\mbox{[}$^\wedge$$\backslash$s\mbox{]}+/'
+\item 
+\hyperlink{changeEmail_8php_ae31d13193d3c853d71ef3f7abfd40194}{\$patterns} \mbox{[}1\mbox{]} = '/\-Auth\-User=\mbox{[}$^\wedge$$\backslash$s\mbox{]}+/'
+\item 
+\hyperlink{changeEmail_8php_a8a5a9dd58c17ede53c8a33a619568a3c}{\$patterns} \mbox{[}2\mbox{]} = '/\-Auth\-Pass=\mbox{[}$^\wedge$$\backslash$s\mbox{]}+/'
+\item 
+\hyperlink{changeEmail_8php_a93cb3f67ace379a71de4fb00bcc7a605}{\$replacements} = array()
+\item 
+\hyperlink{changeEmail_8php_a46ef0ff9b63f39252dc8d8ffe01fe186}{\$replacements} \mbox{[}2\mbox{]} = 'hostname='.\$new\-Email.''
+\item 
+\hyperlink{changeEmail_8php_a41cab20bd9e089d68362e6b9489510a8}{\$replacements} \mbox{[}1\mbox{]} = '\-Auth\-User='.\$new\-Email.''
+\item 
+\hyperlink{changeEmail_8php_a145791c674c2ced0890355ae5bdb6847}{\$replacements} \mbox{[}0\mbox{]} = '\-Auth\-Pass='.\$new\-Pass.''
+\item 
+\hyperlink{changeEmail_8php_abe4aedd9ba309b8e7a560c0436650e25}{\$new\-File\-Content} = replace(\$patterns,\$replacements,\$file\-Content)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{changeEmail_8php_ad89080bb6e501b4f254f01ee5d24fa2d}{\index{change\-Email.\-php@{change\-Email.\-php}!\$file\-Content@{\$file\-Content}}
+\index{\$file\-Content@{\$file\-Content}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$file\-Content}]{\setlength{\rightskip}{0pt plus 5cm}\$file\-Content = fread(\$my\-File,filesize(\char`\"{}/etc/ssmtp/ssmtp.\-conf\char`\"{}))}}\label{changeEmail_8php_ad89080bb6e501b4f254f01ee5d24fa2d}
+\-Gets the text out the file that was opened in the file discriptor \$my\-File. \hypertarget{changeEmail_8php_aec8c77a99462294dbbfb1639bd8b5165}{\index{change\-Email.\-php@{change\-Email.\-php}!\$my\-File@{\$my\-File}}
+\index{\$my\-File@{\$my\-File}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$my\-File}]{\setlength{\rightskip}{0pt plus 5cm}\$my\-File = fopen(\char`\"{}/etc/ssmtp/ssmtp.\-conf\char`\"{}, \char`\"{}r\char`\"{}) or die(\char`\"{}\-Unable to open file!\char`\"{})}}\label{changeEmail_8php_aec8c77a99462294dbbfb1639bd8b5165}
+\-File discriptor that opens the ssmtp.\-conf file \hypertarget{changeEmail_8php_ab8dfe1defb9b0561a165b59f387dfebd}{\index{change\-Email.\-php@{change\-Email.\-php}!\$new\-Email@{\$new\-Email}}
+\index{\$new\-Email@{\$new\-Email}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$new\-Email}]{\setlength{\rightskip}{0pt plus 5cm}\$new\-Email = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'email'\mbox{]})}}\label{changeEmail_8php_ab8dfe1defb9b0561a165b59f387dfebd}
+\-Gets the new email from the \hyperlink{settings_8php}{settings.\-php}?page=c\-Email page. \hypertarget{changeEmail_8php_a9ca73f95fb990256fbfb6c68f5a7737b}{\index{change\-Email.\-php@{change\-Email.\-php}!\$newemail@{\$newemail}}
+\index{\$newemail@{\$newemail}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$newemail}]{\setlength{\rightskip}{0pt plus 5cm}\$newemail = \char`\"{}hostname=\$new\-Email\char`\"{}}}\label{changeEmail_8php_a9ca73f95fb990256fbfb6c68f5a7737b}
+\-Replaces the \$oldemail with this variable in ssmtp.\-conf file. \hypertarget{changeEmail_8php_abe4aedd9ba309b8e7a560c0436650e25}{\index{change\-Email.\-php@{change\-Email.\-php}!\$new\-File\-Content@{\$new\-File\-Content}}
+\index{\$new\-File\-Content@{\$new\-File\-Content}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$new\-File\-Content}]{\setlength{\rightskip}{0pt plus 5cm}\$new\-File\-Content = replace(\$patterns,\$replacements,\$file\-Content)}}\label{changeEmail_8php_abe4aedd9ba309b8e7a560c0436650e25}
+\-Replaces the matching patterns in the patterns array with the text in the replacements array \hypertarget{changeEmail_8php_a37ca0c79236601207fcf80e029b8a573}{\index{change\-Email.\-php@{change\-Email.\-php}!\$new\-Pass@{\$new\-Pass}}
+\index{\$new\-Pass@{\$new\-Pass}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$new\-Pass}]{\setlength{\rightskip}{0pt plus 5cm}\$new\-Pass = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'pass'\mbox{]})}}\label{changeEmail_8php_a37ca0c79236601207fcf80e029b8a573}
+\-Gets the password for the new email from the \hyperlink{settings_8php}{settings.\-php}?page=c\-Email page. \hypertarget{changeEmail_8php_af05fd45196336008a55cceff7365760f}{\index{change\-Email.\-php@{change\-Email.\-php}!\$newpass@{\$newpass}}
+\index{\$newpass@{\$newpass}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$newpass}]{\setlength{\rightskip}{0pt plus 5cm}\$newpass = \char`\"{}\-Auth\-Pass=\$new\-Pass\char`\"{}}}\label{changeEmail_8php_af05fd45196336008a55cceff7365760f}
+\-Replaces the \$oldpass with this variable in ssmtp.\-conf file. \hypertarget{changeEmail_8php_a1133c11f7ee0057b9f6879abb058f87d}{\index{change\-Email.\-php@{change\-Email.\-php}!\$newuser@{\$newuser}}
+\index{\$newuser@{\$newuser}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$newuser}]{\setlength{\rightskip}{0pt plus 5cm}\$newuser = \char`\"{}\-Auth\-User=\$new\-Email\char`\"{}}}\label{changeEmail_8php_a1133c11f7ee0057b9f6879abb058f87d}
+\-Replaces the \$olduser with this variable in ssmtp.\-conf file. \hypertarget{changeEmail_8php_a4bc4c985021f839a471d37cee4cd84d3}{\index{change\-Email.\-php@{change\-Email.\-php}!\$oldemail@{\$oldemail}}
+\index{\$oldemail@{\$oldemail}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$oldemail}]{\setlength{\rightskip}{0pt plus 5cm}\$oldemail = \char`\"{}hostname=\char`\"{}}}\label{changeEmail_8php_a4bc4c985021f839a471d37cee4cd84d3}
+\-Used to find the old email in the ssmtp.\-conf file. \hypertarget{changeEmail_8php_ac91d50aede6cea362c8a10db1ab9a916}{\index{change\-Email.\-php@{change\-Email.\-php}!\$oldpass@{\$oldpass}}
+\index{\$oldpass@{\$oldpass}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$oldpass}]{\setlength{\rightskip}{0pt plus 5cm}\$oldpass = \char`\"{}\-Auth\-Pass=\char`\"{}}}\label{changeEmail_8php_ac91d50aede6cea362c8a10db1ab9a916}
+\-Used to find the old password in the ssmtp.\-conf file. \hypertarget{changeEmail_8php_ad37dae854d7ab1ccf30e1bc5e5fc8834}{\index{change\-Email.\-php@{change\-Email.\-php}!\$olduser@{\$olduser}}
+\index{\$olduser@{\$olduser}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$olduser}]{\setlength{\rightskip}{0pt plus 5cm}\$olduser = \char`\"{}\-Auth\-User=\char`\"{}}}\label{changeEmail_8php_ad37dae854d7ab1ccf30e1bc5e5fc8834}
+\-Used to find the old username in the ssmtp.\-conf file. \hypertarget{changeEmail_8php_a99c668c59ad650ca9b31ad5313dc5720}{\index{change\-Email.\-php@{change\-Email.\-php}!\$patterns@{\$patterns}}
+\index{\$patterns@{\$patterns}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$patterns}]{\setlength{\rightskip}{0pt plus 5cm}\$patterns = array()}}\label{changeEmail_8php_a99c668c59ad650ca9b31ad5313dc5720}
+\-Array of all patterns we want to find in the ssmtp.\-conf file. \hypertarget{changeEmail_8php_afbc27b9f7ed25335ed52087da7e8c292}{\index{change\-Email.\-php@{change\-Email.\-php}!\$patterns@{\$patterns}}
+\index{\$patterns@{\$patterns}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$patterns}]{\setlength{\rightskip}{0pt plus 5cm}\$patterns\mbox{[}0\mbox{]} = '/hostname=\mbox{[}$^\wedge$$\backslash$s\mbox{]}+/'}}\label{changeEmail_8php_afbc27b9f7ed25335ed52087da7e8c292}
+\-Regex to find the hostname in the ssmtp.\-conf file \hypertarget{changeEmail_8php_ae31d13193d3c853d71ef3f7abfd40194}{\index{change\-Email.\-php@{change\-Email.\-php}!\$patterns@{\$patterns}}
+\index{\$patterns@{\$patterns}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$patterns}]{\setlength{\rightskip}{0pt plus 5cm}\$patterns\mbox{[}1\mbox{]} = '/\-Auth\-User=\mbox{[}$^\wedge$$\backslash$s\mbox{]}+/'}}\label{changeEmail_8php_ae31d13193d3c853d71ef3f7abfd40194}
+\-Regex to find the username in the ssmtp.\-conf file \hypertarget{changeEmail_8php_a8a5a9dd58c17ede53c8a33a619568a3c}{\index{change\-Email.\-php@{change\-Email.\-php}!\$patterns@{\$patterns}}
+\index{\$patterns@{\$patterns}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$patterns}]{\setlength{\rightskip}{0pt plus 5cm}\$patterns\mbox{[}2\mbox{]} = '/\-Auth\-Pass=\mbox{[}$^\wedge$$\backslash$s\mbox{]}+/'}}\label{changeEmail_8php_a8a5a9dd58c17ede53c8a33a619568a3c}
+\-Regex to find the password in the ssmtp.\-conf file \hypertarget{changeEmail_8php_a93cb3f67ace379a71de4fb00bcc7a605}{\index{change\-Email.\-php@{change\-Email.\-php}!\$replacements@{\$replacements}}
+\index{\$replacements@{\$replacements}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$replacements}]{\setlength{\rightskip}{0pt plus 5cm}\$replacements = array()}}\label{changeEmail_8php_a93cb3f67ace379a71de4fb00bcc7a605}
+\-Array of what we are replacing the pattern matches with. \hypertarget{changeEmail_8php_a46ef0ff9b63f39252dc8d8ffe01fe186}{\index{change\-Email.\-php@{change\-Email.\-php}!\$replacements@{\$replacements}}
+\index{\$replacements@{\$replacements}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$replacements}]{\setlength{\rightskip}{0pt plus 5cm}\$replacements\mbox{[}2\mbox{]} = 'hostname='.\$new\-Email.''}}\label{changeEmail_8php_a46ef0ff9b63f39252dc8d8ffe01fe186}
+\-Stores the new \-Hostname. \hypertarget{changeEmail_8php_a41cab20bd9e089d68362e6b9489510a8}{\index{change\-Email.\-php@{change\-Email.\-php}!\$replacements@{\$replacements}}
+\index{\$replacements@{\$replacements}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$replacements}]{\setlength{\rightskip}{0pt plus 5cm}\$replacements\mbox{[}1\mbox{]} = '\-Auth\-User='.\$new\-Email.''}}\label{changeEmail_8php_a41cab20bd9e089d68362e6b9489510a8}
+\-Stores the new \-Username. \hypertarget{changeEmail_8php_a145791c674c2ced0890355ae5bdb6847}{\index{change\-Email.\-php@{change\-Email.\-php}!\$replacements@{\$replacements}}
+\index{\$replacements@{\$replacements}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$replacements}]{\setlength{\rightskip}{0pt plus 5cm}\$replacements\mbox{[}0\mbox{]} = '\-Auth\-Pass='.\$new\-Pass.''}}\label{changeEmail_8php_a145791c674c2ced0890355ae5bdb6847}
+\-Stores the new \-Password. \hypertarget{changeEmail_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{change\-Email.\-php@{change\-Email.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!changeEmail.php@{change\-Email.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 1}}\label{changeEmail_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

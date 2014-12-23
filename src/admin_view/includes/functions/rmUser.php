@@ -27,9 +27,9 @@
 <br/>
 
 <?php 
-$users = "SELECT student_id AS ID, username AS Username FROM users";
-$users2 = "SELECT student_id AS ID, username AS Username FROM users";
-$limit = 0; 
+$users = "SELECT student_id AS ID, username AS Username FROM users"; /**< SQL string that gets student id's and username's from the users table, that will be limited to a number of results later. */
+$users2 = "SELECT student_id AS ID, username AS Username FROM users"; /**< SQL string that gets all student id's and usernames's from the users table. */
+$limit = 0; /**< Used to limit the number of results in the $users SQL Query. */
 if(isset($_GET['limit']))
 {
 	$users.= " LIMIT ".$_GET['limit']." , 10";
@@ -54,7 +54,7 @@ else
 	echo '<a class="button1" href="settings.php?page=rAccounts&limit=10">Next 10</a><br/><br/><br/>';
 }
 
-$resUsers = mysqli_query($dbconn, $users);
+$resUsers = mysqli_query($dbconn, $users); /**< Runs the SQL Query in $users. */
 
 if( isset($_POST['username']) && $_POST['username'] != null && $_POST['username'] != '' ){
      $users2 .= ' WHERE username = "' . mysqli_real_escape_string($dbconn,$_POST['username']) .'"';

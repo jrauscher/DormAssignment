@@ -1,0 +1,40 @@
+\hypertarget{buildingVal_8php}{\section{src/admin\-\_\-view/validate/building\-Val.php \-File \-Reference}
+\label{buildingVal_8php}\index{src/admin\-\_\-view/validate/building\-Val.\-php@{src/admin\-\_\-view/validate/building\-Val.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{buildingVal_8php_adda32c78f7f7aed9a0f7bb03a9198e9c}{\$b\-Name} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})
+\item 
+\hyperlink{buildingVal_8php_a5f9c1e96bbb9e8e9cbb49a18f0412f58}{\$letter} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'letter'\mbox{]})
+\item 
+\hyperlink{buildingVal_8php_a6f0655994f3941d6ab50f681032f899b}{\$campus} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'campus'\mbox{]})
+\item 
+\hyperlink{buildingVal_8php_ae95126b1133cf958aaf8a31b0283364c}{\$lease} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'lease'\mbox{]})
+\item 
+\hyperlink{buildingVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{buildingVal_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O building (build\-\_\-id, building\-\_\-name, building\-\_\-letter, lease, campus, num\-\_\-rooms, floor, \-R\-A\-\_\-rooms, handicapped\-\_\-rooms, complex) \-V\-A\-L\-U\-E\-S ('\-D\-E\-F\-A\-U\-L\-T', '\$b\-Name','\$letter', '\$lease','\$campus',0,0,0,0,0)\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{buildingVal_8php_adda32c78f7f7aed9a0f7bb03a9198e9c}{\index{building\-Val.\-php@{building\-Val.\-php}!\$b\-Name@{\$b\-Name}}
+\index{\$b\-Name@{\$b\-Name}!buildingVal.php@{building\-Val.\-php}}
+\subsubsection[{\$b\-Name}]{\setlength{\rightskip}{0pt plus 5cm}\$b\-Name = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})}}\label{buildingVal_8php_adda32c78f7f7aed9a0f7bb03a9198e9c}
+\-Gets the new building name from the \hyperlink{settings_8php}{settings.\-php}?page=a\-Building page. \hypertarget{buildingVal_8php_a6f0655994f3941d6ab50f681032f899b}{\index{building\-Val.\-php@{building\-Val.\-php}!\$campus@{\$campus}}
+\index{\$campus@{\$campus}!buildingVal.php@{building\-Val.\-php}}
+\subsubsection[{\$campus}]{\setlength{\rightskip}{0pt plus 5cm}\$campus = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'campus'\mbox{]})}}\label{buildingVal_8php_a6f0655994f3941d6ab50f681032f899b}
+\-Gets campus for the new building from the \hyperlink{settings_8php}{settings.\-php}?page=a\-Building page. \hypertarget{buildingVal_8php_ae95126b1133cf958aaf8a31b0283364c}{\index{building\-Val.\-php@{building\-Val.\-php}!\$lease@{\$lease}}
+\index{\$lease@{\$lease}!buildingVal.php@{building\-Val.\-php}}
+\subsubsection[{\$lease}]{\setlength{\rightskip}{0pt plus 5cm}\$lease = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'lease'\mbox{]})}}\label{buildingVal_8php_ae95126b1133cf958aaf8a31b0283364c}
+\-Gets the lease type for the new building from the \hyperlink{settings_8php}{settings.\-php}?page=a\-Building page. \hypertarget{buildingVal_8php_a5f9c1e96bbb9e8e9cbb49a18f0412f58}{\index{building\-Val.\-php@{building\-Val.\-php}!\$letter@{\$letter}}
+\index{\$letter@{\$letter}!buildingVal.php@{building\-Val.\-php}}
+\subsubsection[{\$letter}]{\setlength{\rightskip}{0pt plus 5cm}\$letter = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'letter'\mbox{]})}}\label{buildingVal_8php_a5f9c1e96bbb9e8e9cbb49a18f0412f58}
+\-Gets the new building letter from the \hyperlink{settings_8php}{settings.\-php}?page=a\-Building page. \hypertarget{buildingVal_8php_a047170d6020a882807665812a27e2525}{\index{building\-Val.\-php@{building\-Val.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!buildingVal.php@{building\-Val.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O building (build\-\_\-id, building\-\_\-name, building\-\_\-letter, lease, campus, num\-\_\-rooms, floor, \-R\-A\-\_\-rooms, handicapped\-\_\-rooms, complex) \-V\-A\-L\-U\-E\-S ('\-D\-E\-F\-A\-U\-L\-T', '\$b\-Name','\$letter', '\$lease','\$campus',0,0,0,0,0)\char`\"{}}}\label{buildingVal_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L string that adds a new building to the databse using the variables \$b\-Name, \$letter, \$campus, \$lease. \hypertarget{buildingVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{building\-Val.\-php@{building\-Val.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!buildingVal.php@{building\-Val.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{buildingVal_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

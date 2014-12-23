@@ -1,8 +1,8 @@
 <?php
 
-$complex = mysqli_real_escape_string($dbconn, $_POST['complex']);
-$floors = mysqli_real_escape_string($dbconn, $_POST['fnum']);
-$rooms = mysqli_real_escape_string($dbconn, $_POST['rnum']);
+$complex = mysqli_real_escape_string($dbconn, $_POST['complex']); /**< Gets complex id from settings.php?page=14 page. */
+$floors = mysqli_real_escape_string($dbconn, $_POST['fnum']); /**< Gets the number of floors from settings.php?page=14 page. */
+$rooms = mysqli_real_escape_string($dbconn, $_POST['rnum']);/**< Gets the number of rooms from settings.php?page=14 page. */
 echo '<link rel="stylesheet" href="../css/inputTable.css" type="text/css">';
 
 echo '<form action="validate/roomsVal.php" method="post">';
@@ -16,7 +16,13 @@ echo '<form action="validate/roomsVal.php" method="post">';
 	makeTable($floors, $rooms);
 echo '</form>';
 
-
+/**
+* <pre>
+* MAKETABLE: Makes a table in html, that allows for input for room numbers. 
+* TAKES: Number of rows and number of coloumns.
+* RETURNS: Nothing, generates a table in html. 
+*</pre>
+*/
 function makeTable($rows,$cols){
 
 	$count = 0;

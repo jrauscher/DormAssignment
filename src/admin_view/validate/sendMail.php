@@ -31,20 +31,20 @@ if(ob_get_level() == 0){
 }
 
 // escape variables for security
-$body = mysqli_real_escape_string($dbconn, $_POST['body']);
-$title = mysqli_real_escape_string($dbconn, $_POST['title']);
+$body = mysqli_real_escape_string($dbconn, $_POST['body']); /**< Gets the message body from the email.php page. */ 
+$title = mysqli_real_escape_string($dbconn, $_POST['title']); /**< Gets the message title from the email.php page. */
 //$limit = mysqli_real_escape_string($dbconn, $_POST['limit']);
-$recip = mysqli_real_escape_string($dbconn, $_POST['recip']);
-$valid = 1;
-$semail = "";
-$output = 1;
+$recip = mysqli_real_escape_string($dbconn, $_POST['recip']); /**< Gets the recipiants from the email.php page. */
+$valid = 1; /**< Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. */
+$semail = ""; /**< Stores the email of the person we are sending mail too in the loop. */
+$output = 1; /**< Output = 1 if error Ouput = 0 if good. */
 
 echo "Sending Mail To: $recip...";
 ob_flush();
 flush();
 
-$emailString = "echo '$body' | mail -s '$title' $recip";
-$output = shell_exec($emailString);
+$emailString = "echo '$body' | mail -s '$title' $recip"; /**< String that is going to be sent to a linx shell, so it can use the mail command. */
+$output = shell_exec($emailString); /**< Runs the $emailString in a shell. */
 
 if($output != 0){
 	echo " Failed!&#13;&#10";
@@ -58,6 +58,7 @@ if($output != 0){
 
 $output = 1;
 
+/** Sends 10 emails at a time, loops though all the recipients that were sent to this script from a html form. */
 for($i=1;$i<11;$i++){
 	$studentId = mysqli_real_escape_string($dbconn, $_POST['stdID'.$i.'']);
 	$isChecked = mysqli_real_escape_string($dbconn, $_POST['chk'.$i.'']);

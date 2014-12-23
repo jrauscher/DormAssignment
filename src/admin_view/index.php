@@ -1,35 +1,35 @@
 <?php
 	include ('../includes/svrConnect.php');
 
-$campus_string ='';
-$group_string = '';
-$building_count = 0;
-$total_room_count =0;
-$avail_room_count =0;
-$user_string = '';
-$user_completion_count = 0;
-$user_needs_email_count = 0;
-$group_arr = array();
-$array_counter=0;
-$males_count = 0;
-$females_count = 0;
-$student_gender_var ='';
-$campus = "SELECT DISTINCT campus FROM building";
-$building_names = "SELECT DISTINCT building_name FROM building WHERE campus ='";
-$building_letters = "SELECT building_letter FROM building WHERE build_id ='";
-$build_idd ="SELECT build_id FROM building WHERE building_name = '";
-$num_roomss = "SELECT num_rooms FROM building WHERE build_id = '";
+$campus_string =''; /**< All of the campus names. */
+$group_string = ''; /**< All of the building names. */
+$building_count = 0; /**< The number of buildings. */
+$total_room_count =0; /**< The number of rooms. */
+$avail_room_count =0; /**< The number of rooms that are not full. */
+$user_string = ''; /**< The name of the logged in user. */
+$user_completion_count = 0; /**< The number of users that filled out the student form */
+$user_needs_email_count = 0; /**< The number of users that still need to be emailed the url for this application. */
+$group_arr = array(); /**< Associative array to map the building id to the building name. */
+$array_counter=0; /**< This is a counter variable that is used to iterate through a loop. */
+$males_count = 0; /**< The number of males in this application. */
+$females_count = 0; /**< The number of females in this application. */
+$student_gender_var =''; /**< The gender of the logged in user. */
+$campus = "SELECT DISTINCT campus FROM building"; /**< SQL query to get all the campuses. */
+$building_names = "SELECT DISTINCT building_name FROM building WHERE campus ='"; /**< SQL query to get the different building names from the building table. */
+$building_letters = "SELECT building_letter FROM building WHERE build_id ='"; /**< SQL query to get the different building letters. */
+$build_idd ="SELECT build_id FROM building WHERE building_name = '"; /**< SQL query to get the building ids. */
+$num_roomss = "SELECT num_rooms FROM building WHERE build_id = '"; /**< SQL query to get the number of rooms in a given building. */
 
-$result_user_building_x = mysqli_query($dbconn, "SELECT building_name FROM users");
-$result_warning_date = mysqli_query($dbconn, "SELECT warning_date FROM form_settings");
-$result_deadline_date = mysqli_query($dbconn, "SELECT deadline_date FROM form_settings");
-$result_user_needs_email = mysqli_query($dbconn, "SELECT needs_email FROM users");
-$result_user_completion = mysqli_query($dbconn, "SELECT form_completion FROM users");
-$result_student_gender = mysqli_query($dbconn, "SELECT gender FROM students");
+$result_user_building_x = mysqli_query($dbconn, "SELECT building_name FROM users"); /**< Holds the result for the query to get the different building names from the users table. */
+$result_warning_date = mysqli_query($dbconn, "SELECT warning_date FROM form_settings"); /**< Holds the result for the query to get the date that is set for the warning email from the form_settings table. */
+$result_deadline_date = mysqli_query($dbconn, "SELECT deadline_date FROM form_settings"); /**< Holds the result for the query to get the date that is set for the deadline email from the form_settings table. */
+$result_user_needs_email = mysqli_query($dbconn, "SELECT needs_email FROM users"); /**< Holds the result for the query to find who still needs to receive an email for a link to this application from the users table. */
+$result_user_completion = mysqli_query($dbconn, "SELECT form_completion FROM users"); /**< Holds the result for the query to find who had completed the student form from the users table. */
+$result_student_gender = mysqli_query($dbconn, "SELECT gender FROM students"); /**< Holds the result for the query to find the genders from the students table. */
 
-$warning_date = mysqli_fetch_assoc($result_warning_date);
-$result_campus = mysqli_query($dbconn, $campus . ";");
-$deadline_date = mysqli_fetch_assoc($result_deadline_date);
+$warning_date = mysqli_fetch_assoc($result_warning_date); /**< Creates an array of the query $result_warning_date. */
+$result_campus = mysqli_query($dbconn, $campus . ";"); /**< Holds the result for the query $campus. */
+$deadline_date = mysqli_fetch_assoc($result_deadline_date); /**< Creates an array of the query $deadline_date. */
 
 include ('../includes/header.html');
 
@@ -68,9 +68,12 @@ while($campus_name = mysqli_fetch_assoc($result_campus))
 	}
 }
 
-$user_completion_count = fetch_count($result_user_completion);
-$user_needs_email_count = fetch_count($result_user_needs_email);
+$user_completion_count = fetch_count($result_user_completion); /**< The result from the fetch_count function. */
+$user_needs_email_count = fetch_count($result_user_needs_email); /**< The result from the fetch_count function. */
 
+/**
+* Increments the $group_arr array for each building that is in it.
+*/
 while ($user_building_x = mysqli_fetch_assoc($result_user_building_x))
 {
 	foreach($user_building_x as $user_building_value_x)
@@ -81,7 +84,11 @@ while ($user_building_x = mysqli_fetch_assoc($result_user_building_x))
 			}
 	}
 }
-		
+
+/**
+*
+* Finds the total number of males and females.
+*/
 while ($student_gender = mysqli_fetch_assoc($result_student_gender))
 {
 	foreach($student_gender as $student_gender_val)
@@ -98,9 +105,16 @@ while ($student_gender = mysqli_fetch_assoc($result_student_gender))
 	}
 }
 
-$warning_date_value = date_check($warning_date);
-$deadline_date_value = date_check($deadline_date);
+$warning_date_value = date_check($warning_date); /**< The result from the date_check function. */
+$deadline_date_value = date_check($deadline_date); /**< The result from the date_check function. */
 
+/**
+*<pre>
+DATE_CHECK: Checks whether or not the given date is set.
+TAKES: An array of dates.
+RETURNS: The last date within the given date array OR "Not set up".
+</pre>
+*/
 function date_check($X)
 {
 	if($X)
@@ -114,6 +128,13 @@ function date_check($X)
 	return $Y;
 }
 	
+/**
+*<pre>
+FETCH_COUNT: Checks how many elements are in an array.
+TAKES: An array.
+RETURNS: The number of elements in the array.
+</pre>
+*/
 function fetch_count($X)
 {
 	$count = 0;
@@ -171,6 +192,9 @@ function fetch_count($X)
 				<td><h4> Students Per Complex <h4></td>
 				<td><p><?php
 					$array_counter = 0;
+					/**
+					* Gets the name of the building based on the id of the building.
+					*/
 					foreach ($group_arr as $key => $value)
 					{
 						if(isset($key) && isset($group_arr) && isset($value))

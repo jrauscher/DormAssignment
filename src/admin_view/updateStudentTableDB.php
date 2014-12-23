@@ -5,30 +5,33 @@
 
 <?php
 	include ('../includes/svrConnect.php');
-	include ('includes/algo/check_room.php');
+	//include ('includes/algo/check_room.php');
 
-$room = $_GET['room'];
-$building = $_GET['building_id'];
-$action = $_GET['action'];
-$st_id = $_GET['id'];
-//$group = $_GET['group'];
+$room = $_GET['room']; /**< The room the student is trying to be added to and is escaped later. */
+$building = $_GET['building_id']; /**< The building the student is trying to be added to and is escaped later. */
+$action = $_GET['action']; /**< Determines what information to be generated and is escaped later. */
+$st_id = $_GET['id']; /**< The id of the student that is trying to be added and is escaped later. */
 
 $room = mysql_real_escape_string($room);
 $building = mysql_real_escape_string($building);
 $action = mysql_real_escape_string($action);
 $st_id = mysql_real_escape_string($st_id);
-//$group = mysql_real_escape_string($group);
 
-$getStudentLetter = "SELECT letter FROM room_letter_temp WHERE student_id = '$st_id'";
-$result_getStudentLetter = mysqli_query($dbconn, $getStudentLetter);
-$st_letter = "";
+$getStudentLetter = "SELECT letter FROM room_letter_temp WHERE student_id = '$st_id'"; /**< SQL query to get the letter of the student from the temporary room_letter table. */
+$result_getStudentLetter = mysqli_query($dbconn, $getStudentLetter); /**< Holds the result of the query $getStudentLetter. */
+$st_letter = ""; /**< Creation of the variable that will hold the letter of the room the student is staying in. */
 while($letter = mysqli_fetch_assoc($result_getStudentLetter))
 {
 	$st_letter = $letter['letter'];
 }
 
-$result_group = mysqli_query($dbconn, "SELECT group_id FROM groups_temp WHERE build_id = '" . $building . "' AND room_num = '" . $room . "';");
-$group = 0;
+$result_group = mysqli_query($dbconn, "SELECT group_id FROM groups_temp WHERE build_id = '" . $building . "' AND room_num = '" . $room . "';"); /**< Holds the result of the query that finds the id of the group for the room that the student is staying in. */
+$group = 0; /**< Sets the default group id to be 0 */
+
+/**
+* Gets the real value of the group id
+*/
+
 while($group_num = mysqli_fetch_assoc($result_group))
 {
 	$group = $group_num['group_id'];
@@ -37,6 +40,11 @@ while($group_num = mysqli_fetch_assoc($result_group))
 }
 
 //if(($action=="add" or $action=="remove") and check_room($st_id, $room, $building)){
+
+/**
+* 
+* If $action is "add", then the student will be added to the temporary students table. If there are no others already in the room, a group id will be generated for it. A letter will also be assigned to the student
+*/
 if($action == "add")
 {
 	if($group == 0){
@@ -101,42 +109,17 @@ if($action == "add")
 	while($room_ltr = mysqli_fetch_assoc($result_getLetters))
 	{
 		$tmp_letter = $room_ltr['letter'];
-		/*foreach($room_ltr as $room_ltr_val)
-		{
-			if($room_ltr_val == 'A')
-				$letter_arr[] = 'A';
-			elseif($room_ltr_val == 'B')
-				$letter_arr[] = 'B';
-			elseif($room_ltr_val == 'C')
-				$letter_arr[] = 'C';
-			elseif($room_ltr_val == 'D')
-				$letter_arr[] = 'D';
-		}*/
 	}
-	/*if(!in_array('A', $letter_arr))
-		$tmp_letter = 'A';
-	elseif(!in_array('B', $letter_arr))
-		$tmp_letter = 'B';
-	elseif(!in_array('C', $letter_arr))
-		$tmp_letter = 'C';
-	elseif(!in_array('D', $letter_arr))
-		$tmp_letter = 'D';
-*/
+
 	$updateStudentIDLetterTemp = "UPDATE room_letter_temp SET student_id = '$st_id' WHERE room_num= '$room' AND build_id = '$building' AND letter = '$tmp_letter'";	
 	mysqli_query($dbconn, $updateStudentIDLetterTemp);
 
-/*	
-
-	$setLetter = "UPDATE room_letter_temp SET letter='$tmp_letter' WHERE student_id = '$st_id'";
-	mysqli_query($dbconn, $setLetter);
-
-	$addRoomNumToRoomLetter = "UPDATE room_letter_temp SET room_num = '$room' WHERE student_id='$st_id'";
-	$addBuildIDToRoomLetter = "UPDATE room_letter_temp SET build_id = '$building' WHERE student_id='$st_id'";
-	mysqli_query($dbconn, $addRoomNumToRoomLetter);
-	mysqli_query($dbconn, $addBuildIDToRoomLetter);
-*/
 }
 
+/**
+*
+* If $action is "remove", remove the student from the temporary students table. */
+*/
 elseif($action == "remove")
 {
 	$removeStudentFromTable = "UPDATE students_temp SET group_id='0' WHERE student_id='$st_id'";
@@ -196,7 +179,7 @@ elseif($action == "remove")
                 {
 					$.ajax({
                         type:"GET",
-                       url: "checkRooms.php?action=addBench&id=" + studentID + "&building_id=" + buildingID + "&room=" + roomID,
+                       url: "checkRooms2.php?action=addBench&id=" + studentID + "&building_id=" + buildingID + "&room=" + roomID,
                         success: function(msg){
                             $("#uselessDiv").html(msg);
                         }
@@ -206,7 +189,7 @@ elseif($action == "remove")
                 {
 					$.ajax({
                         type:"GET",
-                       url: "checkRooms.php?action=addStudent&id=" + studentID + "&building_id=" + buildingID2 + "&room=" + roomID2,
+                       url: "checkRooms2.php?action=addStudent&id=" + studentID + "&building_id=" + buildingID2 + "&room=" + roomID2,
                         success: function(msg){
                             $("#uselessDiv").html(msg);
                         }
@@ -229,16 +212,7 @@ function switchLetters(oldLetter, elementValue, st_id, building, room)
         		$("#uselessDiv").html(msg);
         	}
         });
-	/*	
-		$.ajax({
-        	type:"GET",
-        	url:"updateStudentTableDB.php?action=display&id="+st_id+"&building_id="+building+"&room="+room,
-        	success: function(msg){
-        		$("#student_info").html(msg);
-        	}
-        });*/
-    }
-	//alert("it worked");
+
 }
 
 function displayMoreInfo(id)
@@ -274,10 +248,9 @@ else
 	$is_valid = "SELECT * FROM rooms_temp WHERE room_num='$room' AND build_id = '$building'";
 	$availStudents = False;
 }
-$query_result = mysqli_query($dbconn, $query);
-$result_is_valid = mysqli_query($dbconn, $is_valid);
+$query_result = mysqli_query($dbconn, $query); /**< Holds the result of the query $query. */
+$result_is_valid = mysqli_query($dbconn, $is_valid); /**< Holds the result of the query $is_valid. */
 if(mysqli_num_rows($result_is_valid)){
-//echo '<script type="text/javascript">if(!'.$availStudents.'){elem = document.getElementById("displayRoomNum"); elem.innerHTML = '.$room.';} </script>';	
 echo '<table style="width:70%;" id="'.$building.'!'.$room.'" class="mytable">';
 echo '<thead>';
 echo '<tr>';
@@ -298,7 +271,9 @@ else
 }
 $counter = 1;
 
-//echo '<script type="text/javascript">alert("Should print table"); </script>';
+/**
+* Creates the table that will display all of the students that are in the specified room.
+*/
 while($row = mysqli_fetch_assoc($query_result))
 {
 	foreach($row as $st_id)
@@ -389,7 +364,6 @@ while($row = mysqli_fetch_assoc($query_result))
 				elseif($counter % 5 == 0)
 				{
 					echo '<td style="min-width:200px; max-width:430px; padding:0px;">';
-					//echo '<div style="cursor: pointer; height:100%; width:100%; position:relative; display:inline-block;" id="' . $counter . '">';
 					echo '<div class="shortText" onclick="displayText(' . $st_id . ',' . $counter . ');" id="' . $counter . '"title="0">';	
 					echo $st_info;
 					echo '</div>';

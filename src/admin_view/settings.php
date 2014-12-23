@@ -1,36 +1,36 @@
 <?php
 	include ('../includes/svrConnect.php');
 
-$was_errors = false;
-$errors = array();
+$was_errors = false; /**< True if there were errors, False if there we no errors */
+$errors = array(); /**< Array that stores all the errors that occur. */
 
-/* Set up your query in a string. */
-$buildings = "SELECT build_id AS ID, building_name AS 'Building Name', building_letter AS Letter, campus AS Campus, num_rooms AS 'Number of Rooms', floor AS Floors, lease AS 'Lease Type', RA_rooms AS 'RA Rooms', handicapped_rooms AS 'Handicapped Rooms' FROM building WHERE complex=0 ORDER BY building_name";
-$campus = "SELECT DISTINCT Campus FROM building";
-$student = "SELECT student_ID AS ID, first_name AS 'First Name', last_name AS 'Last Name', email AS 'Email' FROM students";
-$users = "SELECT student_id AS ID, username AS Username FROM users";
-$admins = "SELECT admin_id AS ID, username AS Username FROM admins";
-$notif = "SELECT form_name AS 'Form Name', deadline_date AS Deadline, warning_date AS 'Warning Date' FROM form_settings";
-$complex_names = "SELECT DISTINCT building_name FROM building WHERE complex=1";
-$complex_names2 = "SELECT DISTINCT building_name AS 'Complex Name' FROM building WHERE complex=1";
-$formNames = "SELECT DISTINCT form_name FROM form_settings";
-$error = "SELECT type AS Type FROM errors";
+$buildings = "SELECT build_id AS ID, building_name AS 'Building Name', building_letter AS Letter, campus AS Campus, num_rooms AS 'Number of Rooms', floor AS Floors, lease AS 'Lease Type', RA_rooms AS 'RA Rooms', handicapped_rooms AS 'Handicapped Rooms' FROM building WHERE complex=0 ORDER BY building_name"; /**< SQL string that selects bulding information from the buildings table. */
+$campus = "SELECT DISTINCT Campus FROM building"; /**< SQL string that selects all the unique campus names from the buildings table. */
+$student = "SELECT student_ID AS ID, first_name AS 'First Name', last_name AS 'Last Name', email AS 'Email' FROM students"; /**< SQL string that selects student infromation from the students table. */
+$users = "SELECT student_id AS ID, username AS Username FROM users"; /**< SQL string that selects user information from the users table. */
+$admins = "SELECT admin_id AS ID, username AS Username FROM admins"; /**< SQL string that selects admin information from the admins table. */
+$notif = "SELECT form_name AS 'Form Name', deadline_date AS Deadline, warning_date AS 'Warning Date' FROM form_settings"; /**< SQL string that selects form information from the form_settings table. */
+$complex_names = "SELECT DISTINCT building_name FROM building WHERE complex=1"; /**< SQL string that selects all the building names from the buildings table. */
+$complex_names2 = "SELECT DISTINCT building_name AS 'Complex Name' FROM building WHERE complex=1"; /**< SQL string that selects all the complex names from the buildings table. */
+$formNames = "SELECT DISTINCT form_name FROM form_settings"; /**< SQL string that selects all the form names from the forms settings table. */
+$error = "SELECT type AS Type FROM errors"; /**< SQL string that selects all the types from the erros table. */
 
-$resBuildings = mysqli_query($dbconn, $buildings);
-$resFormNames = mysqli_query($dbconn, $formNames);
-$resCamp = mysqli_query($dbconn, $campus);
-$resCamp2 = mysqli_query($dbconn, $campus);
-$resStudent = mysqli_query($dbconn, $student);
-$resUsers = mysqli_query($dbconn, $users);
-$resAdmins = mysqli_query($dbconn, $admins);
-$resForms = mysqli_query($dbconn, $notif);
-$complex = mysqli_query($dbconn, $complex_names);
-$complex2 = mysqli_query($dbconn, $complex_names2);
-$resErrors = mysqli_query($dbconn, $error);
+$resBuildings = mysqli_query($dbconn, $buildings); /**< Runs the SQL Query in $buildings */
+$resFormNames = mysqli_query($dbconn, $formNames); /**< Runs the SQL Query in $formNames */
+$resCamp = mysqli_query($dbconn, $campus); /**< Runs the SQL Query in $campus */
+$resCamp2 = mysqli_query($dbconn, $campus); /**< Runs the SQL Query in $campus */
+$resStudent = mysqli_query($dbconn, $student); /**< Runs the SQL Query in $student */
+$resUsers = mysqli_query($dbconn, $users); /**< Runs the SQL Query in $users */
+$resAdmins = mysqli_query($dbconn, $admins); /**< Runs the SQL Query in $admins */
+$resForms = mysqli_query($dbconn, $notif); /**< Runs the SQL Query in $notif */
+$complex = mysqli_query($dbconn, $complex_names); /**< Runs the SQL Query in $complex_names */
+$complex2 = mysqli_query($dbconn, $complex_names2); /**< Runs the SQL Query in $complex_names2 */
+$resErrors = mysqli_query($dbconn, $error); /**< Runs the SQL Query in $error */
 
-$validate = 0;
-$page = "Main";
+$validate = 0; /**< Validate must equl the total number of input variables at the end of the program to insure input variables contain valid text. */
+$page = "Main"; /**< Determines page location within the settings page. */
 
+/** Checks to make sure these variables are set before using them. */
 if(isset($_GET['validate'])){
 	$validate = mysqli_real_escape_string($dbconn, $_GET['validate']);
 }
@@ -270,6 +270,13 @@ include ('../includes/header.html');
 </div>
 
 <?php
+/**
+* <pre>
+* PRINTRESULTTABLE: Produces a html table that is formatted properly from a SQL Query result. 
+* TAKES: The result of a SQL Query.
+* RETURNS: A table based off the result of the query it was sent. 
+*</pre>
+*/
 function printResultTable($res){
 		if($res){
 			//echo 'Query successful.';

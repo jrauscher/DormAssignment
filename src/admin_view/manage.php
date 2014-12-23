@@ -1,60 +1,41 @@
 <?php
 	include ('../includes/svrConnect.php');
 
-//$makeTempTable = "CREATE TEMPORARY TABLE IF NOT EXISTS tempStudents AS (SELECT * FROM students)";
-$dropTempTable = "DROP TABLE students_temp";
+$dropTempTable = "DROP TABLE students_temp"; /**< SQL query to drop the temporary students table. */
 mysqli_query($dbconn, $dropTempTable);
-$makeTempTable = "CREATE TABLE students_temp SELECT * FROM students";
+$makeTempTable = "CREATE TABLE students_temp SELECT * FROM students"; /**< SQL query to create a copy of the students table. */
 mysqli_query($dbconn, $makeTempTable);
 
-$dropTempGroupTable = "DROP TABLE groups_temp";
+$dropTempGroupTable = "DROP TABLE groups_temp";/**< SQL query to drop the temporary groups table. */
 mysqli_query($dbconn, $dropTempGroupTable);
-$makeTempGroupTable = "CREATE TABLE groups_temp SELECT * FROM groups";
+$makeTempGroupTable = "CREATE TABLE groups_temp SELECT * FROM groups";/**< SQL query to create a copy of the groups table. */
 mysqli_query($dbconn, $makeTempGroupTable);
 
-$dropTempBenchTable = "DROP TABLE bench_temp";
+$dropTempBenchTable = "DROP TABLE bench_temp";/**< SQL query to drop the temporary bench table. */
 mysqli_query($dbconn, $dropTempBenchTable);
-$makeTempBenchTable = "CREATE TABLE bench_temp SELECT * FROM bench";
+$makeTempBenchTable = "CREATE TABLE bench_temp SELECT * FROM bench";/**< SQL query to create a copy of the bench table. */
 mysqli_query($dbconn, $makeTempBenchTable);
 
-$dropTempRoomLetterTable = "DROP TABLE room_letter_temp";
+$dropTempRoomLetterTable = "DROP TABLE room_letter_temp";/**< SQL query to drop the temporary room_letter table. */
 mysqli_query($dbconn, $dropTempRoomLetterTable);
-$makeTempRoomLetterTable = "CREATE TABLE room_letter_temp SELECT * FROM room_letter";
+$makeTempRoomLetterTable = "CREATE TABLE room_letter_temp SELECT * FROM room_letter";/**< SQL query to create a copy of the room_letter table. */
 mysqli_query($dbconn, $makeTempRoomLetterTable);
 
-$dropTempRoomsTable = "DROP TABLE rooms_temp";
+$dropTempRoomsTable = "DROP TABLE rooms_temp";/**< SQL query to drop the temporary rooms table. */
 mysqli_query($dbconn, $dropTempRoomsTable);
-$makeTempRoomsTable = "CREATE TABLE rooms_temp SELECT * FROM rooms";
+$makeTempRoomsTable = "CREATE TABLE rooms_temp SELECT * FROM rooms";/**< SQL query to create a copy of the rooms table. */
 mysqli_query($dbconn, $makeTempRoomsTable);
 
 
 
 
-
-/* Set up your query in a string. */
-$buildings = "SELECT building_name FROM building";
-$NUIDs = "SELECT student_id FROM tempStudents WHERE student_id=10000000"; #Change student_id to * to print off everything on screen!!!!!
-#$NUIDs = ""; #Change student_id to * to print off everything on screen!!!!!
-
-/* Add a where clause if user has entered some data. */
-if( isset($_POST['NUID_search']) && is_numeric($_POST['NUID_search']) && $_POST['NUID_search'] != null && $_POST['NUID_search'] != '' ){
-    $NUIDs .= ' WHERE student_id  = ' . mysqli_real_escape_string($dbconn, $_POST['NUID_search']);
-}
-
-/* Send query to database. */
-$result = mysqli_query($dbconn, $NUIDs);
 include ('../includes/header.html');
 ?>
 <title>Manage</title><!-- This title shows up in the broswer tab. -->
-   <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css">-->
    <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.js"></script>
-<!--	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>-->
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
 
-
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
---><script type="text/javascript" src="java-script/mktree.js"></script>
+<script type="text/javascript" src="java-script/mktree.js"></script>
 <link rel="stylesheet" href="css/mktree.css" type="text/css">
 <div class="content">
 <div id="manage">
@@ -64,14 +45,13 @@ include ('../includes/header.html');
 </div>
 
 <?php
-$campus = "SELECT DISTINCT campus FROM building";
-$building_names = "SELECT building_name FROM building";
-$building_letters = "SELECT building_letter FROM building";
-$room_number = "SELECT * FROM building, rooms WHERE building.build_id = "; 
-$result_campus = mysqli_query($dbconn, $campus . ";");
-$buildingAndNumbers = array();
+$campus = "SELECT DISTINCT campus FROM building"; /**< SQL query to get the different campuses from the building table. */
+$building_names = "SELECT building_name FROM building"; /**< SQL query to get the building names from the building table. */
+$building_letters = "SELECT building_letter FROM building"; /**< SQL query to get the building letters from the building table. */
+$room_number = "SELECT * FROM building, rooms WHERE building.build_id = "; /**< SQL query to get the room numbers from the building table. */
+$result_campus = mysqli_query($dbconn, $campus . ";"); /**< Holds the result from the query $campus. */
+$buildingAndNumbers = array(); /**< An array to associate the building name with the building ID. */
 
-$temp = "campus";
 echo '<ul class="mktree" id="tree">';
 echo '<li class="liOpen" id="campusID" /*onclick="showComments(this.id)"*/>Campus';
 while ($campus_name = mysqli_fetch_assoc($result_campus)) //North or South
@@ -240,7 +220,7 @@ echo '</ul>'; //tree
 	
 	$(document).ready(function(){
 		var buildsAndNums = <?php echo '["' . implode('", "', $buildingAndNumbers). '"]' ?>;
-		var buildNums = <?php echo '["' . implode('", "', $buildingIDList). '"]' ?>;
+		var buildNums = <?php echo '["' . implode('", "', $buildingIDList). '"]' ?>; /**< Copies the php array $buildingIDList to the JavaScript array buildNums. */
 		var sel = document.getElementById('building_id');
 		for(var i=0; i<buildsAndNums.length; i++){
 			var opt = document.createElement('option');
@@ -312,15 +292,6 @@ echo '</ul>'; //tree
 			ele.className = 'shortText';
 			ele.title = "0";
 		}
-	/*	document.getElementById(cell_id).classList.add('fullText');
-		document.getElementById(cell_id).classList.remove('shortText');
-		$.ajax({
-			type: "GET",
-			url: "showText.php?st_id="+st_id+"&length="+length+"&cell_id="+cell_id,
-			success: function(msg){
-				$('#' + cell_id).html(msg);
-			}
-		});*/
 	}
 
 	$(document).mouseup(function (e)
@@ -383,11 +354,12 @@ echo '</ul>'; //tree
 
 <div id="right_view_content">
 	<div id="roomDiv" class="student_info" style="float: left; width: 100%; height: 100%; overflow-x: hidden; overflow-y: auto">
-	<div id="displayRoomNum" style="height: 10%; width: 100%; text-align: center; font-size: 20px">
+	<div id="roomInfoWraper" style="height:100%; width:100%; padding: 100px">
+	<div id="displayRoomNum" style="margin-top: -100px; height: 100px; width: 100%; text-align: center; font-size: 20px">
 	</div>
 	<div id="uselessDiv">
 	</div>
-	<div id="student_info" class="student_info" style="float: left; width: 100%; height: 90%">
+	<div id="student_info" class="student_info" style="float: left; width: 100%; height: 100%">
 		<!--<table style="width:200px;" id="studentTable" class="mytable">
 			<tbody class ="connectedSortable">
 				<tr id="testStudentRowHeader">
@@ -405,6 +377,7 @@ echo '</ul>'; //tree
 			</tbody>
 		</table>-->
 	</div>
+	</div><!--wrapper-->
 	</div>
 	<div id="bench" class="bench" style="width: 0px; height: 100%; float: right;">
 		<!--<table style="width:200px;" id="benchTable" class="mytable">

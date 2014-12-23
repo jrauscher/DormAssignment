@@ -1,0 +1,50 @@
+\hypertarget{updateStudentLetter_8php}{\section{src/admin\-\_\-view/update\-Student\-Letter.php \-File \-Reference}
+\label{updateStudentLetter_8php}\index{src/admin\-\_\-view/update\-Student\-Letter.\-php@{src/admin\-\_\-view/update\-Student\-Letter.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{updateStudentLetter_8php_ab285a2e759ea45a70f8ff40a63d2fe89}{\$room} = \$\-\_\-\-G\-E\-T\mbox{[}'room'\mbox{]}
+\item 
+\hyperlink{updateStudentLetter_8php_a903ab1c50249715a442ce81e6d5ba775}{\$building} = \$\-\_\-\-G\-E\-T\mbox{[}'building'\mbox{]}
+\item 
+\hyperlink{updateStudentLetter_8php_ad5ac878e93fc1bef0c50e99e53515c4d}{\$new\-Letter} = \$\-\_\-\-G\-E\-T\mbox{[}'new\-Letter'\mbox{]}
+\item 
+\hyperlink{updateStudentLetter_8php_a41c33048ffcf05119d1162b4a317b806}{\$old\-Letter} = \$\-\_\-\-G\-E\-T\mbox{[}'old\-Letter'\mbox{]}
+\item 
+\hyperlink{updateStudentLetter_8php_ab68b86e23fd74e101c03130a49b24f66}{\$st\-\_\-id} = \$\-\_\-\-G\-E\-T\mbox{[}'st\-\_\-id'\mbox{]}
+\item 
+\hyperlink{updateStudentLetter_8php_a7f985a3a1771038a28cc4019ea3b818e}{\$\-Temp\-Change\-Other\-Student} = \char`\"{}\-U\-P\-D\-A\-T\-E room\-\_\-letter\-\_\-temp \-S\-E\-T letter='\$old\-Letter' \-W\-H\-E\-R\-E build\-\_\-id='\$building' \-A\-N\-D room\-\_\-num='\$room' \-A\-N\-D letter='\$new\-Letter'\char`\"{}
+\item 
+\hyperlink{updateStudentLetter_8php_a5028b950af91c1e21a8e47bf6bd2f480}{\$\-Change\-Current\-Student} = \char`\"{}\-U\-P\-D\-A\-T\-E room\-\_\-letter\-\_\-temp \-S\-E\-T letter='\$new\-Letter' \-W\-H\-E\-R\-E student\-\_\-id='\$st\-\_\-id'\char`\"{}
+\item 
+\hyperlink{updateStudentLetter_8php_a31daebf88fc668f410293e2c70cea3fc}{\$test} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{updateStudentLetter_8php_a903ab1c50249715a442ce81e6d5ba775}{\index{update\-Student\-Letter.\-php@{update\-Student\-Letter.\-php}!\$building@{\$building}}
+\index{\$building@{\$building}!updateStudentLetter.php@{update\-Student\-Letter.\-php}}
+\subsubsection[{\$building}]{\setlength{\rightskip}{0pt plus 5cm}\$building = \$\-\_\-\-G\-E\-T\mbox{[}'building'\mbox{]}}}\label{updateStudentLetter_8php_a903ab1c50249715a442ce81e6d5ba775}
+\-The building id that the student is in and is escaped later. \hypertarget{updateStudentLetter_8php_a5028b950af91c1e21a8e47bf6bd2f480}{\index{update\-Student\-Letter.\-php@{update\-Student\-Letter.\-php}!\$\-Change\-Current\-Student@{\$\-Change\-Current\-Student}}
+\index{\$\-Change\-Current\-Student@{\$\-Change\-Current\-Student}!updateStudentLetter.php@{update\-Student\-Letter.\-php}}
+\subsubsection[{\$\-Change\-Current\-Student}]{\setlength{\rightskip}{0pt plus 5cm}\$\-Change\-Current\-Student = \char`\"{}\-U\-P\-D\-A\-T\-E room\-\_\-letter\-\_\-temp \-S\-E\-T letter='\$new\-Letter' \-W\-H\-E\-R\-E student\-\_\-id='\$st\-\_\-id'\char`\"{}}}\label{updateStudentLetter_8php_a5028b950af91c1e21a8e47bf6bd2f480}
+\-S\-Q\-L query to change the student's letter from \$old\-Letter to \$new\-Letter. \hypertarget{updateStudentLetter_8php_ad5ac878e93fc1bef0c50e99e53515c4d}{\index{update\-Student\-Letter.\-php@{update\-Student\-Letter.\-php}!\$new\-Letter@{\$new\-Letter}}
+\index{\$new\-Letter@{\$new\-Letter}!updateStudentLetter.php@{update\-Student\-Letter.\-php}}
+\subsubsection[{\$new\-Letter}]{\setlength{\rightskip}{0pt plus 5cm}\$new\-Letter = \$\-\_\-\-G\-E\-T\mbox{[}'new\-Letter'\mbox{]}}}\label{updateStudentLetter_8php_ad5ac878e93fc1bef0c50e99e53515c4d}
+\-The letter that the student is changing to and is escaped later. \hypertarget{updateStudentLetter_8php_a41c33048ffcf05119d1162b4a317b806}{\index{update\-Student\-Letter.\-php@{update\-Student\-Letter.\-php}!\$old\-Letter@{\$old\-Letter}}
+\index{\$old\-Letter@{\$old\-Letter}!updateStudentLetter.php@{update\-Student\-Letter.\-php}}
+\subsubsection[{\$old\-Letter}]{\setlength{\rightskip}{0pt plus 5cm}\$old\-Letter = \$\-\_\-\-G\-E\-T\mbox{[}'old\-Letter'\mbox{]}}}\label{updateStudentLetter_8php_a41c33048ffcf05119d1162b4a317b806}
+\-The letter that the student was and is escaped later. \hypertarget{updateStudentLetter_8php_ab285a2e759ea45a70f8ff40a63d2fe89}{\index{update\-Student\-Letter.\-php@{update\-Student\-Letter.\-php}!\$room@{\$room}}
+\index{\$room@{\$room}!updateStudentLetter.php@{update\-Student\-Letter.\-php}}
+\subsubsection[{\$room}]{\setlength{\rightskip}{0pt plus 5cm}\$room = \$\-\_\-\-G\-E\-T\mbox{[}'room'\mbox{]}}}\label{updateStudentLetter_8php_ab285a2e759ea45a70f8ff40a63d2fe89}
+\-The room that the student is in and is escaped later. \hypertarget{updateStudentLetter_8php_ab68b86e23fd74e101c03130a49b24f66}{\index{update\-Student\-Letter.\-php@{update\-Student\-Letter.\-php}!\$st\-\_\-id@{\$st\-\_\-id}}
+\index{\$st\-\_\-id@{\$st\-\_\-id}!updateStudentLetter.php@{update\-Student\-Letter.\-php}}
+\subsubsection[{\$st\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}\$st\-\_\-id = \$\-\_\-\-G\-E\-T\mbox{[}'st\-\_\-id'\mbox{]}}}\label{updateStudentLetter_8php_ab68b86e23fd74e101c03130a49b24f66}
+\-The id of the student and is escaped later. \hypertarget{updateStudentLetter_8php_a7f985a3a1771038a28cc4019ea3b818e}{\index{update\-Student\-Letter.\-php@{update\-Student\-Letter.\-php}!\$\-Temp\-Change\-Other\-Student@{\$\-Temp\-Change\-Other\-Student}}
+\index{\$\-Temp\-Change\-Other\-Student@{\$\-Temp\-Change\-Other\-Student}!updateStudentLetter.php@{update\-Student\-Letter.\-php}}
+\subsubsection[{\$\-Temp\-Change\-Other\-Student}]{\setlength{\rightskip}{0pt plus 5cm}\$\-Temp\-Change\-Other\-Student = \char`\"{}\-U\-P\-D\-A\-T\-E room\-\_\-letter\-\_\-temp \-S\-E\-T letter='\$old\-Letter' \-W\-H\-E\-R\-E build\-\_\-id='\$building' \-A\-N\-D room\-\_\-num='\$room' \-A\-N\-D letter='\$new\-Letter'\char`\"{}}}\label{updateStudentLetter_8php_a7f985a3a1771038a28cc4019ea3b818e}
+\-S\-Q\-L query to change the student that has the requested \$new\-Letter to the \$old\-Letter. \hypertarget{updateStudentLetter_8php_a31daebf88fc668f410293e2c70cea3fc}{\index{update\-Student\-Letter.\-php@{update\-Student\-Letter.\-php}!\$test@{\$test}}
+\index{\$test@{\$test}!updateStudentLetter.php@{update\-Student\-Letter.\-php}}
+\subsubsection[{\$test}]{\setlength{\rightskip}{0pt plus 5cm}\$test = 0}}\label{updateStudentLetter_8php_a31daebf88fc668f410293e2c70cea3fc}
+\-Variable to prevent the code from failing 

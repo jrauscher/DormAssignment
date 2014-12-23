@@ -1,0 +1,30 @@
+\hypertarget{upCampus_8php}{\section{src/admin\-\_\-view/validate/update/up\-Campus.php \-File \-Reference}
+\label{upCampus_8php}\index{src/admin\-\_\-view/validate/update/up\-Campus.\-php@{src/admin\-\_\-view/validate/update/up\-Campus.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{upCampus_8php_ad06b2227b1785217614a1af1253505e0}{\$new\-C} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'new\-Camp'\mbox{]})
+\item 
+\hyperlink{upCampus_8php_a50d27d31cd853f014465997ccb9a89f0}{\$old\-C} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'old\-Camp'\mbox{]})
+\item 
+\hyperlink{upCampus_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{upCampus_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-U\-P\-D\-A\-T\-E `building` \-S\-E\-T `campus`='\$new\-C' \-W\-H\-E\-R\-E campus ='\$old\-C'\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{upCampus_8php_ad06b2227b1785217614a1af1253505e0}{\index{up\-Campus.\-php@{up\-Campus.\-php}!\$new\-C@{\$new\-C}}
+\index{\$new\-C@{\$new\-C}!upCampus.php@{up\-Campus.\-php}}
+\subsubsection[{\$new\-C}]{\setlength{\rightskip}{0pt plus 5cm}\$new\-C = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'new\-Camp'\mbox{]})}}\label{upCampus_8php_ad06b2227b1785217614a1af1253505e0}
+\-Gets the new campus name from the page=e\-Campus page. \hypertarget{upCampus_8php_a50d27d31cd853f014465997ccb9a89f0}{\index{up\-Campus.\-php@{up\-Campus.\-php}!\$old\-C@{\$old\-C}}
+\index{\$old\-C@{\$old\-C}!upCampus.php@{up\-Campus.\-php}}
+\subsubsection[{\$old\-C}]{\setlength{\rightskip}{0pt plus 5cm}\$old\-C = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'old\-Camp'\mbox{]})}}\label{upCampus_8php_a50d27d31cd853f014465997ccb9a89f0}
+\-Gets the old campus name from the page=e\-Campus page. \hypertarget{upCampus_8php_a047170d6020a882807665812a27e2525}{\index{up\-Campus.\-php@{up\-Campus.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!upCampus.php@{up\-Campus.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-U\-P\-D\-A\-T\-E `building` \-S\-E\-T `campus`='\$new\-C' \-W\-H\-E\-R\-E campus ='\$old\-C'\char`\"{}}}\label{upCampus_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L \-Query that updates the old campus with teh new \-Campus name stores in \$new\-C. \hypertarget{upCampus_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{up\-Campus.\-php@{up\-Campus.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!upCampus.php@{up\-Campus.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{upCampus_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

@@ -1,0 +1,70 @@
+\hypertarget{rmBuilding_8php}{\section{src/admin\-\_\-view/validate/rm\-Building.php \-File \-Reference}
+\label{rmBuilding_8php}\index{src/admin\-\_\-view/validate/rm\-Building.\-php@{src/admin\-\_\-view/validate/rm\-Building.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rmBuilding_8php_adda32c78f7f7aed9a0f7bb03a9198e9c}{\$b\-Name} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'b\-Name'\mbox{]})
+\item 
+\hyperlink{rmBuilding_8php_ac3687b5a21519c53f240b5d1c07f997a}{\$let} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'letter'\mbox{]})
+\item 
+\hyperlink{rmBuilding_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 1
+\item 
+\hyperlink{rmBuilding_8php_aae30003a4d3fab7dc75a19cbfddea7a8}{\$get\-I\-D} = \char`\"{}\-S\-E\-L\-E\-C\-T build\-\_\-id \-F\-R\-O\-M building \-W\-H\-E\-R\-E building\-\_\-name='\$b\-Name' \-A\-N\-D building\-\_\-letter='\$let'\char`\"{}
+\item 
+\hyperlink{rmBuilding_8php_a7458cf5c1cfaeb93fe055362ecff999e}{\$\-B\-I\-D} = mysqli\-\_\-query(\$dbconn, \$get\-I\-D) or (\$valid=2)
+\item 
+\hyperlink{rmBuilding_8php_a68d2e459193313b71494801a69ade623}{\$\-I\-D} = mysqli\-\_\-fetch\-\_\-assoc(\$\-B\-I\-D)
+\item 
+\hyperlink{rmBuilding_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M building \-W\-H\-E\-R\-E building\-\_\-name='\$b\-Name' \-A\-N\-D building\-\_\-letter='\$let'\char`\"{}
+\item 
+\hyperlink{rmBuilding_8php_a1ad0ffe3fa0755e56a1a6bb40c232b8a}{\$sql2} = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M room\-\_\-letter \-W\-H\-E\-R\-E build\-\_\-id='\$\-I\-D'\char`\"{}
+\item 
+\hyperlink{rmBuilding_8php_af837618eb187a024f9473f6de320db84}{\$sql3} = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M rooms \-W\-H\-E\-R\-E build\-\_\-id='\$\-I\-D'\char`\"{}
+\item 
+\hyperlink{rmBuilding_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result} = mysqli\-\_\-query(\$dbconn, \$sql) or (\$valid=2)
+\item 
+\hyperlink{rmBuilding_8php_ae734ecc68847d4f436c60c39ec64af11}{\$result2} = mysqli\-\_\-query(\$dbconn, \$sql2) or (\$valid=1)
+\item 
+\hyperlink{rmBuilding_8php_a3bed351c02cbc07bce580e0044c8d37d}{\$result3} = mysqli\-\_\-query(\$dbconn, \$sql3) or (\$valid=1)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{rmBuilding_8php_a7458cf5c1cfaeb93fe055362ecff999e}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$\-B\-I\-D@{\$\-B\-I\-D}}
+\index{\$\-B\-I\-D@{\$\-B\-I\-D}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$\-B\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$\-B\-I\-D = mysqli\-\_\-query(\$dbconn, \$get\-I\-D) or (\$valid=2)}}\label{rmBuilding_8php_a7458cf5c1cfaeb93fe055362ecff999e}
+\-Runs the \-S\-Q\-L \-Query in \$get\-I\-D. \hypertarget{rmBuilding_8php_adda32c78f7f7aed9a0f7bb03a9198e9c}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$b\-Name@{\$b\-Name}}
+\index{\$b\-Name@{\$b\-Name}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$b\-Name}]{\setlength{\rightskip}{0pt plus 5cm}\$b\-Name = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'b\-Name'\mbox{]})}}\label{rmBuilding_8php_adda32c78f7f7aed9a0f7bb03a9198e9c}
+gets the building name from the \hyperlink{settings_8php}{settings.\-php}?page=r\-Building page. \hypertarget{rmBuilding_8php_aae30003a4d3fab7dc75a19cbfddea7a8}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$get\-I\-D@{\$get\-I\-D}}
+\index{\$get\-I\-D@{\$get\-I\-D}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$get\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$get\-I\-D = \char`\"{}\-S\-E\-L\-E\-C\-T build\-\_\-id \-F\-R\-O\-M building \-W\-H\-E\-R\-E building\-\_\-name='\$b\-Name' \-A\-N\-D building\-\_\-letter='\$let'\char`\"{}}}\label{rmBuilding_8php_aae30003a4d3fab7dc75a19cbfddea7a8}
+gets the building id from the building table where the bulding\-\_\-name = \$b\-Name, and where building letter = \$let. \hypertarget{rmBuilding_8php_a68d2e459193313b71494801a69ade623}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$\-I\-D@{\$\-I\-D}}
+\index{\$\-I\-D@{\$\-I\-D}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$\-I\-D = mysqli\-\_\-fetch\-\_\-assoc(\$\-B\-I\-D)}}\label{rmBuilding_8php_a68d2e459193313b71494801a69ade623}
+\-Gets the first \-B\-I\-D from the \-S\-Q\-L result. \hypertarget{rmBuilding_8php_ac3687b5a21519c53f240b5d1c07f997a}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$let@{\$let}}
+\index{\$let@{\$let}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$let}]{\setlength{\rightskip}{0pt plus 5cm}\$let = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'letter'\mbox{]})}}\label{rmBuilding_8php_ac3687b5a21519c53f240b5d1c07f997a}
+gets the building letter from the \hyperlink{settings_8php}{settings.\-php}?page=r\-Building page. \hypertarget{rmBuilding_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$result@{\$result}}
+\index{\$result@{\$result}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$result}]{\setlength{\rightskip}{0pt plus 5cm}\$result = mysqli\-\_\-query(\$dbconn, \$sql) or (\$valid=2)}}\label{rmBuilding_8php_a112ef069ddc0454086e3d1e6d8d55d07}
+\-Runs the \-S\-Q\-L \-Query in \$sql. \hypertarget{rmBuilding_8php_ae734ecc68847d4f436c60c39ec64af11}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$result2@{\$result2}}
+\index{\$result2@{\$result2}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$result2}]{\setlength{\rightskip}{0pt plus 5cm}\$result2 = mysqli\-\_\-query(\$dbconn, \$sql2) or (\$valid=1)}}\label{rmBuilding_8php_ae734ecc68847d4f436c60c39ec64af11}
+\-Runs the \-S\-Q\-L \-Query in \$sql2. \hypertarget{rmBuilding_8php_a3bed351c02cbc07bce580e0044c8d37d}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$result3@{\$result3}}
+\index{\$result3@{\$result3}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$result3}]{\setlength{\rightskip}{0pt plus 5cm}\$result3 = mysqli\-\_\-query(\$dbconn, \$sql3) or (\$valid=1)}}\label{rmBuilding_8php_a3bed351c02cbc07bce580e0044c8d37d}
+\-Runs the \-S\-Q\-L \-Query in \$sql3. \hypertarget{rmBuilding_8php_a047170d6020a882807665812a27e2525}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M building \-W\-H\-E\-R\-E building\-\_\-name='\$b\-Name' \-A\-N\-D building\-\_\-letter='\$let'\char`\"{}}}\label{rmBuilding_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L string that deletes the building from the building table where the building\-\_\-name = \$b\-Name and where the building\-\_\-letter = \$let. \hypertarget{rmBuilding_8php_a1ad0ffe3fa0755e56a1a6bb40c232b8a}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$sql2@{\$sql2}}
+\index{\$sql2@{\$sql2}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$sql2}]{\setlength{\rightskip}{0pt plus 5cm}\$sql2 = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M room\-\_\-letter \-W\-H\-E\-R\-E build\-\_\-id='\$\-I\-D'\char`\"{}}}\label{rmBuilding_8php_a1ad0ffe3fa0755e56a1a6bb40c232b8a}
+\-S\-Q\-L string that deletes all the room\-\_\-letters from the room\-\_\-letter table where build\-\_\-id = \$\-I\-D. \hypertarget{rmBuilding_8php_af837618eb187a024f9473f6de320db84}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$sql3@{\$sql3}}
+\index{\$sql3@{\$sql3}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$sql3}]{\setlength{\rightskip}{0pt plus 5cm}\$sql3 = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M rooms \-W\-H\-E\-R\-E build\-\_\-id='\$\-I\-D'\char`\"{}}}\label{rmBuilding_8php_af837618eb187a024f9473f6de320db84}
+\-S\-Q\-L string that deletes all rooms from the rooms table where build\-\_\-id = \$\-I\-D. \hypertarget{rmBuilding_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{rm\-Building.\-php@{rm\-Building.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!rmBuilding.php@{rm\-Building.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 1}}\label{rmBuilding_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

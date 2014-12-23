@@ -1,0 +1,75 @@
+\hypertarget{studentForm_8php}{\section{src/user\-\_\-view/student\-Form.php \-File \-Reference}
+\label{studentForm_8php}\index{src/user\-\_\-view/student\-Form.\-php@{src/user\-\_\-view/student\-Form.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{studentForm_8php_ae8f928f475945454d3cfd1d4214c09f2}{\$was\-\_\-errors} = false
+\item 
+\hyperlink{studentForm_8php_ab24faf4aa647cdcee494fc48524ad4ff}{\$errors} = array()
+\item 
+\hyperlink{studentForm_8php_a47bae00d656c37ccabf3f0a6e8ca39ec}{\$\-E\-M\-A\-I\-L} = \char`\"{}five@five.\-com\char`\"{}
+\item 
+\hyperlink{studentForm_8php_a2a52d5de3c70db963bd63f3cc0bdb09e}{\$std\-\_\-build2} = \char`\"{}\-I\char`\"{}
+\item 
+\hyperlink{studentForm_8php_a46b1581b0b49ddd7427714321fc5a641}{\$sql\-Std\-I\-D} = \char`\"{}'\char`\"{}
+\item 
+\hyperlink{studentForm_8php_adb86f6e2c816e38e375c8c73aab83c39}{\$sql\-Std\-Complex} = \char`\"{}'\char`\"{}
+\item 
+\hyperlink{studentForm_8php_af4ecd7d330a614a9ff022fcccfd8df8a}{\$result\-\_\-6} = mysqli\-\_\-query(\$dbconn, \$sql\-Std\-I\-D)
+\item 
+\hyperlink{studentForm_8php_a07f852a7360d1ebc1bf4cd3656067b66}{\$result\-\_\-7} = mysqli\-\_\-query(\$dbconn, \$sql\-Std\-Complex)
+\item 
+\hyperlink{studentForm_8php_a357d2b02bfc3b7772c72f22aa687fd14}{\$result\-\_\-8} = mysqli\-\_\-query(\$dbconn, \$sql\-Std\-Build)
+\item 
+\hyperlink{studentForm_8php_a4747dd5778098fd12613d61e564cf58e}{\$iterate} = 1
+\item 
+\hyperlink{studentForm_8php_abeb5d2366a9870820ffb1e260d040d8d}{while} (\$std\-\_\-build\-\_\-temp=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-8))
+\item 
+\hyperlink{studentForm_8php_a4003cf8da4c94911cef7e69853cbac42}{\$\-B\-U\-I\-L\-D\-\_\-\-I\-D} = \char`\"{}'\char`\"{}
+\item 
+\hyperlink{studentForm_8php_a0b3f63d6f969a6ad92963ceae90afab9}{\$result\-\_\-9} = mysqli\-\_\-query(\$dbconn, \$\-B\-U\-I\-L\-D\-\_\-\-I\-D)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{studentForm_8php_a4003cf8da4c94911cef7e69853cbac42}{\index{student\-Form.\-php@{student\-Form.\-php}!\$\-B\-U\-I\-L\-D\-\_\-\-I\-D@{\$\-B\-U\-I\-L\-D\-\_\-\-I\-D}}
+\index{\$\-B\-U\-I\-L\-D\-\_\-\-I\-D@{\$\-B\-U\-I\-L\-D\-\_\-\-I\-D}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$\-B\-U\-I\-L\-D\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$\-B\-U\-I\-L\-D\-\_\-\-I\-D = \char`\"{}'\char`\"{}}}\label{studentForm_8php_a4003cf8da4c94911cef7e69853cbac42}
+\-S\-Q\-L query to get building \-I\-D based on complex and building letter \hypertarget{studentForm_8php_a47bae00d656c37ccabf3f0a6e8ca39ec}{\index{student\-Form.\-php@{student\-Form.\-php}!\$\-E\-M\-A\-I\-L@{\$\-E\-M\-A\-I\-L}}
+\index{\$\-E\-M\-A\-I\-L@{\$\-E\-M\-A\-I\-L}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$\-E\-M\-A\-I\-L}]{\setlength{\rightskip}{0pt plus 5cm}\$\-E\-M\-A\-I\-L = \char`\"{}five@five.\-com\char`\"{}}}\label{studentForm_8php_a47bae00d656c37ccabf3f0a6e8ca39ec}
+\hypertarget{studentForm_8php_ab24faf4aa647cdcee494fc48524ad4ff}{\index{student\-Form.\-php@{student\-Form.\-php}!\$errors@{\$errors}}
+\index{\$errors@{\$errors}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$errors}]{\setlength{\rightskip}{0pt plus 5cm}\$errors = array()}}\label{studentForm_8php_ab24faf4aa647cdcee494fc48524ad4ff}
+\-Holds all of the errors that were found. \hypertarget{studentForm_8php_a4747dd5778098fd12613d61e564cf58e}{\index{student\-Form.\-php@{student\-Form.\-php}!\$iterate@{\$iterate}}
+\index{\$iterate@{\$iterate}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$iterate}]{\setlength{\rightskip}{0pt plus 5cm}\$iterate = 1}}\label{studentForm_8php_a4747dd5778098fd12613d61e564cf58e}
+\hypertarget{studentForm_8php_af4ecd7d330a614a9ff022fcccfd8df8a}{\index{student\-Form.\-php@{student\-Form.\-php}!\$result\-\_\-6@{\$result\-\_\-6}}
+\index{\$result\-\_\-6@{\$result\-\_\-6}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$result\-\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-6 = mysqli\-\_\-query(\$dbconn, \$sql\-Std\-I\-D)}}\label{studentForm_8php_af4ecd7d330a614a9ff022fcccfd8df8a}
+\-Holds the result of \$sql\-Std\-I\-D \hypertarget{studentForm_8php_a07f852a7360d1ebc1bf4cd3656067b66}{\index{student\-Form.\-php@{student\-Form.\-php}!\$result\-\_\-7@{\$result\-\_\-7}}
+\index{\$result\-\_\-7@{\$result\-\_\-7}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$result\-\_\-7}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-7 = mysqli\-\_\-query(\$dbconn, \$sql\-Std\-Complex)}}\label{studentForm_8php_a07f852a7360d1ebc1bf4cd3656067b66}
+\-Holds the result of \$sql\-Std\-Complex \hypertarget{studentForm_8php_a357d2b02bfc3b7772c72f22aa687fd14}{\index{student\-Form.\-php@{student\-Form.\-php}!\$result\-\_\-8@{\$result\-\_\-8}}
+\index{\$result\-\_\-8@{\$result\-\_\-8}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$result\-\_\-8}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-8 = mysqli\-\_\-query(\$dbconn, \$sql\-Std\-Build)}}\label{studentForm_8php_a357d2b02bfc3b7772c72f22aa687fd14}
+\-S\-Q\-L query to get building letter based on complex name \-Holds the result of \$sql\-Std\-Build saves student id to \$\-N\-U\-I\-D if the value exists\hypertarget{studentForm_8php_a0b3f63d6f969a6ad92963ceae90afab9}{\index{student\-Form.\-php@{student\-Form.\-php}!\$result\-\_\-9@{\$result\-\_\-9}}
+\index{\$result\-\_\-9@{\$result\-\_\-9}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$result\-\_\-9}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-9 = mysqli\-\_\-query(\$dbconn, \$\-B\-U\-I\-L\-D\-\_\-\-I\-D)}}\label{studentForm_8php_a0b3f63d6f969a6ad92963ceae90afab9}
+\hypertarget{studentForm_8php_adb86f6e2c816e38e375c8c73aab83c39}{\index{student\-Form.\-php@{student\-Form.\-php}!\$sql\-Std\-Complex@{\$sql\-Std\-Complex}}
+\index{\$sql\-Std\-Complex@{\$sql\-Std\-Complex}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$sql\-Std\-Complex}]{\setlength{\rightskip}{0pt plus 5cm}\$sql\-Std\-Complex = \char`\"{}'\char`\"{}}}\label{studentForm_8php_adb86f6e2c816e38e375c8c73aab83c39}
+\-S\-Q\-L query to get building name of the user with email(id) of \$\-E\-M\-A\-I\-L \hypertarget{studentForm_8php_a46b1581b0b49ddd7427714321fc5a641}{\index{student\-Form.\-php@{student\-Form.\-php}!\$sql\-Std\-I\-D@{\$sql\-Std\-I\-D}}
+\index{\$sql\-Std\-I\-D@{\$sql\-Std\-I\-D}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$sql\-Std\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$sql\-Std\-I\-D = \char`\"{}'\char`\"{}}}\label{studentForm_8php_a46b1581b0b49ddd7427714321fc5a641}
+\-S\-Q\-L query to get the student id of the user with email(id) of \$\-E\-M\-A\-I\-L \hypertarget{studentForm_8php_a2a52d5de3c70db963bd63f3cc0bdb09e}{\index{student\-Form.\-php@{student\-Form.\-php}!\$std\-\_\-build2@{\$std\-\_\-build2}}
+\index{\$std\-\_\-build2@{\$std\-\_\-build2}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$std\-\_\-build2}]{\setlength{\rightskip}{0pt plus 5cm}\$std\-\_\-build2 = \char`\"{}\-I\char`\"{}}}\label{studentForm_8php_a2a52d5de3c70db963bd63f3cc0bdb09e}
+\hypertarget{studentForm_8php_ae8f928f475945454d3cfd1d4214c09f2}{\index{student\-Form.\-php@{student\-Form.\-php}!\$was\-\_\-errors@{\$was\-\_\-errors}}
+\index{\$was\-\_\-errors@{\$was\-\_\-errors}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{\$was\-\_\-errors}]{\setlength{\rightskip}{0pt plus 5cm}\$was\-\_\-errors = false}}\label{studentForm_8php_ae8f928f475945454d3cfd1d4214c09f2}
+\-True if there were errors in the form. \hypertarget{studentForm_8php_abeb5d2366a9870820ffb1e260d040d8d}{\index{student\-Form.\-php@{student\-Form.\-php}!while@{while}}
+\index{while@{while}!studentForm.php@{student\-Form.\-php}}
+\subsubsection[{while}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while}(\$std\-\_\-build\-\_\-temp=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-8))}}\label{studentForm_8php_abeb5d2366a9870820ffb1e260d040d8d}
+$<$ for each building display a select option 

@@ -2,14 +2,14 @@
 	include ('../../../includes/svrConnect.php');
 
 // escape variables for security
-$values = mysqli_real_escape_string($dbconn, $_POST['num_rooms']);
-$valid = 0;
-$valid2 = 0;
-$temp = explode(":",$values);
-$num_rooms = $temp[0];
-$BID = $temp[1];
-$num_ra = 0;
-$num_hc = 0;
+$values = mysqli_real_escape_string($dbconn, $_POST['num_rooms']); /**< Gets the number of rooms from the settings.php?page=eRooms page. */
+$valid = 0; /**< Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. */
+$valid2 = 0; /**< Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. */
+$temp = explode(":",$values); /**< array that has all the values in $values that were seperated by ':' */
+$num_rooms = $temp[0]; /**< Total number of rooms. */
+$BID = $temp[1]; /**< Building id. */
+$num_ra = 0; /**< Number of RA Rooms. */
+$num_hc = 0; /**< Number of Handicapped Rooms. */
 
 for($i=0;$i<$num_rooms;$i++){		
 	$room = mysqli_real_escape_string($dbconn, $_POST['room'.$i.'']);

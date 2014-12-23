@@ -15,13 +15,20 @@
 				<div id="header">
 					<div id="navbar">
 							<div class="img"><a href="index.php"><img src ="../images/scottcampuslogo.png"/></a></div>
+							<!-- <div class="logout"><a href="index.php">LogOut</a></div> -->
 
 						<ul>
 <?php 
 // Error vars
-	$error1 = 'Error: building without a letter';
+	$error1 = 'Error: building without a letter'; /**< If there is an error diplay this message. */
 	
-
+/**
+* <pre>
+* MAKE_DIV: Generates the tabs for navigation ammong the web pages.
+* TAKES: Nothing
+* RETURNS: Tabs
+*</pre>
+*/
 	function make_div()
 	{
 		echo '<div class="tab_div" id="';
@@ -63,14 +70,17 @@
 		}
 		echo '"></div>';
 	}
+	
+
+function make_div()
+
 	function make_tab($link,$id,$value,$pos)
 	{
-		$tab_c = strtolower($value);
+		$tab_c = strtolower($value);/**< test1 */
 		if ( preg_match('/\s/',$tab_c) )
 		{
 			$tab_c = preg_replace('/\s+/', '_', $tab_c); 
 		}
-		
 		$label = '<label';	
 		$checkness =  'list_of_elements';
 		echo $label;		
@@ -86,7 +96,7 @@
 			$id = $id .'2';
 			$checkness ='list_of_elements_checked';
 		}
-		echo $id;
+		echo $id; /**< test1 */
 		echo '" ';
 		echo 'class="'.$checkness.'"';
 		echo '>'; 

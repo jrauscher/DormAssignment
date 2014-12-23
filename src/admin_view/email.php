@@ -1,14 +1,14 @@
 <?php
 	include ('../includes/svrConnect.php');
 
-$was_errors = false;
-$errors = array();
+$was_errors = false; /**< Set to True if errors were found. */
+$errors = array(); /**< Stores a array of the error that occurs. */ 
 
 /* Set up your query in a string. */
-$sqlEmailTable = "SELECT needs_email AS 'Email?', student_id AS 'Student ID', username AS 'Username', building_name AS 'Complex Name' FROM users";
-$sqlEmailTable2 = "SELECT student_id AS 'Student ID', username AS 'Username', building_name AS 'Complex Name' FROM users";
-$building_names = "SELECT DISTINCT building_name FROM building";
-$better = 0;
+$sqlEmailTable = "SELECT needs_email AS 'Email?', student_id AS 'Student ID', username AS 'Username', building_name AS 'Complex Name' FROM users"; /**< Default Query used to get student information for the emails table when username is not passed. */
+$sqlEmailTable2 = "SELECT student_id AS 'Student ID', username AS 'Username', building_name AS 'Complex Name' FROM users"; /**< Query is used if a username is passed to populate emails tables. */
+$building_names = "SELECT DISTINCT building_name FROM building"; /**< Query used to get a list of building names. */
+$better = 0; /**< Used to figure out which Query to use, set to 1 if a username is passed. */
 
 if(isset($_GET['sort'])){
 	if($_GET['sort'] == 'Student ID')
@@ -94,12 +94,16 @@ include ('../includes/header.html');
 
 <?php
 
+/** Used to make sure the username variable is set to a value before using it. */
 if( isset($_POST['username']) && $_POST['username'] != null && $_POST['username'] != '' ){
      $sqlEmailTable2 .= ' WHERE username = "' . mysqli_real_escape_string($dbconn,$_POST['username']) .'"';
 	 $better = 1;
 }
 
 $limit = 0; 
+/**
+* Checks to see if there is a limit set on the table and limits the table based on that.
+*/
 if(isset($_GET['limit']))
 {
 	echo '<input type="hidden" value="'.$_GET['limit'].'" name="limit"/>';
@@ -112,6 +116,9 @@ if(isset($_GET['limit']))
 	
 	if($limit > 0)
 	{
+/**
+* Checks to see if there is a sort variable and sorts the table if there is one based on the variable passed.
+*/
 		if(isset($_GET['sort']))
 		{
 		if($_GET['order'] == 'asc')
@@ -138,6 +145,9 @@ if(isset($_GET['limit']))
 			echo '">Prev 10</a>';
 		}
 	}
+/**
+* Checks to see if there is a sort variable and sorts the table if there is one based on the variable passed.
+*/
 	if(isset($_GET['sort']))
 	{
 		if($_GET['order'] == 'asc')
@@ -206,6 +216,13 @@ $result_2 = mysqli_query($dbconn, $building_names);
 <?php
 printResultTable($result_1);
 echo '</form>';
+/**
+*<pre>
+PRINTRESULTTABLE: Prints a table based on the SQL Query result passed to it.
+TAKES: Takes a SQL Query result.
+RETURNS: A table that is based on the SQL Query result.
+</pre> 
+*/
 function printResultTable($res){
 		$count = 0;
 		$count2 = 0;

@@ -1,12 +1,12 @@
 <?php
 echo '<link rel="stylesheet" href="../css/inputTable.css" type="text/css">';
 
-$BID = mysqli_real_escape_string($dbconn, $_POST['complex']);
+$BID = mysqli_real_escape_string($dbconn, $_POST['complex']); /**< Gets the complex ID from the settings.php?page=roomsInput page. */
 
-$sql ="SELECT room_num AS 'Room Number',floor AS 'Floor', RA_Room as 'RA Room', HC_Room AS 'HC Room' FROM rooms WHERE build_id='$BID'";
-$sql2 ="SELECT building_name AS 'Complex Name', building_letter AS 'Letter' FROM building WHERE build_id='$BID'";
-$res = mysqli_query($dbconn, $sql);
-$res2 = mysqli_query($dbconn, $sql2);
+$sql ="SELECT room_num AS 'Room Number',floor AS 'Floor', RA_Room as 'RA Room', HC_Room AS 'HC Room' FROM rooms WHERE build_id='$BID'"; /**< SQL string that Gets the room numbers from the rooms table where build_id = $BID. */
+$sql2 ="SELECT building_name AS 'Complex Name', building_letter AS 'Letter' FROM building WHERE build_id='$BID'"; /**< SQL string that gets building information from the building table where build_id = $BID. */
+$res = mysqli_query($dbconn, $sql); /**< Runs the SQL Query in $sql. */
+$res2 = mysqli_query($dbconn, $sql2); /**< Runs the SQL Query in $sql2 */
 
 echo "<p>Selected Building:";
 while( $row = mysqli_fetch_assoc($res2) ){ 
@@ -19,11 +19,11 @@ echo "</p>";
 echo '<form action="validate/update/upRooms.php" method="post">';
 echo '<input class="button1" type="submit" value="Update"/><br/>';
 echo '<br/><br/>';
-	$complex100 = "SELECT building_name FROM building WHERE complex=1";
-	$complexRes100 = mysqli_query($dbconn, $complex100);	
-	$count=0;
-	$num_rooms = 0;
-	$I=0;
+	$complex100 = "SELECT building_name FROM building WHERE complex=1"; /**< SQL string that gets all the building names from the building table. */
+	$complexRes100 = mysqli_query($dbconn, $complex100); /**< Runs the SQL Query in $complex100 */	
+	$count=0; /**< Counter varaible for the loop. */
+	$num_rooms = 0; /**< Total number of rooms. */
+	$I=0; /**< Another counter variable for the loop. */
 
 		if($res){
 			//echo 'Query successful.';

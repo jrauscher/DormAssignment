@@ -1,0 +1,35 @@
+\hypertarget{getEmail_8php}{\section{src/admin\-\_\-view/includes/functions/get\-Email.php \-File \-Reference}
+\label{getEmail_8php}\index{src/admin\-\_\-view/includes/functions/get\-Email.\-php@{src/admin\-\_\-view/includes/functions/get\-Email.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{getEmail_8php_aec8c77a99462294dbbfb1639bd8b5165}{\$my\-File} = fopen(\char`\"{}/etc/ssmtp/ssmtp.\-conf\char`\"{}, \char`\"{}r\char`\"{}) or die(\char`\"{}\-Unable to open file!\char`\"{})
+\item 
+\hyperlink{getEmail_8php_ad89080bb6e501b4f254f01ee5d24fa2d}{\$file\-Content} = fread(\$my\-File,filesize(\char`\"{}/etc/ssmtp/ssmtp.\-conf\char`\"{}))
+\item 
+\hyperlink{getEmail_8php_af6fbb70c99c1f5a92778615a2a9861e6}{\$pattern} = \char`\"{}/hostname=\mbox{[}$^\wedge$$\backslash$s\mbox{]}+/\char`\"{}
+\item 
+\hyperlink{getEmail_8php_aa28657aaa5fcc7509dd883662f8accbe}{\$len} = strlen(\$matches\mbox{[}0\mbox{]})
+\item 
+\hyperlink{getEmail_8php_ad634f418b20382e2802f80532d76d3cd}{\$email} = substr(\$matches\mbox{[}0\mbox{]},9,\$len)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{getEmail_8php_ad634f418b20382e2802f80532d76d3cd}{\index{get\-Email.\-php@{get\-Email.\-php}!\$email@{\$email}}
+\index{\$email@{\$email}!getEmail.php@{get\-Email.\-php}}
+\subsubsection[{\$email}]{\setlength{\rightskip}{0pt plus 5cm}\$email = substr(\$matches\mbox{[}0\mbox{]},9,\$len)}}\label{getEmail_8php_ad634f418b20382e2802f80532d76d3cd}
+\-Pulls the email out of the match array which holds the values our regex found. \hypertarget{getEmail_8php_ad89080bb6e501b4f254f01ee5d24fa2d}{\index{get\-Email.\-php@{get\-Email.\-php}!\$file\-Content@{\$file\-Content}}
+\index{\$file\-Content@{\$file\-Content}!getEmail.php@{get\-Email.\-php}}
+\subsubsection[{\$file\-Content}]{\setlength{\rightskip}{0pt plus 5cm}\$file\-Content = fread(\$my\-File,filesize(\char`\"{}/etc/ssmtp/ssmtp.\-conf\char`\"{}))}}\label{getEmail_8php_ad89080bb6e501b4f254f01ee5d24fa2d}
+\-Holds all the text that was stored in the file desciptor \$my\-File. \hypertarget{getEmail_8php_aa28657aaa5fcc7509dd883662f8accbe}{\index{get\-Email.\-php@{get\-Email.\-php}!\$len@{\$len}}
+\index{\$len@{\$len}!getEmail.php@{get\-Email.\-php}}
+\subsubsection[{\$len}]{\setlength{\rightskip}{0pt plus 5cm}\$len = strlen(\$matches\mbox{[}0\mbox{]})}}\label{getEmail_8php_aa28657aaa5fcc7509dd883662f8accbe}
+\-Length of the first match our regex found (\$pattern). \hypertarget{getEmail_8php_aec8c77a99462294dbbfb1639bd8b5165}{\index{get\-Email.\-php@{get\-Email.\-php}!\$my\-File@{\$my\-File}}
+\index{\$my\-File@{\$my\-File}!getEmail.php@{get\-Email.\-php}}
+\subsubsection[{\$my\-File}]{\setlength{\rightskip}{0pt plus 5cm}\$my\-File = fopen(\char`\"{}/etc/ssmtp/ssmtp.\-conf\char`\"{}, \char`\"{}r\char`\"{}) or die(\char`\"{}\-Unable to open file!\char`\"{})}}\label{getEmail_8php_aec8c77a99462294dbbfb1639bd8b5165}
+\-File discriptor opening the ssmtm config file for editing. \hypertarget{getEmail_8php_af6fbb70c99c1f5a92778615a2a9861e6}{\index{get\-Email.\-php@{get\-Email.\-php}!\$pattern@{\$pattern}}
+\index{\$pattern@{\$pattern}!getEmail.php@{get\-Email.\-php}}
+\subsubsection[{\$pattern}]{\setlength{\rightskip}{0pt plus 5cm}\$pattern = \char`\"{}/hostname=\mbox{[}$^\wedge$$\backslash$s\mbox{]}+/\char`\"{}}}\label{getEmail_8php_af6fbb70c99c1f5a92778615a2a9861e6}
+\-Regex that finds the text hostname followed by any number of charactors followed by a newline. 

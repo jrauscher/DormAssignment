@@ -1,0 +1,205 @@
+\hypertarget{algoFuncs_8php}{\section{src/admin\-\_\-view/includes/algo/algo\-Funcs.php \-File \-Reference}
+\label{algoFuncs_8php}\index{src/admin\-\_\-view/includes/algo/algo\-Funcs.\-php@{src/admin\-\_\-view/includes/algo/algo\-Funcs.\-php}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{algoFuncs_8php_a0978ce5dc06e2a3474c5f6174b047e87}{check\-\_\-room} (\$std\-\_\-id, \$room\-\_\-num, \$build\-\_\-id)
+\item 
+\hyperlink{algoFuncs_8php_a9f6cf15a7de0e111a83f4fd027e56d2e}{assign\-\_\-student} (\$std\-\_\-id, \$group\-\_\-id, \$room\-\_\-num, \$build\-\_\-id)
+\item 
+\hyperlink{algoFuncs_8php_a08bada5204efb33fb5504a299c748820}{imp\-\_\-prefs} (\$std\-\_\-id)
+\item 
+\hyperlink{algoFuncs_8php_a501e20624843a1f718961adc7441f668}{populate\-\_\-room} (\$std\-\_\-id)
+\item 
+\hyperlink{algoFuncs_8php_ac654f557ca489d7fe9684885bc711ff5}{assign\-\_\-list} (\$list)
+\item 
+\hyperlink{algoFuncs_8php_a93fe7618cc2d6e57542bd01dcd80bede}{assign\-\_\-by\-\_\-prefs2} (\$std\-\_\-id, \$rooms, \$build\-\_\-id)
+\item 
+\hyperlink{algoFuncs_8php_a5bd2a3cc01c912d33fb37421b15b6cdd}{assign\-\_\-by\-\_\-prefs} (\$std\-\_\-id, \$builds)
+\item 
+\hyperlink{algoFuncs_8php_a19197469afa162da66f70127ed241472}{non\-\_\-full\-\_\-rooms} (\$building)
+\item 
+\hyperlink{algoFuncs_8php_a71ebc404ee2d8a756dc22ed2b1ff6621}{assign\-\_\-std\-\_\-empty} (\$std\-\_\-id)
+\item 
+\hyperlink{algoFuncs_8php_a59399a6e039580d0d4c017f01b521e0d}{assign\-\_\-std\-\_\-empty2} (\$std\-\_\-id)
+\item 
+\hyperlink{algoFuncs_8php_a4fa5bd5ac429115b83fa2485413e8c12}{assign\-\_\-quarter} (\$list)
+\item 
+\hyperlink{algoFuncs_8php_acd4506f38112d4063d2641679477a23b}{assign\-\_\-quarter2} (\$list)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{algoFuncs_8php_a5bd2a3cc01c912d33fb37421b15b6cdd}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!assign\-\_\-by\-\_\-prefs@{assign\-\_\-by\-\_\-prefs}}
+\index{assign\-\_\-by\-\_\-prefs@{assign\-\_\-by\-\_\-prefs}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{assign\-\_\-by\-\_\-prefs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf assign\-\_\-by\-\_\-prefs} (
+\begin{DoxyParamCaption}
+\item[{\$}]{std\-\_\-id, }
+\item[{\$}]{builds}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_a5bd2a3cc01c912d33fb37421b15b6cdd}
+
+\begin{DoxyPre}
+ ASSIGN\_BY\_PREFS: Places a student into that room that best fits his/hers preferences.
+ TAKES: Student ID, and Building ID.
+ RETURNS: 0 if the student could not be placed anywhere.
+ 	  1 if the student was placed into a room.
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_a93fe7618cc2d6e57542bd01dcd80bede}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!assign\-\_\-by\-\_\-prefs2@{assign\-\_\-by\-\_\-prefs2}}
+\index{assign\-\_\-by\-\_\-prefs2@{assign\-\_\-by\-\_\-prefs2}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{assign\-\_\-by\-\_\-prefs2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf assign\-\_\-by\-\_\-prefs2} (
+\begin{DoxyParamCaption}
+\item[{\$}]{std\-\_\-id, }
+\item[{\$}]{rooms, }
+\item[{\$}]{build\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_a93fe7618cc2d6e57542bd01dcd80bede}
+
+\begin{DoxyPre}
+ ASSIGN\_BY\_PREFS2: Places a student into that room that best fits his/hers preferences.
+ TAKES: Student ID, Room Number, and Building ID.
+ RETURNS: 0 if the student could not be placed anywhere.
+ 	  1 if the student was placed into a room.
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_ac654f557ca489d7fe9684885bc711ff5}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!assign\-\_\-list@{assign\-\_\-list}}
+\index{assign\-\_\-list@{assign\-\_\-list}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{assign\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf assign\-\_\-list} (
+\begin{DoxyParamCaption}
+\item[{\$}]{list}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_ac654f557ca489d7fe9684885bc711ff5}
+
+\begin{DoxyPre}
+ ASSIGN\_LIST: Loops though a list of students and assigns them to a room based on there preferences.
+ TAKES: An Array of Student ID's.
+ RETURNS: Nothing
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_a4fa5bd5ac429115b83fa2485413e8c12}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!assign\-\_\-quarter@{assign\-\_\-quarter}}
+\index{assign\-\_\-quarter@{assign\-\_\-quarter}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{assign\-\_\-quarter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf assign\-\_\-quarter} (
+\begin{DoxyParamCaption}
+\item[{\$}]{list}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_a4fa5bd5ac429115b83fa2485413e8c12}
+
+\begin{DoxyPre}
+ ASSIGN\_QUARTER: Assigns a quarter of the students in the array it was given. 
+ TAKES: Array of Student ID's.
+ RETURNS: Same the array it was given, minus a quarter of the students
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_acd4506f38112d4063d2641679477a23b}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!assign\-\_\-quarter2@{assign\-\_\-quarter2}}
+\index{assign\-\_\-quarter2@{assign\-\_\-quarter2}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{assign\-\_\-quarter2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf assign\-\_\-quarter2} (
+\begin{DoxyParamCaption}
+\item[{\$}]{list}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_acd4506f38112d4063d2641679477a23b}
+
+\begin{DoxyPre}
+ ASSIGN\_QUARTER: Assigns a quarter of the students in the array it was given. 
+ TAKES: Array of Student ID's.
+ RETURNS: Same the array it was given, minus a quarter of the students
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_a71ebc404ee2d8a756dc22ed2b1ff6621}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!assign\-\_\-std\-\_\-empty@{assign\-\_\-std\-\_\-empty}}
+\index{assign\-\_\-std\-\_\-empty@{assign\-\_\-std\-\_\-empty}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{assign\-\_\-std\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf assign\-\_\-std\-\_\-empty} (
+\begin{DoxyParamCaption}
+\item[{\$}]{std\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_a71ebc404ee2d8a756dc22ed2b1ff6621}
+
+\begin{DoxyPre}
+ ASSIGN\_STD\_EMPTY: Places a student into a empty room.
+ TAKES: Student ID.
+ RETURNS: 0 if the student could not be placed anywhere.
+ 	  1 if the student was placed into a room.
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_a59399a6e039580d0d4c017f01b521e0d}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!assign\-\_\-std\-\_\-empty2@{assign\-\_\-std\-\_\-empty2}}
+\index{assign\-\_\-std\-\_\-empty2@{assign\-\_\-std\-\_\-empty2}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{assign\-\_\-std\-\_\-empty2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf assign\-\_\-std\-\_\-empty2} (
+\begin{DoxyParamCaption}
+\item[{\$}]{std\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_a59399a6e039580d0d4c017f01b521e0d}
+
+\begin{DoxyPre}
+ ASSIGN\_STD\_EMPTY: Places a student into a empty room.
+ TAKES: Student ID.
+ RETURNS: 0 if the student could not be placed anywhere.
+ 	  1 if the student was placed into a room.
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_a9f6cf15a7de0e111a83f4fd027e56d2e}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!assign\-\_\-student@{assign\-\_\-student}}
+\index{assign\-\_\-student@{assign\-\_\-student}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{assign\-\_\-student}]{\setlength{\rightskip}{0pt plus 5cm}{\bf assign\-\_\-student} (
+\begin{DoxyParamCaption}
+\item[{\$}]{std\-\_\-id, }
+\item[{\$}]{group\-\_\-id, }
+\item[{\$}]{room\-\_\-num, }
+\item[{\$}]{build\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_a9f6cf15a7de0e111a83f4fd027e56d2e}
+
+\begin{DoxyPre}
+ ASSIGN\_STUDENT: Assigns a student to a room.
+ TAKES: Student ID, Room Number, and Building ID.
+ RETURNS: 0 if the student was not placed into that room.
+ 	  1 if the student was placed into that room.
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_a0978ce5dc06e2a3474c5f6174b047e87}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!check\-\_\-room@{check\-\_\-room}}
+\index{check\-\_\-room@{check\-\_\-room}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{check\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}{\bf check\-\_\-room} (
+\begin{DoxyParamCaption}
+\item[{\$}]{std\-\_\-id, }
+\item[{\$}]{room\-\_\-num, }
+\item[{\$}]{build\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_a0978ce5dc06e2a3474c5f6174b047e87}
+
+\begin{DoxyPre}
+ CHECK\_ROOM: Makes sure students are of the correct lease type, gender, and that the room is not full.
+ TAKES: Student ID, Room Number, and Building ID.
+ RETURNS: 0 if the student cannot go into that room.
+ 	  1 if the student can be placed into that room.
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_a08bada5204efb33fb5504a299c748820}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!imp\-\_\-prefs@{imp\-\_\-prefs}}
+\index{imp\-\_\-prefs@{imp\-\_\-prefs}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{imp\-\_\-prefs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf imp\-\_\-prefs} (
+\begin{DoxyParamCaption}
+\item[{\$}]{std\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_a08bada5204efb33fb5504a299c748820}
+
+\begin{DoxyPre}
+ IMP\_PREFS: Finds the top 2 most imporant preferences of the student it is given.
+ TAKES: Student ID.
+ RETURNS: an Array containing the top 2 prefernces of the studnet ID given.
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_a19197469afa162da66f70127ed241472}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!non\-\_\-full\-\_\-rooms@{non\-\_\-full\-\_\-rooms}}
+\index{non\-\_\-full\-\_\-rooms@{non\-\_\-full\-\_\-rooms}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{non\-\_\-full\-\_\-rooms}]{\setlength{\rightskip}{0pt plus 5cm}{\bf non\-\_\-full\-\_\-rooms} (
+\begin{DoxyParamCaption}
+\item[{\$}]{building}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_a19197469afa162da66f70127ed241472}
+
+\begin{DoxyPre}
+ NON\_FULL\_ROOMS: Finds rooms that are not currently full.
+ TAKES: Building ID.
+ RETURNS: An Array of rooms in that building that are not full.
+\end{DoxyPre}
+ \hypertarget{algoFuncs_8php_a501e20624843a1f718961adc7441f668}{\index{algo\-Funcs.\-php@{algo\-Funcs.\-php}!populate\-\_\-room@{populate\-\_\-room}}
+\index{populate\-\_\-room@{populate\-\_\-room}!algoFuncs.php@{algo\-Funcs.\-php}}
+\subsubsection[{populate\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}{\bf populate\-\_\-room} (
+\begin{DoxyParamCaption}
+\item[{\$}]{std\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{algoFuncs_8php_a501e20624843a1f718961adc7441f668}
+
+\begin{DoxyPre}
+ POPULATE\_ROOM: Places a student into a empty room.
+ TAKES: Student ID.
+ RETURNS: 0 if the student could not be placed anywhere.
+ 	  1 if the student was placed into a empty room.
+\end{DoxyPre}
+ 

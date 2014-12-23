@@ -1,0 +1,42 @@
+\hypertarget{displayStudentInfo_8php}{\section{src/admin\-\_\-view/display\-Student\-Info.php \-File \-Reference}
+\label{displayStudentInfo_8php}\index{src/admin\-\_\-view/display\-Student\-Info.\-php@{src/admin\-\_\-view/display\-Student\-Info.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{displayStudentInfo_8php_af62eac6f1a6ea66c9f90093940147945}{\$student\-I\-D} = \$\-\_\-\-G\-E\-T\mbox{[}'id'\mbox{]}
+\item 
+\hyperlink{displayStudentInfo_8php_afacc031eed5b55847cdf634cbac8b9a6}{\$get\-Student\-Info} = \char`\"{}\-S\-E\-L\-E\-C\-T student\-\_\-id, build\-\_\-id, gender, birthdate, cell\-\_\-phone, home\-\_\-phone, email, age, address, city, state, zip, lease, renewal, scott\-\_\-scholar \-F\-R\-O\-M students\-\_\-temp \-W\-H\-E\-R\-E student\-\_\-id = '\$student\-I\-D'\char`\"{}
+\item 
+\hyperlink{displayStudentInfo_8php_ab8bbdcdd0fe4999997ee43345fd69dbe}{\$result\-\_\-get\-Student\-Info} = mysqli\-\_\-query(\$dbconn, \$get\-Student\-Info)
+\item 
+\hyperlink{displayStudentInfo_8php_a8475c55a95335ffc4309e9001d7d1fa3}{\$get\-Name} = \char`\"{}\-S\-E\-L\-E\-C\-T first\-\_\-name, last\-\_\-name \-F\-R\-O\-M students\-\_\-temp \-W\-H\-E\-R\-E student\-\_\-id = '\$student\-I\-D'\char`\"{}
+\item 
+\hyperlink{displayStudentInfo_8php_abf07436f24cd62ffb968c81f8bcbe272}{\$result\-\_\-get\-Name} = mysqli\-\_\-query(\$dbconn, \$get\-Name)
+\item 
+\hyperlink{displayStudentInfo_8php_a21986c98f8e5909ee2e102a3ff82fcc1}{while} (\$st\-\_\-name=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-get\-Name)) = \hyperlink{admin__view_2index_8php_ab37d59932fd6526f337d009f44f5ab2e}{fetch\-\_\-count}(\$result\-\_\-user\-\_\-completion)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{displayStudentInfo_8php_a8475c55a95335ffc4309e9001d7d1fa3}{\index{display\-Student\-Info.\-php@{display\-Student\-Info.\-php}!\$get\-Name@{\$get\-Name}}
+\index{\$get\-Name@{\$get\-Name}!displayStudentInfo.php@{display\-Student\-Info.\-php}}
+\subsubsection[{\$get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}\$get\-Name = \char`\"{}\-S\-E\-L\-E\-C\-T first\-\_\-name, last\-\_\-name \-F\-R\-O\-M students\-\_\-temp \-W\-H\-E\-R\-E student\-\_\-id = '\$student\-I\-D'\char`\"{}}}\label{displayStudentInfo_8php_a8475c55a95335ffc4309e9001d7d1fa3}
+\-S\-Q\-L query to grab the name of the student from the temporary student table. \hypertarget{displayStudentInfo_8php_afacc031eed5b55847cdf634cbac8b9a6}{\index{display\-Student\-Info.\-php@{display\-Student\-Info.\-php}!\$get\-Student\-Info@{\$get\-Student\-Info}}
+\index{\$get\-Student\-Info@{\$get\-Student\-Info}!displayStudentInfo.php@{display\-Student\-Info.\-php}}
+\subsubsection[{\$get\-Student\-Info}]{\setlength{\rightskip}{0pt plus 5cm}\$get\-Student\-Info = \char`\"{}\-S\-E\-L\-E\-C\-T student\-\_\-id, build\-\_\-id, gender, birthdate, cell\-\_\-phone, home\-\_\-phone, email, age, address, city, state, zip, lease, renewal, scott\-\_\-scholar \-F\-R\-O\-M students\-\_\-temp \-W\-H\-E\-R\-E student\-\_\-id = '\$student\-I\-D'\char`\"{}}}\label{displayStudentInfo_8php_afacc031eed5b55847cdf634cbac8b9a6}
+\-S\-Q\-L query to grab information about the student from the temporary student table. \hypertarget{displayStudentInfo_8php_abf07436f24cd62ffb968c81f8bcbe272}{\index{display\-Student\-Info.\-php@{display\-Student\-Info.\-php}!\$result\-\_\-get\-Name@{\$result\-\_\-get\-Name}}
+\index{\$result\-\_\-get\-Name@{\$result\-\_\-get\-Name}!displayStudentInfo.php@{display\-Student\-Info.\-php}}
+\subsubsection[{\$result\-\_\-get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-get\-Name = mysqli\-\_\-query(\$dbconn, \$get\-Name)}}\label{displayStudentInfo_8php_abf07436f24cd62ffb968c81f8bcbe272}
+\-Stores the result of the query \$get\-Name. \hypertarget{displayStudentInfo_8php_ab8bbdcdd0fe4999997ee43345fd69dbe}{\index{display\-Student\-Info.\-php@{display\-Student\-Info.\-php}!\$result\-\_\-get\-Student\-Info@{\$result\-\_\-get\-Student\-Info}}
+\index{\$result\-\_\-get\-Student\-Info@{\$result\-\_\-get\-Student\-Info}!displayStudentInfo.php@{display\-Student\-Info.\-php}}
+\subsubsection[{\$result\-\_\-get\-Student\-Info}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-get\-Student\-Info = mysqli\-\_\-query(\$dbconn, \$get\-Student\-Info)}}\label{displayStudentInfo_8php_ab8bbdcdd0fe4999997ee43345fd69dbe}
+\-Stores the result of the query \$get\-Student\-Info. \hypertarget{displayStudentInfo_8php_af62eac6f1a6ea66c9f90093940147945}{\index{display\-Student\-Info.\-php@{display\-Student\-Info.\-php}!\$student\-I\-D@{\$student\-I\-D}}
+\index{\$student\-I\-D@{\$student\-I\-D}!displayStudentInfo.php@{display\-Student\-Info.\-php}}
+\subsubsection[{\$student\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$student\-I\-D = \$\-\_\-\-G\-E\-T\mbox{[}'id'\mbox{]}}}\label{displayStudentInfo_8php_af62eac6f1a6ea66c9f90093940147945}
+\-The \-I\-D of the student and is later escaped. \hypertarget{displayStudentInfo_8php_a21986c98f8e5909ee2e102a3ff82fcc1}{\index{display\-Student\-Info.\-php@{display\-Student\-Info.\-php}!while@{while}}
+\index{while@{while}!displayStudentInfo.php@{display\-Student\-Info.\-php}}
+\subsubsection[{while}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while} = {\bf fetch\-\_\-count}(\$result\-\_\-user\-\_\-completion)}}\label{displayStudentInfo_8php_a21986c98f8e5909ee2e102a3ff82fcc1}
+\-The result from the fetch\-\_\-count function.
+
+\-Gets the correct value for \$\-S\-Fdeadline. \-Holds the result of the query to get the lease information deadline date from the for\-\_\-settings table. 

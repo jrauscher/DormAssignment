@@ -6,30 +6,23 @@
 <?php
 	include ('../includes/svrConnect.php');
 
-$room = $_GET['room'];
-$building = $_GET['building'];
-$newLetter = $_GET['newLetter'];
-$oldLetter = $_GET['oldLetter'];
-$st_id = $_GET['st_id'];
-//$group = $_GET['group'];
+$room = $_GET['room']; /**< The room that the student is in and is escaped later. */
+$building = $_GET['building']; /**< The building id that the student is in and is escaped later. */
+$newLetter = $_GET['newLetter']; /**< The letter that the student is changing to and is escaped later. */
+$oldLetter = $_GET['oldLetter']; /**< The letter that the student was and is escaped later. */
+$st_id = $_GET['st_id']; /**< The id of the student and is escaped later. */
 
 $room = mysql_real_escape_string($room);
 $building = mysql_real_escape_string($building);
 $newLetter = mysql_real_escape_string($newLetter);
 $oldLetter = mysql_real_escape_string($oldLetter);
 $st_id = mysql_real_escape_string($st_id);
-//$group = mysql_real_escape_string($group);
 
-//$TempChangeOtherStudent = "UPDATE room_letter_temp SET letter='0' WHERE build_id=$building AND room_num=$room AND letter=$newLetter";
-$TempChangeOtherStudent = "UPDATE room_letter_temp SET letter='$oldLetter' WHERE build_id='$building' AND room_num='$room' AND letter='$newLetter'";
-//$ChangeCurrentStudent = "UPDATE room_letter_temp SET letter=$newLetter WHERE build_id=$building AND room_num=$room AND letter=$oldLetter";
-$ChangeCurrentStudent = "UPDATE room_letter_temp SET letter='$newLetter' WHERE student_id='$st_id'";
-//$ChangeOtherStudent = "UPDATE room_letter_temp SET letter=$oldLetter WHERE build_id=$building AND room_num=$room AND letter='0'";
-//echo '<script type="text/javascript">alert("oldLetter: '.$oldLetter.'\nnewLetter: '.$newLetter.'"); </script>';
-$test = 0;
+$TempChangeOtherStudent = "UPDATE room_letter_temp SET letter='$oldLetter' WHERE build_id='$building' AND room_num='$room' AND letter='$newLetter'"; /**< SQL query to change the student that has the requested $newLetter to the $oldLetter. */
+$ChangeCurrentStudent = "UPDATE room_letter_temp SET letter='$newLetter' WHERE student_id='$st_id'"; /**< SQL query to change the student's letter from $oldLetter to $newLetter. */
+$test = 0; /**< Variable to prevent the code from failing */
 mysqli_query($dbconn, $TempChangeOtherStudent) or $test = 1;
 mysqli_query($dbconn, $ChangeCurrentStudent) or $test = 2;
-//mysqli_query($dbconn, $ChangeOtherStudent) or $test = 3;
 
 
 

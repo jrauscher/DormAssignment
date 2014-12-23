@@ -1,0 +1,99 @@
+\hypertarget{manage_8php}{\section{src/admin\-\_\-view/manage.php \-File \-Reference}
+\label{manage_8php}\index{src/admin\-\_\-view/manage.\-php@{src/admin\-\_\-view/manage.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{manage_8php_ab1dd9f6f45ee74e34c0430f067a3c215}{\$drop\-Temp\-Table} = \char`\"{}\-D\-R\-O\-P \-T\-A\-B\-L\-E students\-\_\-temp\char`\"{}
+\item 
+\hyperlink{manage_8php_a0febbda45804f1928bcedee869cd7317}{\$make\-Temp\-Table} = \char`\"{}\-C\-R\-E\-A\-T\-E \-T\-A\-B\-L\-E students\-\_\-temp \-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M students\char`\"{}
+\item 
+\hyperlink{manage_8php_a37871ad6099a27b6315fface9172c4d5}{\$drop\-Temp\-Group\-Table} = \char`\"{}\-D\-R\-O\-P \-T\-A\-B\-L\-E groups\-\_\-temp\char`\"{}
+\item 
+\hyperlink{manage_8php_ac943069bf7ec74f20a4d874e81a25d31}{\$make\-Temp\-Group\-Table} = \char`\"{}\-C\-R\-E\-A\-T\-E \-T\-A\-B\-L\-E groups\-\_\-temp \-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M groups\char`\"{}
+\item 
+\hyperlink{manage_8php_abf1c8fc767af82673be54ca48a20e0d8}{\$drop\-Temp\-Bench\-Table} = \char`\"{}\-D\-R\-O\-P \-T\-A\-B\-L\-E bench\-\_\-temp\char`\"{}
+\item 
+\hyperlink{manage_8php_ad31899f9608939d4b4d0166145cbf832}{\$make\-Temp\-Bench\-Table} = \char`\"{}\-C\-R\-E\-A\-T\-E \-T\-A\-B\-L\-E bench\-\_\-temp \-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M bench\char`\"{}
+\item 
+\hyperlink{manage_8php_a6d511c33a3f839e8b150f2df556d9cf0}{\$drop\-Temp\-Room\-Letter\-Table} = \char`\"{}\-D\-R\-O\-P \-T\-A\-B\-L\-E room\-\_\-letter\-\_\-temp\char`\"{}
+\item 
+\hyperlink{manage_8php_a5764a84ed61064638292cd39c4270cad}{\$make\-Temp\-Room\-Letter\-Table} = \char`\"{}\-C\-R\-E\-A\-T\-E \-T\-A\-B\-L\-E room\-\_\-letter\-\_\-temp \-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M room\-\_\-letter\char`\"{}
+\item 
+\hyperlink{manage_8php_ac3791b6f14bdbeeee37e52e7a7e8c98b}{\$drop\-Temp\-Rooms\-Table} = \char`\"{}\-D\-R\-O\-P \-T\-A\-B\-L\-E rooms\-\_\-temp\char`\"{}
+\item 
+\hyperlink{manage_8php_ab664e3752ad88a1b92d5f9d505faa716}{\$make\-Temp\-Rooms\-Table} = \char`\"{}\-C\-R\-E\-A\-T\-E \-T\-A\-B\-L\-E rooms\-\_\-temp \-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M rooms\char`\"{}
+\item 
+\hyperlink{manage_8php_a6f0655994f3941d6ab50f681032f899b}{\$campus} = \char`\"{}\-S\-E\-L\-E\-C\-T \-D\-I\-S\-T\-I\-N\-C\-T campus \-F\-R\-O\-M building\char`\"{}
+\item 
+\hyperlink{manage_8php_a8ab55fcf525cc50064165d5b3e77e9a5}{\$building\-\_\-names} = \char`\"{}\-S\-E\-L\-E\-C\-T building\-\_\-name \-F\-R\-O\-M building\char`\"{}
+\item 
+\hyperlink{manage_8php_ab7c3ef21f41bcddbed5d1f3b591342da}{\$building\-\_\-letters} = \char`\"{}\-S\-E\-L\-E\-C\-T building\-\_\-letter \-F\-R\-O\-M building\char`\"{}
+\item 
+\hyperlink{manage_8php_a1f68a7fd1d38612fa4b61dda6e9bd035}{\$room\-\_\-number} = \char`\"{}\-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M building, rooms \-W\-H\-E\-R\-E building.\-build\-\_\-id = \char`\"{}
+\item 
+\hyperlink{manage_8php_afdd2ad9cb7726ebdf33d1095eac78a1a}{\$result\-\_\-campus} = mysqli\-\_\-query(\$dbconn, \$campus . \char`\"{};\char`\"{})
+\item 
+\hyperlink{manage_8php_ab991259438d75c98bca8f82bd9283a57}{\$building\-And\-Numbers} = array()
+\item 
+\hyperlink{manage_8php_aab1672b501262d8a7c242d2c87e1a361}{while} (\$campus\-\_\-name=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-campus))
+\item 
+\hyperlink{manage_8php_aaa4523e3eb6e4848efff15be60f7f802}{build\-Nums} = $<$?php echo '\mbox{[}\char`\"{}' . implode('\char`\"{}, \char`\"{}', \$building\-I\-D\-List). '\char`\"{}\mbox{]}'
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{manage_8php_ab7c3ef21f41bcddbed5d1f3b591342da}{\index{manage.\-php@{manage.\-php}!\$building\-\_\-letters@{\$building\-\_\-letters}}
+\index{\$building\-\_\-letters@{\$building\-\_\-letters}!manage.php@{manage.\-php}}
+\subsubsection[{\$building\-\_\-letters}]{\setlength{\rightskip}{0pt plus 5cm}\$building\-\_\-letters = \char`\"{}\-S\-E\-L\-E\-C\-T building\-\_\-letter \-F\-R\-O\-M building\char`\"{}}}\label{manage_8php_ab7c3ef21f41bcddbed5d1f3b591342da}
+\-S\-Q\-L query to get the building letters from the building table. \hypertarget{manage_8php_a8ab55fcf525cc50064165d5b3e77e9a5}{\index{manage.\-php@{manage.\-php}!\$building\-\_\-names@{\$building\-\_\-names}}
+\index{\$building\-\_\-names@{\$building\-\_\-names}!manage.php@{manage.\-php}}
+\subsubsection[{\$building\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}\$building\-\_\-names = \char`\"{}\-S\-E\-L\-E\-C\-T building\-\_\-name \-F\-R\-O\-M building\char`\"{}}}\label{manage_8php_a8ab55fcf525cc50064165d5b3e77e9a5}
+\-S\-Q\-L query to get the building names from the building table. \hypertarget{manage_8php_ab991259438d75c98bca8f82bd9283a57}{\index{manage.\-php@{manage.\-php}!\$building\-And\-Numbers@{\$building\-And\-Numbers}}
+\index{\$building\-And\-Numbers@{\$building\-And\-Numbers}!manage.php@{manage.\-php}}
+\subsubsection[{\$building\-And\-Numbers}]{\setlength{\rightskip}{0pt plus 5cm}\$building\-And\-Numbers = array()}}\label{manage_8php_ab991259438d75c98bca8f82bd9283a57}
+\-An array to associate the building name with the building \-I\-D. \hypertarget{manage_8php_a6f0655994f3941d6ab50f681032f899b}{\index{manage.\-php@{manage.\-php}!\$campus@{\$campus}}
+\index{\$campus@{\$campus}!manage.php@{manage.\-php}}
+\subsubsection[{\$campus}]{\setlength{\rightskip}{0pt plus 5cm}\$campus = \char`\"{}\-S\-E\-L\-E\-C\-T \-D\-I\-S\-T\-I\-N\-C\-T campus \-F\-R\-O\-M building\char`\"{}}}\label{manage_8php_a6f0655994f3941d6ab50f681032f899b}
+\-S\-Q\-L query to get the different campuses from the building table. \hypertarget{manage_8php_abf1c8fc767af82673be54ca48a20e0d8}{\index{manage.\-php@{manage.\-php}!\$drop\-Temp\-Bench\-Table@{\$drop\-Temp\-Bench\-Table}}
+\index{\$drop\-Temp\-Bench\-Table@{\$drop\-Temp\-Bench\-Table}!manage.php@{manage.\-php}}
+\subsubsection[{\$drop\-Temp\-Bench\-Table}]{\setlength{\rightskip}{0pt plus 5cm}\$drop\-Temp\-Bench\-Table = \char`\"{}\-D\-R\-O\-P \-T\-A\-B\-L\-E bench\-\_\-temp\char`\"{}}}\label{manage_8php_abf1c8fc767af82673be54ca48a20e0d8}
+\-S\-Q\-L query to drop the temporary bench table. \hypertarget{manage_8php_a37871ad6099a27b6315fface9172c4d5}{\index{manage.\-php@{manage.\-php}!\$drop\-Temp\-Group\-Table@{\$drop\-Temp\-Group\-Table}}
+\index{\$drop\-Temp\-Group\-Table@{\$drop\-Temp\-Group\-Table}!manage.php@{manage.\-php}}
+\subsubsection[{\$drop\-Temp\-Group\-Table}]{\setlength{\rightskip}{0pt plus 5cm}\$drop\-Temp\-Group\-Table = \char`\"{}\-D\-R\-O\-P \-T\-A\-B\-L\-E groups\-\_\-temp\char`\"{}}}\label{manage_8php_a37871ad6099a27b6315fface9172c4d5}
+\-S\-Q\-L query to drop the temporary groups table. \hypertarget{manage_8php_a6d511c33a3f839e8b150f2df556d9cf0}{\index{manage.\-php@{manage.\-php}!\$drop\-Temp\-Room\-Letter\-Table@{\$drop\-Temp\-Room\-Letter\-Table}}
+\index{\$drop\-Temp\-Room\-Letter\-Table@{\$drop\-Temp\-Room\-Letter\-Table}!manage.php@{manage.\-php}}
+\subsubsection[{\$drop\-Temp\-Room\-Letter\-Table}]{\setlength{\rightskip}{0pt plus 5cm}\$drop\-Temp\-Room\-Letter\-Table = \char`\"{}\-D\-R\-O\-P \-T\-A\-B\-L\-E room\-\_\-letter\-\_\-temp\char`\"{}}}\label{manage_8php_a6d511c33a3f839e8b150f2df556d9cf0}
+\-S\-Q\-L query to drop the temporary room\-\_\-letter table. \hypertarget{manage_8php_ac3791b6f14bdbeeee37e52e7a7e8c98b}{\index{manage.\-php@{manage.\-php}!\$drop\-Temp\-Rooms\-Table@{\$drop\-Temp\-Rooms\-Table}}
+\index{\$drop\-Temp\-Rooms\-Table@{\$drop\-Temp\-Rooms\-Table}!manage.php@{manage.\-php}}
+\subsubsection[{\$drop\-Temp\-Rooms\-Table}]{\setlength{\rightskip}{0pt plus 5cm}\$drop\-Temp\-Rooms\-Table = \char`\"{}\-D\-R\-O\-P \-T\-A\-B\-L\-E rooms\-\_\-temp\char`\"{}}}\label{manage_8php_ac3791b6f14bdbeeee37e52e7a7e8c98b}
+\-S\-Q\-L query to drop the temporary rooms table. \hypertarget{manage_8php_ab1dd9f6f45ee74e34c0430f067a3c215}{\index{manage.\-php@{manage.\-php}!\$drop\-Temp\-Table@{\$drop\-Temp\-Table}}
+\index{\$drop\-Temp\-Table@{\$drop\-Temp\-Table}!manage.php@{manage.\-php}}
+\subsubsection[{\$drop\-Temp\-Table}]{\setlength{\rightskip}{0pt plus 5cm}\$drop\-Temp\-Table = \char`\"{}\-D\-R\-O\-P \-T\-A\-B\-L\-E students\-\_\-temp\char`\"{}}}\label{manage_8php_ab1dd9f6f45ee74e34c0430f067a3c215}
+\-S\-Q\-L query to drop the temporary students table. \hypertarget{manage_8php_ad31899f9608939d4b4d0166145cbf832}{\index{manage.\-php@{manage.\-php}!\$make\-Temp\-Bench\-Table@{\$make\-Temp\-Bench\-Table}}
+\index{\$make\-Temp\-Bench\-Table@{\$make\-Temp\-Bench\-Table}!manage.php@{manage.\-php}}
+\subsubsection[{\$make\-Temp\-Bench\-Table}]{\setlength{\rightskip}{0pt plus 5cm}\$make\-Temp\-Bench\-Table = \char`\"{}\-C\-R\-E\-A\-T\-E \-T\-A\-B\-L\-E bench\-\_\-temp \-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M bench\char`\"{}}}\label{manage_8php_ad31899f9608939d4b4d0166145cbf832}
+\-S\-Q\-L query to create a copy of the bench table. \hypertarget{manage_8php_ac943069bf7ec74f20a4d874e81a25d31}{\index{manage.\-php@{manage.\-php}!\$make\-Temp\-Group\-Table@{\$make\-Temp\-Group\-Table}}
+\index{\$make\-Temp\-Group\-Table@{\$make\-Temp\-Group\-Table}!manage.php@{manage.\-php}}
+\subsubsection[{\$make\-Temp\-Group\-Table}]{\setlength{\rightskip}{0pt plus 5cm}\$make\-Temp\-Group\-Table = \char`\"{}\-C\-R\-E\-A\-T\-E \-T\-A\-B\-L\-E groups\-\_\-temp \-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M groups\char`\"{}}}\label{manage_8php_ac943069bf7ec74f20a4d874e81a25d31}
+\-S\-Q\-L query to create a copy of the groups table. \hypertarget{manage_8php_a5764a84ed61064638292cd39c4270cad}{\index{manage.\-php@{manage.\-php}!\$make\-Temp\-Room\-Letter\-Table@{\$make\-Temp\-Room\-Letter\-Table}}
+\index{\$make\-Temp\-Room\-Letter\-Table@{\$make\-Temp\-Room\-Letter\-Table}!manage.php@{manage.\-php}}
+\subsubsection[{\$make\-Temp\-Room\-Letter\-Table}]{\setlength{\rightskip}{0pt plus 5cm}\$make\-Temp\-Room\-Letter\-Table = \char`\"{}\-C\-R\-E\-A\-T\-E \-T\-A\-B\-L\-E room\-\_\-letter\-\_\-temp \-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M room\-\_\-letter\char`\"{}}}\label{manage_8php_a5764a84ed61064638292cd39c4270cad}
+\-S\-Q\-L query to create a copy of the room\-\_\-letter table. \hypertarget{manage_8php_ab664e3752ad88a1b92d5f9d505faa716}{\index{manage.\-php@{manage.\-php}!\$make\-Temp\-Rooms\-Table@{\$make\-Temp\-Rooms\-Table}}
+\index{\$make\-Temp\-Rooms\-Table@{\$make\-Temp\-Rooms\-Table}!manage.php@{manage.\-php}}
+\subsubsection[{\$make\-Temp\-Rooms\-Table}]{\setlength{\rightskip}{0pt plus 5cm}\$make\-Temp\-Rooms\-Table = \char`\"{}\-C\-R\-E\-A\-T\-E \-T\-A\-B\-L\-E rooms\-\_\-temp \-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M rooms\char`\"{}}}\label{manage_8php_ab664e3752ad88a1b92d5f9d505faa716}
+\-S\-Q\-L query to create a copy of the rooms table. \hypertarget{manage_8php_a0febbda45804f1928bcedee869cd7317}{\index{manage.\-php@{manage.\-php}!\$make\-Temp\-Table@{\$make\-Temp\-Table}}
+\index{\$make\-Temp\-Table@{\$make\-Temp\-Table}!manage.php@{manage.\-php}}
+\subsubsection[{\$make\-Temp\-Table}]{\setlength{\rightskip}{0pt plus 5cm}\$make\-Temp\-Table = \char`\"{}\-C\-R\-E\-A\-T\-E \-T\-A\-B\-L\-E students\-\_\-temp \-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M students\char`\"{}}}\label{manage_8php_a0febbda45804f1928bcedee869cd7317}
+\-S\-Q\-L query to create a copy of the students table. \hypertarget{manage_8php_afdd2ad9cb7726ebdf33d1095eac78a1a}{\index{manage.\-php@{manage.\-php}!\$result\-\_\-campus@{\$result\-\_\-campus}}
+\index{\$result\-\_\-campus@{\$result\-\_\-campus}!manage.php@{manage.\-php}}
+\subsubsection[{\$result\-\_\-campus}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-campus = mysqli\-\_\-query(\$dbconn, \$campus . \char`\"{};\char`\"{})}}\label{manage_8php_afdd2ad9cb7726ebdf33d1095eac78a1a}
+\-Holds the result from the query \$campus. \hypertarget{manage_8php_a1f68a7fd1d38612fa4b61dda6e9bd035}{\index{manage.\-php@{manage.\-php}!\$room\-\_\-number@{\$room\-\_\-number}}
+\index{\$room\-\_\-number@{\$room\-\_\-number}!manage.php@{manage.\-php}}
+\subsubsection[{\$room\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}\$room\-\_\-number = \char`\"{}\-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M building, rooms \-W\-H\-E\-R\-E building.\-build\-\_\-id = \char`\"{}}}\label{manage_8php_a1f68a7fd1d38612fa4b61dda6e9bd035}
+\-S\-Q\-L query to get the room numbers from the building table. \hypertarget{manage_8php_aaa4523e3eb6e4848efff15be60f7f802}{\index{manage.\-php@{manage.\-php}!build\-Nums@{build\-Nums}}
+\index{build\-Nums@{build\-Nums}!manage.php@{manage.\-php}}
+\subsubsection[{build\-Nums}]{\setlength{\rightskip}{0pt plus 5cm}{\bf build\-Nums} = $<$?php echo '\mbox{[}\char`\"{}' . implode('\char`\"{}, \char`\"{}', \$building\-I\-D\-List). '\char`\"{}\mbox{]}'}}\label{manage_8php_aaa4523e3eb6e4848efff15be60f7f802}
+\hypertarget{manage_8php_aab1672b501262d8a7c242d2c87e1a361}{\index{manage.\-php@{manage.\-php}!while@{while}}
+\index{while@{while}!manage.php@{manage.\-php}}
+\subsubsection[{while}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while}(\$campus\-\_\-name=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-campus))}}\label{manage_8php_aab1672b501262d8a7c242d2c87e1a361}

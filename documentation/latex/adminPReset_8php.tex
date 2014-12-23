@@ -1,0 +1,30 @@
+\hypertarget{adminPReset_8php}{\section{src/admin\-\_\-view/validate/admin\-P\-Reset.php \-File \-Reference}
+\label{adminPReset_8php}\index{src/admin\-\_\-view/validate/admin\-P\-Reset.\-php@{src/admin\-\_\-view/validate/admin\-P\-Reset.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{adminPReset_8php_ad10f6388800bdf18e795c1afd61faab1}{\$\-P\-W\-D} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'\-P\-S\-W'\mbox{]})
+\item 
+\hyperlink{adminPReset_8php_a493f3ef0624131954dba9970f1808e66}{\$a\-I\-D} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'admin\-\_\-id'\mbox{]})
+\item 
+\hyperlink{adminPReset_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{adminPReset_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-U\-P\-D\-A\-T\-E `admins` \-S\-E\-T `password`='\$\-P\-W\-D' \-W\-H\-E\-R\-E admin\-\_\-id='\$a\-I\-D'\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{adminPReset_8php_a493f3ef0624131954dba9970f1808e66}{\index{admin\-P\-Reset.\-php@{admin\-P\-Reset.\-php}!\$a\-I\-D@{\$a\-I\-D}}
+\index{\$a\-I\-D@{\$a\-I\-D}!adminPReset.php@{admin\-P\-Reset.\-php}}
+\subsubsection[{\$a\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$a\-I\-D = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'admin\-\_\-id'\mbox{]})}}\label{adminPReset_8php_a493f3ef0624131954dba9970f1808e66}
+\-Gets the admin id from \hyperlink{settings_8php}{settings.\-php}?page=m\-Accounts page. \hypertarget{adminPReset_8php_ad10f6388800bdf18e795c1afd61faab1}{\index{admin\-P\-Reset.\-php@{admin\-P\-Reset.\-php}!\$\-P\-W\-D@{\$\-P\-W\-D}}
+\index{\$\-P\-W\-D@{\$\-P\-W\-D}!adminPReset.php@{admin\-P\-Reset.\-php}}
+\subsubsection[{\$\-P\-W\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$\-P\-W\-D = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'\-P\-S\-W'\mbox{]})}}\label{adminPReset_8php_ad10f6388800bdf18e795c1afd61faab1}
+\-Gets the new password from \hyperlink{settings_8php}{settings.\-php}?page=m\-Accounts page. \hypertarget{adminPReset_8php_a047170d6020a882807665812a27e2525}{\index{admin\-P\-Reset.\-php@{admin\-P\-Reset.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!adminPReset.php@{admin\-P\-Reset.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-U\-P\-D\-A\-T\-E `admins` \-S\-E\-T `password`='\$\-P\-W\-D' \-W\-H\-E\-R\-E admin\-\_\-id='\$a\-I\-D'\char`\"{}}}\label{adminPReset_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L string that updates the admin table with the user input information (\$\-P\-W\-D, \$a\-I\-D) \hypertarget{adminPReset_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{admin\-P\-Reset.\-php@{admin\-P\-Reset.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!adminPReset.php@{admin\-P\-Reset.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{adminPReset_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

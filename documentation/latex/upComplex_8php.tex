@@ -1,0 +1,35 @@
+\hypertarget{upComplex_8php}{\section{src/admin\-\_\-view/validate/update/up\-Complex.php \-File \-Reference}
+\label{upComplex_8php}\index{src/admin\-\_\-view/validate/update/up\-Complex.\-php@{src/admin\-\_\-view/validate/update/up\-Complex.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{upComplex_8php_ad06b2227b1785217614a1af1253505e0}{\$new\-C} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'new\-Comp'\mbox{]})
+\item 
+\hyperlink{upComplex_8php_a62ac845b01c144c44951edea6fe6358e}{\$new\-Camp} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'new\-Camp'\mbox{]})
+\item 
+\hyperlink{upComplex_8php_a50d27d31cd853f014465997ccb9a89f0}{\$old\-C} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'old\-Comp'\mbox{]})
+\item 
+\hyperlink{upComplex_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{upComplex_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-U\-P\-D\-A\-T\-E `building` \-S\-E\-T `building\-\_\-name`='\$new\-C',`campus`='\$new\-Camp' \-W\-H\-E\-R\-E building\-\_\-name ='\$old\-C'\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{upComplex_8php_ad06b2227b1785217614a1af1253505e0}{\index{up\-Complex.\-php@{up\-Complex.\-php}!\$new\-C@{\$new\-C}}
+\index{\$new\-C@{\$new\-C}!upComplex.php@{up\-Complex.\-php}}
+\subsubsection[{\$new\-C}]{\setlength{\rightskip}{0pt plus 5cm}\$new\-C = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'new\-Comp'\mbox{]})}}\label{upComplex_8php_ad06b2227b1785217614a1af1253505e0}
+\-Gets new complex name from \hyperlink{settings_8php}{settings.\-php}?page=e\-Complex page. \hypertarget{upComplex_8php_a62ac845b01c144c44951edea6fe6358e}{\index{up\-Complex.\-php@{up\-Complex.\-php}!\$new\-Camp@{\$new\-Camp}}
+\index{\$new\-Camp@{\$new\-Camp}!upComplex.php@{up\-Complex.\-php}}
+\subsubsection[{\$new\-Camp}]{\setlength{\rightskip}{0pt plus 5cm}\$new\-Camp = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'new\-Camp'\mbox{]})}}\label{upComplex_8php_a62ac845b01c144c44951edea6fe6358e}
+\-Gets new campus name from \hyperlink{settings_8php}{settings.\-php}?page=e\-Complex page. \hypertarget{upComplex_8php_a50d27d31cd853f014465997ccb9a89f0}{\index{up\-Complex.\-php@{up\-Complex.\-php}!\$old\-C@{\$old\-C}}
+\index{\$old\-C@{\$old\-C}!upComplex.php@{up\-Complex.\-php}}
+\subsubsection[{\$old\-C}]{\setlength{\rightskip}{0pt plus 5cm}\$old\-C = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'old\-Comp'\mbox{]})}}\label{upComplex_8php_a50d27d31cd853f014465997ccb9a89f0}
+\-Gets old complex name from \hyperlink{settings_8php}{settings.\-php}?page=e\-Complex page. \hypertarget{upComplex_8php_a047170d6020a882807665812a27e2525}{\index{up\-Complex.\-php@{up\-Complex.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!upComplex.php@{up\-Complex.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-U\-P\-D\-A\-T\-E `building` \-S\-E\-T `building\-\_\-name`='\$new\-C',`campus`='\$new\-Camp' \-W\-H\-E\-R\-E building\-\_\-name ='\$old\-C'\char`\"{}}}\label{upComplex_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L string that updates the a building in the building table with the new information stores in the \$new\-C and \$new\-Camp variables. \hypertarget{upComplex_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{up\-Complex.\-php@{up\-Complex.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!upComplex.php@{up\-Complex.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{upComplex_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

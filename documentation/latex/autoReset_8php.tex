@@ -1,0 +1,54 @@
+\hypertarget{autoReset_8php}{\section{src/admin\-\_\-view/includes/algo/auto\-Reset.php \-File \-Reference}
+\label{autoReset_8php}\index{src/admin\-\_\-view/includes/algo/auto\-Reset.\-php@{src/admin\-\_\-view/includes/algo/auto\-Reset.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{autoReset_8php_aacb611dbf5c84e030f2c54eff45ca222}{\$room\-Reset} = \char`\"{}\-U\-P\-D\-A\-T\-E `rooms` \-S\-E\-T `group\-\_\-id`=0,`num\-\_\-students`=0,`gender`=0,`smoking`=0 \-W\-H\-E\-R\-E 1\char`\"{}
+\item 
+\hyperlink{autoReset_8php_a196911b75d870334239968cfe0faccea}{\$group\-Reset} = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M groups \-W\-H\-E\-R\-E 1\char`\"{}
+\item 
+\hyperlink{autoReset_8php_a9b9cdc0f04cb545881acb36c15d42c5e}{\$student\-Reset} = \char`\"{}\-U\-P\-D\-A\-T\-E `students` \-S\-E\-T `group\-\_\-id`=0,`room\-\_\-num`=0,`build\-\_\-id`=0 \-W\-H\-E\-R\-E 1\char`\"{}
+\item 
+\hyperlink{autoReset_8php_abdc52362179d3c8ff144e8da3468d399}{\$room\-Let\-Reset} = \char`\"{}\-U\-P\-D\-A\-T\-E `room\-\_\-letter` \-S\-E\-T `student\-\_\-id`=0 \-W\-H\-E\-R\-E 1\char`\"{}
+\item 
+\hyperlink{autoReset_8php_a5ee9920a3f7aaf091b8092eefdb65239}{\$room\-Rest\-Q} = mysqli\-\_\-query(\$dbconn, \$room\-Reset) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))
+\item 
+\hyperlink{autoReset_8php_a569059e4fb7abd35a8b0573e74b8c8cf}{\$group\-Rest\-Q} = mysqli\-\_\-query(\$dbconn, \$group\-Reset) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))
+\item 
+\hyperlink{autoReset_8php_ad531504cb204dbfaa4c9f041dba740e6}{\$student\-Rest\-Q} = mysqli\-\_\-query(\$dbconn, \$student\-Reset) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))
+\item 
+\hyperlink{autoReset_8php_a97de145c656e04df0e5900451d77e099}{\$room\-Let\-Rest\-Q} = mysqli\-\_\-query(\$dbconn, \$room\-Let\-Reset) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))
+\item 
+\hyperlink{autoReset_8php_a3ad3a4240c0f97c7e85aff5c52a454d4}{print}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{autoReset_8php_a196911b75d870334239968cfe0faccea}{\index{auto\-Reset.\-php@{auto\-Reset.\-php}!\$group\-Reset@{\$group\-Reset}}
+\index{\$group\-Reset@{\$group\-Reset}!autoReset.php@{auto\-Reset.\-php}}
+\subsubsection[{\$group\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}\$group\-Reset = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M groups \-W\-H\-E\-R\-E 1\char`\"{}}}\label{autoReset_8php_a196911b75d870334239968cfe0faccea}
+\-S\-Q\-L that resets the groups table. \hypertarget{autoReset_8php_a569059e4fb7abd35a8b0573e74b8c8cf}{\index{auto\-Reset.\-php@{auto\-Reset.\-php}!\$group\-Rest\-Q@{\$group\-Rest\-Q}}
+\index{\$group\-Rest\-Q@{\$group\-Rest\-Q}!autoReset.php@{auto\-Reset.\-php}}
+\subsubsection[{\$group\-Rest\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\$group\-Rest\-Q = mysqli\-\_\-query(\$dbconn, \$group\-Reset) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))}}\label{autoReset_8php_a569059e4fb7abd35a8b0573e74b8c8cf}
+\-Runs the \$group\-Reset \-S\-Q\-L \-Query. \hypertarget{autoReset_8php_abdc52362179d3c8ff144e8da3468d399}{\index{auto\-Reset.\-php@{auto\-Reset.\-php}!\$room\-Let\-Reset@{\$room\-Let\-Reset}}
+\index{\$room\-Let\-Reset@{\$room\-Let\-Reset}!autoReset.php@{auto\-Reset.\-php}}
+\subsubsection[{\$room\-Let\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}\$room\-Let\-Reset = \char`\"{}\-U\-P\-D\-A\-T\-E `room\-\_\-letter` \-S\-E\-T `student\-\_\-id`=0 \-W\-H\-E\-R\-E 1\char`\"{}}}\label{autoReset_8php_abdc52362179d3c8ff144e8da3468d399}
+\-S\-Q\-L that resets the room\-\_\-letter table so no students are in it. \hypertarget{autoReset_8php_a97de145c656e04df0e5900451d77e099}{\index{auto\-Reset.\-php@{auto\-Reset.\-php}!\$room\-Let\-Rest\-Q@{\$room\-Let\-Rest\-Q}}
+\index{\$room\-Let\-Rest\-Q@{\$room\-Let\-Rest\-Q}!autoReset.php@{auto\-Reset.\-php}}
+\subsubsection[{\$room\-Let\-Rest\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\$room\-Let\-Rest\-Q = mysqli\-\_\-query(\$dbconn, \$room\-Let\-Reset) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))}}\label{autoReset_8php_a97de145c656e04df0e5900451d77e099}
+\-Runs the \$room\-Let\-Reset \-S\-Q\-L \-Query. \hypertarget{autoReset_8php_aacb611dbf5c84e030f2c54eff45ca222}{\index{auto\-Reset.\-php@{auto\-Reset.\-php}!\$room\-Reset@{\$room\-Reset}}
+\index{\$room\-Reset@{\$room\-Reset}!autoReset.php@{auto\-Reset.\-php}}
+\subsubsection[{\$room\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}\$room\-Reset = \char`\"{}\-U\-P\-D\-A\-T\-E `rooms` \-S\-E\-T `group\-\_\-id`=0,`num\-\_\-students`=0,`gender`=0,`smoking`=0 \-W\-H\-E\-R\-E 1\char`\"{}}}\label{autoReset_8php_aacb611dbf5c84e030f2c54eff45ca222}
+\-S\-Q\-L that resets the rooms to 0, or so that there is no longer any students in the rooms. \hypertarget{autoReset_8php_a5ee9920a3f7aaf091b8092eefdb65239}{\index{auto\-Reset.\-php@{auto\-Reset.\-php}!\$room\-Rest\-Q@{\$room\-Rest\-Q}}
+\index{\$room\-Rest\-Q@{\$room\-Rest\-Q}!autoReset.php@{auto\-Reset.\-php}}
+\subsubsection[{\$room\-Rest\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\$room\-Rest\-Q = mysqli\-\_\-query(\$dbconn, \$room\-Reset) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))}}\label{autoReset_8php_a5ee9920a3f7aaf091b8092eefdb65239}
+\-Runs the \$room\-Reset \-S\-Q\-L \-Query. \hypertarget{autoReset_8php_a9b9cdc0f04cb545881acb36c15d42c5e}{\index{auto\-Reset.\-php@{auto\-Reset.\-php}!\$student\-Reset@{\$student\-Reset}}
+\index{\$student\-Reset@{\$student\-Reset}!autoReset.php@{auto\-Reset.\-php}}
+\subsubsection[{\$student\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}\$student\-Reset = \char`\"{}\-U\-P\-D\-A\-T\-E `students` \-S\-E\-T `group\-\_\-id`=0,`room\-\_\-num`=0,`build\-\_\-id`=0 \-W\-H\-E\-R\-E 1\char`\"{}}}\label{autoReset_8php_a9b9cdc0f04cb545881acb36c15d42c5e}
+\-S\-Q\-L that resets where the students have been placed. \hypertarget{autoReset_8php_ad531504cb204dbfaa4c9f041dba740e6}{\index{auto\-Reset.\-php@{auto\-Reset.\-php}!\$student\-Rest\-Q@{\$student\-Rest\-Q}}
+\index{\$student\-Rest\-Q@{\$student\-Rest\-Q}!autoReset.php@{auto\-Reset.\-php}}
+\subsubsection[{\$student\-Rest\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\$student\-Rest\-Q = mysqli\-\_\-query(\$dbconn, \$student\-Reset) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))}}\label{autoReset_8php_ad531504cb204dbfaa4c9f041dba740e6}
+\-Runs the \$student\-Reset \-S\-Q\-L \-Query. \hypertarget{autoReset_8php_a3ad3a4240c0f97c7e85aff5c52a454d4}{\index{auto\-Reset.\-php@{auto\-Reset.\-php}!print@{print}}
+\index{print@{print}!autoReset.php@{auto\-Reset.\-php}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}{\bf print}}}\label{autoReset_8php_a3ad3a4240c0f97c7e85aff5c52a454d4}

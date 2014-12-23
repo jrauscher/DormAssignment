@@ -2,20 +2,27 @@
 	include ('../includes/svrConnect.php');
 
 // escape variables for security
-$username = mysqli_real_escape_string($dbconn, $_POST['username']);
-$pass = mysqli_real_escape_string($dbconn, $_POST['password']);
-$valid = 0;
+$username = mysqli_real_escape_string($dbconn, $_POST['username']); /**< The submitted username. */
+$pass = mysqli_real_escape_string($dbconn, $_POST['password']); /**< The submitted password. */
+$valid = 0; /**< Valid must equal the total number of input variables at the end of the program to insure input variables contain valid text. */
 
+
+/**
+* Increments $valid if the $username is filled out.
+*/
 if( isset($username) && $username != null && $username != '' ){
         $valid ++;
 }
-
+/**
+*
+* Increments $valid if the $pass is filled out.
+*/
 if( isset($pass) && $pass != null && $pass != '' ){
         $valid ++;
 }
 
-$dbPass = "";
-$VAL = "";
+$dbPass = ""; /**< The passwords that will allow access to the system. */
+$VAL = ""; /**< Whether or not the user has access. */
 
 if ($valid == 2){
 	$sl = "SELECT password FROM users WHERE username = '$username'";

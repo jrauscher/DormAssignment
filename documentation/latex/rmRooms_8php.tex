@@ -1,0 +1,35 @@
+\hypertarget{rmRooms_8php}{\section{src/admin\-\_\-view/validate/rm\-Rooms.php \-File \-Reference}
+\label{rmRooms_8php}\index{src/admin\-\_\-view/validate/rm\-Rooms.\-php@{src/admin\-\_\-view/validate/rm\-Rooms.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rmRooms_8php_ae8be3ef9b83c4349916cb3e11ea81f9d}{\$b\-I\-D} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'build'\mbox{]})
+\item 
+\hyperlink{rmRooms_8php_ac8f3b2b9a28b7619de496a616ba2de94}{\$room\-\_\-num} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'r\-Num'\mbox{]})
+\item 
+\hyperlink{rmRooms_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 1
+\item 
+\hyperlink{rmRooms_8php_afe172836ca3d0c604d5bf0378508f614}{\$sql1} = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M room\-\_\-letter \-W\-H\-E\-R\-E build\-\_\-id='\$b\-I\-D'\char`\"{}
+\item 
+\hyperlink{rmRooms_8php_a1ad0ffe3fa0755e56a1a6bb40c232b8a}{\$sql2} = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M rooms \-W\-H\-E\-R\-E build\-\_\-id='\$b\-I\-D' \-A\-N\-D room\-\_\-num='\$room\-\_\-num' \char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{rmRooms_8php_ae8be3ef9b83c4349916cb3e11ea81f9d}{\index{rm\-Rooms.\-php@{rm\-Rooms.\-php}!\$b\-I\-D@{\$b\-I\-D}}
+\index{\$b\-I\-D@{\$b\-I\-D}!rmRooms.php@{rm\-Rooms.\-php}}
+\subsubsection[{\$b\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$b\-I\-D = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'build'\mbox{]})}}\label{rmRooms_8php_ae8be3ef9b83c4349916cb3e11ea81f9d}
+\-Gets the building \-I\-D from the \hyperlink{settings_8php}{settings.\-php}?page=r\-Rooms page. \hypertarget{rmRooms_8php_ac8f3b2b9a28b7619de496a616ba2de94}{\index{rm\-Rooms.\-php@{rm\-Rooms.\-php}!\$room\-\_\-num@{\$room\-\_\-num}}
+\index{\$room\-\_\-num@{\$room\-\_\-num}!rmRooms.php@{rm\-Rooms.\-php}}
+\subsubsection[{\$room\-\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}\$room\-\_\-num = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'r\-Num'\mbox{]})}}\label{rmRooms_8php_ac8f3b2b9a28b7619de496a616ba2de94}
+\-Gets the room number from the \hyperlink{settings_8php}{settings.\-php}?page=r\-Rooms page. \hypertarget{rmRooms_8php_afe172836ca3d0c604d5bf0378508f614}{\index{rm\-Rooms.\-php@{rm\-Rooms.\-php}!\$sql1@{\$sql1}}
+\index{\$sql1@{\$sql1}!rmRooms.php@{rm\-Rooms.\-php}}
+\subsubsection[{\$sql1}]{\setlength{\rightskip}{0pt plus 5cm}\$sql1 = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M room\-\_\-letter \-W\-H\-E\-R\-E build\-\_\-id='\$b\-I\-D'\char`\"{}}}\label{rmRooms_8php_afe172836ca3d0c604d5bf0378508f614}
+\-S\-Q\-L string that deletes the room\-\_\-letter where the build\-\_\-id = \$b\-I\-D. \hypertarget{rmRooms_8php_a1ad0ffe3fa0755e56a1a6bb40c232b8a}{\index{rm\-Rooms.\-php@{rm\-Rooms.\-php}!\$sql2@{\$sql2}}
+\index{\$sql2@{\$sql2}!rmRooms.php@{rm\-Rooms.\-php}}
+\subsubsection[{\$sql2}]{\setlength{\rightskip}{0pt plus 5cm}\$sql2 = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M rooms \-W\-H\-E\-R\-E build\-\_\-id='\$b\-I\-D' \-A\-N\-D room\-\_\-num='\$room\-\_\-num' \char`\"{}}}\label{rmRooms_8php_a1ad0ffe3fa0755e56a1a6bb40c232b8a}
+\hypertarget{rmRooms_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{rm\-Rooms.\-php@{rm\-Rooms.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!rmRooms.php@{rm\-Rooms.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 1}}\label{rmRooms_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

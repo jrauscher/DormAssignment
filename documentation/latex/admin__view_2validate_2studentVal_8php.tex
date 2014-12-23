@@ -1,0 +1,275 @@
+\hypertarget{admin__view_2validate_2studentVal_8php}{\section{src/admin\-\_\-view/validate/student\-Val.php \-File \-Reference}
+\label{admin__view_2validate_2studentVal_8php}\index{src/admin\-\_\-view/validate/student\-Val.\-php@{src/admin\-\_\-view/validate/student\-Val.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a70806170d1b60ef7fb76db46f2bce5e3}{\$student\-\_\-id} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'student\-\_\-id'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_ae0a75279f3627fb32311bc3352c89fe6}{\$first\-\_\-name} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'first\-\_\-name'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a7aa024f049337e3bb2365d4007262847}{\$last\-\_\-name} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'last\-\_\-name'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a0f1d7cfb9dc6f494b9014885205fc47e}{\$gender} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'gender'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a1d5a040d6cd65b40daa47911e18adbb0}{\$birthdate} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'birthdate'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a04f4e771f2239bf8a55f2ee7580a9609}{\$cell\-\_\-phone} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'cell\-\_\-phone'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_af8981335f6e9218851c725816b60158e}{\$home\-\_\-phone} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'home\-\_\-phone'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_ad634f418b20382e2802f80532d76d3cd}{\$email} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'email'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a653579f1800dead9ae026af236859831}{\$address1} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'address1'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a914305af9ec7e49528f07f35a8e8c6a9}{\$address2} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'address2'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a5b9ddd3e3a69d8901270064346bdef49}{\$city} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'city'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_ae82306c4f2d17d8dd5c7d8d916b33bed}{\$state} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'state'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_aa91be3142812d8cd4221c6f54555079b}{\$zip} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'zip'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_ae95126b1133cf958aaf8a31b0283364c}{\$lease} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'lease'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a1a67d224b0f0712693c41c17f2c85183}{\$renewal} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'renewal'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a08dd3f8caa6a5a9037559298cfd9e5cc}{\$sub\-\_\-date} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'sub\-\_\-date'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_aeba3fa7111a05390371249cf7515b517}{\$scott\-\_\-scholar} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'scott\-\_\-scholar'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a9c454efdb922da9127af82e94ee399a1}{\$desired\-\_\-roommate1} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate1'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_aeaab2ccbd0e9359193a66a1c07606bf8}{\$desired\-\_\-roommate2} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate2'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a6c6068b6183d30d97211b0acc4c44e97}{\$desired\-\_\-roommate3} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate3'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a5982e6f9a315f1a035bc2b440b67f187}{\$desired\-\_\-roommate1\-\_\-ph} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate\-\_\-ph1'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_ac9a221d01a865e9db4fd8d517db1f5f1}{\$desired\-\_\-roommate2\-\_\-ph} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate\-\_\-ph2'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a0e28d9f5935e6f64d0b142410bb2e5e6}{\$desired\-\_\-roommate3\-\_\-ph} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate\-\_\-ph3'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a379014f2a48154febd53d5f95871dc14}{\$grade\-\_\-lvl} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'grade\-\_\-lvl'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a4918f9ca4d470ccadff836850844ea58}{\$enrolled\-\_\-college} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'enrolled\-\_\-college'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a2c21a55b0bd902797539f840b7bf94dc}{\$enrolled\-\_\-department} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'enrolled\-\_\-department'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a7a259082f57125b6bd143f3387a5f655}{\$cleanliness} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'cleanliness'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a2774f17621ab4d3b64411f86c88df407}{\$noise} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'noise'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a30ca6680bf78675c5916e0c0114191fb}{\$guest\-\_\-sleeping} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'guest\-\_\-sleeping'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_ad62de11903542434007800bf0bc24594}{\$share\-\_\-belongings} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'share\-\_\-belongings'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a08edd61848021bc8ed4c15804842d5fb}{\$bed\-\_\-time} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'bed\-\_\-time'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_ade31df5f8971826d6902226d01975007}{\$wakeup\-\_\-time} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'wakeup\-\_\-time'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a0b341ac1da1798a6803878383a2a6086}{\$gathering} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'gathering'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a155e4a24650f8440d97423fe1d652eb7}{\$drink\-\_\-alchohol} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'drink\-\_\-alchohol'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_ad8d98a0ffa836c8f5ff6cd94cc18dca1}{\$others\-\_\-drink} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'others\-\_\-drink'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a266c5c8c450a524f2b62297da83a6461}{\$smoking} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'smoking'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a41f287196869fc73324563f84fc1ea73}{\$others\-\_\-smoking} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'others\-\_\-smoking'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a92d14fe0154487caa69f117986fb08da}{\$noise\-\_\-rating} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'noise\-\_\-rating'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_aa181e44821f174a8b2551d5c30c03c1d}{\$cleanliness\-\_\-rating} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'cleanliness\-\_\-rating'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_aeaacae1f81e4a03e1332c1e322315730}{\$lifestyle\-\_\-rating} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'lifestyle\-\_\-rating'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a69122fb82424ff3bb0780b56f8bc8e6d}{\$age\-\_\-rating} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'age\-\_\-rating'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a658e327f04cd3d91c4a064f7f496ccef}{\$major\-\_\-rating} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'major\-\_\-rating'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_ade1951cffb40e000076f5d81e34e41d8}{\$guest\-\_\-rating} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'guest\-\_\-rating'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a35e8cdeb473a5eb016fea893d14de951}{\$comments} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'comments'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a03ada09603995a51dc132367698e687d}{\$req\-\_\-room\-\_\-num} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'req\-\_\-room\-\_\-num'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_adab4b11b8fdbb9622f5c281bcdcc8c5d}{\$req\-\_\-bedroom\-\_\-letter} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'req\-\_\-bedroom\-\_\-letter'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a36592f31d5a2db44ff8fdf35ef05776d}{\$req\-\_\-building\-\_\-name} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'req\-\_\-build\-\_\-name'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_aa9cc64b4d1f994b0e4e2437b8bb61c96}{\$\-\_\-req\-\_\-building\-\_\-letter} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'req\-\_\-build\-\_\-letter'\mbox{]})
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a4003cf8da4c94911cef7e69853cbac42}{\$\-B\-U\-I\-L\-D\-\_\-\-I\-D} = \char`\"{}';\char`\"{}
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a0b3f63d6f969a6ad92963ceae90afab9}{\$result\-\_\-9} = mysqli\-\_\-query(\$dbconn, \$\-B\-U\-I\-L\-D\-\_\-\-I\-D)
+\item 
+\hyperlink{studentForm_8php_abeb5d2366a9870820ffb1e260d040d8d}{while}(\$build\-\_\-id\-\_\-tempp=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-9)) \hyperlink{admin__view_2validate_2studentVal_8php_aa7111d653b27e29a80df8d7421848981}{\$req\-\_\-build\-\_\-id} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$build\-\_\-idd)
+\item 
+\hyperlink{admin__view_2validate_2studentVal_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O students (student\-\_\-id, group\-\_\-id, room\-\_\-num, build\-\_\-id, first\-\_\-name, last\-\_\-name, gender, birthdate, cell\-\_\-phone, home\-\_\-phone, email, age, address, city, state, zip, lease, renewal, sub\-\_\-date, scott\-\_\-scholar, desired\-\_\-roommate1, desired\-\_\-roommate2, desired\-\_\-roommate3, desired\-\_\-roommate1\-\_\-ph, desired\-\_\-roommate2\-\_\-ph, desired\-\_\-roommate3\-\_\-ph, grade\-\_\-lvl, enrolled\-\_\-college, enrolled\-\_\-department, cleanliness, noise, guest\-\_\-sleeping, share\-\_\-belongings, bed\-\_\-time, wakeup\-\_\-time, gathering, drink\-\_\-alchohol, others\-\_\-drink, smoking, others\-\_\-smoking, noise\-\_\-rating, cleanliness\-\_\-rating, lifestyle\-\_\-rating, age\-\_\-rating, major\-\_\-rating, guest\-\_\-rating, comments, comments\-\_\-resolved, req\-\_\-room\-\_\-num, req\-\_\-bedroom\-\_\-letter, req\-\_\-build\-\_\-id) \-V\-A\-L\-U\-E\-S (\$student\-\_\-id, \$group\-\_\-id, \$room\-\_\-num, \$build\-\_\-id, \$first\-\_\-name, \$last\-\_\-name, \$gender, \$birthdate, \$cell\-\_\-phone, \$home\-\_\-phone, \$email, \$age, \$address, \$city, \$state, \$zip, \$lease, \$renewal, \$sub\-\_\-date, \$scott\-\_\-scholar, \$desired\-\_\-roommate1, \$desired\-\_\-roommate2, \$desired\-\_\-roommate3, \$desired\-\_\-roommate1\-\_\-ph, \$desired\-\_\-roommate2\-\_\-ph, \$desired\-\_\-roommate3\-\_\-ph, \$grade\-\_\-lvl, \$enrolled\-\_\-college, \$enrolled\-\_\-department, \$cleanliness, \$noise, \$guest\-\_\-sleeping, \$share\-\_\-belongings, \$bed\-\_\-time, \$wakeup\-\_\-time, \$gathering, \$drink\-\_\-alchohol, \$others\-\_\-drink, \$smoking, \$others\-\_\-smoking, \$noise\-\_\-rating, \$cleanliness\-\_\-rating, \$lifestyle\-\_\-rating, \$age\-\_\-rating, \$major\-\_\-rating, \$guest\-\_\-rating, \$comments, \$comments\-\_\-resolved, \$req\-\_\-room\-\_\-num ,\$req\-\_\-bedroom\-\_\-letter,\$req\-\_\-build\-\_\-id)\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{admin__view_2validate_2studentVal_8php_aa9cc64b4d1f994b0e4e2437b8bb61c96}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$\-\_\-req\-\_\-building\-\_\-letter@{\$\-\_\-req\-\_\-building\-\_\-letter}}
+\index{\$\-\_\-req\-\_\-building\-\_\-letter@{\$\-\_\-req\-\_\-building\-\_\-letter}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$\-\_\-req\-\_\-building\-\_\-letter}]{\setlength{\rightskip}{0pt plus 5cm}\$\-\_\-req\-\_\-building\-\_\-letter = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'req\-\_\-build\-\_\-letter'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_aa9cc64b4d1f994b0e4e2437b8bb61c96}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a653579f1800dead9ae026af236859831}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$address1@{\$address1}}
+\index{\$address1@{\$address1}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$address1}]{\setlength{\rightskip}{0pt plus 5cm}\$address1 = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'address1'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a653579f1800dead9ae026af236859831}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a914305af9ec7e49528f07f35a8e8c6a9}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$address2@{\$address2}}
+\index{\$address2@{\$address2}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$address2}]{\setlength{\rightskip}{0pt plus 5cm}\$address2 = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'address2'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a914305af9ec7e49528f07f35a8e8c6a9}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a69122fb82424ff3bb0780b56f8bc8e6d}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$age\-\_\-rating@{\$age\-\_\-rating}}
+\index{\$age\-\_\-rating@{\$age\-\_\-rating}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$age\-\_\-rating}]{\setlength{\rightskip}{0pt plus 5cm}\$age\-\_\-rating = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'age\-\_\-rating'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a69122fb82424ff3bb0780b56f8bc8e6d}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a08edd61848021bc8ed4c15804842d5fb}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$bed\-\_\-time@{\$bed\-\_\-time}}
+\index{\$bed\-\_\-time@{\$bed\-\_\-time}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$bed\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}\$bed\-\_\-time = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'bed\-\_\-time'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a08edd61848021bc8ed4c15804842d5fb}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a1d5a040d6cd65b40daa47911e18adbb0}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$birthdate@{\$birthdate}}
+\index{\$birthdate@{\$birthdate}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$birthdate}]{\setlength{\rightskip}{0pt plus 5cm}\$birthdate = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'birthdate'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a1d5a040d6cd65b40daa47911e18adbb0}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a4003cf8da4c94911cef7e69853cbac42}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$\-B\-U\-I\-L\-D\-\_\-\-I\-D@{\$\-B\-U\-I\-L\-D\-\_\-\-I\-D}}
+\index{\$\-B\-U\-I\-L\-D\-\_\-\-I\-D@{\$\-B\-U\-I\-L\-D\-\_\-\-I\-D}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$\-B\-U\-I\-L\-D\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$\-B\-U\-I\-L\-D\-\_\-\-I\-D = \char`\"{}';\char`\"{}}}\label{admin__view_2validate_2studentVal_8php_a4003cf8da4c94911cef7e69853cbac42}
+\-S\-Q\-L statement to select building id based on complex name and building letter \hypertarget{admin__view_2validate_2studentVal_8php_a04f4e771f2239bf8a55f2ee7580a9609}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$cell\-\_\-phone@{\$cell\-\_\-phone}}
+\index{\$cell\-\_\-phone@{\$cell\-\_\-phone}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$cell\-\_\-phone}]{\setlength{\rightskip}{0pt plus 5cm}\$cell\-\_\-phone = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'cell\-\_\-phone'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a04f4e771f2239bf8a55f2ee7580a9609}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a5b9ddd3e3a69d8901270064346bdef49}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$city@{\$city}}
+\index{\$city@{\$city}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$city}]{\setlength{\rightskip}{0pt plus 5cm}\$city = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'city'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a5b9ddd3e3a69d8901270064346bdef49}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a7a259082f57125b6bd143f3387a5f655}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$cleanliness@{\$cleanliness}}
+\index{\$cleanliness@{\$cleanliness}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$cleanliness}]{\setlength{\rightskip}{0pt plus 5cm}\$cleanliness = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'cleanliness'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a7a259082f57125b6bd143f3387a5f655}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_aa181e44821f174a8b2551d5c30c03c1d}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$cleanliness\-\_\-rating@{\$cleanliness\-\_\-rating}}
+\index{\$cleanliness\-\_\-rating@{\$cleanliness\-\_\-rating}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$cleanliness\-\_\-rating}]{\setlength{\rightskip}{0pt plus 5cm}\$cleanliness\-\_\-rating = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'cleanliness\-\_\-rating'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_aa181e44821f174a8b2551d5c30c03c1d}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a35e8cdeb473a5eb016fea893d14de951}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$comments@{\$comments}}
+\index{\$comments@{\$comments}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$comments}]{\setlength{\rightskip}{0pt plus 5cm}\$comments = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'comments'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a35e8cdeb473a5eb016fea893d14de951}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a9c454efdb922da9127af82e94ee399a1}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$desired\-\_\-roommate1@{\$desired\-\_\-roommate1}}
+\index{\$desired\-\_\-roommate1@{\$desired\-\_\-roommate1}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$desired\-\_\-roommate1}]{\setlength{\rightskip}{0pt plus 5cm}\$desired\-\_\-roommate1 = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate1'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a9c454efdb922da9127af82e94ee399a1}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a5982e6f9a315f1a035bc2b440b67f187}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$desired\-\_\-roommate1\-\_\-ph@{\$desired\-\_\-roommate1\-\_\-ph}}
+\index{\$desired\-\_\-roommate1\-\_\-ph@{\$desired\-\_\-roommate1\-\_\-ph}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$desired\-\_\-roommate1\-\_\-ph}]{\setlength{\rightskip}{0pt plus 5cm}\$desired\-\_\-roommate1\-\_\-ph = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate\-\_\-ph1'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a5982e6f9a315f1a035bc2b440b67f187}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_aeaab2ccbd0e9359193a66a1c07606bf8}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$desired\-\_\-roommate2@{\$desired\-\_\-roommate2}}
+\index{\$desired\-\_\-roommate2@{\$desired\-\_\-roommate2}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$desired\-\_\-roommate2}]{\setlength{\rightskip}{0pt plus 5cm}\$desired\-\_\-roommate2 = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate2'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_aeaab2ccbd0e9359193a66a1c07606bf8}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_ac9a221d01a865e9db4fd8d517db1f5f1}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$desired\-\_\-roommate2\-\_\-ph@{\$desired\-\_\-roommate2\-\_\-ph}}
+\index{\$desired\-\_\-roommate2\-\_\-ph@{\$desired\-\_\-roommate2\-\_\-ph}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$desired\-\_\-roommate2\-\_\-ph}]{\setlength{\rightskip}{0pt plus 5cm}\$desired\-\_\-roommate2\-\_\-ph = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate\-\_\-ph2'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_ac9a221d01a865e9db4fd8d517db1f5f1}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a6c6068b6183d30d97211b0acc4c44e97}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$desired\-\_\-roommate3@{\$desired\-\_\-roommate3}}
+\index{\$desired\-\_\-roommate3@{\$desired\-\_\-roommate3}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$desired\-\_\-roommate3}]{\setlength{\rightskip}{0pt plus 5cm}\$desired\-\_\-roommate3 = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate3'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a6c6068b6183d30d97211b0acc4c44e97}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a0e28d9f5935e6f64d0b142410bb2e5e6}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$desired\-\_\-roommate3\-\_\-ph@{\$desired\-\_\-roommate3\-\_\-ph}}
+\index{\$desired\-\_\-roommate3\-\_\-ph@{\$desired\-\_\-roommate3\-\_\-ph}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$desired\-\_\-roommate3\-\_\-ph}]{\setlength{\rightskip}{0pt plus 5cm}\$desired\-\_\-roommate3\-\_\-ph = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'desired\-\_\-roommate\-\_\-ph3'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a0e28d9f5935e6f64d0b142410bb2e5e6}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a155e4a24650f8440d97423fe1d652eb7}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$drink\-\_\-alchohol@{\$drink\-\_\-alchohol}}
+\index{\$drink\-\_\-alchohol@{\$drink\-\_\-alchohol}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$drink\-\_\-alchohol}]{\setlength{\rightskip}{0pt plus 5cm}\$drink\-\_\-alchohol = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'drink\-\_\-alchohol'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a155e4a24650f8440d97423fe1d652eb7}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_ad634f418b20382e2802f80532d76d3cd}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$email@{\$email}}
+\index{\$email@{\$email}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$email}]{\setlength{\rightskip}{0pt plus 5cm}\$email = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'email'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_ad634f418b20382e2802f80532d76d3cd}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a4918f9ca4d470ccadff836850844ea58}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$enrolled\-\_\-college@{\$enrolled\-\_\-college}}
+\index{\$enrolled\-\_\-college@{\$enrolled\-\_\-college}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$enrolled\-\_\-college}]{\setlength{\rightskip}{0pt plus 5cm}\$enrolled\-\_\-college = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'enrolled\-\_\-college'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a4918f9ca4d470ccadff836850844ea58}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a2c21a55b0bd902797539f840b7bf94dc}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$enrolled\-\_\-department@{\$enrolled\-\_\-department}}
+\index{\$enrolled\-\_\-department@{\$enrolled\-\_\-department}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$enrolled\-\_\-department}]{\setlength{\rightskip}{0pt plus 5cm}\$enrolled\-\_\-department = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'enrolled\-\_\-department'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a2c21a55b0bd902797539f840b7bf94dc}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_ae0a75279f3627fb32311bc3352c89fe6}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$first\-\_\-name@{\$first\-\_\-name}}
+\index{\$first\-\_\-name@{\$first\-\_\-name}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$first\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}\$first\-\_\-name = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'first\-\_\-name'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_ae0a75279f3627fb32311bc3352c89fe6}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a0b341ac1da1798a6803878383a2a6086}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$gathering@{\$gathering}}
+\index{\$gathering@{\$gathering}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$gathering}]{\setlength{\rightskip}{0pt plus 5cm}\$gathering = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'gathering'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a0b341ac1da1798a6803878383a2a6086}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a0f1d7cfb9dc6f494b9014885205fc47e}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$gender@{\$gender}}
+\index{\$gender@{\$gender}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$gender}]{\setlength{\rightskip}{0pt plus 5cm}\$gender = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'gender'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a0f1d7cfb9dc6f494b9014885205fc47e}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a379014f2a48154febd53d5f95871dc14}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$grade\-\_\-lvl@{\$grade\-\_\-lvl}}
+\index{\$grade\-\_\-lvl@{\$grade\-\_\-lvl}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$grade\-\_\-lvl}]{\setlength{\rightskip}{0pt plus 5cm}\$grade\-\_\-lvl = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'grade\-\_\-lvl'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a379014f2a48154febd53d5f95871dc14}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_ade1951cffb40e000076f5d81e34e41d8}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$guest\-\_\-rating@{\$guest\-\_\-rating}}
+\index{\$guest\-\_\-rating@{\$guest\-\_\-rating}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$guest\-\_\-rating}]{\setlength{\rightskip}{0pt plus 5cm}\$guest\-\_\-rating = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'guest\-\_\-rating'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_ade1951cffb40e000076f5d81e34e41d8}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a30ca6680bf78675c5916e0c0114191fb}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$guest\-\_\-sleeping@{\$guest\-\_\-sleeping}}
+\index{\$guest\-\_\-sleeping@{\$guest\-\_\-sleeping}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$guest\-\_\-sleeping}]{\setlength{\rightskip}{0pt plus 5cm}\$guest\-\_\-sleeping = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'guest\-\_\-sleeping'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a30ca6680bf78675c5916e0c0114191fb}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_af8981335f6e9218851c725816b60158e}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$home\-\_\-phone@{\$home\-\_\-phone}}
+\index{\$home\-\_\-phone@{\$home\-\_\-phone}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$home\-\_\-phone}]{\setlength{\rightskip}{0pt plus 5cm}\$home\-\_\-phone = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'home\-\_\-phone'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_af8981335f6e9218851c725816b60158e}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a7aa024f049337e3bb2365d4007262847}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$last\-\_\-name@{\$last\-\_\-name}}
+\index{\$last\-\_\-name@{\$last\-\_\-name}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$last\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}\$last\-\_\-name = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'last\-\_\-name'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a7aa024f049337e3bb2365d4007262847}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_ae95126b1133cf958aaf8a31b0283364c}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$lease@{\$lease}}
+\index{\$lease@{\$lease}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$lease}]{\setlength{\rightskip}{0pt plus 5cm}\$lease = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'lease'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_ae95126b1133cf958aaf8a31b0283364c}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_aeaacae1f81e4a03e1332c1e322315730}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$lifestyle\-\_\-rating@{\$lifestyle\-\_\-rating}}
+\index{\$lifestyle\-\_\-rating@{\$lifestyle\-\_\-rating}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$lifestyle\-\_\-rating}]{\setlength{\rightskip}{0pt plus 5cm}\$lifestyle\-\_\-rating = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'lifestyle\-\_\-rating'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_aeaacae1f81e4a03e1332c1e322315730}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a658e327f04cd3d91c4a064f7f496ccef}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$major\-\_\-rating@{\$major\-\_\-rating}}
+\index{\$major\-\_\-rating@{\$major\-\_\-rating}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$major\-\_\-rating}]{\setlength{\rightskip}{0pt plus 5cm}\$major\-\_\-rating = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'major\-\_\-rating'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a658e327f04cd3d91c4a064f7f496ccef}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a2774f17621ab4d3b64411f86c88df407}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$noise@{\$noise}}
+\index{\$noise@{\$noise}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$noise}]{\setlength{\rightskip}{0pt plus 5cm}\$noise = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'noise'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a2774f17621ab4d3b64411f86c88df407}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a92d14fe0154487caa69f117986fb08da}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$noise\-\_\-rating@{\$noise\-\_\-rating}}
+\index{\$noise\-\_\-rating@{\$noise\-\_\-rating}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$noise\-\_\-rating}]{\setlength{\rightskip}{0pt plus 5cm}\$noise\-\_\-rating = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'noise\-\_\-rating'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a92d14fe0154487caa69f117986fb08da}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_ad8d98a0ffa836c8f5ff6cd94cc18dca1}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$others\-\_\-drink@{\$others\-\_\-drink}}
+\index{\$others\-\_\-drink@{\$others\-\_\-drink}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$others\-\_\-drink}]{\setlength{\rightskip}{0pt plus 5cm}\$others\-\_\-drink = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'others\-\_\-drink'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_ad8d98a0ffa836c8f5ff6cd94cc18dca1}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a41f287196869fc73324563f84fc1ea73}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$others\-\_\-smoking@{\$others\-\_\-smoking}}
+\index{\$others\-\_\-smoking@{\$others\-\_\-smoking}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$others\-\_\-smoking}]{\setlength{\rightskip}{0pt plus 5cm}\$others\-\_\-smoking = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'others\-\_\-smoking'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a41f287196869fc73324563f84fc1ea73}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a1a67d224b0f0712693c41c17f2c85183}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$renewal@{\$renewal}}
+\index{\$renewal@{\$renewal}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$renewal}]{\setlength{\rightskip}{0pt plus 5cm}\$renewal = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'renewal'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a1a67d224b0f0712693c41c17f2c85183}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_adab4b11b8fdbb9622f5c281bcdcc8c5d}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$req\-\_\-bedroom\-\_\-letter@{\$req\-\_\-bedroom\-\_\-letter}}
+\index{\$req\-\_\-bedroom\-\_\-letter@{\$req\-\_\-bedroom\-\_\-letter}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$req\-\_\-bedroom\-\_\-letter}]{\setlength{\rightskip}{0pt plus 5cm}\$req\-\_\-bedroom\-\_\-letter = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'req\-\_\-bedroom\-\_\-letter'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_adab4b11b8fdbb9622f5c281bcdcc8c5d}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_aa7111d653b27e29a80df8d7421848981}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$req\-\_\-build\-\_\-id@{\$req\-\_\-build\-\_\-id}}
+\index{\$req\-\_\-build\-\_\-id@{\$req\-\_\-build\-\_\-id}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$req\-\_\-build\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while} (\$build\-\_\-id\-\_\-tempp=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-9)) \$req\-\_\-build\-\_\-id = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$build\-\_\-idd)}}\label{admin__view_2validate_2studentVal_8php_aa7111d653b27e29a80df8d7421848981}
+\hypertarget{admin__view_2validate_2studentVal_8php_a36592f31d5a2db44ff8fdf35ef05776d}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$req\-\_\-building\-\_\-name@{\$req\-\_\-building\-\_\-name}}
+\index{\$req\-\_\-building\-\_\-name@{\$req\-\_\-building\-\_\-name}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$req\-\_\-building\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}\$req\-\_\-building\-\_\-name = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'req\-\_\-build\-\_\-name'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a36592f31d5a2db44ff8fdf35ef05776d}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a03ada09603995a51dc132367698e687d}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$req\-\_\-room\-\_\-num@{\$req\-\_\-room\-\_\-num}}
+\index{\$req\-\_\-room\-\_\-num@{\$req\-\_\-room\-\_\-num}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$req\-\_\-room\-\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}\$req\-\_\-room\-\_\-num = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'req\-\_\-room\-\_\-num'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a03ada09603995a51dc132367698e687d}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a0b3f63d6f969a6ad92963ceae90afab9}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$result\-\_\-9@{\$result\-\_\-9}}
+\index{\$result\-\_\-9@{\$result\-\_\-9}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$result\-\_\-9}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-9 = mysqli\-\_\-query(\$dbconn, \$\-B\-U\-I\-L\-D\-\_\-\-I\-D)}}\label{admin__view_2validate_2studentVal_8php_a0b3f63d6f969a6ad92963ceae90afab9}
+\hypertarget{admin__view_2validate_2studentVal_8php_aeba3fa7111a05390371249cf7515b517}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$scott\-\_\-scholar@{\$scott\-\_\-scholar}}
+\index{\$scott\-\_\-scholar@{\$scott\-\_\-scholar}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$scott\-\_\-scholar}]{\setlength{\rightskip}{0pt plus 5cm}\$scott\-\_\-scholar = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'scott\-\_\-scholar'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_aeba3fa7111a05390371249cf7515b517}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_ad62de11903542434007800bf0bc24594}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$share\-\_\-belongings@{\$share\-\_\-belongings}}
+\index{\$share\-\_\-belongings@{\$share\-\_\-belongings}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$share\-\_\-belongings}]{\setlength{\rightskip}{0pt plus 5cm}\$share\-\_\-belongings = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'share\-\_\-belongings'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_ad62de11903542434007800bf0bc24594}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a266c5c8c450a524f2b62297da83a6461}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$smoking@{\$smoking}}
+\index{\$smoking@{\$smoking}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$smoking}]{\setlength{\rightskip}{0pt plus 5cm}\$smoking = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'smoking'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a266c5c8c450a524f2b62297da83a6461}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a047170d6020a882807665812a27e2525}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O students (student\-\_\-id, group\-\_\-id, room\-\_\-num, build\-\_\-id, first\-\_\-name, last\-\_\-name, gender, birthdate, cell\-\_\-phone, home\-\_\-phone, email, age, address, city, state, zip, lease, renewal, sub\-\_\-date, scott\-\_\-scholar, desired\-\_\-roommate1, desired\-\_\-roommate2, desired\-\_\-roommate3, desired\-\_\-roommate1\-\_\-ph, desired\-\_\-roommate2\-\_\-ph, desired\-\_\-roommate3\-\_\-ph, grade\-\_\-lvl, enrolled\-\_\-college, enrolled\-\_\-department, cleanliness, noise, guest\-\_\-sleeping, share\-\_\-belongings, bed\-\_\-time, wakeup\-\_\-time, gathering, drink\-\_\-alchohol, others\-\_\-drink, smoking, others\-\_\-smoking, noise\-\_\-rating, cleanliness\-\_\-rating, lifestyle\-\_\-rating, age\-\_\-rating, major\-\_\-rating, guest\-\_\-rating, comments, comments\-\_\-resolved, req\-\_\-room\-\_\-num, req\-\_\-bedroom\-\_\-letter, req\-\_\-build\-\_\-id) \-V\-A\-L\-U\-E\-S (\$student\-\_\-id, \$group\-\_\-id, \$room\-\_\-num, \$build\-\_\-id, \$first\-\_\-name, \$last\-\_\-name, \$gender, \$birthdate, \$cell\-\_\-phone, \$home\-\_\-phone, \$email, \$age, \$address, \$city, \$state, \$zip, \$lease, \$renewal, \$sub\-\_\-date, \$scott\-\_\-scholar, \$desired\-\_\-roommate1, \$desired\-\_\-roommate2, \$desired\-\_\-roommate3, \$desired\-\_\-roommate1\-\_\-ph, \$desired\-\_\-roommate2\-\_\-ph, \$desired\-\_\-roommate3\-\_\-ph, \$grade\-\_\-lvl, \$enrolled\-\_\-college, \$enrolled\-\_\-department, \$cleanliness, \$noise, \$guest\-\_\-sleeping, \$share\-\_\-belongings, \$bed\-\_\-time, \$wakeup\-\_\-time, \$gathering, \$drink\-\_\-alchohol, \$others\-\_\-drink, \$smoking, \$others\-\_\-smoking, \$noise\-\_\-rating, \$cleanliness\-\_\-rating, \$lifestyle\-\_\-rating, \$age\-\_\-rating, \$major\-\_\-rating, \$guest\-\_\-rating, \$comments, \$comments\-\_\-resolved, \$req\-\_\-room\-\_\-num ,\$req\-\_\-bedroom\-\_\-letter,\$req\-\_\-build\-\_\-id)\char`\"{}}}\label{admin__view_2validate_2studentVal_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L query to insert variables from student form into the database \hypertarget{admin__view_2validate_2studentVal_8php_ae82306c4f2d17d8dd5c7d8d916b33bed}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$state@{\$state}}
+\index{\$state@{\$state}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$state}]{\setlength{\rightskip}{0pt plus 5cm}\$state = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'state'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_ae82306c4f2d17d8dd5c7d8d916b33bed}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a70806170d1b60ef7fb76db46f2bce5e3}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$student\-\_\-id@{\$student\-\_\-id}}
+\index{\$student\-\_\-id@{\$student\-\_\-id}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$student\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}\$student\-\_\-id = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'student\-\_\-id'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a70806170d1b60ef7fb76db46f2bce5e3}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a08dd3f8caa6a5a9037559298cfd9e5cc}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$sub\-\_\-date@{\$sub\-\_\-date}}
+\index{\$sub\-\_\-date@{\$sub\-\_\-date}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$sub\-\_\-date}]{\setlength{\rightskip}{0pt plus 5cm}\$sub\-\_\-date = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'sub\-\_\-date'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_a08dd3f8caa6a5a9037559298cfd9e5cc}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{admin__view_2validate_2studentVal_8php_a0587674d27d00ef497e08e53ccf45bbb}
+recieve \-P\-O\-S\-T variables from student form, replace spaces with \char`\"{}\-\_\-\char`\"{}, escape strings to avoid \-S\-Q\-L injections \-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. \hypertarget{admin__view_2validate_2studentVal_8php_ade31df5f8971826d6902226d01975007}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$wakeup\-\_\-time@{\$wakeup\-\_\-time}}
+\index{\$wakeup\-\_\-time@{\$wakeup\-\_\-time}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$wakeup\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}\$wakeup\-\_\-time = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'wakeup\-\_\-time'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_ade31df5f8971826d6902226d01975007}
+\-Gets the student from the student registration form \hypertarget{admin__view_2validate_2studentVal_8php_aa91be3142812d8cd4221c6f54555079b}{\index{admin\-\_\-view/validate/student\-Val.\-php@{admin\-\_\-view/validate/student\-Val.\-php}!\$zip@{\$zip}}
+\index{\$zip@{\$zip}!admin_view/validate/studentVal.php@{admin\-\_\-view/validate/student\-Val.\-php}}
+\subsubsection[{\$zip}]{\setlength{\rightskip}{0pt plus 5cm}\$zip = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'zip'\mbox{]})}}\label{admin__view_2validate_2studentVal_8php_aa91be3142812d8cd4221c6f54555079b}
+\-Gets the student from the student registration form 

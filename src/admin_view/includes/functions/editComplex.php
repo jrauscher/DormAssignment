@@ -6,8 +6,8 @@
 			<th align="left">				
 				<select name="complex">
 					<?php
-						$complex3 = "SELECT building_name FROM building WHERE complex=1";
-						$complexRes = mysqli_query($dbconn, $complex3);
+						$complex3 = "SELECT building_name FROM building WHERE complex=1"; /**< SQL string that gets all building names from the builings table. */
+						$complexRes = mysqli_query($dbconn, $complex3); /**< Runs the SQL Query in $complex3. */
 						while( $row = mysqli_fetch_assoc($complexRes)){
 							foreach($row as $val){
 								echo '<option value="'.$val.'">';

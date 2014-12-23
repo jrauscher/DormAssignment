@@ -1,6 +1,6 @@
 #DormAssignment
 ###Version:
-1.0
+1.1
 
 ###System Overview:
 DormAssignment is an application that groups students together based on there preferences and assigns them to a dorm room. 

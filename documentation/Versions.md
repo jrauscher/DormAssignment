@@ -1,3 +1,11 @@
+#DormAssignment 1.1 (12-15-2014)
+========
+###Documentation:
+- Added Doxygen. 
+- Commented all code using Doxygen standards. 
+
+-----------------------------------------------------------------------
+
 #DormAssignment 1.0 (12-15-2014)
 ========
 ###Bug Fixes:
@@ -64,7 +72,6 @@
 - Added database schema.<br/>
 
 -----------------------------------------------------------------------
-
 
 #DormAssignment 0.1 (10-5-2014)
 ========

@@ -1,19 +1,22 @@
 <?php
 	include ('../includes/svrConnect.php');
-	$was_errors = false;
-	$errors = array();
+	$was_errors = false; /**< True if there were errors in the form. */
+	$errors = array(); /**< Holds all of the errors that were found. */
 
 	//should be passed from login
 //	$EMAIL = "stdFname2@testemail.com";
 	$EMAIL = "five@five.com";
 	$std_build2 = "I";
 	
-	$sqlStdID = "SELECT student_id FROM users WHERE username ='" . $EMAIL . "'";
-	$sqlStdComplex 	= "SELECT building_name FROM users WHERE username ='" . $EMAIL . "'";
-	$result_6 = mysqli_query($dbconn, $sqlStdID);
-	$result_7 = mysqli_query($dbconn, $sqlStdComplex);
-	if($std_id_temp = mysqli_fetch_assoc($result_6))
+	$sqlStdID = "SELECT student_id FROM users WHERE username ='" . $EMAIL . "'"; /**< SQL query to get the student id of the user with email(id) of $EMAIL*/
+	$sqlStdComplex 	= "SELECT building_name FROM users WHERE username ='" . $EMAIL . "'";/**<SQL query to get building name of the user with email(id) of $EMAIL */
+	$result_6 = mysqli_query($dbconn, $sqlStdID);/**< Holds the result of $sqlStdID*/
+	$result_7 = mysqli_query($dbconn, $sqlStdComplex);/**< Holds the result of $sqlStdComplex*/
+	if($std_id_temp = mysqli_fetch_assoc($result_6))/**< Save the student ids found to $std_id_temp*/
 	{
+		/**
+		* saves student id to $NUID if the value exists	
+		*/
 		foreach($std_id_temp as $std_id)
 		{	
 			if ($std_id)
@@ -27,9 +30,9 @@
 		$NUID = "Student not in DB";
 	}
 
-	if($std_comp_temp = mysqli_fetch_assoc($result_7))
+	if($std_comp_temp = mysqli_fetch_assoc($result_7))/**< Holds the complex name of the student provided*/
 	{
-		foreach($std_comp_temp as $std_comp)
+		foreach($std_comp_temp as $std_comp)/**<assgins the complex name to $COMPLEX if the value exists*/
 		{	
 			if ($std_comp)
 			{
@@ -41,8 +44,8 @@
 	{
 		$COMPLEX = "Student not in DB";
 	}
-	$sqlStdBuild = "SELECT building_letter FROM building WHERE building_name ='" . mysql_real_escape_string( $COMPLEX ) . "'";
-	$result_8 = mysqli_query($dbconn, $sqlStdBuild);
+	$sqlStdBuild = "SELECT building_letter FROM building WHERE building_name ='" . mysql_real_escape_string( $COMPLEX ) . "'";/**< SQL query to get building letter based on complex name*/
+	$result_8 = mysqli_query($dbconn, $sqlStdBuild);/**< Holds the result of $sqlStdBuild*/
 	
 
 	include ('../includes/student_header.html');
@@ -124,9 +127,9 @@
 							<?php
 								echo '<option value="" disabled="true" selected="true">Building</option>';
 								$iterate =1;
-								while($std_build_temp = mysqli_fetch_assoc($result_8))
+								while($std_build_temp = mysqli_fetch_assoc($result_8))/**< assigns the building letter to $std_build_temp*/
 								{
-									foreach($std_build_temp as $std_build)
+									foreach($std_build_temp as $std_build)/**< for each building display a select option*/
 									{
 										if ($iterate == 1)
 										{	
@@ -163,18 +166,18 @@
 								// take based on building selected
 								//$std_build2 = "1";
 								echo '<option disabled="true">ajax needed</option>';
-								$BUILD_ID = "SELECT build_id FROM building WHERE building_name ='" . $COMPLEX . "'AND building_letter ='". $std_build2 . "'";
+								$BUILD_ID = "SELECT build_id FROM building WHERE building_name ='" . $COMPLEX . "'AND building_letter ='". $std_build2 . "'";/**< SQL query to get building ID based on complex and building letter*/
 								$result_9 = mysqli_query($dbconn, $BUILD_ID);
-								while($build_id_tempp = mysqli_fetch_assoc($result_9))
+								while($build_id_tempp = mysqli_fetch_assoc($result_9))/**< Holds the value of $BUILD_ID*/
 								{
-									foreach($build_id_tempp as $build_idd)
+									foreach($build_id_tempp as $build_idd)/**< for each building ID display room as select option*/
 									{
-										$ROOMSS = "SELECT room_num FROM rooms WHERE build_id = '" . $build_idd . "'";
-										$result_10 = mysqli_query($dbconn, $ROOMSS);	
+										$ROOMSS = "SELECT room_num FROM rooms WHERE build_id = '" . $build_idd . "'";/**< SQL query to get rooms based on building ID*/
+										$result_10 = mysqli_query($dbconn, $ROOMSS);/**< HOlds the result of $ROOMSS*/
 									
-										while($std_rooms_temp = mysqli_fetch_assoc($result_10))
+										while($std_rooms_temp = mysqli_fetch_assoc($result_10))/**< assigns rooms to $std_rooms_temp*/
 										{
-											foreach($std_rooms_temp as $std_roomm)
+											foreach($std_rooms_temp as $std_roomm) /*< for each room display as select option */
 											{	
 												if ($std_roomm)
 												{
@@ -225,7 +228,7 @@
 			<table>
 				 <tr>
 				 <?php
-				   echo'<td>What will be your grade level be for '. date("Y") . '-' .date('Y', strtotime('+1 year')) .' at UNO?</td>';
+				   echo'<td>What will be your grade level be for '. date("Y") . '-' .date('Y', strtotime('+1 year')) .' at UNO?</td>';/**< display year based on currect day*/
 				  ?>
 				   <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 				   <td>
@@ -271,7 +274,7 @@
 			 	</tr>
 			</table>
 			<table id="form_questions_table">
-			<?php 
+			<?php /** variables preparetion for questions forming function*/ 
 				$q1  = "On average, what time do you normally go to sleep?";
 				$q2  = "On average, what time do you normally wake up?";
 				$q3  = "How would you describe yourself?";
@@ -331,7 +334,7 @@
 				$min9  = "(Strongly Mind)";
 				$min10 = "(Never)";
 				$min11 = "(Strongly Mind)";
-				
+				/* make the questions with the provided variables */
 				make_question($q1,$min1,$L1,$max1,$name1);
 				make_question($q2,$min2,$L2,$max2,$name2);
 				make_question($q3,$min3,$L3,$max3,$name3);
@@ -372,7 +375,9 @@
 </div>
 
 <?php
-	
+	/* function that takes question, min and max value
+	prints the questions accordingly
+*/
 	function make_question($question,$min,$val,$max,$name)
 	{
 		$i =0;
@@ -401,7 +406,7 @@
 		}
 	echo '<td align="left">'. $max . '</td></tr>';
 	}
-
+/* function that takes priority name and it's string and prints priority */
 	function priority($name, $show_string)
 	{
   		echo '<tr>';

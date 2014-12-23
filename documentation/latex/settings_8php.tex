@@ -1,0 +1,176 @@
+\hypertarget{settings_8php}{\section{src/admin\-\_\-view/settings.php \-File \-Reference}
+\label{settings_8php}\index{src/admin\-\_\-view/settings.\-php@{src/admin\-\_\-view/settings.\-php}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(isset(\$validate)\&\&\$validate!=null \*
+\&\&\$validate!= '') \hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(\$page==\char`\"{}a\-Building\char`\"{}) \*
+if(\$page==\char`\"{}r\-Building\char`\"{}) if(\$page==\char`\"{}e\-Building\char`\"{}) \*
+if(\$page==\char`\"{}build\-Input\char`\"{}) if(\$page==\char`\"{}a\-Campus\char`\"{}) \*
+if(\$page==\char`\"{}r\-Campus\char`\"{}) if(\$page==\char`\"{}e\-Campus\char`\"{}) \*
+if(\$page==\char`\"{}campus\-Input\char`\"{}) if(\$page==\char`\"{}n\-Settings\char`\"{}) \*
+if(\$page==\char`\"{}c\-Email\char`\"{}) if(\$page==\char`\"{}a\-Student\char`\"{}) \*
+if(\$page==\char`\"{}r\-Student\char`\"{}) if(\$page==\char`\"{}auto\-Student\char`\"{}) \*
+if(\$page==\char`\"{}a\-Accounts\char`\"{}) if(\$page==\char`\"{}r\-Accounts\char`\"{}) \*
+if(\$page==\char`\"{}m\-Accounts\char`\"{}) if(\$page==\char`\"{}a\-Complex\char`\"{}) \*
+if(\$page==\char`\"{}r\-Complex\char`\"{}) if(\$page==\char`\"{}e\-Complex\char`\"{}) \*
+if(\$page==\char`\"{}complex\-Input\char`\"{}) if(\$page==\char`\"{}a\-Rooms\char`\"{}) \*
+if(\$page==\char`\"{}r\-Rooms\char`\"{}) if(\$page==\char`\"{}e\-Rooms\char`\"{}) \*
+if(\$page==\char`\"{}rooms\-Input\char`\"{}) if(\$page==14) \*
+\hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(\$page==15) \hyperlink{settings_8php_a3fe408882ee0f65b33c57642d9b6d505}{print\-Result\-Table} (\$res)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{settings_8php_ae8f928f475945454d3cfd1d4214c09f2}{\$was\-\_\-errors} = false
+\item 
+\hyperlink{settings_8php_ab24faf4aa647cdcee494fc48524ad4ff}{\$errors} = array()
+\item 
+\hyperlink{settings_8php_a430365aa824380ed32157dab98577b5b}{\$buildings} = \char`\"{}\-S\-E\-L\-E\-C\-T build\-\_\-id \-A\-S \-I\-D, building\-\_\-name \-A\-S '\-Building \-Name', building\-\_\-letter \-A\-S \-Letter, campus \-A\-S \-Campus, num\-\_\-rooms \-A\-S '\-Number of \-Rooms', floor \-A\-S \-Floors, lease \-A\-S '\-Lease \-Type', \-R\-A\-\_\-rooms \-A\-S '\-R\-A \-Rooms', handicapped\-\_\-rooms \-A\-S '\-Handicapped \-Rooms' \-F\-R\-O\-M building \-W\-H\-E\-R\-E complex=0 \-O\-R\-D\-E\-R \-B\-Y building\-\_\-name\char`\"{}
+\item 
+\hyperlink{settings_8php_a6f0655994f3941d6ab50f681032f899b}{\$campus} = \char`\"{}\-S\-E\-L\-E\-C\-T \-D\-I\-S\-T\-I\-N\-C\-T \-Campus \-F\-R\-O\-M building\char`\"{}
+\item 
+\hyperlink{settings_8php_a5a5a2522ab0ea5c503744aa937fac0e2}{\$student} = \char`\"{}\-S\-E\-L\-E\-C\-T student\-\_\-\-I\-D \-A\-S \-I\-D, first\-\_\-name \-A\-S '\-First \-Name', last\-\_\-name \-A\-S '\-Last \-Name', email \-A\-S '\-Email' \-F\-R\-O\-M students\char`\"{}
+\item 
+\hyperlink{settings_8php_a28005d22fa7ef2dfe215ad886b497d9c}{\$users} = \char`\"{}\-S\-E\-L\-E\-C\-T student\-\_\-id \-A\-S \-I\-D, username \-A\-S \-Username \-F\-R\-O\-M users\char`\"{}
+\item 
+\hyperlink{settings_8php_ae508e19115d8c43284ba5177298a107b}{\$admins} = \char`\"{}\-S\-E\-L\-E\-C\-T admin\-\_\-id \-A\-S \-I\-D, username \-A\-S \-Username \-F\-R\-O\-M admins\char`\"{}
+\item 
+\hyperlink{settings_8php_a088b05600068f1f98fec9e435a59fa4a}{\$notif} = \char`\"{}\-S\-E\-L\-E\-C\-T form\-\_\-name \-A\-S '\-Form \-Name', deadline\-\_\-date \-A\-S \-Deadline, warning\-\_\-date \-A\-S '\-Warning \-Date' \-F\-R\-O\-M form\-\_\-settings\char`\"{}
+\item 
+\hyperlink{settings_8php_a35bd04dbb758885cf1cdf47f4d9d338d}{\$complex\-\_\-names} = \char`\"{}\-S\-E\-L\-E\-C\-T \-D\-I\-S\-T\-I\-N\-C\-T building\-\_\-name \-F\-R\-O\-M building \-W\-H\-E\-R\-E complex=1\char`\"{}
+\item 
+\hyperlink{settings_8php_a1b9130a7b15f9d24c6c7b9f180f58c35}{\$complex\-\_\-names2} = \char`\"{}\-S\-E\-L\-E\-C\-T \-D\-I\-S\-T\-I\-N\-C\-T building\-\_\-name \-A\-S '\-Complex \-Name' \-F\-R\-O\-M building \-W\-H\-E\-R\-E complex=1\char`\"{}
+\item 
+\hyperlink{settings_8php_aeeee3257142a61e1147e755245933bc2}{\$form\-Names} = \char`\"{}\-S\-E\-L\-E\-C\-T \-D\-I\-S\-T\-I\-N\-C\-T form\-\_\-name \-F\-R\-O\-M form\-\_\-settings\char`\"{}
+\item 
+\hyperlink{settings_8php_aeba2ab722cedda53dbb7ec1a59f45550}{\$error} = \char`\"{}\-S\-E\-L\-E\-C\-T type \-A\-S \-Type \-F\-R\-O\-M errors\char`\"{}
+\item 
+\hyperlink{settings_8php_ad13e1ac4736397ee0c0755924e4a2167}{\$res\-Buildings} = mysqli\-\_\-query(\$dbconn, \$buildings)
+\item 
+\hyperlink{settings_8php_a3442ba39121c93784426f695600100ed}{\$res\-Form\-Names} = mysqli\-\_\-query(\$dbconn, \$form\-Names)
+\item 
+\hyperlink{settings_8php_a926be07138c512547f16ff9996acaf0b}{\$res\-Camp} = mysqli\-\_\-query(\$dbconn, \$campus)
+\item 
+\hyperlink{settings_8php_aeef360c79af90d6206e9afd0c3fb2f47}{\$res\-Camp2} = mysqli\-\_\-query(\$dbconn, \$campus)
+\item 
+\hyperlink{settings_8php_a6c39affecebae5119fae4099069c709b}{\$res\-Student} = mysqli\-\_\-query(\$dbconn, \$student)
+\item 
+\hyperlink{settings_8php_aee2bc5dc8abe81b77e854b5714fe4182}{\$res\-Users} = mysqli\-\_\-query(\$dbconn, \$users)
+\item 
+\hyperlink{settings_8php_a01f28ab79ba230a18421177d38277f7c}{\$res\-Admins} = mysqli\-\_\-query(\$dbconn, \$admins)
+\item 
+\hyperlink{settings_8php_ac1efa906f5ef5a29c1f02d9afc08e3df}{\$res\-Forms} = mysqli\-\_\-query(\$dbconn, \$notif)
+\item 
+\hyperlink{settings_8php_a25ec02534214977602829622b78b5d78}{\$complex} = mysqli\-\_\-query(\$dbconn, \$complex\-\_\-names)
+\item 
+\hyperlink{settings_8php_a0f1e56ea9ecb95074e133ed789db0d70}{\$complex2} = mysqli\-\_\-query(\$dbconn, \$complex\-\_\-names2)
+\item 
+\hyperlink{settings_8php_a1e38f7424dfc03f443c41bf83e9e90bd}{\$res\-Errors} = mysqli\-\_\-query(\$dbconn, \$error)
+\item 
+\hyperlink{settings_8php_a320b75b46e1832c327d9d47b4cea9e7d}{\$validate} = 0
+\item 
+\hyperlink{settings_8php_a0a44e6760141442bb439b1ab1395d8ff}{\$page} = \char`\"{}\-Main\char`\"{}
+\item 
+\hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(isset(\$\-\_\-\-G\-E\-T\mbox{[}'validate'\mbox{]})) \*
+\hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(isset(\$\-\_\-\-G\-E\-T\mbox{[}'page'\mbox{]})) \hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(isset(\$\-\_\-\-G\-E\-T\mbox{[}'error'\mbox{]})) \hyperlink{settings_8php_a0ed21aab8454e9342adc3df6d89ac9fe}{if} (isset(\$\-\_\-\-G\-E\-T\mbox{[}'error'\mbox{]}))
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{settings_8php_a3fe408882ee0f65b33c57642d9b6d505}{\index{settings.\-php@{settings.\-php}!print\-Result\-Table@{print\-Result\-Table}}
+\index{print\-Result\-Table@{print\-Result\-Table}!settings.php@{settings.\-php}}
+\subsubsection[{print\-Result\-Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (isset(\$validate)\&\&\$validate!=null \&\&\$validate!= '') {\bf if} (\$page==\char`\"{}a\-Building\char`\"{}) if (\$page==\char`\"{}r\-Building\char`\"{}) if (\$page==\char`\"{}e\-Building\char`\"{}) if (\$page==\char`\"{}build\-Input\char`\"{}) if (\$page==\char`\"{}a\-Campus\char`\"{}) if (\$page==\char`\"{}r\-Campus\char`\"{}) if (\$page==\char`\"{}e\-Campus\char`\"{}) if (\$page==\char`\"{}campus\-Input\char`\"{}) if (\$page==\char`\"{}n\-Settings\char`\"{}) if (\$page==\char`\"{}c\-Email\char`\"{}) if (\$page==\char`\"{}a\-Student\char`\"{}) if (\$page==\char`\"{}r\-Student\char`\"{}) if (\$page==\char`\"{}auto\-Student\char`\"{}) if (\$page==\char`\"{}a\-Accounts\char`\"{}) if (\$page==\char`\"{}r\-Accounts\char`\"{}) if (\$page==\char`\"{}m\-Accounts\char`\"{}) if (\$page==\char`\"{}a\-Complex\char`\"{}) if (\$page==\char`\"{}r\-Complex\char`\"{}) if (\$page==\char`\"{}e\-Complex\char`\"{}) if (\$page==\char`\"{}complex\-Input\char`\"{}) if (\$page==\char`\"{}a\-Rooms\char`\"{}) if (\$page==\char`\"{}r\-Rooms\char`\"{}) if (\$page==\char`\"{}e\-Rooms\char`\"{}) if (\$page==\char`\"{}rooms\-Input\char`\"{}) if (\$page==14) {\bf if} (\$page==15) {\bf print\-Result\-Table} (
+\begin{DoxyParamCaption}
+\item[{\$}]{res}
+\end{DoxyParamCaption}
+)}}\label{settings_8php_a3fe408882ee0f65b33c57642d9b6d505}
+
+\begin{DoxyPre}
+ PRINTRESULTTABLE: Produces a html table that is formatted properly from a SQL Query result. 
+ TAKES: The result of a SQL Query.
+ RETURNS: A table based off the result of the query it was sent. 
+\end{DoxyPre}
+ 
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{settings_8php_ae508e19115d8c43284ba5177298a107b}{\index{settings.\-php@{settings.\-php}!\$admins@{\$admins}}
+\index{\$admins@{\$admins}!settings.php@{settings.\-php}}
+\subsubsection[{\$admins}]{\setlength{\rightskip}{0pt plus 5cm}\$admins = \char`\"{}\-S\-E\-L\-E\-C\-T admin\-\_\-id \-A\-S \-I\-D, username \-A\-S \-Username \-F\-R\-O\-M admins\char`\"{}}}\label{settings_8php_ae508e19115d8c43284ba5177298a107b}
+\-S\-Q\-L string that selects admin information from the admins table. \hypertarget{settings_8php_a430365aa824380ed32157dab98577b5b}{\index{settings.\-php@{settings.\-php}!\$buildings@{\$buildings}}
+\index{\$buildings@{\$buildings}!settings.php@{settings.\-php}}
+\subsubsection[{\$buildings}]{\setlength{\rightskip}{0pt plus 5cm}\$buildings = \char`\"{}\-S\-E\-L\-E\-C\-T build\-\_\-id \-A\-S \-I\-D, building\-\_\-name \-A\-S '\-Building \-Name', building\-\_\-letter \-A\-S \-Letter, campus \-A\-S \-Campus, num\-\_\-rooms \-A\-S '\-Number of \-Rooms', floor \-A\-S \-Floors, lease \-A\-S '\-Lease \-Type', \-R\-A\-\_\-rooms \-A\-S '\-R\-A \-Rooms', handicapped\-\_\-rooms \-A\-S '\-Handicapped \-Rooms' \-F\-R\-O\-M building \-W\-H\-E\-R\-E complex=0 \-O\-R\-D\-E\-R \-B\-Y building\-\_\-name\char`\"{}}}\label{settings_8php_a430365aa824380ed32157dab98577b5b}
+\-S\-Q\-L string that selects bulding information from the buildings table. \hypertarget{settings_8php_a6f0655994f3941d6ab50f681032f899b}{\index{settings.\-php@{settings.\-php}!\$campus@{\$campus}}
+\index{\$campus@{\$campus}!settings.php@{settings.\-php}}
+\subsubsection[{\$campus}]{\setlength{\rightskip}{0pt plus 5cm}\$campus = \char`\"{}\-S\-E\-L\-E\-C\-T \-D\-I\-S\-T\-I\-N\-C\-T \-Campus \-F\-R\-O\-M building\char`\"{}}}\label{settings_8php_a6f0655994f3941d6ab50f681032f899b}
+\-S\-Q\-L string that selects all the unique campus names from the buildings table. \hypertarget{settings_8php_a25ec02534214977602829622b78b5d78}{\index{settings.\-php@{settings.\-php}!\$complex@{\$complex}}
+\index{\$complex@{\$complex}!settings.php@{settings.\-php}}
+\subsubsection[{\$complex}]{\setlength{\rightskip}{0pt plus 5cm}\$complex = mysqli\-\_\-query(\$dbconn, \$complex\-\_\-names)}}\label{settings_8php_a25ec02534214977602829622b78b5d78}
+\-Runs the \-S\-Q\-L \-Query in \$complex\-\_\-names \hypertarget{settings_8php_a0f1e56ea9ecb95074e133ed789db0d70}{\index{settings.\-php@{settings.\-php}!\$complex2@{\$complex2}}
+\index{\$complex2@{\$complex2}!settings.php@{settings.\-php}}
+\subsubsection[{\$complex2}]{\setlength{\rightskip}{0pt plus 5cm}\$complex2 = mysqli\-\_\-query(\$dbconn, \$complex\-\_\-names2)}}\label{settings_8php_a0f1e56ea9ecb95074e133ed789db0d70}
+\-Runs the \-S\-Q\-L \-Query in \$complex\-\_\-names2 \hypertarget{settings_8php_a35bd04dbb758885cf1cdf47f4d9d338d}{\index{settings.\-php@{settings.\-php}!\$complex\-\_\-names@{\$complex\-\_\-names}}
+\index{\$complex\-\_\-names@{\$complex\-\_\-names}!settings.php@{settings.\-php}}
+\subsubsection[{\$complex\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}\$complex\-\_\-names = \char`\"{}\-S\-E\-L\-E\-C\-T \-D\-I\-S\-T\-I\-N\-C\-T building\-\_\-name \-F\-R\-O\-M building \-W\-H\-E\-R\-E complex=1\char`\"{}}}\label{settings_8php_a35bd04dbb758885cf1cdf47f4d9d338d}
+\-S\-Q\-L string that selects all the building names from the buildings table. \hypertarget{settings_8php_a1b9130a7b15f9d24c6c7b9f180f58c35}{\index{settings.\-php@{settings.\-php}!\$complex\-\_\-names2@{\$complex\-\_\-names2}}
+\index{\$complex\-\_\-names2@{\$complex\-\_\-names2}!settings.php@{settings.\-php}}
+\subsubsection[{\$complex\-\_\-names2}]{\setlength{\rightskip}{0pt plus 5cm}\$complex\-\_\-names2 = \char`\"{}\-S\-E\-L\-E\-C\-T \-D\-I\-S\-T\-I\-N\-C\-T building\-\_\-name \-A\-S '\-Complex \-Name' \-F\-R\-O\-M building \-W\-H\-E\-R\-E complex=1\char`\"{}}}\label{settings_8php_a1b9130a7b15f9d24c6c7b9f180f58c35}
+\-S\-Q\-L string that selects all the complex names from the buildings table. \hypertarget{settings_8php_aeba2ab722cedda53dbb7ec1a59f45550}{\index{settings.\-php@{settings.\-php}!\$error@{\$error}}
+\index{\$error@{\$error}!settings.php@{settings.\-php}}
+\subsubsection[{\$error}]{\setlength{\rightskip}{0pt plus 5cm}\$error = \char`\"{}\-S\-E\-L\-E\-C\-T type \-A\-S \-Type \-F\-R\-O\-M errors\char`\"{}}}\label{settings_8php_aeba2ab722cedda53dbb7ec1a59f45550}
+\-S\-Q\-L string that selects all the types from the erros table. \hypertarget{settings_8php_ab24faf4aa647cdcee494fc48524ad4ff}{\index{settings.\-php@{settings.\-php}!\$errors@{\$errors}}
+\index{\$errors@{\$errors}!settings.php@{settings.\-php}}
+\subsubsection[{\$errors}]{\setlength{\rightskip}{0pt plus 5cm}\$errors = array()}}\label{settings_8php_ab24faf4aa647cdcee494fc48524ad4ff}
+\-Array that stores all the errors that occur. \hypertarget{settings_8php_aeeee3257142a61e1147e755245933bc2}{\index{settings.\-php@{settings.\-php}!\$form\-Names@{\$form\-Names}}
+\index{\$form\-Names@{\$form\-Names}!settings.php@{settings.\-php}}
+\subsubsection[{\$form\-Names}]{\setlength{\rightskip}{0pt plus 5cm}\$form\-Names = \char`\"{}\-S\-E\-L\-E\-C\-T \-D\-I\-S\-T\-I\-N\-C\-T form\-\_\-name \-F\-R\-O\-M form\-\_\-settings\char`\"{}}}\label{settings_8php_aeeee3257142a61e1147e755245933bc2}
+\-S\-Q\-L string that selects all the form names from the forms settings table. \hypertarget{settings_8php_a088b05600068f1f98fec9e435a59fa4a}{\index{settings.\-php@{settings.\-php}!\$notif@{\$notif}}
+\index{\$notif@{\$notif}!settings.php@{settings.\-php}}
+\subsubsection[{\$notif}]{\setlength{\rightskip}{0pt plus 5cm}\$notif = \char`\"{}\-S\-E\-L\-E\-C\-T form\-\_\-name \-A\-S '\-Form \-Name', deadline\-\_\-date \-A\-S \-Deadline, warning\-\_\-date \-A\-S '\-Warning \-Date' \-F\-R\-O\-M form\-\_\-settings\char`\"{}}}\label{settings_8php_a088b05600068f1f98fec9e435a59fa4a}
+\-S\-Q\-L string that selects form information from the form\-\_\-settings table. \hypertarget{settings_8php_a0a44e6760141442bb439b1ab1395d8ff}{\index{settings.\-php@{settings.\-php}!\$page@{\$page}}
+\index{\$page@{\$page}!settings.php@{settings.\-php}}
+\subsubsection[{\$page}]{\setlength{\rightskip}{0pt plus 5cm}\$page = \char`\"{}\-Main\char`\"{}}}\label{settings_8php_a0a44e6760141442bb439b1ab1395d8ff}
+\-Determines page location within the settings page. \hypertarget{settings_8php_a01f28ab79ba230a18421177d38277f7c}{\index{settings.\-php@{settings.\-php}!\$res\-Admins@{\$res\-Admins}}
+\index{\$res\-Admins@{\$res\-Admins}!settings.php@{settings.\-php}}
+\subsubsection[{\$res\-Admins}]{\setlength{\rightskip}{0pt plus 5cm}\$res\-Admins = mysqli\-\_\-query(\$dbconn, \$admins)}}\label{settings_8php_a01f28ab79ba230a18421177d38277f7c}
+\-Runs the \-S\-Q\-L \-Query in \$admins \hypertarget{settings_8php_ad13e1ac4736397ee0c0755924e4a2167}{\index{settings.\-php@{settings.\-php}!\$res\-Buildings@{\$res\-Buildings}}
+\index{\$res\-Buildings@{\$res\-Buildings}!settings.php@{settings.\-php}}
+\subsubsection[{\$res\-Buildings}]{\setlength{\rightskip}{0pt plus 5cm}\$res\-Buildings = mysqli\-\_\-query(\$dbconn, \$buildings)}}\label{settings_8php_ad13e1ac4736397ee0c0755924e4a2167}
+\-Runs the \-S\-Q\-L \-Query in \$buildings \hypertarget{settings_8php_a926be07138c512547f16ff9996acaf0b}{\index{settings.\-php@{settings.\-php}!\$res\-Camp@{\$res\-Camp}}
+\index{\$res\-Camp@{\$res\-Camp}!settings.php@{settings.\-php}}
+\subsubsection[{\$res\-Camp}]{\setlength{\rightskip}{0pt plus 5cm}\$res\-Camp = mysqli\-\_\-query(\$dbconn, \$campus)}}\label{settings_8php_a926be07138c512547f16ff9996acaf0b}
+\-Runs the \-S\-Q\-L \-Query in \$campus \hypertarget{settings_8php_aeef360c79af90d6206e9afd0c3fb2f47}{\index{settings.\-php@{settings.\-php}!\$res\-Camp2@{\$res\-Camp2}}
+\index{\$res\-Camp2@{\$res\-Camp2}!settings.php@{settings.\-php}}
+\subsubsection[{\$res\-Camp2}]{\setlength{\rightskip}{0pt plus 5cm}\$res\-Camp2 = mysqli\-\_\-query(\$dbconn, \$campus)}}\label{settings_8php_aeef360c79af90d6206e9afd0c3fb2f47}
+\-Runs the \-S\-Q\-L \-Query in \$campus \hypertarget{settings_8php_a1e38f7424dfc03f443c41bf83e9e90bd}{\index{settings.\-php@{settings.\-php}!\$res\-Errors@{\$res\-Errors}}
+\index{\$res\-Errors@{\$res\-Errors}!settings.php@{settings.\-php}}
+\subsubsection[{\$res\-Errors}]{\setlength{\rightskip}{0pt plus 5cm}\$res\-Errors = mysqli\-\_\-query(\$dbconn, \$error)}}\label{settings_8php_a1e38f7424dfc03f443c41bf83e9e90bd}
+\-Runs the \-S\-Q\-L \-Query in \$error \hypertarget{settings_8php_a3442ba39121c93784426f695600100ed}{\index{settings.\-php@{settings.\-php}!\$res\-Form\-Names@{\$res\-Form\-Names}}
+\index{\$res\-Form\-Names@{\$res\-Form\-Names}!settings.php@{settings.\-php}}
+\subsubsection[{\$res\-Form\-Names}]{\setlength{\rightskip}{0pt plus 5cm}\$res\-Form\-Names = mysqli\-\_\-query(\$dbconn, \$form\-Names)}}\label{settings_8php_a3442ba39121c93784426f695600100ed}
+\-Runs the \-S\-Q\-L \-Query in \$form\-Names \hypertarget{settings_8php_ac1efa906f5ef5a29c1f02d9afc08e3df}{\index{settings.\-php@{settings.\-php}!\$res\-Forms@{\$res\-Forms}}
+\index{\$res\-Forms@{\$res\-Forms}!settings.php@{settings.\-php}}
+\subsubsection[{\$res\-Forms}]{\setlength{\rightskip}{0pt plus 5cm}\$res\-Forms = mysqli\-\_\-query(\$dbconn, \$notif)}}\label{settings_8php_ac1efa906f5ef5a29c1f02d9afc08e3df}
+\-Runs the \-S\-Q\-L \-Query in \$notif \hypertarget{settings_8php_a6c39affecebae5119fae4099069c709b}{\index{settings.\-php@{settings.\-php}!\$res\-Student@{\$res\-Student}}
+\index{\$res\-Student@{\$res\-Student}!settings.php@{settings.\-php}}
+\subsubsection[{\$res\-Student}]{\setlength{\rightskip}{0pt plus 5cm}\$res\-Student = mysqli\-\_\-query(\$dbconn, \$student)}}\label{settings_8php_a6c39affecebae5119fae4099069c709b}
+\-Runs the \-S\-Q\-L \-Query in \$student \hypertarget{settings_8php_aee2bc5dc8abe81b77e854b5714fe4182}{\index{settings.\-php@{settings.\-php}!\$res\-Users@{\$res\-Users}}
+\index{\$res\-Users@{\$res\-Users}!settings.php@{settings.\-php}}
+\subsubsection[{\$res\-Users}]{\setlength{\rightskip}{0pt plus 5cm}\$res\-Users = mysqli\-\_\-query(\$dbconn, \$users)}}\label{settings_8php_aee2bc5dc8abe81b77e854b5714fe4182}
+\-Runs the \-S\-Q\-L \-Query in \$users \hypertarget{settings_8php_a5a5a2522ab0ea5c503744aa937fac0e2}{\index{settings.\-php@{settings.\-php}!\$student@{\$student}}
+\index{\$student@{\$student}!settings.php@{settings.\-php}}
+\subsubsection[{\$student}]{\setlength{\rightskip}{0pt plus 5cm}\$student = \char`\"{}\-S\-E\-L\-E\-C\-T student\-\_\-\-I\-D \-A\-S \-I\-D, first\-\_\-name \-A\-S '\-First \-Name', last\-\_\-name \-A\-S '\-Last \-Name', email \-A\-S '\-Email' \-F\-R\-O\-M students\char`\"{}}}\label{settings_8php_a5a5a2522ab0ea5c503744aa937fac0e2}
+\-S\-Q\-L string that selects student infromation from the students table. \hypertarget{settings_8php_a28005d22fa7ef2dfe215ad886b497d9c}{\index{settings.\-php@{settings.\-php}!\$users@{\$users}}
+\index{\$users@{\$users}!settings.php@{settings.\-php}}
+\subsubsection[{\$users}]{\setlength{\rightskip}{0pt plus 5cm}\$users = \char`\"{}\-S\-E\-L\-E\-C\-T student\-\_\-id \-A\-S \-I\-D, username \-A\-S \-Username \-F\-R\-O\-M users\char`\"{}}}\label{settings_8php_a28005d22fa7ef2dfe215ad886b497d9c}
+\-S\-Q\-L string that selects user information from the users table. \hypertarget{settings_8php_a320b75b46e1832c327d9d47b4cea9e7d}{\index{settings.\-php@{settings.\-php}!\$validate@{\$validate}}
+\index{\$validate@{\$validate}!settings.php@{settings.\-php}}
+\subsubsection[{\$validate}]{\setlength{\rightskip}{0pt plus 5cm}\$validate = 0}}\label{settings_8php_a320b75b46e1832c327d9d47b4cea9e7d}
+\-Validate must equl the total number of input variables at the end of the program to insure input variables contain valid text. \hypertarget{settings_8php_ae8f928f475945454d3cfd1d4214c09f2}{\index{settings.\-php@{settings.\-php}!\$was\-\_\-errors@{\$was\-\_\-errors}}
+\index{\$was\-\_\-errors@{\$was\-\_\-errors}!settings.php@{settings.\-php}}
+\subsubsection[{\$was\-\_\-errors}]{\setlength{\rightskip}{0pt plus 5cm}\$was\-\_\-errors = false}}\label{settings_8php_ae8f928f475945454d3cfd1d4214c09f2}
+\-True if there were errors, \-False if there we no errors \hypertarget{settings_8php_a0ed21aab8454e9342adc3df6d89ac9fe}{\index{settings.\-php@{settings.\-php}!if@{if}}
+\index{if@{if}!settings.php@{settings.\-php}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (isset(\$\-\_\-\-G\-E\-T\mbox{[}'validate'\mbox{]})) {\bf if} (isset(\$\-\_\-\-G\-E\-T\mbox{[}'page'\mbox{]})) {\bf if} (isset(\$\-\_\-\-G\-E\-T\mbox{[}'error'\mbox{]})) {\bf if}(isset(\$\-\_\-\-G\-E\-T\mbox{[}'error'\mbox{]}))}}\label{settings_8php_a0ed21aab8454e9342adc3df6d89ac9fe}
+\-Checks to make sure these variables are set before using them. 

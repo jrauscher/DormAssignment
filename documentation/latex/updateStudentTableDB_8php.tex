@@ -1,0 +1,75 @@
+\hypertarget{updateStudentTableDB_8php}{\section{src/admin\-\_\-view/update\-Student\-Table\-D\-B.php \-File \-Reference}
+\label{updateStudentTableDB_8php}\index{src/admin\-\_\-view/update\-Student\-Table\-D\-B.\-php@{src/admin\-\_\-view/update\-Student\-Table\-D\-B.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{updateStudentTableDB_8php_ab285a2e759ea45a70f8ff40a63d2fe89}{\$room} = \$\-\_\-\-G\-E\-T\mbox{[}'room'\mbox{]}
+\item 
+\hyperlink{updateStudentTableDB_8php_a903ab1c50249715a442ce81e6d5ba775}{\$building} = \$\-\_\-\-G\-E\-T\mbox{[}'building\-\_\-id'\mbox{]}
+\item 
+\hyperlink{updateStudentTableDB_8php_aa698a3e72116e8e778be0e95d908ee30}{\$action} = \$\-\_\-\-G\-E\-T\mbox{[}'action'\mbox{]}
+\item 
+\hyperlink{updateStudentTableDB_8php_ab68b86e23fd74e101c03130a49b24f66}{\$st\-\_\-id} = \$\-\_\-\-G\-E\-T\mbox{[}'id'\mbox{]}
+\item 
+\hyperlink{updateStudentTableDB_8php_af06279fba2b6159d32d26bae1bd62aee}{\$get\-Student\-Letter} = \char`\"{}\-S\-E\-L\-E\-C\-T letter \-F\-R\-O\-M room\-\_\-letter\-\_\-temp \-W\-H\-E\-R\-E student\-\_\-id = '\$st\-\_\-id'\char`\"{}
+\item 
+\hyperlink{updateStudentTableDB_8php_a570754c64bbdb4096bb2ee09f899cfb8}{\$result\-\_\-get\-Student\-Letter} = mysqli\-\_\-query(\$dbconn, \$get\-Student\-Letter)
+\item 
+\hyperlink{updateStudentTableDB_8php_aae4bfbe92cd3c7c9837886688f7440f5}{\$st\-\_\-letter} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{studentForm_8php_abeb5d2366a9870820ffb1e260d040d8d}{while}(\$letter=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-get\-Student\-Letter)) \hyperlink{updateStudentTableDB_8php_a7ac58462dd2e6879a3f08e42f20adc8a}{\$result\-\_\-group} = mysqli\-\_\-query(\$dbconn, \char`\"{}\-S\-E\-L\-E\-C\-T group\-\_\-id \-F\-R\-O\-M groups\-\_\-temp \-W\-H\-E\-R\-E build\-\_\-id = '\char`\"{} . \$building . \char`\"{}' \-A\-N\-D room\-\_\-num = '\char`\"{} . \$room . \char`\"{}';\char`\"{})
+\item 
+\hyperlink{updateStudentTableDB_8php_ad530a85733b0ec1dc321859fd8faa0dc}{\$group} = 0
+\item 
+\hyperlink{studentForm_8php_abeb5d2366a9870820ffb1e260d040d8d}{while}(\$group\-\_\-num=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-group)) \*
+\hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if} $\ast$(\$action==\char`\"{}add\char`\"{}) elseif(\$action==\char`\"{}remove\char`\"{}) \hyperlink{updateStudentTableDB_8php_a9c865fd17963305c27b0e1cf920f24f8}{\$avail\-Students} = \-False
+\item 
+\hyperlink{updateStudentTableDB_8php_a93add9cb1d213b0fdb7c51b0464785d3}{\$result\-\_\-is\-\_\-valid} = mysqli\-\_\-query(\$dbconn, \$is\-\_\-valid)
+\item 
+\hyperlink{updateStudentTableDB_8php_abbca5b4e0da1a7b7e95bb777ad93473d}{while} (\$row=mysqli\-\_\-fetch\-\_\-assoc(\$query\-\_\-result))
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{updateStudentTableDB_8php_aa698a3e72116e8e778be0e95d908ee30}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$action@{\$action}}
+\index{\$action@{\$action}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$action}]{\setlength{\rightskip}{0pt plus 5cm}\$action = \$\-\_\-\-G\-E\-T\mbox{[}'action'\mbox{]}}}\label{updateStudentTableDB_8php_aa698a3e72116e8e778be0e95d908ee30}
+\-Determines what information to be generated and is escaped later. \hypertarget{updateStudentTableDB_8php_a9c865fd17963305c27b0e1cf920f24f8}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$avail\-Students@{\$avail\-Students}}
+\index{\$avail\-Students@{\$avail\-Students}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$avail\-Students}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while} (\$group\-\_\-num=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-group)) {\bf if}$\ast$ (\$action==\char`\"{}add\char`\"{}) elseif (\$action==\char`\"{}remove\char`\"{}) \$avail\-Students = \-False}}\label{updateStudentTableDB_8php_a9c865fd17963305c27b0e1cf920f24f8}
+\-Gets the real value of the group id
+
+\-If \$action is \char`\"{}add\char`\"{}, then the student will be added to the temporary students table. \-If there are no others already in the room, a group id will be generated for it. \-A letter will also be assigned to the student
+
+\-If \$action is \char`\"{}remove\char`\"{}, remove the student from the temporary students table. \hypertarget{updateStudentTableDB_8php_a903ab1c50249715a442ce81e6d5ba775}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$building@{\$building}}
+\index{\$building@{\$building}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$building}]{\setlength{\rightskip}{0pt plus 5cm}\$building = \$\-\_\-\-G\-E\-T\mbox{[}'building\-\_\-id'\mbox{]}}}\label{updateStudentTableDB_8php_a903ab1c50249715a442ce81e6d5ba775}
+\-The building the student is trying to be added to and is escaped later. \hypertarget{updateStudentTableDB_8php_af06279fba2b6159d32d26bae1bd62aee}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$get\-Student\-Letter@{\$get\-Student\-Letter}}
+\index{\$get\-Student\-Letter@{\$get\-Student\-Letter}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$get\-Student\-Letter}]{\setlength{\rightskip}{0pt plus 5cm}\$get\-Student\-Letter = \char`\"{}\-S\-E\-L\-E\-C\-T letter \-F\-R\-O\-M room\-\_\-letter\-\_\-temp \-W\-H\-E\-R\-E student\-\_\-id = '\$st\-\_\-id'\char`\"{}}}\label{updateStudentTableDB_8php_af06279fba2b6159d32d26bae1bd62aee}
+\-S\-Q\-L query to get the letter of the student from the temporary room\-\_\-letter table. \hypertarget{updateStudentTableDB_8php_ad530a85733b0ec1dc321859fd8faa0dc}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$group@{\$group}}
+\index{\$group@{\$group}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$group}]{\setlength{\rightskip}{0pt plus 5cm}\$group = 0}}\label{updateStudentTableDB_8php_ad530a85733b0ec1dc321859fd8faa0dc}
+\-Sets the default group id to be 0 \hypertarget{updateStudentTableDB_8php_a570754c64bbdb4096bb2ee09f899cfb8}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$result\-\_\-get\-Student\-Letter@{\$result\-\_\-get\-Student\-Letter}}
+\index{\$result\-\_\-get\-Student\-Letter@{\$result\-\_\-get\-Student\-Letter}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$result\-\_\-get\-Student\-Letter}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-get\-Student\-Letter = mysqli\-\_\-query(\$dbconn, \$get\-Student\-Letter)}}\label{updateStudentTableDB_8php_a570754c64bbdb4096bb2ee09f899cfb8}
+\-Holds the result of the query \$get\-Student\-Letter. \hypertarget{updateStudentTableDB_8php_a7ac58462dd2e6879a3f08e42f20adc8a}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$result\-\_\-group@{\$result\-\_\-group}}
+\index{\$result\-\_\-group@{\$result\-\_\-group}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$result\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while} (\$letter=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-get\-Student\-Letter)) \$result\-\_\-group = mysqli\-\_\-query(\$dbconn, \char`\"{}\-S\-E\-L\-E\-C\-T group\-\_\-id \-F\-R\-O\-M groups\-\_\-temp \-W\-H\-E\-R\-E build\-\_\-id = '\char`\"{} . \$building . \char`\"{}' \-A\-N\-D room\-\_\-num = '\char`\"{} . \$room . \char`\"{}';\char`\"{})}}\label{updateStudentTableDB_8php_a7ac58462dd2e6879a3f08e42f20adc8a}
+\-Holds the result of the query that finds the id of the group for the room that the student is staying in. \hypertarget{updateStudentTableDB_8php_a93add9cb1d213b0fdb7c51b0464785d3}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$result\-\_\-is\-\_\-valid@{\$result\-\_\-is\-\_\-valid}}
+\index{\$result\-\_\-is\-\_\-valid@{\$result\-\_\-is\-\_\-valid}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$result\-\_\-is\-\_\-valid}]{\setlength{\rightskip}{0pt plus 5cm}\$result\-\_\-is\-\_\-valid = mysqli\-\_\-query(\$dbconn, \$is\-\_\-valid)}}\label{updateStudentTableDB_8php_a93add9cb1d213b0fdb7c51b0464785d3}
+\-Holds the result of the query \$query. \-Holds the result of the query \$is\-\_\-valid. \hypertarget{updateStudentTableDB_8php_ab285a2e759ea45a70f8ff40a63d2fe89}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$room@{\$room}}
+\index{\$room@{\$room}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$room}]{\setlength{\rightskip}{0pt plus 5cm}\$room = \$\-\_\-\-G\-E\-T\mbox{[}'room'\mbox{]}}}\label{updateStudentTableDB_8php_ab285a2e759ea45a70f8ff40a63d2fe89}
+\-The room the student is trying to be added to and is escaped later. \hypertarget{updateStudentTableDB_8php_ab68b86e23fd74e101c03130a49b24f66}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$st\-\_\-id@{\$st\-\_\-id}}
+\index{\$st\-\_\-id@{\$st\-\_\-id}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$st\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}\$st\-\_\-id = \$\-\_\-\-G\-E\-T\mbox{[}'id'\mbox{]}}}\label{updateStudentTableDB_8php_ab68b86e23fd74e101c03130a49b24f66}
+\-The id of the student that is trying to be added and is escaped later. \hypertarget{updateStudentTableDB_8php_aae4bfbe92cd3c7c9837886688f7440f5}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!\$st\-\_\-letter@{\$st\-\_\-letter}}
+\index{\$st\-\_\-letter@{\$st\-\_\-letter}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{\$st\-\_\-letter}]{\setlength{\rightskip}{0pt plus 5cm}\$st\-\_\-letter = \char`\"{}\char`\"{}}}\label{updateStudentTableDB_8php_aae4bfbe92cd3c7c9837886688f7440f5}
+\-Creation of the variable that will hold the letter of the room the student is staying in. \hypertarget{updateStudentTableDB_8php_abbca5b4e0da1a7b7e95bb777ad93473d}{\index{update\-Student\-Table\-D\-B.\-php@{update\-Student\-Table\-D\-B.\-php}!while@{while}}
+\index{while@{while}!updateStudentTableDB.php@{update\-Student\-Table\-D\-B.\-php}}
+\subsubsection[{while}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while}(\$row=mysqli\-\_\-fetch\-\_\-assoc(\$query\-\_\-result))}}\label{updateStudentTableDB_8php_abbca5b4e0da1a7b7e95bb777ad93473d}
+\-Creates the table that will display all of the students that are in the specified room. 

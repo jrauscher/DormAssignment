@@ -1,5 +1,5 @@
 <?php
-$complex = mysqli_real_escape_string($dbconn, $_POST['complex']);
+$complex = mysqli_real_escape_string($dbconn, $_POST['complex']); /**< Gets the complex name from the settings.php?page=complexInput page. */
 
 echo "<p>Selected Campus: $complex</p>";
 echo '<form action="validate/update/upComplex.php" method="post">';

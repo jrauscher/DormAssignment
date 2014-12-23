@@ -1,6 +1,13 @@
 <?php
 
-// CHECK_ROOM: MAKES SURE STUDENTS IS OF THE CORRECT LEASE, GENDER, AND ROOM IS NOT FULL
+/**
+* <pre>
+* CHECK_ROOM: Makes sure students are of the correct lease type, gender, and that the room is not full.
+* TAKES: Student ID, Room Number, and Building ID.
+* RETURNS: 0 if the student cannot go into that room.
+* 	  1 if the student can be placed into that room.
+*</pre>
+*/
 function check_room ($std_id,$room_num,$build_id){
 	include ('../../../includes/svrConnect.php');
 	$student_info = "SELECT gender, lease FROM students WHERE student_id='$std_id'";
@@ -40,10 +47,16 @@ function check_room ($std_id,$room_num,$build_id){
 		return 0;
 	}
 }
-// END CHECK ROOM //
 
-//ASSIGN_STUDENT: ASSIGNS A STUDENTS TO A ROOM //
-//DONT CALL THIS FUNCTIONS WITH SAME STUDENT ID TWICE!!!! //
+
+/**
+* <pre>
+* ASSIGN_STUDENT: Assigns a student to a room.
+* TAKES: Student ID, Room Number, and Building ID.
+* RETURNS: 0 if the student was not placed into that room.
+* 	  1 if the student was placed into that room.
+*</pre>
+*/
 function assign_student ($std_id,$group_id,$room_num,$build_id){
 	include ('../../../includes/svrConnect.php');
 	$room_info = "SELECT num_students FROM rooms WHERE room_num='$room_num' AND build_id='$build_id'";
@@ -113,9 +126,15 @@ function assign_student ($std_id,$group_id,$room_num,$build_id){
 		return 1;
 	}	
 }
-// END ASSIGN STUDENT //
 
-// IMP_PREFS: RETURNS THE TOP 2 PREFERENCES OF A STUDENT IT IS GIVEN //
+
+/**
+* <pre>
+* IMP_PREFS: Finds the top 2 most imporant preferences of the student it is given.
+* TAKES: Student ID.
+* RETURNS: an Array containing the top 2 prefernces of the studnet ID given.
+*</pre>
+*/
 function imp_prefs($std_id){
 	include ('../../../includes/svrConnect.php');
 	$high_array = array();
@@ -190,9 +209,16 @@ function imp_prefs($std_id){
 	}
 	return ($high_array);
 }
-//END IMP_PREFS //
 
-//POPULATE PUTS 1 STUDENTS IN EACH ROOM //
+
+/**
+* <pre>
+* POPULATE_ROOM: Places a student into a empty room.
+* TAKES: Student ID.
+* RETURNS: 0 if the student could not be placed anywhere.
+* 	  1 if the student was placed into a empty room.
+*</pre>
+*/
 function populate_room($std_id){
 	include ('../../../includes/svrConnect.php');
 
@@ -216,9 +242,15 @@ function populate_room($std_id){
 	}
 	return 0;
 }
-// END POPULATE //
 
-//ASSIGN_LIST LOOPS THOUGH LSIT OF STUDENTS AND ASSIGNS TO ROOM BASED ON PREFS//
+
+/**
+* <pre>
+* ASSIGN_LIST: Loops though a list of students and assigns them to a room based on there preferences.
+* TAKES: An Array of Student ID's.
+* RETURNS: Nothing
+*</pre>
+*/
 function assign_list($list){
 	include ('../../../includes/svrConnect.php');
 	$total = 0;
@@ -254,8 +286,15 @@ function assign_list($list){
 		}
 	}
 }
-// END ASSIGN LIST //
-// ASSIGN BY PREFS //
+
+/**
+* <pre>
+* ASSIGN_BY_PREFS2: Places a student into that room that best fits his/hers preferences.
+* TAKES: Student ID, Room Number, and Building ID.
+* RETURNS: 0 if the student could not be placed anywhere.
+* 	  1 if the student was placed into a room.
+*</pre>
+*/
 function assign_by_prefs2($std_id, $rooms, $build_id){
 	include ('../../../includes/svrConnect.php');
 	$room_num;
@@ -346,8 +385,6 @@ function assign_by_prefs2($std_id, $rooms, $build_id){
 
 						$allStudents[$count] = $oneStudent;
 						$count ++;
-
-						//echo "$cleanliness, $noise, $guest_sleeping, $share_belongings, $bed_time, $wakeup_time, $gathering, $drink_alcohol, $others_drink, $smoking, $other_smoking, $noise_rating, $cleanliness_rating, $lifestyle_rating, $age_rating, $major_rating, $guest_rating<br/>";
 
 						$test = array();
 						$test = (imp_prefs($student_id));
@@ -449,9 +486,16 @@ function assign_by_prefs2($std_id, $rooms, $build_id){
 		return 0;
 	}
 }
-// END ASSIGN BY PREFS //
 
-// ASSIGN BY PREFS //
+
+/**
+* <pre>
+* ASSIGN_BY_PREFS: Places a student into that room that best fits his/hers preferences.
+* TAKES: Student ID, and Building ID.
+* RETURNS: 0 if the student could not be placed anywhere.
+* 	  1 if the student was placed into a room.
+*</pre>
+*/
 function assign_by_prefs($std_id, $builds){
 	include ('../../../includes/svrConnect.php');
 	$room_num;
@@ -647,9 +691,15 @@ function assign_by_prefs($std_id, $builds){
 		return 0;
 	}
 }
-// END ASSIGN BY PREFS //
 
-//takes a building and returns an array of rooms with one student in that building//
+
+/**
+* <pre>
+* NON_FULL_ROOMS: Finds rooms that are not currently full.
+* TAKES: Building ID.
+* RETURNS: An Array of rooms in that building that are not full.
+*</pre>
+*/
 function non_full_rooms($building){
 	include ('../../../includes/svrConnect.php');
 	$one_std_arr = array();
@@ -665,8 +715,16 @@ function non_full_rooms($building){
 	}
 	return $one_std_arr;
 }
-// end of one std room //
 
+
+/**
+* <pre>
+* ASSIGN_STD_EMPTY: Places a student into a empty room.
+* TAKES: Student ID.
+* RETURNS: 0 if the student could not be placed anywhere.
+* 	  1 if the student was placed into a room.
+*</pre>
+*/
 function assign_std_empty($std_id){
 	include ('../../../includes/svrConnect.php');
 	$rooms = "SELECT room_num, build_id FROM rooms WHERE num_students = '0' ";
@@ -685,6 +743,15 @@ function assign_std_empty($std_id){
 	return 0;
 }
 
+
+/**
+* <pre>
+* ASSIGN_STD_EMPTY: Places a student into a empty room.
+* TAKES: Student ID.
+* RETURNS: 0 if the student could not be placed anywhere.
+* 	  1 if the student was placed into a room.
+*</pre>
+*/
 function assign_std_empty2($std_id)
 {
 	$empty_r3 = "SELECT room_num, build_id from rooms WHERE num_students = '0'";
@@ -713,11 +780,13 @@ function assign_std_empty2($std_id)
 }
 
 
-
-/* takes a list of students
-	returns the same list minus quarter of the students
-		assign this quarter to rooms
-			note: the list returned has distorted indexes, such as this sequence:  5, 7, 8, 9, 16.... */
+/**
+* <pre>
+* ASSIGN_QUARTER: Assigns a quarter of the students in the array it was given. 
+* TAKES: Array of Student ID's.
+* RETURNS: Same the array it was given, minus a quarter of the students
+*</pre>
+*/
 function assign_quarter($list)
 {
 	include ('../../../includes/svrConnect.php');
@@ -814,6 +883,15 @@ function assign_quarter($list)
 	}//end for students
 	return $list;
 }
+
+
+/**
+* <pre>
+* ASSIGN_QUARTER: Assigns a quarter of the students in the array it was given. 
+* TAKES: Array of Student ID's.
+* RETURNS: Same the array it was given, minus a quarter of the students
+*</pre>
+*/
 function assign_quarter2($list)
 {
 	include ('../../../includes/svrConnect.php');

@@ -1,0 +1,39 @@
+\hypertarget{logVal_8php}{\section{src/login\-\_\-view/log\-Val.php \-File \-Reference}
+\label{logVal_8php}\index{src/login\-\_\-view/log\-Val.\-php@{src/login\-\_\-view/log\-Val.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{logVal_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'username'\mbox{]})
+\item 
+\hyperlink{logVal_8php_a12ec2780b52bd1c54d38c2f981c0349f}{\$pass} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'password'\mbox{]})
+\item 
+\hyperlink{logVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(isset(\$username)\&\&\$username!=null \*
+\&\&\$username!= '') \hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(isset(\$pass)\&\&\$pass!=null \*
+\&\&\$pass!= '') \hyperlink{logVal_8php_ab62c76ac070a71dc45fb561a8ed2b5c0}{\$db\-Pass} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{logVal_8php_afac416adadad464e183a45b802cd7f8a}{\$\-V\-A\-L} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{logVal_8php_ab62c76ac070a71dc45fb561a8ed2b5c0}{\index{log\-Val.\-php@{log\-Val.\-php}!\$db\-Pass@{\$db\-Pass}}
+\index{\$db\-Pass@{\$db\-Pass}!logVal.php@{log\-Val.\-php}}
+\subsubsection[{\$db\-Pass}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (isset(\$username)\&\&\$username!=null \&\&\$username!= '') {\bf if} (isset(\$pass)\&\&\$pass!=null \&\&\$pass!= '') \$db\-Pass = \char`\"{}\char`\"{}}}\label{logVal_8php_ab62c76ac070a71dc45fb561a8ed2b5c0}
+\-Increments \$valid if the \$username is filled out.
+
+\-Increments \$valid if the \$pass is filled out. \-The passwords that will allow access to the system. \hypertarget{logVal_8php_a12ec2780b52bd1c54d38c2f981c0349f}{\index{log\-Val.\-php@{log\-Val.\-php}!\$pass@{\$pass}}
+\index{\$pass@{\$pass}!logVal.php@{log\-Val.\-php}}
+\subsubsection[{\$pass}]{\setlength{\rightskip}{0pt plus 5cm}\$pass = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'password'\mbox{]})}}\label{logVal_8php_a12ec2780b52bd1c54d38c2f981c0349f}
+\-The submitted password. \hypertarget{logVal_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\index{log\-Val.\-php@{log\-Val.\-php}!\$username@{\$username}}
+\index{\$username@{\$username}!logVal.php@{log\-Val.\-php}}
+\subsubsection[{\$username}]{\setlength{\rightskip}{0pt plus 5cm}\$username = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'username'\mbox{]})}}\label{logVal_8php_a0eb82aa5f81cf845de4b36cd653c42cf}
+\-The submitted username. \hypertarget{logVal_8php_afac416adadad464e183a45b802cd7f8a}{\index{log\-Val.\-php@{log\-Val.\-php}!\$\-V\-A\-L@{\$\-V\-A\-L}}
+\index{\$\-V\-A\-L@{\$\-V\-A\-L}!logVal.php@{log\-Val.\-php}}
+\subsubsection[{\$\-V\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\$\-V\-A\-L = \char`\"{}\char`\"{}}}\label{logVal_8php_afac416adadad464e183a45b802cd7f8a}
+\-Whether or not the user has access. \hypertarget{logVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{log\-Val.\-php@{log\-Val.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!logVal.php@{log\-Val.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{logVal_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equal the total number of input variables at the end of the program to insure input variables contain valid text. 

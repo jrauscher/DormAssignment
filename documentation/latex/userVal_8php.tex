@@ -1,0 +1,35 @@
+\hypertarget{userVal_8php}{\section{src/admin\-\_\-view/validate/user\-Val.php \-File \-Reference}
+\label{userVal_8php}\index{src/admin\-\_\-view/validate/user\-Val.\-php@{src/admin\-\_\-view/validate/user\-Val.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{userVal_8php_a1a24d1e88ff0d48685fff9c620e4ad9e}{\$\-N\-U\-I\-D} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'\-N\-U\-I\-D'\mbox{]})
+\item 
+\hyperlink{userVal_8php_ad634f418b20382e2802f80532d76d3cd}{\$email} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'email'\mbox{]})
+\item 
+\hyperlink{userVal_8php_a25ec02534214977602829622b78b5d78}{\$complex} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})
+\item 
+\hyperlink{userVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{userVal_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O users (student\-\_\-id, username, password, pwd\-\_\-reset, needs\-\_\-email, form\-\_\-completion, building\-\_\-name) \-V\-A\-L\-U\-E\-S ('\$\-N\-U\-I\-D','\$email', '\-F\-A\-K\-E\-P\-A\-S\-S\-W\-O\-R\-D','0', '0', '0', '\$complex')\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{userVal_8php_a25ec02534214977602829622b78b5d78}{\index{user\-Val.\-php@{user\-Val.\-php}!\$complex@{\$complex}}
+\index{\$complex@{\$complex}!userVal.php@{user\-Val.\-php}}
+\subsubsection[{\$complex}]{\setlength{\rightskip}{0pt plus 5cm}\$complex = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})}}\label{userVal_8php_a25ec02534214977602829622b78b5d78}
+\-Gets the complex from the page=a\-Accounts page. \hypertarget{userVal_8php_ad634f418b20382e2802f80532d76d3cd}{\index{user\-Val.\-php@{user\-Val.\-php}!\$email@{\$email}}
+\index{\$email@{\$email}!userVal.php@{user\-Val.\-php}}
+\subsubsection[{\$email}]{\setlength{\rightskip}{0pt plus 5cm}\$email = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'email'\mbox{]})}}\label{userVal_8php_ad634f418b20382e2802f80532d76d3cd}
+\-Gets the email from the page=a\-Accounts page. \hypertarget{userVal_8php_a1a24d1e88ff0d48685fff9c620e4ad9e}{\index{user\-Val.\-php@{user\-Val.\-php}!\$\-N\-U\-I\-D@{\$\-N\-U\-I\-D}}
+\index{\$\-N\-U\-I\-D@{\$\-N\-U\-I\-D}!userVal.php@{user\-Val.\-php}}
+\subsubsection[{\$\-N\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$\-N\-U\-I\-D = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'\-N\-U\-I\-D'\mbox{]})}}\label{userVal_8php_a1a24d1e88ff0d48685fff9c620e4ad9e}
+\-Gets the \-Student \-I\-D from the page=a\-Accounts page. \hypertarget{userVal_8php_a047170d6020a882807665812a27e2525}{\index{user\-Val.\-php@{user\-Val.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!userVal.php@{user\-Val.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O users (student\-\_\-id, username, password, pwd\-\_\-reset, needs\-\_\-email, form\-\_\-completion, building\-\_\-name) \-V\-A\-L\-U\-E\-S ('\$\-N\-U\-I\-D','\$email', '\-F\-A\-K\-E\-P\-A\-S\-S\-W\-O\-R\-D','0', '0', '0', '\$complex')\char`\"{}}}\label{userVal_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L string that adds a new user to the users table using the \$\-N\-U\-I\-D, \$email, and \$complex variables. \hypertarget{userVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{user\-Val.\-php@{user\-Val.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!userVal.php@{user\-Val.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{userVal_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

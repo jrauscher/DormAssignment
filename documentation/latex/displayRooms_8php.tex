@@ -1,0 +1,35 @@
+\hypertarget{displayRooms_8php}{\section{src/admin\-\_\-view/includes/functions/display\-Rooms.php \-File \-Reference}
+\label{displayRooms_8php}\index{src/admin\-\_\-view/includes/functions/display\-Rooms.\-php@{src/admin\-\_\-view/includes/functions/display\-Rooms.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{displayRooms_8php_ac3ea7ac9c4cf508721396f2df0f2943e}{\$complex34} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})
+\item 
+\hyperlink{displayRooms_8php_aa3036dfed222dfa1b4e1082d67e72987}{\$sql34} = \char`\"{}\-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M rooms \-W\-H\-E\-R\-E build\-\_\-id='\$complex34'\char`\"{}
+\item 
+\hyperlink{displayRooms_8php_a82f8cf7bf047f4e029d5bf5b430b8a6e}{\$sql35} = \char`\"{}\-S\-E\-L\-E\-C\-T building\-\_\-name \-F\-R\-O\-M building \-W\-H\-E\-R\-E build\-\_\-id='\$complex34'\char`\"{}
+\item 
+\hyperlink{displayRooms_8php_adc77f040461aac6f192259ee524949cc}{\$result34} = mysqli\-\_\-query(\$dbconn, \$sql34) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))
+\item 
+\hyperlink{displayRooms_8php_a4bb5768155ac2f9d5bd3b6c91a11c3a9}{\$result35} = mysqli\-\_\-query(\$dbconn, \$sql35) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{displayRooms_8php_ac3ea7ac9c4cf508721396f2df0f2943e}{\index{display\-Rooms.\-php@{display\-Rooms.\-php}!\$complex34@{\$complex34}}
+\index{\$complex34@{\$complex34}!displayRooms.php@{display\-Rooms.\-php}}
+\subsubsection[{\$complex34}]{\setlength{\rightskip}{0pt plus 5cm}\$complex34 = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})}}\label{displayRooms_8php_ac3ea7ac9c4cf508721396f2df0f2943e}
+\-Gets the complex selected from the \hyperlink{settings_8php}{settings.\-php}?page=15 page. \hypertarget{displayRooms_8php_adc77f040461aac6f192259ee524949cc}{\index{display\-Rooms.\-php@{display\-Rooms.\-php}!\$result34@{\$result34}}
+\index{\$result34@{\$result34}!displayRooms.php@{display\-Rooms.\-php}}
+\subsubsection[{\$result34}]{\setlength{\rightskip}{0pt plus 5cm}\$result34 = mysqli\-\_\-query(\$dbconn, \$sql34) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))}}\label{displayRooms_8php_adc77f040461aac6f192259ee524949cc}
+\-Runs the \-S\-Q\-L \-Query in \$sql34. \hypertarget{displayRooms_8php_a4bb5768155ac2f9d5bd3b6c91a11c3a9}{\index{display\-Rooms.\-php@{display\-Rooms.\-php}!\$result35@{\$result35}}
+\index{\$result35@{\$result35}!displayRooms.php@{display\-Rooms.\-php}}
+\subsubsection[{\$result35}]{\setlength{\rightskip}{0pt plus 5cm}\$result35 = mysqli\-\_\-query(\$dbconn, \$sql35) or die ('\-Error ' . mysqli\-\_\-error(\$dbconn))}}\label{displayRooms_8php_a4bb5768155ac2f9d5bd3b6c91a11c3a9}
+\-Runs the \-S\-Q\-L \-Query in \$sql35. \hypertarget{displayRooms_8php_aa3036dfed222dfa1b4e1082d67e72987}{\index{display\-Rooms.\-php@{display\-Rooms.\-php}!\$sql34@{\$sql34}}
+\index{\$sql34@{\$sql34}!displayRooms.php@{display\-Rooms.\-php}}
+\subsubsection[{\$sql34}]{\setlength{\rightskip}{0pt plus 5cm}\$sql34 = \char`\"{}\-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M rooms \-W\-H\-E\-R\-E build\-\_\-id='\$complex34'\char`\"{}}}\label{displayRooms_8php_aa3036dfed222dfa1b4e1082d67e72987}
+\-S\-Q\-L string that selects all information on rooms wher the build\-\_\-id = \$complex34. \hypertarget{displayRooms_8php_a82f8cf7bf047f4e029d5bf5b430b8a6e}{\index{display\-Rooms.\-php@{display\-Rooms.\-php}!\$sql35@{\$sql35}}
+\index{\$sql35@{\$sql35}!displayRooms.php@{display\-Rooms.\-php}}
+\subsubsection[{\$sql35}]{\setlength{\rightskip}{0pt plus 5cm}\$sql35 = \char`\"{}\-S\-E\-L\-E\-C\-T building\-\_\-name \-F\-R\-O\-M building \-W\-H\-E\-R\-E build\-\_\-id='\$complex34'\char`\"{}}}\label{displayRooms_8php_a82f8cf7bf047f4e029d5bf5b430b8a6e}
+\-S\-Q\-L string that selects just the builing names from the buildings table where build\-\_\-id = \$complex43. 

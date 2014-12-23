@@ -1,0 +1,30 @@
+\hypertarget{campusVal_8php}{\section{src/admin\-\_\-view/validate/campus\-Val.php \-File \-Reference}
+\label{campusVal_8php}\index{src/admin\-\_\-view/validate/campus\-Val.\-php@{src/admin\-\_\-view/validate/campus\-Val.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{campusVal_8php_a25ec02534214977602829622b78b5d78}{\$complex} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})
+\item 
+\hyperlink{campusVal_8php_a6f0655994f3941d6ab50f681032f899b}{\$campus} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'campus'\mbox{]})
+\item 
+\hyperlink{campusVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{campusVal_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O building (build\-\_\-id, building\-\_\-name, building\-\_\-letter, lease, campus, num\-\_\-rooms, floor, \-R\-A\-\_\-rooms, handicapped\-\_\-rooms) \-V\-A\-L\-U\-E\-S ('\-D\-E\-F\-A\-U\-L\-T', '\$complex','',0,'\$campus',0,0,0,1)\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{campusVal_8php_a6f0655994f3941d6ab50f681032f899b}{\index{campus\-Val.\-php@{campus\-Val.\-php}!\$campus@{\$campus}}
+\index{\$campus@{\$campus}!campusVal.php@{campus\-Val.\-php}}
+\subsubsection[{\$campus}]{\setlength{\rightskip}{0pt plus 5cm}\$campus = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'campus'\mbox{]})}}\label{campusVal_8php_a6f0655994f3941d6ab50f681032f899b}
+\-Gets the campus \-I\-D from the \hyperlink{settings_8php}{settings.\-php}?page=a\-Campus page. \hypertarget{campusVal_8php_a25ec02534214977602829622b78b5d78}{\index{campus\-Val.\-php@{campus\-Val.\-php}!\$complex@{\$complex}}
+\index{\$complex@{\$complex}!campusVal.php@{campus\-Val.\-php}}
+\subsubsection[{\$complex}]{\setlength{\rightskip}{0pt plus 5cm}\$complex = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})}}\label{campusVal_8php_a25ec02534214977602829622b78b5d78}
+\-Gets the complex \-I\-D from the \hyperlink{settings_8php}{settings.\-php}?page=a\-Campus page. \hypertarget{campusVal_8php_a047170d6020a882807665812a27e2525}{\index{campus\-Val.\-php@{campus\-Val.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!campusVal.php@{campus\-Val.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O building (build\-\_\-id, building\-\_\-name, building\-\_\-letter, lease, campus, num\-\_\-rooms, floor, \-R\-A\-\_\-rooms, handicapped\-\_\-rooms) \-V\-A\-L\-U\-E\-S ('\-D\-E\-F\-A\-U\-L\-T', '\$complex','',0,'\$campus',0,0,0,1)\char`\"{}}}\label{campusVal_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L string that addes a new campus into the buildings table. \hypertarget{campusVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{campus\-Val.\-php@{campus\-Val.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!campusVal.php@{campus\-Val.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{campusVal_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

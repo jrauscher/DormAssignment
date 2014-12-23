@@ -1,0 +1,32 @@
+\hypertarget{user__view_2index_8php}{\section{src/user\-\_\-view/index.php \-File \-Reference}
+\label{user__view_2index_8php}\index{src/user\-\_\-view/index.\-php@{src/user\-\_\-view/index.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{user__view_2index_8php_a90edae4400be55d0694d788b51d0da5b}{\$result\-\_\-deadline\-\_\-date} = mysqli\-\_\-query(\$dbconn, \char`\"{}\-S\-E\-L\-E\-C\-T deadline\-\_\-date \-F\-R\-O\-M form\-\_\-settings \-W\-H\-E\-R\-E form\-\_\-name='\-Student \-Form'\char`\"{})
+\item 
+\hyperlink{user__view_2index_8php_a63601fc31b0f0ebad01c582a39f7c946}{\$\-S\-Fdeadline}
+\item 
+\hyperlink{user__view_2index_8php_ab6df47053fd5f065cf01b5c626fe9730}{\$\-L\-Edeadline}
+\item 
+$\ast$ \hyperlink{user__view_2index_8php_a2a213019ea4973a06bcd525b4fd4ab82}{while} (\$deadline=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-deadline\-\_\-date))
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{user__view_2index_8php_ab6df47053fd5f065cf01b5c626fe9730}{\index{user\-\_\-view/index.\-php@{user\-\_\-view/index.\-php}!\$\-L\-Edeadline@{\$\-L\-Edeadline}}
+\index{\$\-L\-Edeadline@{\$\-L\-Edeadline}!user_view/index.php@{user\-\_\-view/index.\-php}}
+\subsubsection[{\$\-L\-Edeadline}]{\setlength{\rightskip}{0pt plus 5cm}\$\-L\-Edeadline}}\label{user__view_2index_8php_ab6df47053fd5f065cf01b5c626fe9730}
+\hypertarget{user__view_2index_8php_a90edae4400be55d0694d788b51d0da5b}{\index{user\-\_\-view/index.\-php@{user\-\_\-view/index.\-php}!\$result\-\_\-deadline\-\_\-date@{\$result\-\_\-deadline\-\_\-date}}
+\index{\$result\-\_\-deadline\-\_\-date@{\$result\-\_\-deadline\-\_\-date}!user_view/index.php@{user\-\_\-view/index.\-php}}
+\subsubsection[{\$result\-\_\-deadline\-\_\-date}]{\setlength{\rightskip}{0pt plus 5cm}$\ast$ {\bf while} (\$deadline=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-deadline\-\_\-date)) \$result\-\_\-deadline\-\_\-date = mysqli\-\_\-query(\$dbconn, \char`\"{}\-S\-E\-L\-E\-C\-T deadline\-\_\-date \-F\-R\-O\-M form\-\_\-settings \-W\-H\-E\-R\-E form\-\_\-name='\-Student \-Form'\char`\"{})}}\label{user__view_2index_8php_a90edae4400be55d0694d788b51d0da5b}
+\-Holds the result of the query to get the student form deadline date from the form\-\_\-settings table.
+
+\-Gets the correct value for \$\-S\-Fdeadline. \-Holds the result of the query to get the lease information deadline date from the for\-\_\-settings table. \hypertarget{user__view_2index_8php_a63601fc31b0f0ebad01c582a39f7c946}{\index{user\-\_\-view/index.\-php@{user\-\_\-view/index.\-php}!\$\-S\-Fdeadline@{\$\-S\-Fdeadline}}
+\index{\$\-S\-Fdeadline@{\$\-S\-Fdeadline}!user_view/index.php@{user\-\_\-view/index.\-php}}
+\subsubsection[{\$\-S\-Fdeadline}]{\setlength{\rightskip}{0pt plus 5cm}\$\-S\-Fdeadline}}\label{user__view_2index_8php_a63601fc31b0f0ebad01c582a39f7c946}
+\-The student form deadline date. \hypertarget{user__view_2index_8php_a2a213019ea4973a06bcd525b4fd4ab82}{\index{user\-\_\-view/index.\-php@{user\-\_\-view/index.\-php}!while@{while}}
+\index{while@{while}!user_view/index.php@{user\-\_\-view/index.\-php}}
+\subsubsection[{while}]{\setlength{\rightskip}{0pt plus 5cm}$\ast$ {\bf while}(\$deadline=mysqli\-\_\-fetch\-\_\-assoc(\$result\-\_\-deadline\-\_\-date))}}\label{user__view_2index_8php_a2a213019ea4973a06bcd525b4fd4ab82}
+\-The lease information deadline date. \-Gets the correct value for \$\-L\-Edeadline. 

@@ -1,5 +1,5 @@
 <?php
-$campus = mysqli_real_escape_string($dbconn, $_POST['campus']);
+$campus = mysqli_real_escape_string($dbconn, $_POST['campus']); /**< Gets campus name from the settings.php?page=campusInput page. */
 
 echo "<p>Selected Campus: $campus</p>";
 echo '<form action="validate/update/upCampus.php" method="post">';

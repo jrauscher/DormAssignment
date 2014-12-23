@@ -1,0 +1,99 @@
+\hypertarget{autoStudent_8php}{\section{src/admin\-\_\-view/includes/algo/auto\-Student.php \-File \-Reference}
+\label{autoStudent_8php}\index{src/admin\-\_\-view/includes/algo/auto\-Student.\-php@{src/admin\-\_\-view/includes/algo/auto\-Student.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{updateBenchDB_8php_a0c1f2915e12defa9f4d515347d884dee}{if}(ob\-\_\-get\-\_\-level()==0) \hyperlink{autoStudent_8php_acdd85a1abce7d32e53f2028aef2fdf30}{\$all\-Students} = \char`\"{}\-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M students \-W\-H\-E\-R\-E room\-\_\-num=0\char`\"{}
+\item 
+\hyperlink{autoStudent_8php_a5b42ae37453b4cb0a7b66ecf7f835c1b}{\$all\-Students\-Res} = mysqli\-\_\-query(\$dbconn, \$all\-Students)
+\item 
+\hyperlink{autoStudent_8php_a4b86be10feafcf37058c5a121b5fff28}{\$renew\-List} = array()
+\item 
+\hyperlink{autoStudent_8php_a9f9bc0c3bc8c3e3f16ec676735e123e8}{\$same\-List} = array()
+\item 
+\hyperlink{autoStudent_8php_af789423037bbc89dc7c850e761177570}{\$count} = 0
+\item 
+\hyperlink{autoStudent_8php_aac8edac502b6ed1fc852e8735ae424c2}{\$std\-\_\-id}
+\item 
+\hyperlink{autoStudent_8php_acf5d6dd3ee125abb9a2523b30bc47d02}{\$flag} = 0
+\item 
+\hyperlink{autoStudent_8php_a8595546d7518e1e6d8955325b0f74995}{\$curr\-\_\-room} = 0
+\item 
+\hyperlink{autoStudent_8php_a5814f5c1f5fabe3c16fc34e62a376cfb}{while} (\$row=mysqli\-\_\-fetch\-\_\-assoc(\$all\-Students\-Res))
+\item 
+\hyperlink{autoStudent_8php_ac8f3b2b9a28b7619de496a616ba2de94}{\$room\-\_\-num}
+\item 
+\hyperlink{autoStudent_8php_a6a8268a00832c2b9fb19639cef3b55c3}{\$build\-\_\-id}
+\item 
+\hyperlink{autoStudent_8php_ae55d8d34900566c9493c0acabfdeee48}{\$leftover\-\_\-table} = array()
+\item 
+\hyperlink{autoStudent_8php_a08b673911720e8532a341a87be7d7f68}{\$leftover\-\_\-table2} = array()
+\item 
+\hyperlink{autoStudent_8php_a35b65b2170992bf2380327e701448d3d}{\$leftover\-\_\-table3} = array()
+\item 
+\hyperlink{autoStudent_8php_ae984c01f36faa31c40889b54bab3cc5f}{foreach} (\$same\-List as \$sl\-\_\-student)
+\item 
+\hyperlink{autoStudent_8php_a5ecf40283519ca1d11b92be0685c64a6}{\$other\-Students} = \char`\"{}\-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M students \-W\-H\-E\-R\-E room\-\_\-num=0\char`\"{}
+\item 
+\hyperlink{autoStudent_8php_a95f5d9e24eab0566eee61e4cc48e9028}{\$other\-Students\-Res} = mysqli\-\_\-query(\$dbconn, \$other\-Students)
+\item 
+\hyperlink{autoStudent_8php_a3ad3a4240c0f97c7e85aff5c52a454d4}{print}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{autoStudent_8php_acdd85a1abce7d32e53f2028aef2fdf30}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$all\-Students@{\$all\-Students}}
+\index{\$all\-Students@{\$all\-Students}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$all\-Students}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (ob\-\_\-get\-\_\-level()==0) \$all\-Students = \char`\"{}\-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M students \-W\-H\-E\-R\-E room\-\_\-num=0\char`\"{}}}\label{autoStudent_8php_acdd85a1abce7d32e53f2028aef2fdf30}
+\-S\-Q\-L \-Query string that will grab all the students without rooms from the databse. \hypertarget{autoStudent_8php_a5b42ae37453b4cb0a7b66ecf7f835c1b}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$all\-Students\-Res@{\$all\-Students\-Res}}
+\index{\$all\-Students\-Res@{\$all\-Students\-Res}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$all\-Students\-Res}]{\setlength{\rightskip}{0pt plus 5cm}\$all\-Students\-Res = mysqli\-\_\-query(\$dbconn, \$all\-Students)}}\label{autoStudent_8php_a5b42ae37453b4cb0a7b66ecf7f835c1b}
+\-Runs the \-S\-Q\-L \-Query that is contained in the variable \$all\-Students. \hypertarget{autoStudent_8php_a6a8268a00832c2b9fb19639cef3b55c3}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$build\-\_\-id@{\$build\-\_\-id}}
+\index{\$build\-\_\-id@{\$build\-\_\-id}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$build\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}\$build\-\_\-id}}\label{autoStudent_8php_a6a8268a00832c2b9fb19639cef3b55c3}
+\-The building id. \hypertarget{autoStudent_8php_af789423037bbc89dc7c850e761177570}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$count@{\$count}}
+\index{\$count@{\$count}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$count}]{\setlength{\rightskip}{0pt plus 5cm}\$count = 0}}\label{autoStudent_8php_af789423037bbc89dc7c850e761177570}
+\-Counter that keeps track of loop interations. \hypertarget{autoStudent_8php_a8595546d7518e1e6d8955325b0f74995}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$curr\-\_\-room@{\$curr\-\_\-room}}
+\index{\$curr\-\_\-room@{\$curr\-\_\-room}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$curr\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}\$curr\-\_\-room = 0}}\label{autoStudent_8php_a8595546d7518e1e6d8955325b0f74995}
+\-The room the student is currently in. \hypertarget{autoStudent_8php_acf5d6dd3ee125abb9a2523b30bc47d02}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$flag@{\$flag}}
+\index{\$flag@{\$flag}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$flag}]{\setlength{\rightskip}{0pt plus 5cm}\$flag = 0}}\label{autoStudent_8php_acf5d6dd3ee125abb9a2523b30bc47d02}
+\-Flag gets set to 1 if the student is a renewal student. \hypertarget{autoStudent_8php_ae55d8d34900566c9493c0acabfdeee48}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$leftover\-\_\-table@{\$leftover\-\_\-table}}
+\index{\$leftover\-\_\-table@{\$leftover\-\_\-table}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$leftover\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}\$leftover\-\_\-table = array()}}\label{autoStudent_8php_ae55d8d34900566c9493c0acabfdeee48}
+\-Stores the leftover student \-I\-D's. \hypertarget{autoStudent_8php_a08b673911720e8532a341a87be7d7f68}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$leftover\-\_\-table2@{\$leftover\-\_\-table2}}
+\index{\$leftover\-\_\-table2@{\$leftover\-\_\-table2}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$leftover\-\_\-table2}]{\setlength{\rightskip}{0pt plus 5cm}\$leftover\-\_\-table2 = array()}}\label{autoStudent_8php_a08b673911720e8532a341a87be7d7f68}
+\-Stores the leftover student \-I\-D's. \hypertarget{autoStudent_8php_a35b65b2170992bf2380327e701448d3d}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$leftover\-\_\-table3@{\$leftover\-\_\-table3}}
+\index{\$leftover\-\_\-table3@{\$leftover\-\_\-table3}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$leftover\-\_\-table3}]{\setlength{\rightskip}{0pt plus 5cm}\$leftover\-\_\-table3 = array()}}\label{autoStudent_8php_a35b65b2170992bf2380327e701448d3d}
+\-Stores the leftover student \-I\-D's. \hypertarget{autoStudent_8php_a5ecf40283519ca1d11b92be0685c64a6}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$other\-Students@{\$other\-Students}}
+\index{\$other\-Students@{\$other\-Students}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$other\-Students}]{\setlength{\rightskip}{0pt plus 5cm}\$other\-Students = \char`\"{}\-S\-E\-L\-E\-C\-T $\ast$ \-F\-R\-O\-M students \-W\-H\-E\-R\-E room\-\_\-num=0\char`\"{}}}\label{autoStudent_8php_a5ecf40283519ca1d11b92be0685c64a6}
+\-Reselects all students without a room. \hypertarget{autoStudent_8php_a95f5d9e24eab0566eee61e4cc48e9028}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$other\-Students\-Res@{\$other\-Students\-Res}}
+\index{\$other\-Students\-Res@{\$other\-Students\-Res}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$other\-Students\-Res}]{\setlength{\rightskip}{0pt plus 5cm}\$other\-Students\-Res = mysqli\-\_\-query(\$dbconn, \$other\-Students)}}\label{autoStudent_8php_a95f5d9e24eab0566eee61e4cc48e9028}
+\-Runs the \-S\-Q\-L \-Query in \$other\-Students \hypertarget{autoStudent_8php_a4b86be10feafcf37058c5a121b5fff28}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$renew\-List@{\$renew\-List}}
+\index{\$renew\-List@{\$renew\-List}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$renew\-List}]{\setlength{\rightskip}{0pt plus 5cm}\$renew\-List = array()}}\label{autoStudent_8php_a4b86be10feafcf37058c5a121b5fff28}
+\-Array that will contain all the students who are renewing there lease. \hypertarget{autoStudent_8php_ac8f3b2b9a28b7619de496a616ba2de94}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$room\-\_\-num@{\$room\-\_\-num}}
+\index{\$room\-\_\-num@{\$room\-\_\-num}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$room\-\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}\$room\-\_\-num}}\label{autoStudent_8php_ac8f3b2b9a28b7619de496a616ba2de94}
+\-The room number in a building. \hypertarget{autoStudent_8php_a9f9bc0c3bc8c3e3f16ec676735e123e8}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$same\-List@{\$same\-List}}
+\index{\$same\-List@{\$same\-List}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$same\-List}]{\setlength{\rightskip}{0pt plus 5cm}\$same\-List = array()}}\label{autoStudent_8php_a9f9bc0c3bc8c3e3f16ec676735e123e8}
+\-Array that will contain all the students who are renewing there lease and requested the same room they had last year. \hypertarget{autoStudent_8php_aac8edac502b6ed1fc852e8735ae424c2}{\index{auto\-Student.\-php@{auto\-Student.\-php}!\$std\-\_\-id@{\$std\-\_\-id}}
+\index{\$std\-\_\-id@{\$std\-\_\-id}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{\$std\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}\$std\-\_\-id}}\label{autoStudent_8php_aac8edac502b6ed1fc852e8735ae424c2}
+\-Stores the student id of the current interation of the loop. \hypertarget{autoStudent_8php_ae984c01f36faa31c40889b54bab3cc5f}{\index{auto\-Student.\-php@{auto\-Student.\-php}!foreach@{foreach}}
+\index{foreach@{foreach}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{foreach}]{\setlength{\rightskip}{0pt plus 5cm}{\bf foreach}(\$renew\-List as \$rl\-\_\-student)}}\label{autoStudent_8php_ae984c01f36faa31c40889b54bab3cc5f}
+$<$ \-Loops though all same\-List students. \hypertarget{autoStudent_8php_a3ad3a4240c0f97c7e85aff5c52a454d4}{\index{auto\-Student.\-php@{auto\-Student.\-php}!print@{print}}
+\index{print@{print}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}{\bf print}}}\label{autoStudent_8php_a3ad3a4240c0f97c7e85aff5c52a454d4}
+\hypertarget{autoStudent_8php_a5814f5c1f5fabe3c16fc34e62a376cfb}{\index{auto\-Student.\-php@{auto\-Student.\-php}!while@{while}}
+\index{while@{while}!autoStudent.php@{auto\-Student.\-php}}
+\subsubsection[{while}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while}(\$row=mysqli\-\_\-fetch\-\_\-assoc(\$all\-Students\-Res))}}\label{autoStudent_8php_a5814f5c1f5fabe3c16fc34e62a376cfb}

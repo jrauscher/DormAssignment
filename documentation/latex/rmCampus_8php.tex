@@ -1,0 +1,40 @@
+\hypertarget{rmCampus_8php}{\section{src/admin\-\_\-view/validate/rm\-Campus.php \-File \-Reference}
+\label{rmCampus_8php}\index{src/admin\-\_\-view/validate/rm\-Campus.\-php@{src/admin\-\_\-view/validate/rm\-Campus.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rmCampus_8php_a6f0655994f3941d6ab50f681032f899b}{\$campus} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'campus'\mbox{]})
+\item 
+\hyperlink{rmCampus_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 1
+\item 
+\hyperlink{rmCampus_8php_aae30003a4d3fab7dc75a19cbfddea7a8}{\$get\-I\-D} = \char`\"{}\-S\-E\-L\-E\-C\-T build\-\_\-id \-From building \-W\-H\-E\-R\-E campus='\$campus'\char`\"{}
+\item 
+\hyperlink{rmCampus_8php_a046621a0674ef3c7f611b85c330fe1c5}{\$\-I\-D\-S} = mysqli\-\_\-query(\$dbconn, \$get\-I\-D) or (\$valid=2)
+\item 
+\hyperlink{studentForm_8php_abeb5d2366a9870820ffb1e260d040d8d}{while}(\$row=mysqli\-\_\-fetch\-\_\-assoc(\$\-I\-D\-S)) \hyperlink{rmCampus_8php_a44dd5051c0321c5bf69d18bbc8cc43c3}{\$sql} = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M building \-W\-H\-E\-R\-E campus='\$campus'\char`\"{}
+\item 
+\hyperlink{rmCampus_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result} = mysqli\-\_\-query(\$dbconn, \$sql) or (\$valid=2)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{rmCampus_8php_a6f0655994f3941d6ab50f681032f899b}{\index{rm\-Campus.\-php@{rm\-Campus.\-php}!\$campus@{\$campus}}
+\index{\$campus@{\$campus}!rmCampus.php@{rm\-Campus.\-php}}
+\subsubsection[{\$campus}]{\setlength{\rightskip}{0pt plus 5cm}\$campus = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'campus'\mbox{]})}}\label{rmCampus_8php_a6f0655994f3941d6ab50f681032f899b}
+\-Gets the campus from the \hyperlink{settings_8php}{settings.\-php}?page=r\-Campus page. \hypertarget{rmCampus_8php_aae30003a4d3fab7dc75a19cbfddea7a8}{\index{rm\-Campus.\-php@{rm\-Campus.\-php}!\$get\-I\-D@{\$get\-I\-D}}
+\index{\$get\-I\-D@{\$get\-I\-D}!rmCampus.php@{rm\-Campus.\-php}}
+\subsubsection[{\$get\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$get\-I\-D = \char`\"{}\-S\-E\-L\-E\-C\-T build\-\_\-id \-From building \-W\-H\-E\-R\-E campus='\$campus'\char`\"{}}}\label{rmCampus_8php_aae30003a4d3fab7dc75a19cbfddea7a8}
+\-S\-Q\-L string that gets all the building id's from the buildings table where campus = \$campus. \hypertarget{rmCampus_8php_a046621a0674ef3c7f611b85c330fe1c5}{\index{rm\-Campus.\-php@{rm\-Campus.\-php}!\$\-I\-D\-S@{\$\-I\-D\-S}}
+\index{\$\-I\-D\-S@{\$\-I\-D\-S}!rmCampus.php@{rm\-Campus.\-php}}
+\subsubsection[{\$\-I\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}\$\-I\-D\-S = mysqli\-\_\-query(\$dbconn, \$get\-I\-D) or (\$valid=2)}}\label{rmCampus_8php_a046621a0674ef3c7f611b85c330fe1c5}
+\-Runs the \-S\-Q\-L \-Query in \$get\-I\-D. \hypertarget{rmCampus_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\index{rm\-Campus.\-php@{rm\-Campus.\-php}!\$result@{\$result}}
+\index{\$result@{\$result}!rmCampus.php@{rm\-Campus.\-php}}
+\subsubsection[{\$result}]{\setlength{\rightskip}{0pt plus 5cm}\$result = mysqli\-\_\-query(\$dbconn, \$sql) or (\$valid=2)}}\label{rmCampus_8php_a112ef069ddc0454086e3d1e6d8d55d07}
+\-Runs the \-S\-Q\-L \-Query in \$sql. \hypertarget{rmCampus_8php_a44dd5051c0321c5bf69d18bbc8cc43c3}{\index{rm\-Campus.\-php@{rm\-Campus.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!rmCampus.php@{rm\-Campus.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while} (\$row=mysqli\-\_\-fetch\-\_\-assoc(\$\-I\-D\-S)) \$sql = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M building \-W\-H\-E\-R\-E campus='\$campus'\char`\"{}}}\label{rmCampus_8php_a44dd5051c0321c5bf69d18bbc8cc43c3}
+\-S\-Q\-L string that deletes all the buildings from the buildings table where campus = \$campus. \hypertarget{rmCampus_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{rm\-Campus.\-php@{rm\-Campus.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!rmCampus.php@{rm\-Campus.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 1}}\label{rmCampus_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

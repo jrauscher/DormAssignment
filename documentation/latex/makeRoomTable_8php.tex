@@ -1,0 +1,47 @@
+\hypertarget{makeRoomTable_8php}{\section{src/admin\-\_\-view/includes/functions/make\-Room\-Table.php \-File \-Reference}
+\label{makeRoomTable_8php}\index{src/admin\-\_\-view/includes/functions/make\-Room\-Table.\-php@{src/admin\-\_\-view/includes/functions/make\-Room\-Table.\-php}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{makeRoomTable_8php_a31fbfb60b92e426226aa63227bba47a2}{make\-Table} (\$rows, \$cols)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{makeRoomTable_8php_a25ec02534214977602829622b78b5d78}{\$complex} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})
+\item 
+\hyperlink{makeRoomTable_8php_aa0d74edae4412a4ad5a1b0537ada5ecc}{\$floors} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'fnum'\mbox{]})
+\item 
+\hyperlink{makeRoomTable_8php_a7885060478f8025f87d356f715f7b776}{\$rooms} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'rnum'\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{makeRoomTable_8php_a31fbfb60b92e426226aa63227bba47a2}{\index{make\-Room\-Table.\-php@{make\-Room\-Table.\-php}!make\-Table@{make\-Table}}
+\index{make\-Table@{make\-Table}!makeRoomTable.php@{make\-Room\-Table.\-php}}
+\subsubsection[{make\-Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf make\-Table} (
+\begin{DoxyParamCaption}
+\item[{\$}]{rows, }
+\item[{\$}]{cols}
+\end{DoxyParamCaption}
+)}}\label{makeRoomTable_8php_a31fbfb60b92e426226aa63227bba47a2}
+
+\begin{DoxyPre}
+ MAKETABLE: Makes a table in html, that allows for input for room numbers. 
+ TAKES: Number of rows and number of coloumns.
+ RETURNS: Nothing, generates a table in html. 
+\end{DoxyPre}
+ 
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{makeRoomTable_8php_a25ec02534214977602829622b78b5d78}{\index{make\-Room\-Table.\-php@{make\-Room\-Table.\-php}!\$complex@{\$complex}}
+\index{\$complex@{\$complex}!makeRoomTable.php@{make\-Room\-Table.\-php}}
+\subsubsection[{\$complex}]{\setlength{\rightskip}{0pt plus 5cm}\$complex = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})}}\label{makeRoomTable_8php_a25ec02534214977602829622b78b5d78}
+\-Gets complex id from \hyperlink{settings_8php}{settings.\-php}?page=14 page. \hypertarget{makeRoomTable_8php_aa0d74edae4412a4ad5a1b0537ada5ecc}{\index{make\-Room\-Table.\-php@{make\-Room\-Table.\-php}!\$floors@{\$floors}}
+\index{\$floors@{\$floors}!makeRoomTable.php@{make\-Room\-Table.\-php}}
+\subsubsection[{\$floors}]{\setlength{\rightskip}{0pt plus 5cm}\$floors = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'fnum'\mbox{]})}}\label{makeRoomTable_8php_aa0d74edae4412a4ad5a1b0537ada5ecc}
+\-Gets the number of floors from \hyperlink{settings_8php}{settings.\-php}?page=14 page. \hypertarget{makeRoomTable_8php_a7885060478f8025f87d356f715f7b776}{\index{make\-Room\-Table.\-php@{make\-Room\-Table.\-php}!\$rooms@{\$rooms}}
+\index{\$rooms@{\$rooms}!makeRoomTable.php@{make\-Room\-Table.\-php}}
+\subsubsection[{\$rooms}]{\setlength{\rightskip}{0pt plus 5cm}\$rooms = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'rnum'\mbox{]})}}\label{makeRoomTable_8php_a7885060478f8025f87d356f715f7b776}
+\-Gets the number of rooms from \hyperlink{settings_8php}{settings.\-php}?page=14 page. 

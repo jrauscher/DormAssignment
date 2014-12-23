@@ -6,21 +6,25 @@
 <?php
 	include ('../includes/svrConnect.php');
 
-$buildingID = $_GET['building_id'];
-$roomID = $_GET['room'];
+$buildingID = $_GET['building_id']; /**< The id of the building and is escaped later. */
+$roomID = $_GET['room']; /**< The id of the room and is escaped later. */
 
 $buildingID = mysql_real_escape_string($buildingID);
 $roomID = mysql_real_escape_string($roomID);
 
-$getBuildingLease = "SELECT lease FROM building WHERE build_id = '$buildingID'";
-$result_getBuildingLease = mysqli_query($dbconn, $getBuildingLease);
+$getBuildingLease = "SELECT lease FROM building WHERE build_id = '$buildingID'"; /**< SQL query to get the lease of the building. */
+$result_getBuildingLease = mysqli_query($dbconn, $getBuildingLease); /**< Holds the result from the query $getBuildingLease. */
 while($lease = mysqli_fetch_assoc($result_getBuildingLease))
 {
 	$build_lease = $lease['lease'];
 }
 									
-$getRoomGender = "SELECT gender FROM rooms_temp WHERE build_id = '$buildingID' AND room_num = '$roomID'";
-$result_getRoomGender = mysqli_query($dbconn, $getRoomGender);
+$getRoomGender = "SELECT gender FROM rooms_temp WHERE build_id = '$buildingID' AND room_num = '$roomID'"; /**< SQL query to get the gender of the room. */
+$result_getRoomGender = mysqli_query($dbconn, $getRoomGender); /**< Holds the result of the query $getRoomGender. */
+
+/**
+* Gets the gender of the room and assigns it to $room_gender.
+*/
 while($gender = mysqli_fetch_assoc($result_getRoomGender))
 {
 	$room_gender = $gender['gender'];

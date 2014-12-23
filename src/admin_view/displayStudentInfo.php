@@ -8,14 +8,13 @@
 include ('../includes/svrConnect.php');
 
 
-$studentID = $_GET['id'];
+$studentID = $_GET['id']; /**< The ID of the student and is later escaped.  */
 $studentID = mysql_real_escape_string($studentID);
 
-$getStudentInfo = "SELECT student_id, build_id, gender, birthdate, cell_phone, home_phone, email, age, address, city, state, zip, lease, renewal, scott_scholar FROM students_temp WHERE student_id = '$studentID'";
-$result_getStudentInfo = mysqli_query($dbconn, $getStudentInfo);
-
-$getName = "SELECT first_name, last_name FROM students_temp WHERE student_id = '$studentID'";
-$result_getName = mysqli_query($dbconn, $getName);
+$getStudentInfo = "SELECT student_id, build_id, gender, birthdate, cell_phone, home_phone, email, age, address, city, state, zip, lease, renewal, scott_scholar FROM students_temp WHERE student_id = '$studentID'"; /**< SQL query to grab information about the student from the temporary student table. */
+$result_getStudentInfo = mysqli_query($dbconn, $getStudentInfo); /**< Stores the result of the query $getStudentInfo. */
+$getName = "SELECT first_name, last_name FROM students_temp WHERE student_id = '$studentID'"; /**< SQL query to grab the name of the student from the temporary student table.  */
+$result_getName = mysqli_query($dbconn, $getName); /**< Stores the result of the query $getName.  */
 while($st_name = mysqli_fetch_assoc($result_getName))
 {
 	$fName = $st_name['first_name'];

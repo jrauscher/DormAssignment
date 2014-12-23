@@ -28,9 +28,10 @@
 <br/>
 
 <?php 
-$users = "SELECT student_id AS ID, username AS Username FROM users";
-$users2 = "SELECT student_id AS ID, username AS Username FROM users";
-$limit = 0; 
+$users = "SELECT student_id AS ID, username AS Username FROM users"; /**< SQL string that gets all student ID's and usernames from the users table, but will later be limited to a specfic number or results. */
+$users2 = "SELECT student_id AS ID, username AS Username FROM users"; /**< SQL string that gets all student ID's and usernames from the users table. */
+$limit = 0; /**< Varaible that will be appened to $users to limit the number of results from the SQL Query. */
+
 if(isset($_GET['limit']))
 {
 	$users.= " LIMIT ".$_GET['limit']." , 10";

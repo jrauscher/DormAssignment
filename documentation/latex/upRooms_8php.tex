@@ -1,0 +1,50 @@
+\hypertarget{upRooms_8php}{\section{src/admin\-\_\-view/validate/update/up\-Rooms.php \-File \-Reference}
+\label{upRooms_8php}\index{src/admin\-\_\-view/validate/update/up\-Rooms.\-php@{src/admin\-\_\-view/validate/update/up\-Rooms.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{upRooms_8php_affc45c6ace2eeb3f300b054dbf9592b6}{\$values} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'num\-\_\-rooms'\mbox{]})
+\item 
+\hyperlink{upRooms_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 0
+\item 
+\hyperlink{upRooms_8php_abe127179a308dc005af960bb7cd17739}{\$valid2} = 0
+\item 
+\hyperlink{upRooms_8php_a0d57fb0317e19ec798aa625381ebf342}{\$temp} = explode(\char`\"{}\-:\char`\"{},\$values)
+\item 
+\hyperlink{upRooms_8php_ad51cf907141b35051a8d4123b3e7e259}{\$num\-\_\-rooms} = \$temp\mbox{[}0\mbox{]}
+\item 
+\hyperlink{upRooms_8php_a7458cf5c1cfaeb93fe055362ecff999e}{\$\-B\-I\-D} = \$temp\mbox{[}1\mbox{]}
+\item 
+\hyperlink{upRooms_8php_aaf1cd7ce3153edff129df3a57ab81c2f}{\$num\-\_\-ra} = 0
+\item 
+\hyperlink{upRooms_8php_a0676c3aab4512e850c0778fdc42ea183}{\$num\-\_\-hc} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{upRooms_8php_a7458cf5c1cfaeb93fe055362ecff999e}{\index{up\-Rooms.\-php@{up\-Rooms.\-php}!\$\-B\-I\-D@{\$\-B\-I\-D}}
+\index{\$\-B\-I\-D@{\$\-B\-I\-D}!upRooms.php@{up\-Rooms.\-php}}
+\subsubsection[{\$\-B\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$\-B\-I\-D = \$temp\mbox{[}1\mbox{]}}}\label{upRooms_8php_a7458cf5c1cfaeb93fe055362ecff999e}
+\-Building id. \hypertarget{upRooms_8php_a0676c3aab4512e850c0778fdc42ea183}{\index{up\-Rooms.\-php@{up\-Rooms.\-php}!\$num\-\_\-hc@{\$num\-\_\-hc}}
+\index{\$num\-\_\-hc@{\$num\-\_\-hc}!upRooms.php@{up\-Rooms.\-php}}
+\subsubsection[{\$num\-\_\-hc}]{\setlength{\rightskip}{0pt plus 5cm}\$num\-\_\-hc = 0}}\label{upRooms_8php_a0676c3aab4512e850c0778fdc42ea183}
+\-Number of \-Handicapped \-Rooms. \hypertarget{upRooms_8php_aaf1cd7ce3153edff129df3a57ab81c2f}{\index{up\-Rooms.\-php@{up\-Rooms.\-php}!\$num\-\_\-ra@{\$num\-\_\-ra}}
+\index{\$num\-\_\-ra@{\$num\-\_\-ra}!upRooms.php@{up\-Rooms.\-php}}
+\subsubsection[{\$num\-\_\-ra}]{\setlength{\rightskip}{0pt plus 5cm}\$num\-\_\-ra = 0}}\label{upRooms_8php_aaf1cd7ce3153edff129df3a57ab81c2f}
+\-Number of \-R\-A \-Rooms. \hypertarget{upRooms_8php_ad51cf907141b35051a8d4123b3e7e259}{\index{up\-Rooms.\-php@{up\-Rooms.\-php}!\$num\-\_\-rooms@{\$num\-\_\-rooms}}
+\index{\$num\-\_\-rooms@{\$num\-\_\-rooms}!upRooms.php@{up\-Rooms.\-php}}
+\subsubsection[{\$num\-\_\-rooms}]{\setlength{\rightskip}{0pt plus 5cm}\$num\-\_\-rooms = \$temp\mbox{[}0\mbox{]}}}\label{upRooms_8php_ad51cf907141b35051a8d4123b3e7e259}
+\-Total number of rooms. \hypertarget{upRooms_8php_a0d57fb0317e19ec798aa625381ebf342}{\index{up\-Rooms.\-php@{up\-Rooms.\-php}!\$temp@{\$temp}}
+\index{\$temp@{\$temp}!upRooms.php@{up\-Rooms.\-php}}
+\subsubsection[{\$temp}]{\setlength{\rightskip}{0pt plus 5cm}\$temp = explode(\char`\"{}\-:\char`\"{},\$values)}}\label{upRooms_8php_a0d57fb0317e19ec798aa625381ebf342}
+array that has all the values in \$values that were seperated by '\-:' \hypertarget{upRooms_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{up\-Rooms.\-php@{up\-Rooms.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!upRooms.php@{up\-Rooms.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 0}}\label{upRooms_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. \hypertarget{upRooms_8php_abe127179a308dc005af960bb7cd17739}{\index{up\-Rooms.\-php@{up\-Rooms.\-php}!\$valid2@{\$valid2}}
+\index{\$valid2@{\$valid2}!upRooms.php@{up\-Rooms.\-php}}
+\subsubsection[{\$valid2}]{\setlength{\rightskip}{0pt plus 5cm}\$valid2 = 0}}\label{upRooms_8php_abe127179a308dc005af960bb7cd17739}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. \hypertarget{upRooms_8php_affc45c6ace2eeb3f300b054dbf9592b6}{\index{up\-Rooms.\-php@{up\-Rooms.\-php}!\$values@{\$values}}
+\index{\$values@{\$values}!upRooms.php@{up\-Rooms.\-php}}
+\subsubsection[{\$values}]{\setlength{\rightskip}{0pt plus 5cm}\$values = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'num\-\_\-rooms'\mbox{]})}}\label{upRooms_8php_affc45c6ace2eeb3f300b054dbf9592b6}
+\-Gets the number of rooms from the \hyperlink{settings_8php}{settings.\-php}?page=e\-Rooms page. 

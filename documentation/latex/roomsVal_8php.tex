@@ -1,0 +1,90 @@
+\hypertarget{roomsVal_8php}{\section{src/admin\-\_\-view/validate/rooms\-Val.php \-File \-Reference}
+\label{roomsVal_8php}\index{src/admin\-\_\-view/validate/rooms\-Val.\-php@{src/admin\-\_\-view/validate/rooms\-Val.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{roomsVal_8php_a903ab1c50249715a442ce81e6d5ba775}{\$building} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'build'\mbox{]})
+\item 
+\hyperlink{roomsVal_8php_aa0d74edae4412a4ad5a1b0537ada5ecc}{\$floors} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'floors'\mbox{]})
+\item 
+\hyperlink{roomsVal_8php_a7885060478f8025f87d356f715f7b776}{\$rooms} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'rooms'\mbox{]})
+\item 
+\hyperlink{roomsVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\$valid} = 1
+\item 
+\hyperlink{roomsVal_8php_aeba2ab722cedda53dbb7ec1a59f45550}{\$error} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{roomsVal_8php_ad51cf907141b35051a8d4123b3e7e259}{\$num\-\_\-rooms} = 0
+\item 
+\hyperlink{roomsVal_8php_aaf1cd7ce3153edff129df3a57ab81c2f}{\$num\-\_\-ra} = 0
+\item 
+\hyperlink{roomsVal_8php_a0676c3aab4512e850c0778fdc42ea183}{\$num\-\_\-hc} = 0
+\item 
+\hyperlink{roomsVal_8php_a2cca3c3b2bea27a3104265f7cc345bcb}{\$bad\-Chars} = array(\char`\"{}'\char`\"{},\char`\"{}$\backslash$\char`\"{}\char`\"{},\char`\"{}\hyperlink{sendMail_8php_a97c5d50455f68774b384f988b990d00f}{for} key \-P\-R\-I\-M\-A\-R\-Y\char`\"{})
+\item 
+\hyperlink{roomsVal_8php_a628d739f2a9b4e8ad7b45417ca5b0edd}{\$lets} = array(\char`\"{}\-A\char`\"{},\char`\"{}\-B\char`\"{},\char`\"{}\-C\char`\"{},\char`\"{}\-D\char`\"{})
+\item 
+\hyperlink{roomsVal_8php_a1ed0735728ed423fcc71363224bf1b96}{\$sql\-Top} = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O `rooms`(`room\-\_\-num`, `build\-\_\-id`, `group\-\_\-id`, `num\-\_\-students`, `floor`, `gender`, `smoking`, `\-R\-A\-\_\-\-Room`, `\-H\-C\-\_\-\-Room`) \-V\-A\-L\-U\-E\-S\char`\"{}
+\item 
+\hyperlink{roomsVal_8php_aa1d0fd452ef88c3f247e457ae5d04157}{\$rm\-Err} = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M `errors`\char`\"{}
+\item 
+\hyperlink{roomsVal_8php_afcbf90f700af2e9cb340e31593985d6e}{\$sql\-Room\-Let} = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O `room\-\_\-letter` (`room\-\_\-num`,`build\-\_\-id`,`student\-\_\-id`,`letter`)\-V\-A\-L\-U\-E\-S\char`\"{}
+\item 
+\hyperlink{roomsVal_8php_a3bed351c02cbc07bce580e0044c8d37d}{\$result3} = mysqli\-\_\-query(\$dbconn, \$rm\-Err) or \$valid = 1
+\item 
+\hyperlink{sendMail_8php_a97c5d50455f68774b384f988b990d00f}{for}(\$i=1;\$i$<$\$floors+1;\$i++) \hyperlink{roomsVal_8php_af17c301fdf57702d6eafe21020b9b075}{\$up\-Build} = \char`\"{}\-U\-P\-D\-A\-T\-E `building` \-S\-E\-T `num\-\_\-rooms`='\$num\-\_\-rooms',`floor`='\$floors',`\-R\-A\-\_\-rooms`='\$num\-\_\-ra',`handicapped\-\_\-rooms`='\$num\-\_\-hc' \-W\-H\-E\-R\-E build\-\_\-id ='\$building'\char`\"{}
+\item 
+\hyperlink{roomsVal_8php_a1b79716c00a22cc3e20b13c14978f455}{\$up\-Result} = mysqli\-\_\-query(\$dbconn, \$up\-Build) or die('\-Error ' . mysqli\-\_\-error(\$dbconn))
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{roomsVal_8php_a2cca3c3b2bea27a3104265f7cc345bcb}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$bad\-Chars@{\$bad\-Chars}}
+\index{\$bad\-Chars@{\$bad\-Chars}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$bad\-Chars}]{\setlength{\rightskip}{0pt plus 5cm}\$bad\-Chars = array(\char`\"{}'\char`\"{},\char`\"{}$\backslash$\char`\"{}\char`\"{},\char`\"{}{\bf for} key \-P\-R\-I\-M\-A\-R\-Y\char`\"{})}}\label{roomsVal_8php_a2cca3c3b2bea27a3104265f7cc345bcb}
+\-Characters that we don't want present in the error messages. \hypertarget{roomsVal_8php_a903ab1c50249715a442ce81e6d5ba775}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$building@{\$building}}
+\index{\$building@{\$building}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$building}]{\setlength{\rightskip}{0pt plus 5cm}\$building = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'build'\mbox{]})}}\label{roomsVal_8php_a903ab1c50249715a442ce81e6d5ba775}
+\-Gets the building \-I\-D from the \hyperlink{settings_8php}{settings.\-php}?page=14 page. \hypertarget{roomsVal_8php_aeba2ab722cedda53dbb7ec1a59f45550}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$error@{\$error}}
+\index{\$error@{\$error}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$error}]{\setlength{\rightskip}{0pt plus 5cm}\$error = \char`\"{}\char`\"{}}}\label{roomsVal_8php_aeba2ab722cedda53dbb7ec1a59f45550}
+\-Stores the all errors that can occur while adding rooms to a building. \hypertarget{roomsVal_8php_aa0d74edae4412a4ad5a1b0537ada5ecc}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$floors@{\$floors}}
+\index{\$floors@{\$floors}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$floors}]{\setlength{\rightskip}{0pt plus 5cm}\$floors = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'floors'\mbox{]})}}\label{roomsVal_8php_aa0d74edae4412a4ad5a1b0537ada5ecc}
+\-Gets the number of floors from the \hyperlink{settings_8php}{settings.\-php}?page=14 page. \hypertarget{roomsVal_8php_a628d739f2a9b4e8ad7b45417ca5b0edd}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$lets@{\$lets}}
+\index{\$lets@{\$lets}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$lets}]{\setlength{\rightskip}{0pt plus 5cm}\$lets = array(\char`\"{}\-A\char`\"{},\char`\"{}\-B\char`\"{},\char`\"{}\-C\char`\"{},\char`\"{}\-D\char`\"{})}}\label{roomsVal_8php_a628d739f2a9b4e8ad7b45417ca5b0edd}
+\-Possible room letters \hypertarget{roomsVal_8php_a0676c3aab4512e850c0778fdc42ea183}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$num\-\_\-hc@{\$num\-\_\-hc}}
+\index{\$num\-\_\-hc@{\$num\-\_\-hc}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$num\-\_\-hc}]{\setlength{\rightskip}{0pt plus 5cm}\$num\-\_\-hc = 0}}\label{roomsVal_8php_a0676c3aab4512e850c0778fdc42ea183}
+the number of \-H\-C rooms. \hypertarget{roomsVal_8php_aaf1cd7ce3153edff129df3a57ab81c2f}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$num\-\_\-ra@{\$num\-\_\-ra}}
+\index{\$num\-\_\-ra@{\$num\-\_\-ra}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$num\-\_\-ra}]{\setlength{\rightskip}{0pt plus 5cm}\$num\-\_\-ra = 0}}\label{roomsVal_8php_aaf1cd7ce3153edff129df3a57ab81c2f}
+\-The number of \-R\-A rooms. \hypertarget{roomsVal_8php_ad51cf907141b35051a8d4123b3e7e259}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$num\-\_\-rooms@{\$num\-\_\-rooms}}
+\index{\$num\-\_\-rooms@{\$num\-\_\-rooms}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$num\-\_\-rooms}]{\setlength{\rightskip}{0pt plus 5cm}\$num\-\_\-rooms = 0}}\label{roomsVal_8php_ad51cf907141b35051a8d4123b3e7e259}
+\-The number of rooms. \hypertarget{roomsVal_8php_a3bed351c02cbc07bce580e0044c8d37d}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$result3@{\$result3}}
+\index{\$result3@{\$result3}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$result3}]{\setlength{\rightskip}{0pt plus 5cm}\$result3 = mysqli\-\_\-query(\$dbconn, \$rm\-Err) or \$valid = 1}}\label{roomsVal_8php_a3bed351c02cbc07bce580e0044c8d37d}
+\-Runs the \-S\-Q\-L \-Query in \$rm\-Err. \hypertarget{roomsVal_8php_aa1d0fd452ef88c3f247e457ae5d04157}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$rm\-Err@{\$rm\-Err}}
+\index{\$rm\-Err@{\$rm\-Err}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$rm\-Err}]{\setlength{\rightskip}{0pt plus 5cm}\$rm\-Err = \char`\"{}\-D\-E\-L\-E\-T\-E \-F\-R\-O\-M `errors`\char`\"{}}}\label{roomsVal_8php_aa1d0fd452ef88c3f247e457ae5d04157}
+\-S\-Q\-L string that removes all errors from the errors table (errors from previous run are stores there). \hypertarget{roomsVal_8php_a7885060478f8025f87d356f715f7b776}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$rooms@{\$rooms}}
+\index{\$rooms@{\$rooms}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$rooms}]{\setlength{\rightskip}{0pt plus 5cm}\$rooms = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'rooms'\mbox{]})}}\label{roomsVal_8php_a7885060478f8025f87d356f715f7b776}
+\-Gets the number of rooms from the \hyperlink{settings_8php}{settings.\-php}?page=14 page. \hypertarget{roomsVal_8php_afcbf90f700af2e9cb340e31593985d6e}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$sql\-Room\-Let@{\$sql\-Room\-Let}}
+\index{\$sql\-Room\-Let@{\$sql\-Room\-Let}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$sql\-Room\-Let}]{\setlength{\rightskip}{0pt plus 5cm}\$sql\-Room\-Let = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O `room\-\_\-letter` (`room\-\_\-num`,`build\-\_\-id`,`student\-\_\-id`,`letter`)\-V\-A\-L\-U\-E\-S\char`\"{}}}\label{roomsVal_8php_afcbf90f700af2e9cb340e31593985d6e}
+\-S\-Q\-L string that adds a new room into the rooms table, part 2. \hypertarget{roomsVal_8php_a1ed0735728ed423fcc71363224bf1b96}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$sql\-Top@{\$sql\-Top}}
+\index{\$sql\-Top@{\$sql\-Top}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$sql\-Top}]{\setlength{\rightskip}{0pt plus 5cm}\$sql\-Top = \char`\"{}\-I\-N\-S\-E\-R\-T \-I\-N\-T\-O `rooms`(`room\-\_\-num`, `build\-\_\-id`, `group\-\_\-id`, `num\-\_\-students`, `floor`, `gender`, `smoking`, `\-R\-A\-\_\-\-Room`, `\-H\-C\-\_\-\-Room`) \-V\-A\-L\-U\-E\-S\char`\"{}}}\label{roomsVal_8php_a1ed0735728ed423fcc71363224bf1b96}
+\-S\-Q\-L string that adds a new room into the rooms table, part 1. \hypertarget{roomsVal_8php_af17c301fdf57702d6eafe21020b9b075}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$up\-Build@{\$up\-Build}}
+\index{\$up\-Build@{\$up\-Build}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$up\-Build}]{\setlength{\rightskip}{0pt plus 5cm}{\bf for} (\$i=1;\$i$<$\$floors+1;\$i++) \$up\-Build = \char`\"{}\-U\-P\-D\-A\-T\-E `building` \-S\-E\-T `num\-\_\-rooms`='\$num\-\_\-rooms',`floor`='\$floors',`\-R\-A\-\_\-rooms`='\$num\-\_\-ra',`handicapped\-\_\-rooms`='\$num\-\_\-hc' \-W\-H\-E\-R\-E build\-\_\-id ='\$building'\char`\"{}}}\label{roomsVal_8php_af17c301fdf57702d6eafe21020b9b075}
+\$\-S\-Q\-L string that updates the building with the new room infromation. \hypertarget{roomsVal_8php_a1b79716c00a22cc3e20b13c14978f455}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$up\-Result@{\$up\-Result}}
+\index{\$up\-Result@{\$up\-Result}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$up\-Result}]{\setlength{\rightskip}{0pt plus 5cm}\$up\-Result = mysqli\-\_\-query(\$dbconn, \$up\-Build) or die('\-Error ' . mysqli\-\_\-error(\$dbconn))}}\label{roomsVal_8php_a1b79716c00a22cc3e20b13c14978f455}
+\-Runs the \-S\-Q\-L \-Query \$up\-Build. \hypertarget{roomsVal_8php_a0587674d27d00ef497e08e53ccf45bbb}{\index{rooms\-Val.\-php@{rooms\-Val.\-php}!\$valid@{\$valid}}
+\index{\$valid@{\$valid}!roomsVal.php@{rooms\-Val.\-php}}
+\subsubsection[{\$valid}]{\setlength{\rightskip}{0pt plus 5cm}\$valid = 1}}\label{roomsVal_8php_a0587674d27d00ef497e08e53ccf45bbb}
+\-Valid must equl the total number of input variables at the end of the program to insure input variables contain valid text. 

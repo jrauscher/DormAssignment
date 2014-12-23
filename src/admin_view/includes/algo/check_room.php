@@ -1,5 +1,12 @@
 <?php
-// CHECK_ROOM: MAKES SURE STUDENTS IS OF THE CORRECT LEASE, GENDER, AND ROOM IS NOT FULL
+/**
+* <pre>
+* CHECK_ROOM: Makes sure students are of the correct lease type, gender, and that the room is not full.
+* TAKES: Student ID, Room Number, and Building ID.
+* RETURNS: 0 if the student cannot go into that room.
+* 	  1 if the student can be placed into that room.
+*</pre>
+*/
 function check_room ($std_id,$room_num,$build_id){
 	include ('../includes/svrConnect.php');
 	$student_info = "SELECT gender, lease FROM students WHERE student_id='$std_id'";

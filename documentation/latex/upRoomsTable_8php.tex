@@ -1,0 +1,64 @@
+\hypertarget{upRoomsTable_8php}{\section{src/admin\-\_\-view/includes/up\-Rooms\-Table.php \-File \-Reference}
+\label{upRoomsTable_8php}\index{src/admin\-\_\-view/includes/up\-Rooms\-Table.\-php@{src/admin\-\_\-view/includes/up\-Rooms\-Table.\-php}}
+}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{upRoomsTable_8php_a7458cf5c1cfaeb93fe055362ecff999e}{\$\-B\-I\-D} = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})
+\item 
+\hyperlink{upRoomsTable_8php_a047170d6020a882807665812a27e2525}{\$sql} = \char`\"{}\-S\-E\-L\-E\-C\-T room\-\_\-num \-A\-S '\-Room \-Number',floor \-A\-S '\-Floor', \-R\-A\-\_\-\-Room as '\-R\-A \-Room', \-H\-C\-\_\-\-Room \-A\-S '\-H\-C \-Room' \-F\-R\-O\-M rooms \-W\-H\-E\-R\-E build\-\_\-id='\$\-B\-I\-D'\char`\"{}
+\item 
+\hyperlink{upRoomsTable_8php_a1ad0ffe3fa0755e56a1a6bb40c232b8a}{\$sql2} = \char`\"{}\-S\-E\-L\-E\-C\-T building\-\_\-name \-A\-S '\-Complex \-Name', building\-\_\-letter \-A\-S '\-Letter' \-F\-R\-O\-M building \-W\-H\-E\-R\-E build\-\_\-id='\$\-B\-I\-D'\char`\"{}
+\item 
+\hyperlink{upRoomsTable_8php_a49a8a4009b02e49717caa88b128affc5}{\$res} = mysqli\-\_\-query(\$dbconn, \$sql)
+\item 
+\hyperlink{upRoomsTable_8php_a3977504adc01ced790e56cece5e24b60}{\$res2} = mysqli\-\_\-query(\$dbconn, \$sql2)
+\item 
+\hyperlink{upRoomsTable_8php_ac3862ddd2ba0a132de05b14eab1a8e7d}{while} (\$row=mysqli\-\_\-fetch\-\_\-assoc(\$res2))
+\item 
+\hyperlink{upRoomsTable_8php_a649817e46b95fbef9ea44e119999dada}{\$complex100} = \char`\"{}\-S\-E\-L\-E\-C\-T building\-\_\-name \-F\-R\-O\-M building \-W\-H\-E\-R\-E complex=1\char`\"{}
+\item 
+\hyperlink{upRoomsTable_8php_aa5d9e7c76b4a1d987e4877d6115c0a38}{\$complex\-Res100} = mysqli\-\_\-query(\$dbconn, \$complex100)
+\item 
+\hyperlink{upRoomsTable_8php_af789423037bbc89dc7c850e761177570}{\$count} = 0
+\item 
+\hyperlink{upRoomsTable_8php_ad51cf907141b35051a8d4123b3e7e259}{\$num\-\_\-rooms} = 0
+\item 
+\hyperlink{upRoomsTable_8php_a46163db64b57db961d4bb2ada2d923f9}{\$\-I} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{upRoomsTable_8php_a7458cf5c1cfaeb93fe055362ecff999e}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!\$\-B\-I\-D@{\$\-B\-I\-D}}
+\index{\$\-B\-I\-D@{\$\-B\-I\-D}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{\$\-B\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\$\-B\-I\-D = mysqli\-\_\-real\-\_\-escape\-\_\-string(\$dbconn, \$\-\_\-\-P\-O\-S\-T\mbox{[}'complex'\mbox{]})}}\label{upRoomsTable_8php_a7458cf5c1cfaeb93fe055362ecff999e}
+\-Gets the complex \-I\-D from the \hyperlink{settings_8php}{settings.\-php}?page=rooms\-Input page. \hypertarget{upRoomsTable_8php_a649817e46b95fbef9ea44e119999dada}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!\$complex100@{\$complex100}}
+\index{\$complex100@{\$complex100}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{\$complex100}]{\setlength{\rightskip}{0pt plus 5cm}\$complex100 = \char`\"{}\-S\-E\-L\-E\-C\-T building\-\_\-name \-F\-R\-O\-M building \-W\-H\-E\-R\-E complex=1\char`\"{}}}\label{upRoomsTable_8php_a649817e46b95fbef9ea44e119999dada}
+\-S\-Q\-L string that gets all the building names from the building table. \hypertarget{upRoomsTable_8php_aa5d9e7c76b4a1d987e4877d6115c0a38}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!\$complex\-Res100@{\$complex\-Res100}}
+\index{\$complex\-Res100@{\$complex\-Res100}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{\$complex\-Res100}]{\setlength{\rightskip}{0pt plus 5cm}\$complex\-Res100 = mysqli\-\_\-query(\$dbconn, \$complex100)}}\label{upRoomsTable_8php_aa5d9e7c76b4a1d987e4877d6115c0a38}
+\-Runs the \-S\-Q\-L \-Query in \$complex100 \hypertarget{upRoomsTable_8php_af789423037bbc89dc7c850e761177570}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!\$count@{\$count}}
+\index{\$count@{\$count}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{\$count}]{\setlength{\rightskip}{0pt plus 5cm}\$count = 0}}\label{upRoomsTable_8php_af789423037bbc89dc7c850e761177570}
+\-Counter varaible for the loop. \hypertarget{upRoomsTable_8php_a46163db64b57db961d4bb2ada2d923f9}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!\$\-I@{\$\-I}}
+\index{\$\-I@{\$\-I}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{\$\-I}]{\setlength{\rightskip}{0pt plus 5cm}\$\-I = 0}}\label{upRoomsTable_8php_a46163db64b57db961d4bb2ada2d923f9}
+\-Another counter variable for the loop. \hypertarget{upRoomsTable_8php_ad51cf907141b35051a8d4123b3e7e259}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!\$num\-\_\-rooms@{\$num\-\_\-rooms}}
+\index{\$num\-\_\-rooms@{\$num\-\_\-rooms}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{\$num\-\_\-rooms}]{\setlength{\rightskip}{0pt plus 5cm}\$num\-\_\-rooms = 0}}\label{upRoomsTable_8php_ad51cf907141b35051a8d4123b3e7e259}
+\-Total number of rooms. \hypertarget{upRoomsTable_8php_a49a8a4009b02e49717caa88b128affc5}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!\$res@{\$res}}
+\index{\$res@{\$res}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{\$res}]{\setlength{\rightskip}{0pt plus 5cm}\$res = mysqli\-\_\-query(\$dbconn, \$sql)}}\label{upRoomsTable_8php_a49a8a4009b02e49717caa88b128affc5}
+\-Runs the \-S\-Q\-L \-Query in \$sql. \hypertarget{upRoomsTable_8php_a3977504adc01ced790e56cece5e24b60}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!\$res2@{\$res2}}
+\index{\$res2@{\$res2}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{\$res2}]{\setlength{\rightskip}{0pt plus 5cm}\$res2 = mysqli\-\_\-query(\$dbconn, \$sql2)}}\label{upRoomsTable_8php_a3977504adc01ced790e56cece5e24b60}
+\-Runs the \-S\-Q\-L \-Query in \$sql2 \hypertarget{upRoomsTable_8php_a047170d6020a882807665812a27e2525}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!\$sql@{\$sql}}
+\index{\$sql@{\$sql}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{\$sql}]{\setlength{\rightskip}{0pt plus 5cm}\$sql = \char`\"{}\-S\-E\-L\-E\-C\-T room\-\_\-num \-A\-S '\-Room \-Number',floor \-A\-S '\-Floor', \-R\-A\-\_\-\-Room as '\-R\-A \-Room', \-H\-C\-\_\-\-Room \-A\-S '\-H\-C \-Room' \-F\-R\-O\-M rooms \-W\-H\-E\-R\-E build\-\_\-id='\$\-B\-I\-D'\char`\"{}}}\label{upRoomsTable_8php_a047170d6020a882807665812a27e2525}
+\-S\-Q\-L string that \-Gets the room numbers from the rooms table where build\-\_\-id = \$\-B\-I\-D. \hypertarget{upRoomsTable_8php_a1ad0ffe3fa0755e56a1a6bb40c232b8a}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!\$sql2@{\$sql2}}
+\index{\$sql2@{\$sql2}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{\$sql2}]{\setlength{\rightskip}{0pt plus 5cm}\$sql2 = \char`\"{}\-S\-E\-L\-E\-C\-T building\-\_\-name \-A\-S '\-Complex \-Name', building\-\_\-letter \-A\-S '\-Letter' \-F\-R\-O\-M building \-W\-H\-E\-R\-E build\-\_\-id='\$\-B\-I\-D'\char`\"{}}}\label{upRoomsTable_8php_a1ad0ffe3fa0755e56a1a6bb40c232b8a}
+\-S\-Q\-L string that gets building information from the building table where build\-\_\-id = \$\-B\-I\-D. \hypertarget{upRoomsTable_8php_ac3862ddd2ba0a132de05b14eab1a8e7d}{\index{up\-Rooms\-Table.\-php@{up\-Rooms\-Table.\-php}!while@{while}}
+\index{while@{while}!upRoomsTable.php@{up\-Rooms\-Table.\-php}}
+\subsubsection[{while}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while}(\$row=mysqli\-\_\-fetch\-\_\-assoc(\$res2))}}\label{upRoomsTable_8php_ac3862ddd2ba0a132de05b14eab1a8e7d}

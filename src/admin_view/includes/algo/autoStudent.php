@@ -30,16 +30,16 @@ if (ob_get_level() == 0) {
 }
 
 // START ALGORITHM 
-$allStudents = "SELECT * FROM students WHERE room_num=0";
-$allStudentsRes = mysqli_query($dbconn, $allStudents);
+$allStudents = "SELECT * FROM students WHERE room_num=0"; /**< SQL Query string that will grab all the students without rooms from the databse. */
+$allStudentsRes = mysqli_query($dbconn, $allStudents); /**< Runs the SQL Query that is contained in the variable $allStudents. */
 
-$renewList = array();
-$sameList = array();
+$renewList = array(); /**< Array that will contain all the students who are renewing there lease. */
+$sameList = array(); /**< Array that will contain all the students who are renewing there lease and requested the same room they had last year. */
 
-$count = 0;
-$std_id;
-$flag = 0;
-$curr_room =0;
+$count = 0; /**< Counter that keeps track of loop interations. */
+$std_id; /**< Stores the student id of the current interation of the loop. */
+$flag = 0; /**< Flag gets set to 1 if the student is a renewal student. */
+$curr_room =0; /**< The room the student is currently in. */
 mysqli_data_seek($allStudentsRes, 0);
 
 // FINDS RENEWAL AND SAME ROOM REQUESTS //
@@ -91,13 +91,13 @@ echo "ASSIGNING SAME ROOM STUDENTS...&#13;&#10";
 ob_flush();
 flush();
 
-$room_num;
-$build_id;
-$leftover_table = array();
-$leftover_table2 = array();
-$leftover_table3 = array();
+$room_num; /**< The room number in a building. */
+$build_id; /**< The building id. */
+$leftover_table = array(); /**< Stores the leftover student ID's. */
+$leftover_table2 = array(); /**< Stores the leftover student ID's. */
+$leftover_table3 = array(); /**< Stores the leftover student ID's. */
 
-foreach ($sameList as $sl_student){
+foreach ($sameList as $sl_student){ /**< Loops though all sameList students. */
 	$sl = "SELECT req_room_num, req_build_id FROM students WHERE student_id = $sl_student AND room_num=0";
 	$sl_result = mysqli_query($dbconn, $sl);
 
@@ -211,10 +211,10 @@ echo "ASSIGNING ALL OTHER STUDENTS...&#13;&#10";
 ob_flush();
 flush();
 
-$otherStudents = "SELECT * FROM students WHERE room_num=0";
-$otherStudentsRes = mysqli_query($dbconn, $otherStudents);
+$otherStudents = "SELECT * FROM students WHERE room_num=0"; /**< Reselects all students without a room. */
+$otherStudentsRes = mysqli_query($dbconn, $otherStudents) /**< Runs the SQL Query in $otherStudents */;
 
-while ($oStudent = mysqli_fetch_array($otherStudentsRes)) {
+while ($oStudent = mysqli_fetch_array($otherStudentsRes)) { 
 	$ost_id = $oStudent['student_id'];
 	
 	$test = populate_room($ost_id);

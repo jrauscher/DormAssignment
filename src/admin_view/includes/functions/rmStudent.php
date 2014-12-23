@@ -23,10 +23,12 @@
 	</tr>
 	<table>
 </form>
+
 <?php
-$student = "SELECT student_ID AS ID, first_name AS 'First Name', last_name AS 'Last Name', email AS 'Email' FROM students";
-$student2 = "SELECT student_ID AS ID, first_name AS 'First Name', last_name AS 'Last Name', email AS 'Email' FROM students";
-$limit = 0; 
+$student = "SELECT student_ID AS ID, first_name AS 'First Name', last_name AS 'Last Name', email AS 'Email' FROM students"; /**< SQL string that grabs student information from the students table which will later be limited. */
+$student2 = "SELECT student_ID AS ID, first_name AS 'First Name', last_name AS 'Last Name', email AS 'Email' FROM students"; /**< SQL string that grabs all student information from the students table. */
+$limit = 0; /**< Variable that will be used to limit the number results from the $student SQL Query. */
+
 if(isset($_GET['limit']))
 {
 	$student.= " LIMIT ".$_GET['limit']." , 10";
@@ -50,7 +52,7 @@ else
 	echo '<br/>';
 	echo '<a align="center" class="button1" href="settings.php?page=rStudent&limit=10">Next 10</a><br/><br/><br/>';
 }
-$resStudent = mysqli_query($dbconn, $student);
+$resStudent = mysqli_query($dbconn, $student); /**< Runs the SQL Query in $student. */
 
 if( isset($_POST['email_id']) && $_POST['email_id'] != null && $_POST['email_id'] != '' ){
     $student2 .= ' WHERE email = "' . mysqli_real_escape_string($dbconn,$_POST['email_id']) .'"';
